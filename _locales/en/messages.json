@@ -1,0 +1,104 @@
+{
+  "extName": {
+    "message":"ERP - Quick Actions"
+  },
+    "lblLight": {
+    "message":"Light"
+  },
+    "lblDark": {
+    "message":"Dark"
+  },
+    "login": {
+    "message":"Login"
+  },
+    "addRule": {
+    "message":"Add Rule"
+  },
+    "reloadReq": {
+    "message":"(reload required)"
+  },
+    "save": {
+    "message":"Save"
+  },
+    "saveConfig": {
+    "message":"Save Config"
+  },
+    "saveRules": {
+    "message":"Save Rules"
+  },
+    "saveCustom": {
+    "message":"Save Custom Settings"
+  },
+    "clearAll": {
+    "message":"Clear All"
+  },
+    "setup": {
+    "message":"Setup"
+  },
+    "example": {
+    "message":"Example"
+  },
+    "usage": {
+    "message":"Usage"
+  },
+    "keywordL": {
+    "message":"keyword"
+  },
+    "linkL": {
+    "message":"link"
+  },
+    "keywordC": {
+    "message":"Keyword"
+  },
+    "linkC": {
+    "message":"Link"
+  },
+    "builtInCom": {
+    "message":"Built-in Commands"
+  },
+    "guide": {
+    "message":"Guide"
+  },
+    "currentVer": {
+    "message":"Current Version"
+  },
+    "latestVer": {
+    "message":"Latest Version"
+  },
+    "msgNone": {
+    "message":"None"
+  },
+    "customSettings": {
+    "message":"Custom Settings"
+  },
+    "experimental": {
+    "message":"Experimental / Beta"
+  },
+    "cssBlock": {
+    "message":"Custom CSS"
+  },
+    "jsBlock": {
+    "message":"Custom JS & jQuery"
+  },
+    "altHeadMeth": {
+    "message":"Alternative smaller header method"
+  },
+    "headGlow": {
+    "message":"Environment header glow"
+  },
+    "rgbhead": {
+    "message":"Animated RGB header glow"
+  },
+    "easyUIfit": {
+    "message":"Fit easyUI to available screen height"
+  },
+    "altMenus": {
+    "message":"Alternative menu look & feel"
+  },
+    "animArrange": {
+    "message":"Animate 'Arrange Shortcuts'"
+  },
+    "mainBlock": {
+    "message":"Smaller Home Items"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "extName": {
+    "message":"ERP - Vinnige Aksies"
+  },
+    "lblLight": {
+    "message":"Lig"
+  },
+    "lblDark": {
+    "message":"Donker"
+  },
+    "login": {
+    "message":"Teken In"
+  },
+    "addRule": {
+    "message":"Voeg Reël by"
+  },
+    "reloadReq": {
+    "message":"(herlaai nodig)"
+  },
+    "save": {
+    "message":"Stoor"
+  },
+    "saveConfig": {
+    "message":"Stoor Konfigurasie"
+  },
+    "saveRules": {
+    "message":"Stoor Reëls"
+  },
+    "saveCustom": {
+    "message":"Stoor Persoonlike Instellings"
+  },
+    "clearAll": {
+    "message":"Verwyder Alles"
+  },
+    "setup": {
+    "message":"Opstel"
+  },
+    "example": {
+    "message":"Voorbeeld"
+  },
+    "usage": {
+    "message":"Gebruik"
+  },
+    "keywordL": {
+    "message":"sleutelwoord"
+  },
+    "linkL": {
+    "message":"skakel"
+  },
+    "keywordC": {
+    "message":"Sleutelwoord"
+  },
+    "linkC": {
+    "message":"Skakel"
+  },
+    "builtInCom": {
+    "message":"Ingeboude Opdragte"
+  },
+    "guide": {
+    "message":"Riglyn"
+  },
+    "currentVer": {
+    "message":"Huidige weergawe"
+  },
+    "latestVer": {
+    "message":"Nuutste weergawe"
+  },
+    "msgNone": {
+    "message":"Geen"
+  },
+    "customSettings": {
+    "message":"Persoonlike Instellings"
+  },
+    "experimental": {
+    "message":"Eksperimenteel / Beta"
+  },
+    "cssBlock": {
+    "message":"Aangepaste CSS"
+  },
+    "jsBlock": {
+    "message":"Aangepaste JS & jQuery"
+  },
+    "altHeadMeth": {
+    "message":"Alternatiewe kleiner 'header' metode"
+  },
+    "headGlow": {
+    "message":"Omgewing 'header' gloei"
+  },
+    "rgbhead": {
+    "message":"Animeerende 'header' gloei"
+  },
+    "easyUIfit": {
+    "message":"Pas 'easyUI' by beskikbare skermhoogte"
+  },
+    "altMenus": {
+    "message":"Alternatiewe menu's"
+  },
+    "animArrange": {
+    "message":"Animeer rangskik kortpaaie"
+  },
+    "mainBlock": {
+    "message":"Kleiner Tuis Items"
+  }
+}

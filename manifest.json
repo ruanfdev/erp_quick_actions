@@ -1,0 +1,43 @@
+{
+  "name": "__MSG_extName__",
+  "version": "3.4",
+  "manifest_version": 2,
+  "description": "__MSG_extName__",
+  "homepage_url": "https://ruanf.co.za",
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/firebasejs/6.0.2/firebase.js https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js https://cdn.firebase.com https://*.firebaseio.com; object-src 'self'",
+  "icons": {
+    "16": "icons/icon_16.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "icons/icon_19.png",
+    "default_title": "__MSG_extName__",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "management",
+    "tabs",
+    "activeTab",
+    "notifications" ,
+    "storage",
+    "http://*.nwk.co.za/*"
+  ],
+  "omnibox": {
+    "keyword": "erp"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.nwk.co.za/*"],
+      "exclude_matches": ["http://imap.nwk.co.za/*","http://*.nwk.co.za/phpMyAdmin/*","http://*.nwk.co.za/Betrokka/*"],
+      "all_frames": true,
+      "js": ["js/jquery/jquery.min.js","src/inject/inject.js"]
+    }
+  ],
+  "web_accessible_resources": ["src/inject/inject.css","src/inject/inject_dark.css","logo_png.png"]
+}
