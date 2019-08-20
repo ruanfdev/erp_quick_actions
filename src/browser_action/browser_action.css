@@ -514,7 +514,7 @@ p.small_title {
   text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 .sidenav .cm-s-default .cm-comment {
-  color: var(--grey-light);
+  color: var(--greyLight);
   font-style: italic;
 }
 .CodeMirror.cm-s-default.CodeMirror-wrap {

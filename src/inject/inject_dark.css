@@ -84,7 +84,8 @@ body.dark .tabs-panels .panel-body {
 body.dark .BlokNav {
   background-color: rgba(232, 232, 232, 0.8);
 }
-body.dark ul.dropdown-menu {
+body.dark ul.dropdown-menu,
+body.dark .Zebra_Form fieldset label {
   background-color: #303030;
 }
 body.dark ul.dropdown-menu li a,
