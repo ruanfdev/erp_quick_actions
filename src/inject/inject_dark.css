@@ -3,7 +3,7 @@ body.dark {
   color: #F2F2F2 !important;
 }
 body.dark label,
-body.dark .Zebra_Form fieldset label
+body.dark .Zebra_Form fieldset label,
 input,
 .login_div input,
 div,
