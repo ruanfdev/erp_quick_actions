@@ -2,7 +2,12 @@ body.dark {
   background-color: #404040 !important;
   color: #F2F2F2 !important;
 }
-body.dark label, input, .login_div input, div, .datagrid-pager.pagination * {
+body.dark label,
+body.dark .Zebra_Form fieldset label
+input,
+.login_div input,
+div,
+.datagrid-pager.pagination * {
   color: #303030;
 }
 body.dark .logo {
@@ -84,8 +89,7 @@ body.dark .tabs-panels .panel-body {
 body.dark .BlokNav {
   background-color: rgba(232, 232, 232, 0.8);
 }
-body.dark ul.dropdown-menu,
-body.dark .Zebra_Form fieldset label {
+body.dark ul.dropdown-menu {
   background-color: #303030;
 }
 body.dark ul.dropdown-menu li a,
