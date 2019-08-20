@@ -2,7 +2,23 @@ var env;
 var envURL;
 var envPage;
 var rules;
-var tempRules = [];
+var tempRules = [
+  'index',
+  'toegang',
+  'access',
+  'taal',
+  'lang',
+  'versoek',
+  'request',
+  'php',
+  'nat',
+  'builder',
+  'codiad',
+  'tye',
+  'times',
+  'kontak',
+  'contact'
+];
 var suggestions = [];
 
 function alertInvalid() {
@@ -59,29 +75,39 @@ function filterCalculations(text) {
   return true;
 }
 
+// chrome.contextMenus.create({
+//   "id": "erpQA",
+//   "title": "ERP - Quick Actions"
+// });
+
+// chrome.storage.sync.get(null, function(result) {
+//   rules = result.rules;
+//   if (rules != undefined) {
+//     for (var i = 0; i < rules.length; i++) {
+//       chrome.contextMenus.create({
+//         "id": rules[i].keyword,
+//         "title": rules[i].keyword,
+//         "parentId": "erpQA",
+//         // "onclick": openPopUp
+//       });
+//     }
+//     chrome.contextMenus.create({"type": "separator","parentId": "erpQA"});
+//   }
+//   for (var i = 0; i < tempRules.length; i++) {
+//     chrome.contextMenus.create({
+//       "id": tempRules[i],
+//       "title": tempRules[i],
+//       "parentId": "erpQA",
+//       // "onclick": openPopUp
+//     });
+//   }
+// });
+
 chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
   text = text.replace(" ", "");
-
   if (rules == undefined) {
     chrome.storage.sync.get(null, function(result) {
       rules = result.rules;
-      tempRules = [
-        'index',
-        'toegang',
-        'access',
-        'taal',
-        'lang',
-        'versoek',
-        'request',
-        'php',
-        'nat',
-        'builder',
-        'codiad',
-        'tye',
-        'times',
-        'kontak',
-        'contact'
-      ];
       for (var i = 0; i < rules.length; i++) {
         tempRules.push(rules[i].keyword);
       }

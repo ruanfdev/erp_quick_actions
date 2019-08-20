@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+  $('.jscolor').click(function(e){
+    console.log($('.jscolor').val());
+    setTimeout(() => {
+      $('.jscolor').val('#C0C0C0')
+      $('.jscolor').css('background-color','#C0C0C0')
+    }, 5000);
+  });
+
+  // var c = document.documentElement.style.getPropertyValue('--dark');
+  // alert('The value of --myVariable is : ' + (c?c:'undefined'));
+
+
+
   var dynInject = false;
   var setDynInject = function(val){
     dynInject = val;
@@ -59,15 +72,11 @@ $(document).ready(function() {
     var opt = {
       type: 'basic',
       title: 'Update Available',
-      message: 'Chrome will update your extensions automatically so keep an eye out',
-      // message: 'Updating ERP Quick Actions to keep you from living in the past...',
+      message: 'Chrome will update your extensions automatically to keep you from living in the past...',
       priority: 2,
       iconUrl:'../../icon_128.png'
     };
     chrome.notifications.create('id', opt, function(id) {});
-    // setTimeout(() => {
-    //   chrome.runtime.reload();
-    // }, 500);
   }
 
   var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
@@ -87,22 +96,20 @@ $(document).ready(function() {
 
       if (current_version < latest_version) {
         $('#versionText').html('Do you like living in the past?');
-        $('#tooltip').css('display','inline-block');
         $('#tooltip').css('color','#c12e2a');
         $('#tooltip .tooltiptext').css('background-color','#c12e2a');
-        // window.close();
         createNotif();
       } else if (current_version > latest_version) {
         $('#versionText').html('Are you a time traveller?');
-        $('#tooltip').css('display','inline-block');
         $('#tooltip').css('color','#71bf44');
         $('#tooltip .tooltiptext').css('background-color','#71bf44');
       } else {
         $('#versionText').html('Up-to-date');
-        $('#tooltip').css('display','inline-block');
         $('#tooltip').css('color','#71bf44');
         $('#tooltip .tooltiptext').css('background-color','#71bf44');
       }
+      $('#tooltip').css('display', 'inline-block');
+      $('#tooltipChange').css('display', 'inline-block');
 
       firebase.app().delete();
     });
@@ -226,8 +233,7 @@ $(document).ready(function() {
     e.preventDefault();
     if(x < max_fields){
       x++;
-      // $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="delete">Delete</a></div>'); //add input box
-      $('<div><input type="text" name="mytext[]" placeholder="index::nwk/index.php"/><a href="#" class="delete">-</a></div>').insertBefore('.bottom_pad'); //add input box
+      $('<div><input type="text" name="mytext[]" placeholder="index::nwk/index.php"/><a href="#" class="delete">-</a></div>').insertBefore('.bottom_pad');
     } else {
       alert('Custom Rule limit reached: '+max_fields+' fields');
     }
@@ -329,9 +335,8 @@ $(document).ready(function() {
         link:  qActions[1]
       });
     });
+
     chrome.storage.sync.clear(function() {
-      // console.log('HIER',rules,email_login,pass_login,nwk_theme,injected,custom_css_block,custom_js_block);
-      // chrome.storage.sync.set({rules:rules,email_login:email_login,pass_login:pass_login,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block}, function() {
       chrome.storage.sync.set({rules:rules,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
         bar1.set(100);
         setTimeout(function () {
@@ -350,8 +355,6 @@ $(document).ready(function() {
 
           document.getElementById("loginWindow").style.top = "-150%"
         }, 800);
-        // window.close();
-        // window.location.reload();
       });
     });
   });
@@ -365,11 +368,8 @@ $(document).ready(function() {
   $(menu_bars).click(function(e){
     document.getElementById("mySidenav").style.width = "90%";
     document.getElementById("mySidenav").style.height = "90%";
-    document.getElementById("mySidenav").style.padding = "4% 5% 10%";
-    document.getElementById("mySidenav").style.boxShadow = "0px 0px 12px 4px rgba(0,0,0,0.5)";
+    document.getElementById("mySidenav").style.padding = "5%";
     document.getElementById("mySidenav").style.opacity = "1";
-    document.getElementById("mySidenav").style.borderLeft = "2px solid #FFFFFF";
-    document.getElementById("mySidenav").style.borderRight = "2px solid #FFFFFF";
     document.getElementById("body").style.minHeight = "550px";
     document.getElementById("body").style.minWidth = "700px";
     document.getElementById("container1").style.overflow = "hidden";
@@ -383,10 +383,7 @@ $(document).ready(function() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("mySidenav").style.height = "125%";
     document.getElementById("mySidenav").style.padding = "0";
-    document.getElementById("mySidenav").style.boxShadow = "0px 0px 0px 0px rgba(0,0,0,0.5)";
     document.getElementById("mySidenav").style.opacity = "0";
-    document.getElementById("mySidenav").style.borderLeft = "0px solid #FFFFFF";
-    document.getElementById("mySidenav").style.borderRight = "0px solid #FFFFFF";
     document.getElementById("body").style.minHeight = "0px";
     document.getElementById("body").style.minWidth = "400px";
     document.getElementById("container1").style.overflow = "visible";
@@ -403,13 +400,11 @@ function injectNow(param) {
     if (param == true) {
       for (var i = 0; i < tabs.length; i++) {
         chrome.tabs.sendMessage(tabs[i].id, {action: "dynInject"}, function(response) {
-          // console.log('Inject Dynamically - Message Sent');
         });
       }
     } else {
       for (var j = 0; j < tabs.length; j++) {
         chrome.tabs.sendMessage(tabs[j].id, {action: "dynInjectCustom"}, function(response) {
-          // console.log('Inject Dynamically - Message Sent');
         });
       }
     }
@@ -419,29 +414,33 @@ function injectNow(param) {
 }
 
 function changeDark() {
-  $('body').css('background-color','#333333');
-  $('body').css('border-color','#333333');
-  $('body>h1').css('color','#FFFFFF');
-  $('.btn_container').css('background-color','#303030');
-  $('.btn_container').css('box-shadow','0px 0px 5px rgba(255,255,255,0.5)');
-  $('.top_container').css('background-color','#303030');
-  $('.top_container').css('box-shadow','0px 0px 5px rgba(255,255,255,0.5)');
-  $('.top_container>h1').css('color','#FFFFFF');
-  $('.sidenav').css('background-color','#333333');
-  $('.sidenav h1, .sidenav li, .sidenav .closebtn, .sidenav .small_title, .sidenav h3').css('color','#FFFFFF');
+  var bodyThemeL = $('body').hasClass("light");
+  var bodyThemeD = $('body').hasClass("dark");
+	if (bodyThemeL == true) {
+    $("body").removeClass("light");
+    $("body").addClass("dark");
+  } else {
+    if (bodyThemeD == true) {
+      return true;
+    } else {
+      $("body").addClass("dark");
+    }
+  }
 }
 
 function changeLight() {
-  $('body').css('background-color','#F2F2F2');
-  $('body').css('border-color','#F2F2F2');
-  $('body>h1').css('color','#333333');
-  $('.btn_container').css('background-color','#FFFFFF');
-  $('.btn_container').css('box-shadow','0px 0px 5px rgba(0,0,0,0.5)');
-  $('.top_container').css('background-color','#FFFFFF');
-  $('.top_container').css('box-shadow','0px 0px 5px rgba(0,0,0,0.5)');
-  $('.top_container>h1').css('color','#333333');
-  $('.sidenav').css('background-color','#FFFFFF');
-  $('.sidenav h1, .sidenav li, .sidenav .closebtn, .sidenav .small_title, .sidenav h3').css('color','#333333');
+  var bodyThemeL = $('body').hasClass("light");
+  var bodyThemeD = $('body').hasClass("dark");
+	if (bodyThemeD == true) {
+    $("body").removeClass("dark");
+    $("body").addClass("light");
+  } else {
+    if (bodyThemeL == true) {
+      return true;
+    } else {
+      $("body").addClass("light");
+    }
+  }
 }
 
 function replace_i18n(obj, tag) {
@@ -466,12 +465,4 @@ function localizeHtmlPage() {
       replace_i18n(obj, tag);
     }
   }
-
-  // Localize everything else by replacing all __MSG_***__ tags
-  // var page = document.getElementsByTagName('html');
-  // for (var j = 0; j < page.length; j++) {
-  //   obj = page[j];
-  //   tag = obj.innerHTML.toString();
-  //   replace_i18n(obj, tag);
-  // }
 }
