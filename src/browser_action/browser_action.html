@@ -11,6 +11,7 @@
     <script src="browser_action.js"></script>
     <script src="../../editor/lib/codemirror.js"></script>
     <script src="../../editor/mode/css/css.js"></script>
+    <script src="../jscolor.js"></script>
     <link rel="stylesheet" href="browser_action.css" />
     <link rel="stylesheet" href="../../loading/loading-bar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -123,12 +124,25 @@
         </div>
         <h3 data-localize="__MSG_easyUIfit__"></h3>
       </div>
-      <div class="row content_row">
-        <h1 id="custom_css_block_header" data-localize="__MSG_cssBlock__"></h1>
-        <textarea id="custom_css_block"></textarea>
+      <!-- <div class="row title_row">
+          <h1 id="custom_css_block_header" data-localize="__MSG_customColours__"></h1>
+      </div>
+      <div class="row sub_content_row">
+        <div class="inject input sideinj">
+          <input id="custCol1" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}" value="333333">
+        </div>
+        <h3 data-localize="__MSG_altHeadMeth__"></h3>
+      </div> -->
+      <div class="row title_row title_row_nom">
+          <h1 id="custom_css_block_header" data-localize="__MSG_cssBlock__"></h1>
       </div>
       <div class="row content_row">
+        <textarea id="custom_css_block"></textarea>
+      </div>
+      <div class="row title_row title_row_nom">
         <h1 id="custom_js_block_header" data-localize="__MSG_jsBlock__"></h1>
+      </div>
+      <div class="row content_row">
         <p class="small_title" data-localize="__MSG_reloadReq__"></p>
         <textarea id="custom_js_block"></textarea>
       </div>
@@ -139,14 +153,17 @@
         <p class="small_title" data-localize="__MSG_msgNone__"></p>
       </div>
     </div>
+
     <div id="ldContain">
       <div class="ldBar" data-type="fill" data-img="nwk.svg" data-value="0" data-fill-dir="btt"></div>
     </div>
+
     <div id="loginWindow">
       <input type="email" placeholder="Email" name="emailadr" required>
       <input type="password" placeholder="Password" name="psw" required>
       <button class="login_btn"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_login__"></span></button>
     </div>
+
     <div class="top_container">
       <h1>
         <i id="menu_bars" class="fa fa-bars" aria-hidden="true"></i>
@@ -181,6 +198,7 @@
         </label>
       </div>
     </div>
+
     <div class="container1" id="container1">
       <div class="top_pad"></div>
       <div>
@@ -188,6 +206,7 @@
       </div>
       <div class="bottom_pad"></div>
     </div>
+
     <div class="btn_container">
       <button class="clear_all"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp; <span data-localize="__MSG_clearAll__"></span></button>
       <button class="add_form_field"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_addRule__"></span></button>

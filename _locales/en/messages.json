@@ -71,6 +71,9 @@
     "customSettings": {
     "message":"Custom Settings"
   },
+    "customColours": {
+    "message":"Custom Colours"
+  },
     "experimental": {
     "message":"Experimental / Beta"
   },

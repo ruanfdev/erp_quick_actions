@@ -1,31 +1,7 @@
-/* :root {
-  --green: #71bf44;
-  --green-light: #71bf44;
-  --green-dark: #71bf44;
+@import url("../colors.css");
 
-  --orange: #f7931c;
-  --orange-light: #f7931c;
-  --orange-dark: #f7931c;
-
-  --red: #c12e2a;
-  --red-light: #c12e2a;
-  --red-dark: #c12e2a;
-
-  --black: #000000;
-  --dark: #333333;
-
-  --white: #FFFFFF;
-  --light: #F2F2F2;
- 
-  --main-padding: 15px;  
-}
-#div2 {
-  background-color: var(--green);
-  color: var(--red);
-  padding: var(--main-padding);
-} */
 @font-face {
-  font-family: RobotoTorn;
+  font-family: myRoboto;
   src: url(../../fonts/Roboto-Regular.ttf);
 }
 @keyframes scaleX {
@@ -40,24 +16,20 @@
 }
 * {
   cursor: default;
-  font-family: RobotoTorn;
+  font-family: myRoboto;
 }
 body {
   margin: 0;
   min-width: 400px;
   min-height: 0px;
-  border-left: 2px solid #F2F2F2;
-  border-right: 2px solid #F2F2F2;
-  /* transition: 1s; */
 }
 h1 {
   font-size: 1.5em;
   text-align: left;
-  color: #333333;
   padding-left: 15px;
 }
 h3 {
-  color: #333333;
+  color: var(--dark);
   font-size: 1.2em;
 }
 .sidenav h1 {
@@ -70,8 +42,8 @@ h3 {
   top: 0;
   left: 0;
   width: 100%;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  background: var(--light);
+  box-shadow: var(--boxShadMed);
 }
 div#loginWindow {
   position: absolute;
@@ -79,7 +51,7 @@ div#loginWindow {
   left: 0;
   top: -150%;
   height: 100%;
-  background: #FFFFFF;
+  background: var(--light);
   opacity: 1;
 }
 .container1,
@@ -94,7 +66,7 @@ div#loginWindow {
   padding: 10px 5px;
   margin: 5px 0px;
   float: left;
-  border: 1px solid #71bf44;
+  border: 1px solid var(--green);
   width: 86%;
   border-radius: 5px 0px 0px 5px;
   outline: none;
@@ -112,7 +84,7 @@ div#loginWindow {
 #loginWindow input[type=password]:focus,
 #loginWindow input[type=email]:hover,
 #loginWindow input[type=password]:hover {
-  background-color: #F2F2F2;
+  background-color: var(--light);
 }
 .container1 div:nth-child(2) input[type=text] {
   width: 96%;
@@ -134,13 +106,13 @@ div#loginWindow {
   left: 0;
   bottom: 0;
   text-align: center;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  background: var(--light);
+  box-shadow: var(--boxShadMed);
 }
 button {
-  background-color: #333333;
+  background-color: var(--dark);
   border: none;
-  color: white;
+  color: var(--light);
   padding: 7px 17px;
   text-align: center;
   text-decoration: none;
@@ -148,30 +120,29 @@ button {
   font-size: 14px;
   margin: 7px 2px 5px;
   cursor: pointer;
-  border: 1px solid #333333;
+  border: 1px solid var(--dark);
   border-radius: 5px;
-  /* transition: all 0.1s linear; */
 }
 button:hover {
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  box-shadow: var(--boxShadMed);
 }
 .save_form_field,
 .save_custom_settings {
-  background-color: #71bf44;
-  border:1px solid #71bf44;
+  background-color: var(--green);
+  border:1px solid var(--green);
 }
 .add_form_field {
-  background-color: #f7931c;
-  border:1px solid #f7931c;
+  background-color: var(--orange);
+  border:1px solid var(--orange);
 }
 .clear_all {
-  background-color: #c12e2a;
-  border:1px solid #c12e2a;
+  background-color: var(--red);
+  border:1px solid var(--red);
 }
 .delete {
-  background-color: #c12e2a;
+  background-color: var(--red);
   border: none;
-  color: white;
+  color: var(--light);
   padding: 7px 15px;
   text-align: center;
   text-decoration: none;
@@ -183,7 +154,7 @@ button:hover {
   transition: all 0.1s linear;
 }
 .delete:hover {
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  box-shadow: var(--boxShadMed);
 }
 .onoffswitch {
   position: absolute; width: 85px;
@@ -198,42 +169,62 @@ button:hover {
   display: none;
 }
 .onoffswitch-label {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 2px solid #E3E3E3; border-radius: 10px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid var(--greyLight);
+  border-radius: 10px;
   transition: all 0.1s linear;
 }
 .onoffswitch-inner {
-  display: block; width: 200%; margin-left: -100%;
+  display: block;
+  width: 200%;
+  margin-left: -100%;
   transition: margin 0.3s ease-in 0s;
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
-  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 15px;
+  color: var(--light);
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
   content: "__MSG_lblLight__";
   padding-left: 10px;
-  background-color: #FFFFFF; color: #333333;
+  background-color: var(--light);
+  color: var(--dark);
   text-align: left;
 }
 .onoffswitch-inner:after {
   content: "__MSG_lblDark__";
   padding-right: 10px;
-  background-color: #333333; color: #FFFFFF;
+  background-color: var(--dark);
+  color: var(--light);
   text-align: right;
 }
 .onoffswitch-switch {
-  display: block; width: 20px; margin: 5px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  display: block;
+  width: 20px;
+  margin: 5px;
+  background: var(--greyLight);
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 50px;
-  border: 2px solid #E3E3E3; border-radius: 50px;
+  border: 2px solid var(--greyLight);
+  border-radius: 50px;
   transition: all 0.3s linear 0s;
 }
 .onoffswitch-label:hover .onoffswitch-switch {
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
-  background: #F2F2F2;
+  box-shadow: var(--boxShadMed);
+  background: var(--light);
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;
@@ -263,20 +254,22 @@ p#versionText {
 }
 #tooltipChange {
   position: relative;
-  color: #71bf44;
-  display: inline-block;
+  color: var(--green);
+  display: none;
+  cursor: help;
 }
 #tooltip {
   position: relative;
-  color: #c12e2a;
+  color: var(--red);
   display: none;
+  cursor: help;
 }
 #tooltip .tooltiptext,
 #tooltipChange .tooltiptextChange {
   visibility: hidden;
   width: 160px;
-  background-color: #c12e2a;
-  color: #F2F2F2;
+  background-color: var(--red);
+  color: var(--light);
   text-align: center;
   border-radius: 6px;
   padding: 0;
@@ -287,7 +280,7 @@ p#versionText {
   margin-left: -80px;
 }
 #tooltipChange .tooltiptextChange {
-  background-color: #71bf44;
+  background-color: var(--green);
   width: 280px;
   margin-left: -140px;
 }
@@ -300,12 +293,12 @@ p#versionText {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #333333 transparent;
+  border-color: transparent transparent var(--dark) transparent;
 }
 #tooltip:hover .tooltiptext,
 #tooltipChange:hover .tooltiptextChange {
   visibility: visible;
-  box-shadow: 0px 1px 8px rgba(0,0,0,0.5);
+  box-shadow: var(--boxShadMed);
 }
 #menu_bars,
 .closebtn,
@@ -318,15 +311,13 @@ button * {
   z-index: 8;
   top: 10px;
   right: 100%;
-  text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
-  /* transition: 0.5s; */
+  text-shadow: var(--boxShadDark);
 }
 .save_custom_settings {
   position: fixed;
   z-index: 8;
   bottom: -45px;
   right: 100%;
-  /* transition: 0.5s; */
 }
 .sidenav {
   height: 87%;
@@ -335,20 +326,19 @@ button * {
   z-index: 3;
   top: 0;
   left: 0;
-  background-color: #333333;
+  background-color: var(--dark);
   overflow-x: hidden;
-  /* transition: 0.5s; */
   padding-top: 60px;
   text-align: left;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+  box-shadow: var(--boxShadMed);
   opacity: 0;
-  border-left: 0px solid #FFFFFF;
-  border-right: 0px solid #FFFFFF;
+  border-left: 0px solid var(--light);
+  border-right: 0px solid var(--light);
 }
 .sidenav h1,
 .sidenav li,
 .sidenav .closebtn {
-  color: #F2F2F2;
+  color: var(--light);
 }
 .sidenav ul {
   padding-left: 18px;
@@ -364,6 +354,9 @@ button * {
 }
 .row.title_row {
   margin-bottom: -5px;
+}
+.row.title_row_nom {
+  margin-bottom: 0px;
 }
 .row.content_row {
   margin-bottom: 20px;
@@ -387,6 +380,15 @@ button * {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+.inject.input {
+  top: 13px;
+  right: 0px;
+}
+.inject.input input {
+  max-width: 65px;
+  text-align: center;
+  margin-right: 5px;
 }
 .inject_container {
   display: block;
@@ -414,22 +416,22 @@ button * {
   right: 3px;
   height: 25px;
   width: 25px;
-  background-color: #DDDDDD;
+  background-color: var(--greyLight);
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s linear;
 }
 .checkmark:hover,
 .checkmark_side:hover {
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  box-shadow: var(--boxShadMed);
 }
 .inject_container:hover input ~ .checkmark,
 .inject_container:hover input ~ .checkmark_side {
-  background-color: #CCCCCC;
+  background-color: var(--light);
 }
 .inject_container input:checked ~ .checkmark,
 .inject_container input:checked ~ .checkmark_side {
-  background-color: #71bf44;
+  background-color: var(--green);
 }
 .checkmark:after,
 .checkmark_side:after {
@@ -447,7 +449,7 @@ button * {
   top: 5px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid var(--light);
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -459,7 +461,7 @@ button * {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.7);
+  background: var(--dark);
   z-index: -1;
   opacity: 0;
   transition: all 0.3s linear;
@@ -478,11 +480,11 @@ button * {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #71bf44;
+  background: var(--green);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #F2F2F2;
+  background: var(--light);
   border-radius: 5px;
 }
 textarea#custom_css_block,
@@ -500,21 +502,65 @@ p.small_title {
   margin: 2px 0px;
 }
 .sidenav .cm-s-default .cm-qualifier {
-  color: #f7931c;
-  text-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+  color: var(--orange);
+  text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 .sidenav .cm-s-default .cm-property {
-  color: #71bf44;
-  text-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+  color: var(--green);
+  text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 .sidenav .cm-s-default .cm-keyword {
-  color: #c12e2a;
-  text-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+  color: var(--red);
+  text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 .sidenav .cm-s-default .cm-comment {
-  color: #C0C0C0;
+  color: var(--greyLight);
   font-style: italic;
 }
 .CodeMirror.cm-s-default.CodeMirror-wrap {
-  border: 1px solid #333333;
+  border: 1px solid var(--dark);
+}
+
+
+
+/* Theming always bottom */
+/* DARK */
+body.dark {
+  background-color: var(--dark);
+}
+body.dark>h1,
+body.dark .top_container>h1,
+body.dark .sidenav h1,
+body.dark .sidenav li,
+body.dark .sidenav .closebtn,
+body.dark .sidenav .small_title,
+body.dark .sidenav h3 {
+  color: var(--light);
+}
+body.dark .btn_container,
+body.dark .top_container {
+  background-color: var(--darker);
+}
+body.dark .sidenav {
+  background-color: var(--dark);
+}
+/* LIGHT */
+body.light {
+  background-color: var(--light);
+}
+body.light>h1,
+body.light .top_container>h1,
+body.light .sidenav h1,
+body.light .sidenav li,
+body.light .sidenav .closebtn,
+body.light .sidenav .small_title,
+body.light .sidenav h3 {
+  color: var(--dark);
+}
+body.light .btn_container,
+body.light .top_container {
+  background-color: var(--light);
+}
+body.light .sidenav {
+  background-color: var(--light);
 }

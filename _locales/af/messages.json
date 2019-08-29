@@ -71,6 +71,9 @@
     "customSettings": {
     "message":"Persoonlike Instellings"
   },
+    "customColours": {
+    "message":"Persoonlike Kleure"
+  },
     "experimental": {
     "message":"Eksperimenteel / Beta"
   },
