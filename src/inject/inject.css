@@ -163,7 +163,7 @@ body.light.smlBlocks .main .BlokNav a.openPage span {
 body.light.smlBlocks .main .BlokNav a.openPage .ca-content {
   font-size: 16px;
 }
-body.light.altEasyui .panel.datagrid .panel-body.light {
+body.light.altEasyui .panel.datagrid .panel-body {
   overflow: auto;
   max-height: calc(100% - 50px);
 }
