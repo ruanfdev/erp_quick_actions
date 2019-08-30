@@ -4,10 +4,10 @@ body.dark {
 }
 body.dark label,
 body.dark .Zebra_Form fieldset label,
-input,
-.login_div input,
-div,
-.datagrid-pager.pagination * {
+body.dark input,
+body.dark .login_div input,
+body.dark div,
+body.dark .datagrid-pager.pagination * {
   color: #303030;
 }
 body.dark .logo {
@@ -22,7 +22,11 @@ body.dark .header {
   background-color: #303030;
   color: #F2F2F2;
 }
-body.dark .welcome, .header_right *, .login_logo, div#menu a, .fc-event-title {
+body.dark .welcome,
+body.dark .header_right *,
+body.dark .login_logo,
+body.dark div#menu a,
+body.dark .fc-event-title {
   color: #F2F2F2;
 }
 body.dark .date-time {
@@ -31,7 +35,9 @@ body.dark .date-time {
 body.dark .show-notifications #icon-bell {
   fill: #C0C0C0;
 }
-body.dark .show-notifications:hover #icon-bell, .show-notifications:focus #icon-bell, .show-notifications.active #icon-bell {
+body.dark .show-notifications:hover #icon-bell,
+body.dark .show-notifications:focus #icon-bell,
+body.dark .show-notifications.active #icon-bell {
   fill: #F2F2F2;
 }
 body.dark .nav-tabs {
@@ -111,7 +117,8 @@ body.dark .BlokNav:hover {
 body.dark h3 {
   color: #333333;
 }
-body.dark #calendar .fc-week .fc-sun, #calendar .fc-week .fc-sat {
+body.dark #calendar .fc-week .fc-sun,
+body.dark #calendar .fc-week .fc-sat {
   background-color: #888888;
 }
 body.dark #calendar .fc-grid .fc-state-highlight .fc-day-number,
@@ -119,16 +126,22 @@ body.dark .login_div input,
 body.dark .Zebra_Form textarea {
   color: #333333;
 }
-body.dark .panel, .tabs-header {
+body.dark .panel,
+body.dark .tabs-header {
   background-color: transparent;
 }
 body.dark .HetWSDL,
 body.dark .noty_type_error * {
   color: #FFFFFF;
 }
-body.dark .select2-results__option[aria-selected], fieldset p, fieldset td, fieldset div,
-body.dark strong.select2-results__group, input.select2-search__field,
-body.dark fieldset .Zebra_Form label, .Zebra_Form fieldset label {
+body.dark .select2-results__option[aria-selected],
+body.dark fieldset p,
+body.dark fieldset td,
+body.dark fieldset div,
+body.dark strong.select2-results__group,
+body.dark input.select2-search__field,
+body.dark fieldset .Zebra_Form label,
+body.dark .Zebra_Form fieldset label {
   color: #303030;
 }
 body.dark div#cboxOverlay {
