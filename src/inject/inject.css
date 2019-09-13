@@ -295,7 +295,7 @@ body.light .backHead:after {
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   z-index: -1;
-  animation: rgbanimate 20s linear infinite;
+  animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
 }
 @keyframes rgbanimate {
