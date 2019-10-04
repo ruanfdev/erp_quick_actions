@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extName__",
-  "version": "3.8",
+  "version": "3.92",
   "manifest_version": 2,
   "description": "__MSG_extName__",
   "homepage_url": "https://ruanf.co.za",
@@ -21,7 +21,6 @@
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
-    "contentSettings",
     "contextMenus",
     "management",
     "tabs",
@@ -41,6 +40,5 @@
       "js": ["js/jquery/jquery.min.js","src/inject/inject.js"],
       "css": ["src/inject/inject.css", "src/inject/inject_dark.css"]
     }
-  ],
-  "web_accessible_resources": ["src/inject/inject.css","src/inject/inject_dark.css","logo_png.png"]
+  ]
 }

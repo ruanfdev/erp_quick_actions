@@ -50,8 +50,6 @@ $(document).ready(function() {
   var onoffswitch    = $(".onoffswitch-label");
   var qActions;
   var rules;
-  var email_login;
-  var pass_login;
   var custom_css_block;
   var custom_js_block;
   var latest_version;
@@ -80,7 +78,7 @@ $(document).ready(function() {
   }
 
   var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
-    var latest_version = snapshot.val().latest_version;
+    latest_version = snapshot.val().latest_version;
     var changelog = snapshot.val().changelog;
 
     for (let index = 2; index < changelog.length; index++) {
@@ -115,32 +113,6 @@ $(document).ready(function() {
     });
 
   });
-
-  // chrome.storage.sync.get(null, function(result) {
-  //   // email_login = 'erp@ruanf.co.za';
-  //   // pass_login = 'Erp135';
-  //   email_login = result.email_login;
-  //   pass_login = result.pass_login;
-  //   console.log('email_login',result);
-  //   if (email_login == undefined) {
-  //     document.getElementById("loginWindow").style.top = "0%";
-  //     document.getElementById("body").style.minHeight = "165px";
-  //     return;
-  //   } else {
-  //     $('[name = "emailadr"]').val(email_login);
-  //     $('[name = "psw"]').val(pass_login);
-  //     firebase.auth().signInWithEmailAndPassword(email_login, pass_login).catch(function(error) {
-  //       var errorCode = error.code;
-  //       var errorMessage = error.message;
-  //
-  //       if (errorCode != undefined) {
-  //         document.getElementById("loginWindow").style.top = "0%";
-  //         document.getElementById("body").style.minHeight = "165px";
-  //         return;
-  //       }
-  //     });
-  //   }
-  // });
 
   chrome.storage.sync.get(null, function(result) {
     nwk_theme = result.nwk_theme;
@@ -352,8 +324,6 @@ $(document).ready(function() {
           } else {
             setDynInject(false);
           }
-
-          document.getElementById("loginWindow").style.top = "-150%"
         }, 800);
       });
     });
@@ -408,8 +378,6 @@ function injectNow(param) {
         });
       }
     }
-
-
   });
 }
 

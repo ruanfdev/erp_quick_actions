@@ -1,23 +1,19 @@
 var env;
 var envURL;
 var envPage;
+var shouldReplaceNewTab = false;
 var rules;
-var tempRules = [
+var fixedRules = [
   'index',
-  'toegang',
-  'access',
-  'taal',
-  'lang',
-  'versoek',
-  'request',
+  'toegang / access',
+  'taal / lang',
+  'versoek / request',
   'php',
   'nat',
   'builder',
   'codiad',
-  'tye',
-  'times',
-  'kontak',
-  'contact'
+  'tye / times',
+  'kontak / contact',
 ];
 var suggestions = [];
 
@@ -53,7 +49,7 @@ function customRule() {
 }
 
 function filterItems(query) {
-  return tempRules.filter(function(el) {
+  return fixedRules.filter(function(el) {
     return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
   });
 }
@@ -75,33 +71,169 @@ function filterCalculations(text) {
   return true;
 }
 
-// chrome.contextMenus.create({
-//   "id": "erpQA",
-//   "title": "ERP - Quick Actions"
-// });
+function callDefaults(envPage) {
+  switch(envPage) {
+    case 'index':
+      chrome.tabs.create({url:envURL+'nwk/index.php'},function(data) {});
+      break;
 
-// chrome.storage.sync.get(null, function(result) {
-//   rules = result.rules;
-//   if (rules != undefined) {
-//     for (var i = 0; i < rules.length; i++) {
-//       chrome.contextMenus.create({
-//         "id": rules[i].keyword,
-//         "title": rules[i].keyword,
-//         "parentId": "erpQA",
-//         // "onclick": openPopUp
-//       });
-//     }
-//     chrome.contextMenus.create({"type": "separator","parentId": "erpQA"});
-//   }
-//   for (var i = 0; i < tempRules.length; i++) {
-//     chrome.contextMenus.create({
-//       "id": tempRules[i],
-//       "title": tempRules[i],
-//       "parentId": "erpQA",
-//       // "onclick": openPopUp
-//     });
-//   }
-// });
+    case 'toegang':
+    case 'access':
+    case 'toegang / access':
+      chrome.tabs.create({url:envURL+'ALGEMEEN/MENU/alg_men_010_S_skp.php'},function(data) {});
+      break;
+
+    case 'taal':
+    case 'lang':
+    case 'taal / lang':
+      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php'},function(data) {});
+      break;
+
+    case 'versoek':
+    case 'request':
+    case 'versoek / request':
+      chrome.tabs.create({url:envURL+'ALGEMEEN/VERSOEKE/alg_ver_001_M_kse.php'},function(data) {});
+      break;
+
+    case 'php':
+      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/STELSELS%20ONDERHOUD/inl_sto_086_E_kse.php'},function(data) {});
+      break;
+
+    case 'nat':
+      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/NATURAL%20STELSELONDERHOUD/inl_nso_001_M_kse.php'},function(data) {});
+      break;
+
+    case 'builder':
+      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/FORM%20BUILDER/inl_fbr_001_Z_skp.php'},function(data) {});
+      break;
+
+    case 'codiad':
+      chrome.tabs.create({url:envURL+'Codiad/'},function(data) {});
+      break;
+
+    case 'tye':
+    case 'times':
+    case 'tye / times':
+      chrome.tabs.create({url:envURL+'MENSEKAPITAAL/AANTEKENREGISTER/mhb_aan_014_Z_wsg.php?blad=wysig'},function(data) {});
+      break;
+
+    case 'kontak':
+    case 'contact':
+    case 'kontak / contact':
+      chrome.tabs.create({url:envURL+'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php'},function(data) {});
+      break;
+
+    default:
+      customRule();
+      break;
+  }
+}
+
+function testEnv(text) {
+  if (text.length > 2) {
+    env = text.substring(0,3);
+    envPage = text.substring(3);
+    if (env == 'dev') {
+      envURL = 'http://php-dev.nwk.co.za/';
+    } else if (env == 'prd') {
+      envURL = 'http://php-prd.nwk.co.za/';
+    } else {
+      alertInvalid();
+      return false;
+    }
+  } else {
+    env = text.substring(0,2);
+    envPage = text.substring(2);
+    if (env == 'qa') {
+      envURL = 'http://php-qa.nwk.co.za/';
+    } else {
+      alertInvalid();
+      return false;
+    }
+  }
+  return true;
+}
+
+var openPRD = function(e) {
+  envURL = 'http://php-prd.nwk.co.za/';
+  var itemID = e.menuItemId;
+  callDefaults(itemID.substring(1));
+};
+
+var openDEV = function(e) {
+  envURL = 'http://php-dev.nwk.co.za/';
+  var itemID = e.menuItemId;
+  callDefaults(itemID.substring(1));
+};
+
+var openQA = function(e) {
+  envURL = 'http://php-qa.nwk.co.za/';
+  var itemID = e.menuItemId;
+  callDefaults(itemID.substring(1));
+};
+
+chrome.contextMenus.create({
+  "id": "erpQA",
+  "title": "ERP - Quick Actions"
+});
+
+chrome.contextMenus.create({
+  "id": "erpQA_PRD",
+  "parentId": "erpQA",
+  "title": "PRD"
+});
+
+chrome.contextMenus.create({
+  "id": "erpQA_DEV",
+  "parentId": "erpQA",
+  "title": "DEV"
+});
+
+chrome.contextMenus.create({
+  "id": "erpQA_QA",
+  "parentId": "erpQA",
+  "title": "QA"
+});
+
+chrome.storage.sync.get(null, function(result) {
+  rules = result.rules;
+
+  for (let indFor = 1; indFor < 4; indFor++) {
+    if (indFor == 1) {
+      event = openPRD;
+      parent = "erpQA_PRD";
+      pre = 'P';
+    } else if (indFor == 2) {
+      event = openDEV;
+      parent = "erpQA_DEV";
+      pre = 'D';
+    } else {
+      event = openQA;
+      parent = "erpQA_QA";
+      pre = 'Q';
+    }
+
+    if (rules != undefined) {
+      for (var i = 0; i < rules.length; i++) {
+        chrome.contextMenus.create({
+          "id": pre+rules[i].keyword,
+          "title": rules[i].keyword,
+          "parentId": parent,
+          "onclick": event
+        });
+      }
+      chrome.contextMenus.create({"type": "separator","parentId": parent});
+    }
+    for (var i = 0; i < fixedRules.length; i++) {
+      chrome.contextMenus.create({
+        "id": pre+fixedRules[i],
+        "title": fixedRules[i],
+        "parentId": parent,
+        "onclick": event
+      });
+    }
+  }
+});
 
 chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
   text = text.replace(" ", "");
@@ -109,7 +241,7 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
     chrome.storage.sync.get(null, function(result) {
       rules = result.rules;
       for (var i = 0; i < rules.length; i++) {
-        tempRules.push(rules[i].keyword);
+        fixedRules.push(rules[i].keyword);
       }
       if (filterCalculations(text)) {
         // Suggest the remaining suggestions
@@ -131,69 +263,16 @@ chrome.omnibox.onInputEntered.addListener(function(text, currentTab) {
       alertReload();
     });
   } else {
-    if (text.length > 2) {
-      env = text.substring(0,3);
-      envPage = text.substring(3);
-      if (env == 'dev') {
-        envURL = 'http://php-dev.nwk.co.za/';
-      } else if (env == 'prd') {
-        envURL = 'http://php-prd.nwk.co.za/';
-      } else {
-        alertInvalid();
-      }
-    } else {
-      alertInvalid();
+    if (testEnv(text)) {
+      callDefaults(envPage);
     }
+  }
+});
 
-    switch(envPage) {
-      case 'index':
-        chrome.tabs.create({url:envURL+'nwk/index.php'},function(data) {});
-        break;
-
-      case 'toegang':
-      case 'access':
-        chrome.tabs.create({url:envURL+'ALGEMEEN/MENU/alg_men_010_S_skp.php'},function(data) {});
-        break;
-
-      case 'taal':
-      case 'lang':
-        chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php'},function(data) {});
-        break;
-
-      case 'versoek':
-      case 'request':
-        chrome.tabs.create({url:envURL+'ALGEMEEN/VERSOEKE/alg_ver_001_M_kse.php'},function(data) {});
-        break;
-
-      case 'php':
-        chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/STELSELS%20ONDERHOUD/inl_sto_086_E_kse.php'},function(data) {});
-        break;
-
-      case 'nat':
-        chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/NATURAL%20STELSELONDERHOUD/inl_nso_001_M_kse.php'},function(data) {});
-        break;
-
-      case 'builder':
-        chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/FORM%20BUILDER/inl_fbr_001_Z_skp.php'},function(data) {});
-        break;
-
-      case 'codiad':
-        chrome.tabs.create({url:envURL+'Codiad/'},function(data) {});
-        break;
-
-      case 'tye':
-      case 'times':
-        chrome.tabs.create({url:envURL+'MENSEKAPITAAL/AANTEKENREGISTER/mhb_aan_014_Z_wsg.php?blad=wysig'},function(data) {});
-        break;
-
-      case 'kontak':
-      case 'contact':
-        chrome.tabs.create({url:envURL+'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php'},function(data) {});
-        break;
-
-      default:
-        customRule();
-        break;
+chrome.tabs.onCreated.addListener(function(tab) {
+  if (tab.url === "chrome://newtab/") {
+    if (shouldReplaceNewTab === true) {
+      chrome.tabs.update({url:chrome.extension.getURL("src/new_tab/new_tab.html")},function(data) {});
     }
   }
 });
