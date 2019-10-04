@@ -25,7 +25,7 @@ function alertReload() {
   alert("Please reload any open ERP tabs to apply changes.");
 }
 
-function customRule() {
+function customRule(envPage) {
   chrome.storage.sync.get(null, function(result) {
     rules = result.rules;
     var i = 0;
@@ -124,7 +124,7 @@ function callDefaults(envPage) {
       break;
 
     default:
-      customRule();
+      customRule(envPage);
       break;
   }
 }
