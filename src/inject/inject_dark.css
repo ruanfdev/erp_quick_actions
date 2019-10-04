@@ -152,6 +152,5 @@ body.dark #Tree #jsTreeMenu ul li a.jstree-search {
   font-size: 1.1em;
 }
 body.dark .backHead + .header {
-  border-color: #303030;
   background-color: #303030;
 }

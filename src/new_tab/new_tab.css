@@ -1,0 +1,7 @@
+@import url("../custom.css");
+
+body#body {
+    background-color: var(--darker);
+    color: var(--light);
+    text-align: center;
+}

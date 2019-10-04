@@ -1,19 +1,5 @@
-@import url("../colors.css");
+@import url("../custom.css");
 
-@font-face {
-  font-family: myRoboto;
-  src: url(../../fonts/Roboto-Regular.ttf);
-}
-@keyframes scaleX {
-  0% {transform: scaleX(1);}
-  50% {transform: scaleX(0);}
-  100% {transform: scaleX(1);}
-}
-@keyframes scaleY {
-  0% {transform: scaleY(1);}
-  50% {transform: scaleY(0);}
-  100% {transform: scaleY(1);}
-}
 * {
   cursor: default;
   font-family: myRoboto;
@@ -45,24 +31,12 @@ h3 {
   background: var(--light);
   box-shadow: var(--boxShadMed);
 }
-div#loginWindow {
-  position: absolute;
-  z-index: 100;
-  left: 0;
-  top: -150%;
-  height: 100%;
-  background: var(--light);
-  opacity: 1;
-}
-.container1,
-div#loginWindow {
+.container1 {
   width: 90%;
   text-align: center;
   padding: 15px 5% 20px;
 }
-.container1 input[type=text],
-#loginWindow input[type=email],
-#loginWindow input[type=password] {
+.container1 input[type=text] {
   padding: 10px 5px;
   margin: 5px 0px;
   float: left;
@@ -73,17 +47,8 @@ div#loginWindow {
   cursor: text;
   float: left;
 }
-#loginWindow input[type=email],
-#loginWindow input[type=password] {
-  width: 96%;
-  border-radius: 5px;
-}
 .container1 input[type=text]:focus,
-.container1 input[type=text]:hover,
-#loginWindow input[type=email]:focus,
-#loginWindow input[type=password]:focus,
-#loginWindow input[type=email]:hover,
-#loginWindow input[type=password]:hover {
+.container1 input[type=text]:hover {
   background-color: var(--light);
 }
 .container1 div:nth-child(2) input[type=text] {

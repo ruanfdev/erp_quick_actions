@@ -280,8 +280,6 @@ body.light .backHead {
 body.light .backHead + .header {
   top: 2px;
   width: 99.4%;
-  box-shadow: none;
-  border-color: #FFFFFF;
   background-color: #FFFFFF;
 }
 body.light .backHead:before,

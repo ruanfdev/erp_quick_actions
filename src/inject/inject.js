@@ -1,16 +1,3 @@
-// var port = chrome.runtime.connect(null, {
-//   name: 'mychannel'
-// });
-// if (port.name) {
-//   console.log('port has name: ',port.name);
-//   port.postMessage({
-//     msg: 'I am contnet script'
-//   });
-// }
-// port.onMessage.addListener(function (msg) {
-//   console.log('Got Message', msg);
-// });
-
 var nwk_theme;
 var headerResized = localStorage.getItem("small_header");
 
@@ -37,22 +24,12 @@ chrome.runtime.onMessage.addListener(function(message, callback) {
 			nwk_theme = result.nwk_theme;
 			custom_css_block = result.custom_css_block;
 			custom_js_block = result.custom_js_block;
-			// if (document.getElementsByTagName("head")[0].lastChild == linkCustomJS) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkCustomJS);
-			// }
-			// if (document.getElementsByTagName("head")[0].lastChild == linkCustomCSS) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkCustomCSS);
-			// }
-			// if (document.getElementsByTagName("head")[0].lastChild == linkDark) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkDark);
-			// }
-			// if (document.getElementsByTagName("head")[0].lastChild == linkLight) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkLight);
-			// }
+			
 			removeTheme();
 
 			linkCustomCSS.innerHTML = custom_css_block;
 			linkCustomJS.innerHTML = custom_js_block;
+
 			if (nwk_theme == 'light') {
 				changeLight();
 				document.getElementsByTagName("head")[0].appendChild(linkCustomCSS);
@@ -66,35 +43,13 @@ chrome.runtime.onMessage.addListener(function(message, callback) {
 			}
 
 			injectProcess();
-
-			// if (nwk_theme == 'light') {
-			// 	document.getElementsByTagName("head")[0].appendChild(linkLight);
-			// 	document.getElementsByTagName("head")[0].appendChild(linkCustomCSS);
-			// 	document.getElementsByTagName("head")[0].appendChild(linkCustomJS);
-			// } else if (nwk_theme == 'dark') {
-			// 	document.getElementsByTagName("head")[0].appendChild(linkLight);
-			// 	document.getElementsByTagName("head")[0].appendChild(linkDark);
-			// 	document.getElementsByTagName("head")[0].appendChild(linkCustomCSS);
-			// 	document.getElementsByTagName("head")[0].appendChild(linkCustomJS);
-			// }
 		});
   } else {
 		chrome.storage.sync.get(null, function(result) {
 			// nwk_theme = result.nwk_theme;
 			custom_css_block = result.custom_css_block;
 			custom_js_block = result.custom_js_block;
-			// if (document.getElementsByTagName("head")[0].lastChild == linkCustomJS) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkCustomJS);
-			// }
-			// if (document.getElementsByTagName("head")[0].lastChild == linkCustomCSS) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkCustomCSS);
-			// }
-			// if (document.getElementsByTagName("head")[0].lastChild == linkDark) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkDark);
-			// }
-			// if (document.getElementsByTagName("head")[0].lastChild == linkLight) {
-			// 	document.getElementsByTagName("head")[0].removeChild(linkLight);
-			// }
+
 			removeTheme();
 
 			linkCustomCSS.innerHTML = custom_css_block;
@@ -105,30 +60,24 @@ chrome.runtime.onMessage.addListener(function(message, callback) {
 	}
 });
 
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-		if (document.readyState === "complete") {
-			clearInterval(readyStateCheckInterval);
+var readyStateCheckInterval = setInterval(function() {
+	if (document.readyState === "complete") {
+		clearInterval(readyStateCheckInterval);
+		injectProcess();
+	}
+}, 10);
 
-			// chrome.storage.sync.clear(function() {
-				//
-			// });
-			// return;
-			injectProcess();
+// chrome.extension.sendMessage({}, function(response) {
+// 	var readyStateCheckInterval = setInterval(function() {
+// 		if (document.readyState === "complete") {
+// 			clearInterval(readyStateCheckInterval);
+// 			injectProcess();
+// 		}
+// 	}, 10);
+// });
 
-		}
-	}, 10);
-});
 
 function injectProcess() {
-	if (window.location.host == 'php-dev.nwk.co.za') {
-		$('title').replaceWith('<title>DEV - NWK ERP</title>');
-	} else if (window.location.host == 'php-prd.nwk.co.za') {
-		$('title').replaceWith('<title>PRD - NWK ERP</title>');
-	} else {
-		$('title').replaceWith('<title>QA - NWK ERP</title>');
-	}
-
 	chrome.storage.sync.get(null, function (result) {
 		nwk_theme = result.nwk_theme;
 		custom_css_block = result.custom_css_block;
@@ -146,11 +95,8 @@ function injectProcess() {
 			if (typeof injected !== 'undefined') {
 				if (injected == true) {
 					if (nwk_theme == 'light') {
-						// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						changeLight();
 					} else if (nwk_theme == 'dark') {
-						// document.getElementsByTagName("head")[0].appendChild(linkLight);
-						// document.getElementsByTagName("head")[0].appendChild(linkDark);
 						changeDark();
 					} else {
 						removeTheme();
@@ -223,16 +169,10 @@ function injectProcess() {
 						if (chkedGlow == true) {
 							if (window.location.host == 'php-dev.nwk.co.za') {
 								$("body").addClass("headGlowDEV");
-								// $('.header').css('box-shadow','inset 0px 0px 6px 0px #c12e2a');
-								// $('.header').css('border-color','#c12e2a');
 							} else if (window.location.host == 'php-prd.nwk.co.za') {
 								$("body").addClass("headGlowPRD");
-								// $('.header').css('box-shadow','inset 0px 0px 6px 0px #71bf44');
-								// $('.header').css('border-color','#71bf44');
 							} else {
 								$("body").addClass("headGlowQA");
-								// $('.header').css('box-shadow','inset 0px 0px 6px 0px #f7941d');
-								// $('.header').css('border-color','#f7941d');
 							}
 						} else {
 							$("body").removeClass("headGlowDEV");
