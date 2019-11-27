@@ -212,8 +212,8 @@ chrome.storage.sync.get(null, function(result) {
       parent = "erpQA_QA";
       pre = 'Q';
     }
-
-    if (rules != undefined) {
+    
+    if (rules != undefined && rules[0].keyword != '') {
       for (var i = 0; i < rules.length; i++) {
         chrome.contextMenus.create({
           "id": pre+rules[i].keyword,

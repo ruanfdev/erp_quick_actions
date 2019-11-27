@@ -1,156 +1,154 @@
-body.dark {
-  background-color: #404040 !important;
-  color: #F2F2F2 !important;
+body.light.dark {
+  background-color: var(--darkLight) !important;
+  color: var(--light) !important;
 }
-body.dark label,
-body.dark .Zebra_Form fieldset label,
-body.dark input,
-body.dark .login_div input,
-body.dark div,
-body.dark .datagrid-pager.pagination * {
-  color: #303030;
+body.light.dark label,
+body.light.dark .Zebra_Form fieldset label,
+body.light.dark input,
+body.light.dark .login_div input,
+body.light.dark div,
+body.light.dark .datagrid-pager.pagination * {
+  color: var(--darker);
 }
-body.dark .logo {
-  margin-top: 14px;
-}
-body.dark .logo img {
-  box-shadow: 0px 0px 5px 3px #FFFFFF;
+body.light.dark .logo img {
+  box-shadow: 0px 0px 5px 3px var(--white);
   border-radius: 5px;
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
-body.dark .header {
-  background-color: #303030;
-  color: #F2F2F2;
+body.light.dark .header {
+  background-color: var(--darker);
+  color: var(--light);
 }
-body.dark .welcome,
-body.dark .header_right *,
-body.dark .login_logo,
-body.dark div#menu a,
-body.dark .fc-event-title {
-  color: #F2F2F2;
+body.light.dark .welcome,
+body.light.dark .header_right *,
+body.light.dark .login_logo,
+body.light.dark div#menu a,
+body.light.dark .fc-event-title {
+  color: var(--light);
 }
-body.dark .date-time {
-  color: #F2F2F2;
+body.light.dark .date-time {
+  color: var(--light);
 }
-body.dark .show-notifications #icon-bell {
-  fill: #C0C0C0;
+body.light.dark .show-notifications #icon-bell {
+  fill: var(--greyLight);
 }
-body.dark .show-notifications:hover #icon-bell,
-body.dark .show-notifications:focus #icon-bell,
-body.dark .show-notifications.active #icon-bell {
-  fill: #F2F2F2;
+body.light.dark .show-notifications:hover #icon-bell,
+body.light.dark .show-notifications:focus #icon-bell,
+body.light.dark .show-notifications.active #icon-bell {
+  fill: var(--light);
 }
-body.dark .nav-tabs {
-  border-bottom: 1px solid #71bf44;
+body.light.dark .nav-tabs {
+  border-bottom: 1px solid var(--green);
 }
-body.dark .nav>li>a {
-  color: #FFFFFF;
+body.light.dark .nav>li>a {
+  color: var(--white);
 }
-body.dark .ui-widget-content {
-  background: #303030;
-  color: #F2F2F2;
+body.light.dark .ui-widget-content {
+  background: var(--darker);
+  color: var(--light);
 }
-body.dark .login_logo img {
+body.light.dark .login_logo img {
   max-width: 100%;
   padding: 3px;
-  box-shadow: 0px 0px 5px 3px #FFFFFF;
+  box-shadow: 0px 0px 5px 3px var(--white);
   border-radius: 5px;
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
-body.dark div#cboxContent {
-  background: #404040;
+body.light.dark div#cboxContent {
+  background: var(--darkLight);
 }
-body.dark.container #enkodeer,
-body.dark.container #enkodeer label,
-body.dark xmp {
-  color: #F2F2F2;
+body.light.dark.container #enkodeer,
+body.light.dark.container #enkodeer label,
+body.light.dark xmp {
+  color: var(--light);
 }
-body.dark ul#ShortcutsList {
-  background: #303030;
+body.light.dark ul#ShortcutsList {
+  background: var(--darker);
 }
-body.dark ul#ShortcutsList>li {
-  background: rgba(232, 232, 232, 0.8);
+body.light.dark ul#ShortcutsList>li {
+  background: var(--greyLight);
 }
-body.dark fieldset {
-  background-color: rgba(232, 232, 232, 0.8);
-  color: #303030;
+body.light.dark fieldset {
+  background-color: var(--greyLight);
+  color: var(--darker);
 }
-body.dark fieldset input.form-control[readonly="readonly"],
-body.dark fieldset input.form-control[readonly],
-body.dark fieldset textarea.form-control[readonly="readonly"],
-body.dark fieldset textarea.form-control[readonly] {
-  background-color: #DDDDDD;
+body.light.dark fieldset input.form-control[readonly="readonly"],
+body.light.dark fieldset input.form-control[readonly],
+body.light.dark fieldset textarea.form-control[readonly="readonly"],
+body.light.dark fieldset textarea.form-control[readonly] {
+  background-color: var(--offWhite);
 }
-body.dark .datagrid {
+body.light.dark .datagrid {
   border-radius: 5px;
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
-body.dark .panel.datagrid .panel-body {
+body.light.dark .panel.datagrid .panel-body {
   border: 0px;
 }
-body.dark .tabs-panels .panel-body {
-  background-color: #404040;
-  color: #F2F2F2;
+body.light.dark .tabs-panels .panel-body {
+  background-color: var(--darkLight);
+  color: var(--light);
 }
-body.dark .BlokNav {
-  background-color: rgba(232, 232, 232, 0.8);
+body.light.dark .BlokNav {
+  background-color: var(--greyLight);
 }
-body.dark ul.dropdown-menu {
-  background-color: #303030;
+body.light.dark ul.dropdown-menu {
+  background-color: var(--darker);
 }
-body.dark ul.dropdown-menu li a,
-body.dark .Zebra_Form label,
-body.dark #Tree #jsTreeMenu ul li a.jstree-search:hover,
-body.dark #Tree #jsTreeMenu ul li a.jstree-search.jstree-clicked,
-body.dark input[type="checkbox"] + label,
-body.dark .login_div *,
-body.dark #calendar .fc-grid .fc-day-number {
-  color: #F2F2F2;
+body.light.dark ul.dropdown-menu li a,
+body.light.dark .Zebra_Form label,
+body.light.dark div.Zebra_Form_error_message .message,
+body.light.dark #Tree #jsTreeMenu ul li a.jstree-search:hover,
+body.light.dark #Tree #jsTreeMenu ul li a.jstree-search.jstree-clicked,
+body.light.dark input[type="checkbox"] + label,
+body.light.dark .login_div *,
+body.light.dark #calendar .fc-grid .fc-day-number {
+  color: var(--light);
 }
-body.dark .Zebra_Form span.required {
+body.light.dark .Zebra_Form span.required {
   color: #FF0000;
 }
-body.dark ul#ShortcutsList>li:hover,
-body.dark .BlokNav:hover {
-  background-color: rgba(250, 250, 250, 1);
+body.light.dark ul#ShortcutsList>li:hover,
+body.light.dark .BlokNav:hover {
+  background-color: var(--light);
 }
-body.dark h3 {
-  color: #333333;
+body.light.dark h3 {
+  color: var(--dark);
 }
-body.dark #calendar .fc-week .fc-sun,
-body.dark #calendar .fc-week .fc-sat {
-  background-color: #888888;
+body.light.dark #calendar .fc-week .fc-sun,
+body.light.dark #calendar .fc-week .fc-sat {
+  background-color: var(--greyDark);
 }
-body.dark #calendar .fc-grid .fc-state-highlight .fc-day-number,
-body.dark .login_div input,
-body.dark .Zebra_Form textarea {
-  color: #333333;
+body.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number,
+body.light.dark .login_div input,
+body.light.dark .Zebra_Form textarea {
+  color: var(--dark);
 }
-body.dark .panel,
-body.dark .tabs-header {
+body.light.dark .panel,
+body.light.dark .tabs-header {
   background-color: transparent;
 }
-body.dark .HetWSDL,
-body.dark .noty_type_error * {
-  color: #FFFFFF;
+body.light.dark .HetWSDL,
+body.light.dark .noty_type_error * {
+  color: var(--white);
 }
-body.dark .select2-results__option[aria-selected],
-body.dark fieldset p,
-body.dark fieldset td,
-body.dark fieldset div,
-body.dark strong.select2-results__group,
-body.dark input.select2-search__field,
-body.dark fieldset .Zebra_Form label,
-body.dark .Zebra_Form fieldset label {
-  color: #303030;
+body.light.dark .select2-results__option[aria-selected],
+body.light.dark fieldset p,
+body.light.dark fieldset td,
+body.light.dark fieldset div,
+body.light.dark strong.select2-results__group,
+body.light.dark input.select2-search__field,
+body.light.dark fieldset .Zebra_Form label,
+body.light.dark .Zebra_Form fieldset label {
+  color: var(--darker);
 }
-body.dark div#cboxOverlay {
-  background: #404040;
+body.light.dark div#cboxOverlay {
+  background: var(--darkLight);
 }
-body.dark #Tree #jsTreeMenu ul li a.jstree-search {
-  color: #71bf44;
+body.light.dark #Tree #jsTreeMenu ul li a.jstree-search {
+  color: var(--green);
   font-size: 1.1em;
 }
-body.dark .backHead + .header {
-  background-color: #303030;
+body.light.dark .backHead + .header {
+  background-color: var(--darker);
 }

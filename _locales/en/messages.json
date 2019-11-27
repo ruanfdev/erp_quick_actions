@@ -84,7 +84,7 @@
     "message":"Custom JS & jQuery"
   },
     "altHeadMeth": {
-    "message":"Alternative smaller header method"
+    "message":"Alternative smaller header (hide button)"
   },
     "headGlow": {
     "message":"Environment header glow"

@@ -1,5 +1,5 @@
 body.light .header {
-  border: 2px solid #71bf44;
+  border: 2px solid var(--green);
   height: 90px;
 }
 body.light .header>.header_nav>h4 {
@@ -12,16 +12,16 @@ body.light .header>.header_nav a {
   transition: 0.1s linear;
 }
 body.light .header_nav a:hover {
-  background-color: #ffad41;
-  box-shadow: 1px 1px 8px #666666;
-  -webkit-box-shadow: 1px 1px 8px #666666;
-  -moz-box-shadow: 1px 1px 8px #666666;
+  background-color: var(--orange);
+  box-shadow: 1px 1px 8px var(--darker);
+  -webkit-box-shadow: 1px 1px 8px var(--darker);
+  -moz-box-shadow: 1px 1px 8px var(--darker);
 }
 body.light #head-button .show-notifications {
   margin-top: 3px;
 }
 body.light #head-button .show-notifications.active #icon-bell {
-  fill: #F2F2F2;
+  fill: var(--light);
 }
 body.light #head-button .show-notifications.active~.notifications {
   top: 48px;
@@ -32,7 +32,7 @@ body.light .main .BlokNav {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 body.light .main .BlokNav:hover {
-  background: #e5e5e5;
+  background: var(--light);
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
 body.light .main .BlokNav > div {
@@ -43,12 +43,12 @@ body.light .main .openPage > .fa-stack {
   transition: all 0.3s ease-in-out;
 }
 body.light .ui-dialog .ui-dialog-titlebar {
-  background: #71bf44;
+  background: var(--green);
 }
 body.light .header .logo {
-  height: 55px;
+  height: auto;
   float: left;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 body.light .header .logo img {
   max-width: 100%;
@@ -89,24 +89,24 @@ body.light .btn.btn-default {
   outline: none;
 }
 body.light .btn.btn-success {
-  background-color: #71bf44;
-  border: 1px solid #71bf44;
+  background-color: var(--green);
+  border: 1px solid var(--green);
 }
 body.light .btn.btn-warning {
-  background-color: #f7941d;
-  border: 1px solid #f7941d;
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
 }
 body.light .btn.btn-danger {
-  background-color: #c12e2a;
-  border: 1px solid #c12e2a;
+  background-color: var(--red);
+  border: 1px solid var(--red);
 }
 body.light .btn.btn-info {
-  background-color: #2aabd2;
-  border: 1px solid #2aabd2;
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
 }
 body.light .btn.btn-default {
-  background-color: #F2F2F2;
-  border: 1px solid #F2F2F2;
+  background-color: var(--light);
+  border: 1px solid var(--light);
 }
 body.light .btn.btn-success:hover,
 body.light .btn.btn-warning:hover,
@@ -118,24 +118,24 @@ body.light .btn.btn-default:hover {
   -moz-box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.6);
 }
 body.light .btn.btn-success:hover {
-  border-color: #449d44;
-  background-color: #449d44;
+  border-color: var(--greenDark);
+  background-color: var(--greenDark);
 }
 body.light .btn.btn-warning:hover {
-  border-color: #eb9316;
-  background-color: #eb9316;
+  border-color: var(--orangeDark);
+  background-color: var(--orangeDark);
 }
 body.light .btn.btn-danger:hover {
-  background-color: #cc403d;
-  border: 1px solid #cc403d;
+  background-color: var(--redDark);
+  border: 1px solid var(--redDark);
 }
 body.light .btn.btn-info:hover {
-  background-color: #49bfe2;
-  border: 1px solid #49bfe2;
+  background-color: var(--blueDark);
+  border: 1px solid var(--blueDark);
 }
 body.light .btn.btn-default:hover {
-  background-color: #e0e0e0;
-  border: 1px solid #e0e0e0;
+  background-color: var(--greyLighter);
+  border: 1px solid var(--greyLighter);
 }
 body.light iframe#renderHier {
   min-width: 100%;
@@ -168,16 +168,16 @@ body.light.altEasyui .panel.datagrid .panel-body {
   max-height: calc(100% - 50px);
 }
 body.light.headGlowDEV .header {
-  box-shadow: inset 0px 0px 6px 0px #c12e2a;
-  border-color: #c12e2a;
+  box-shadow: inset 0px 0px 6px 0px var(--red);
+  border-color: var(--red);
 }
 body.light.headGlowPRD .header {
-  box-shadow: inset 0px 0px 6px 0px #71bf44;
-  border-color: #71bf44;
+  box-shadow: inset 0px 0px 6px 0px var(--green);
+  border-color: var(--green);
 }
 body.light.headGlowQA .header {
-  box-shadow: inset 0px 0px 6px 0px #f7941d;
-  border-color: #f7941d;
+  box-shadow: inset 0px 0px 6px 0px var(--orange);
+  border-color: var(--orange);
 }
 body.light.altMenus .ui-widget-overlay {
   background: rgba(0,0,0,0.5);
@@ -191,6 +191,7 @@ body.light.altMenus ul#ShortcutsList {
   border-radius: 0;
   top: 0;
   right: 0;
+  min-width: 300px;
   max-height: none;
   height: 98%;
   border-top: 0;
@@ -206,13 +207,6 @@ body.light ul#ShortcutsList>li:first-child .fa-stack {
   float: none;
   margin-right: 0px;
   margin-top: 1px;
-}
-@keyframes quiverAnimate {
-  0% {transform: rotate(0deg) scale(1);}
-  25% {transform: rotate(0deg) scale(0.98);}
-  50% {transform: rotate(0deg) scale(1.01);}
-  75% {transform: rotate(0deg) scale(0.99);}
-  100% {transform: rotate(0deg) scale(1);}
 }
 body.light.animArrange .main ul.ca-menu.ui-sortable > * {
   animation-name: quiverAnimate;
@@ -233,11 +227,6 @@ body.light .header div#header_container {
 }
 body.light.small .header {
   height: 45px;
-}
-body.light .header .logo {
-  height: auto;
-  float: left;
-  margin-top: 20px;
 }
 body.light.small .header .logo {
   margin-top: 6px;
@@ -268,8 +257,6 @@ body.light.small .content {
 body.light.small .header .logo img {
   max-height: 33px;
 }
-
-
 body.light .backHead {
   width: 99.7%;
   margin-left: 2px;
@@ -277,10 +264,15 @@ body.light .backHead {
   position: absolute;
   z-index: 95;
 }
-body.light .backHead + .header {
+body.light.small .backHead {
+  height: 51px;
+}
+body.light.RGBclass .header {
   top: 2px;
   width: 99.4%;
-  background-color: #FFFFFF;
+  border: none;
+  padding: 2px;
+  background-color: var(--white);
 }
 body.light .backHead:before,
 body.light .backHead:after {
@@ -296,22 +288,39 @@ body.light .backHead:after {
   animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
 }
-@keyframes rgbanimate {
-	0% {
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 400% 0;
-	}
-	100% {
-		background-position: 0 0;
-	}
-}
 body.light .backHead:after {
 	filter: blur(2px);
 }
-
-
+body.light.hiddenHead .header {
+  border-top-width: 0;
+  top: 0;
+  margin-top: -85px;
+  transition: 0.25s linear;
+}
+body.light.small.hiddenHead .header {
+  margin-top: -40px;
+}
+body.light.hiddenHead.RGBclass .backHead {
+  margin-top: -87px;
+  transition: 0.25s linear;
+}
+body.light.hiddenHead .content {
+  padding-top: 13px;
+  transition: 0.25s linear;
+}
+/* body.light.hiddenHead div#head-button {
+  top: -15px;
+}
+body.light.small.hiddenHead div#head-button {
+  margin-top: -65px;
+} */
+body.light.hiddenHead .header:hover,
+body.light.small.hiddenHead .header:hover {
+  margin-top: 0px;
+}
+body.light.hiddenHead .header:hover + .backHead {
+  margin-top: -2px;
+}
 /* body.light #lang button .fa-language:after {
   content: "E";
   padding: 0px 1px 0px 4px;

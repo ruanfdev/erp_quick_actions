@@ -1,24 +1,32 @@
 :root {
     --green: #71bf44;
     --greenLight: #71bf44;
-    --greenDark: #71bf44;
+    --greenDark: #449d44;
 
     --orange: #f7931c;
     --orangeLight: #f7931c;
-    --orangeDark: #f7931c;
+    --orangeDark: #e88a19;
 
     --red: #c12e2a;
     --redLight: #c12e2a;
-    --redDark: #c12e2a;
+    --redDark: #af2926;
+
+    --blue: #2aabd2;
+    --blueLight: #49bfe2;
+    --blueDark: #27a2c7;
 
     --black: #000000;
+    --darkLight: #404040;
     --dark: #333333;
     --darker: #303030;
 
+    --greyDark: #666666;
     --greyLight: #C0C0C0;
+    --greyLighter: #e0e0e0;
 
     --white: #FFFFFF;
     --light: #F2F2F2;
+    --offWhite: #DDDDDD;
 
     --boxShadLight: 0px 0px 5px rgba(0,0,0,0.3);
     --boxShadMed: 0px 0px 5px rgba(0,0,0,0.5);
@@ -39,6 +47,24 @@
     0% {transform: scaleY(1);}
     50% {transform: scaleY(0);}
     100% {transform: scaleY(1);}
+}
+@keyframes quiverAnimate {
+    0% {transform: rotate(0deg) scale(1);}
+    25% {transform: rotate(0deg) scale(0.98);}
+    50% {transform: rotate(0deg) scale(1.01);}
+    75% {transform: rotate(0deg) scale(0.99);}
+    100% {transform: rotate(0deg) scale(1);}
+}
+@keyframes rgbanimate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 /*
 #div2 {
