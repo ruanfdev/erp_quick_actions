@@ -173,25 +173,25 @@ var openQA = function(e) {
 };
 
 chrome.contextMenus.create({
-  "id": "erpQA",
+  "id": "erpID",
   "title": "ERP - Quick Actions"
 });
 
 chrome.contextMenus.create({
-  "id": "erpQA_PRD",
-  "parentId": "erpQA",
+  "id": "erpID_PRD",
+  "parentId": "erpID",
   "title": "PRD"
 });
 
 chrome.contextMenus.create({
-  "id": "erpQA_DEV",
-  "parentId": "erpQA",
+  "id": "erpID_DEV",
+  "parentId": "erpID",
   "title": "DEV"
 });
 
 chrome.contextMenus.create({
-  "id": "erpQA_QA",
-  "parentId": "erpQA",
+  "id": "erpID_QA",
+  "parentId": "erpID",
   "title": "QA"
 });
 
@@ -201,15 +201,15 @@ chrome.storage.sync.get(null, function(result) {
   for (let indFor = 1; indFor < 4; indFor++) {
     if (indFor == 1) {
       event = openPRD;
-      parent = "erpQA_PRD";
+      parent = "erpID_PRD";
       pre = 'P';
     } else if (indFor == 2) {
       event = openDEV;
-      parent = "erpQA_DEV";
+      parent = "erpID_DEV";
       pre = 'D';
     } else {
       event = openQA;
-      parent = "erpQA_QA";
+      parent = "erpID_QA";
       pre = 'Q';
     }
     
