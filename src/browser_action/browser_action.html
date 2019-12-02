@@ -124,15 +124,44 @@
         </div>
         <h3 data-localize="__MSG_easyUIfit__"></h3>
       </div>
+      <div class="row sub_content_row">
+        <div class="inject sideinj">
+          <label class="inject_container">
+            <input type="checkbox" id="check_newtab">
+            <span class="checkmark_side"></span>
+          </label>
+        </div>
+        <h3 data-localize="__MSG_custNewTab__"></h3>
+      </div>
       <div class="row title_row">
           <h1 id="custom_css_block_header" data-localize="__MSG_customColours__"></h1>
       </div>
+      <!-- Custom Colors Start -->
       <div class="row sub_content_row">
-        <div class="inject input sideinj">
-          <input id="custCol1" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}" value="333333">
-        </div>
-        <h3 data-localize="__MSG_altHeadMeth__"></h3>
+        <table class="input">
+          <tr>
+            <th><label for="darkLightCustCol">DarkLight</label></th>
+            <th><label for="darkCustCol">Dark</label></th>
+            <th><label for="darkerCustCol">Darker</label></th>
+            <th><label for="greenCustCol">Green</label></th>
+            <th><label for="test">DarkLight</label></th>
+          </tr>
+          <tr>
+            <td><input id="darkLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="darkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <th><input id="darkerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></th>
+            <th><input id="greenCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></th>
+            <td><input id="test" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          </tr>
+          <!-- <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr> -->
+        </table>
       </div>
+      <div class="spacer"></div>
+      <!-- Custom Colors End -->
       <div class="row title_row title_row_nom">
           <h1 id="custom_css_block_header" data-localize="__MSG_cssBlock__"></h1>
       </div>

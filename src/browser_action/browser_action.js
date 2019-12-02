@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-  $('.jscolor').click(function(e){
-    console.log($('.jscolor').val());
-    setTimeout(() => {
-      $('.jscolor').val('#C0C0C0')
-      $('.jscolor').css('background-color','#C0C0C0')
-    }, 5000);
-  });
+  // $('.jscolor').click(function(e){
+  //   console.log($('.jscolor').val());
+  //   setTimeout(() => {
+  //     $('.jscolor').val('#C0C0C0')
+  //     $('.jscolor').css('background-color','#C0C0C0')
+  //   }, 5000);
+  // });
 
   // var c = document.documentElement.style.getPropertyValue('--dark');
   // alert('The value of --myVariable is : ' + (c?c:'undefined'));
@@ -52,6 +52,7 @@ $(document).ready(function() {
   var rules;
   var custom_css_block;
   var custom_js_block;
+  var custColsArr;
   var latest_version;
   var current_version;
 
@@ -120,10 +121,12 @@ $(document).ready(function() {
     custom_js_block = result.custom_js_block;
     injected = result.injected;
     rules = result.rules;
+    custColsArr = result.custColsArr;
     chkedHeader = result.chkedHeader;
     chkedGlow = result.chkedGlow;
     chkedRGBhead = result.chkedRGBhead;
     chkedEasyui = result.chkedEasyui;
+    chkedNewtab = result.chkedNewtab;
     chkedMenus = result.chkedMenus;
     chkedAnimate = result.chkedAnimate;
     chkedMainBlock = result.chkedMainBlock;
@@ -141,6 +144,15 @@ $(document).ready(function() {
         i++;
       });
     }
+    
+    if (custColsArr == undefined || typeof custColsArr[0] == undefined) {
+      custColsArr = [];
+    } else {
+      $.each( custColsArr, function(idx,val) {
+        document.getElementById(val.id).jscolor.fromString(val.val);
+      });
+    }
+    
 
     if (nwk_theme == 'dark') {
       $('#myonoffswitch').prop('checked', false);
@@ -175,6 +187,11 @@ $(document).ready(function() {
       $('#check_easyui').prop('checked', true);
     } else {
       $('#check_easyui').prop('checked', false);
+    }
+    if (chkedNewtab == true) {
+      $('#check_newtab').prop('checked', true);
+    } else {
+      $('#check_newtab').prop('checked', false);
     }
     if (chkedMenus == true) {
       $('#check_menus').prop('checked', true);
@@ -284,6 +301,7 @@ $(document).ready(function() {
     var chkedGlow = $('#check_glow').is(":checked");
     var chkedRGBhead = $('#check_rgbhead').is(":checked");
     var chkedEasyui = $('#check_easyui').is(":checked");
+    var chkedNewtab = $('#check_newtab').is(":checked");
 
     if (chkedTheme) {
       nwk_theme = 'light';
@@ -308,8 +326,22 @@ $(document).ready(function() {
       });
     });
 
+    custColsArr = [];
+    $('input.jscolor').each(function(index){
+      var input = $(this);
+      console.log('HIER',input[0].style.color);
+      custColsId = input[0].id;
+      custColsVal = input.val();
+      custColsText = input[0].style.color;
+      custColsArr.push({
+        id: custColsId,
+        val:  custColsVal,
+        textCol: custColsText
+      });
+    });
+
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
@@ -323,6 +355,13 @@ $(document).ready(function() {
             setDynInject(true);
           } else {
             setDynInject(false);
+          }
+
+          var rld = confirm("Reload required if the following changes were made:\n1. Changing 'Custom Colors'\n2. Enabling/Disabling 'Custom New Tab'\n3. Adding/Editing quick actions to update the context menu\n\nDo you want to reload?");
+          if (rld == true) {
+            setTimeout(() => {
+              chrome.runtime.reload();
+            }, 1000);
           }
         }, 800);
       });

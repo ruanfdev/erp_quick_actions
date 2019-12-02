@@ -197,6 +197,11 @@ chrome.contextMenus.create({
 
 chrome.storage.sync.get(null, function(result) {
   rules = result.rules;
+  chkedNewtab = result.chkedNewtab;
+
+  if (chkedNewtab == true) {
+    shouldReplaceNewTab = true;
+  }
 
   for (let indFor = 1; indFor < 4; indFor++) {
     if (indFor == 1) {

@@ -95,6 +95,9 @@
     "easyUIfit": {
     "message":"Fit easyUI to available screen height"
   },
+    "custNewTab": {
+    "message":"Note taking new tab"
+  },
     "altMenus": {
     "message":"Alternative menu look & feel"
   },

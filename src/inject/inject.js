@@ -71,10 +71,12 @@ function injectProcess() {
 		custom_css_block = result.custom_css_block;
 		custom_js_block = result.custom_js_block;
 		injected = result.injected;
+		custColsArr = result.custColsArr;
 		chkedHeader = result.chkedHeader;
 		chkedGlow = result.chkedGlow;
 		chkedRGBhead = result.chkedRGBhead;
 		chkedEasyui = result.chkedEasyui;
+		chkedNewtab = result.chkedNewtab;
 		chkedMenus = result.chkedMenus;
 		chkedAnimate = result.chkedAnimate;
 		chkedMainBlock = result.chkedMainBlock;
@@ -200,6 +202,20 @@ function injectProcess() {
 						});
 					}
 
+					if (typeof chkedNewtab !== 'undefined') {
+						if (chkedNewtab == true) {
+							$("body").addClass("altNewtab");
+						} else {
+							$("body").removeClass("altNewtab");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedNewtab: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
 					if (typeof chkedMenus !== 'undefined') {
 						if (chkedMenus == true) {
 							$("body").addClass("altMenus");
@@ -241,6 +257,19 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
+					
+					if (typeof custColsArr !== 'undefined') {
+						$.each( custColsArr, function(idx,val) {
+							custColsArrSplit = val.id.split("CustCol");
+							document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+						});
+					} else {
+						chrome.storage.sync.set({
+							custColsArr: []
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
 
 				}
 			} else {
@@ -251,6 +280,7 @@ function injectProcess() {
 					chkedGlow: false,
 					chkedRGBhead: false,
 					chkedEasyui: false,
+					chkedNewtab: false,
 					chkedMenus: false,
 					chkedAnimate: false,
 					chkedMainBlock: false
@@ -268,6 +298,7 @@ function injectProcess() {
 				chkedGlow: false,
 				chkedRGBhead: false,
 				chkedEasyui: false,
+				chkedNewtab: false,
 				chkedMenus: false,
 				chkedAnimate: false,
 				chkedMainBlock: false
