@@ -152,16 +152,22 @@ body.light #lang button:hover {
   padding: 6px 17px 6px 12px;
 }
 body.light.smlBlocks .main .BlokNav {
-  width: 153px;
-  height: 205px;
+  width: 132px;
+  height: 170px;
   margin: 6px;
 }
 body.light.smlBlocks .main .BlokNav a.openPage span {
-  transform: scale(0.75);
-  margin-top: -15px;
+  transform: scale(0.6);
+  margin-top: -22px;
 }
 body.light.smlBlocks .main .BlokNav a.openPage .ca-content {
-  font-size: 16px;
+  font-size: 14px;
+  width: 100%;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  line-height: 18px;
 }
 body.light.altEasyui .panel.datagrid .panel-body {
   overflow: auto;
