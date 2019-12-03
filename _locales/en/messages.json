@@ -98,6 +98,9 @@
     "custNewTab": {
     "message":"Note taking new tab"
   },
+    "hidHead": {
+    "message":"Slide out hidden header"
+  },
     "altMenus": {
     "message":"Alternative menu look & feel"
   },

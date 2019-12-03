@@ -77,6 +77,7 @@ function injectProcess() {
 		chkedRGBhead = result.chkedRGBhead;
 		chkedEasyui = result.chkedEasyui;
 		chkedNewtab = result.chkedNewtab;
+		chkedHidhead = result.chkedHidhead;
 		chkedMenus = result.chkedMenus;
 		chkedAnimate = result.chkedAnimate;
 		chkedMainBlock = result.chkedMainBlock;
@@ -216,6 +217,20 @@ function injectProcess() {
 						});
 					}
 
+					if (typeof chkedHidhead !== 'undefined') {
+						if (chkedHidhead == true) {
+							$("body").addClass("hiddenHead");
+						} else {
+							$("body").removeClass("hiddenHead");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedHidhead: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
 					if (typeof chkedMenus !== 'undefined') {
 						if (chkedMenus == true) {
 							$("body").addClass("altMenus");
@@ -281,6 +296,7 @@ function injectProcess() {
 					chkedRGBhead: false,
 					chkedEasyui: false,
 					chkedNewtab: false,
+					chkedHidhead: false,
 					chkedMenus: false,
 					chkedAnimate: false,
 					chkedMainBlock: false
@@ -299,6 +315,7 @@ function injectProcess() {
 				chkedRGBhead: false,
 				chkedEasyui: false,
 				chkedNewtab: false,
+				chkedHidhead: false,
 				chkedMenus: false,
 				chkedAnimate: false,
 				chkedMainBlock: false

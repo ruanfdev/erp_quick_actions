@@ -98,6 +98,9 @@
     "custNewTab": {
     "message":"Neem notas 'new tab'"
   },
+    "hidHead": {
+    "message":"Versteekte 'Header'"
+  },
     "altMenus": {
     "message":"Alternatiewe menu's"
   },

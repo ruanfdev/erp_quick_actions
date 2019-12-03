@@ -244,13 +244,6 @@ body.light.small .header > .header_nav a {
   height: 32px;
   background-size: 20px;
 }
-body.light.small div#head-button {
-  margin-top: -20px;
-}
-body.light.small div#head-button {
-  margin-top: -25px;
-  position: absolute !important;
-}
 body.light.small .content {
   padding-top: 55px;
 }
@@ -291,6 +284,11 @@ body.light .backHead:after {
 body.light .backHead:after {
 	filter: blur(2px);
 }
+/* body.light.hidHead .header {
+  height: 99.3%;
+  width: 90px;
+  border-radius: 0 25px 25px 0;
+} */
 body.light.hiddenHead .header {
   border-top-width: 0;
   top: 0;
@@ -301,19 +299,19 @@ body.light.small.hiddenHead .header {
   margin-top: -40px;
 }
 body.light.hiddenHead.RGBclass .backHead {
-  margin-top: -87px;
+  margin-top: -42px;
   transition: 0.25s linear;
 }
 body.light.hiddenHead .content {
   padding-top: 13px;
   transition: 0.25s linear;
 }
-/* body.light.hiddenHead div#head-button {
-  top: -15px;
+body.light.hiddenHead div#head-button {
+  top: -30px;
 }
-body.light.small.hiddenHead div#head-button {
-  margin-top: -65px;
-} */
+body.light.hiddenHead div#head-button:hover {
+  top: -3px;
+}
 body.light.hiddenHead .header:hover,
 body.light.small.hiddenHead .header:hover {
   margin-top: 0px;
