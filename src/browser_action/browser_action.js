@@ -356,13 +356,6 @@ $(document).ready(function() {
           } else {
             setDynInject(false);
           }
-
-          var rld = confirm("Reload required if the following changes were made:\n1. Changing 'Custom Colors'\n2. Enabling/Disabling 'Custom New Tab'\n3. Adding/Editing quick actions to update the context menu\n\nDo you want to reload?");
-          if (rld == true) {
-            setTimeout(() => {
-              chrome.runtime.reload();
-            }, 1000);
-          }
         }, 800);
       });
     });
@@ -404,6 +397,15 @@ $(document).ready(function() {
   localizeHtmlPage();
 });
 
+function reloadExt() {
+  var rld = confirm("Reload required if the following changes were made:\n1. Changing 'Custom Colors'\n2. Enabling/Disabling 'Custom New Tab'\n3. Adding/Editing quick actions to update the context menu\n\nDo you want to reload?");
+  if (rld == true) {
+    setTimeout(() => {
+      chrome.runtime.reload();
+    }, 1000);
+  }
+}
+
 function injectNow(param) {
   chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
     if (param == true) {
@@ -417,6 +419,7 @@ function injectNow(param) {
         });
       }
     }
+    reloadExt();
   });
 }
 
