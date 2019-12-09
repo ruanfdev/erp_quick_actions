@@ -74,6 +74,9 @@
     "customColours": {
     "message":"Custom Colours"
   },
+    "resetCols": {
+    "message":"Reset"
+  },
     "experimental": {
     "message":"Experimental / Beta"
   },

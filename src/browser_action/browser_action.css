@@ -22,6 +22,9 @@ h3 {
   padding-left: 0px;
   margin: 0;
 }
+h1#custom_css_block_header {
+  display: inline-block;
+}
 .top_container {
   position: fixed;
   z-index: 1;
@@ -91,12 +94,17 @@ button {
 button:hover {
   box-shadow: var(--boxShadMed);
 }
+button.reset_cust_cols {
+  min-width: 100px;
+  padding: 3px 17px;
+}
 .save_form_field,
 .save_custom_settings {
   background-color: var(--green);
   border:1px solid var(--green);
 }
-.add_form_field {
+.add_form_field,
+.reset_cust_cols {
   background-color: var(--orange);
   border:1px solid var(--orange);
 }
@@ -345,9 +353,6 @@ button * {
   position: absolute;
   top: 10px;
   right: 10px;
-}
-table.input {
-  margin-top: 10px;
 }
 table.input label {
   font-size: 1.2em;

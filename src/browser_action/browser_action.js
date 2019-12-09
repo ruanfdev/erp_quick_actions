@@ -42,6 +42,7 @@ $(document).ready(function() {
   var add_button    = $(".add_form_field");
   var clear_button  = $(".clear_all");
   var login_btn   = $(".login_btn");
+  var reset_cols   = $(".reset_cust_cols");
   var save_button   = $(".save_form_field");
   var save_custom_settings   = $(".save_custom_settings");
   var menu_bars     = $("#menu_bars");
@@ -257,6 +258,14 @@ $(document).ready(function() {
 
   $(login_btn).click(function(e){
     bar1.set(0);
+    setTimeout(function () {
+      $(save_button).trigger('click');
+    }, 50);
+  });
+
+  $(reset_cols).click(function(e){
+    bar1.set(0);
+    custColsArr = [];
     setTimeout(function () {
       $(save_button).trigger('click');
     }, 50);

@@ -276,7 +276,9 @@ function injectProcess() {
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");
-							document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+							if (val.val != '#FFFFFF') {
+								document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+							}
 						});
 					} else {
 						chrome.storage.sync.set({

@@ -74,6 +74,9 @@
     "customColours": {
     "message":"Persoonlike Kleure"
   },
+    "resetCols": {
+    "message":"Herstel"
+  },
     "experimental": {
     "message":"Eksperimenteel / Beta"
   },
