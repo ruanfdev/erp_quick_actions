@@ -405,10 +405,15 @@ $(document).ready(function() {
 });
 
 function reloadExt() {
-  var rld = confirm("Reload required if the following changes were made:\n1. Changing 'Custom Colors'\n2. Enabling/Disabling 'Custom New Tab'\n3. Adding/Editing quick actions to update the context menu\n\nDo you want to reload?");
+  var rld = confirm("Reload required if the following changes were made:\n1. Enabling/Disabling 'Custom New Tab'\n2. Adding/Editing quick actions to update the context menu\n\nDo you want to reload all ERP tabs?");
   if (rld == true) {
     setTimeout(() => {
-      chrome.runtime.reload();
+      chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
+        for (var i = 0; i < tabs.length; i++) {
+          chrome.tabs.reload(tabs[i].id);
+        }
+        chrome.runtime.reload();
+      });
     }, 1000);
   }
 }
