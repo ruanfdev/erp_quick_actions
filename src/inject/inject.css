@@ -296,34 +296,106 @@ body.light .backHead:after {
   border-radius: 0 25px 25px 0;
 } */
 body.light.hiddenHead .header {
-  border-top-width: 0;
+  /* border-top-width: 0;
   top: 0;
   margin-top: -85px;
-  transition: 0.25s linear;
+  transition: 0.25s linear; */
 }
 body.light.small.hiddenHead .header {
-  margin-top: -40px;
+  /* margin-top: -40px; */
 }
 body.light.hiddenHead.RGBclass .backHead {
-  margin-top: -42px;
-  transition: 0.25s linear;
+  /* margin-top: -42px;
+  transition: 0.25s linear; */
 }
 body.light.hiddenHead .content {
-  padding-top: 13px;
-  transition: 0.25s linear;
+  /* padding-top: 13px;
+  transition: 0.25s linear; */
 }
 body.light.hiddenHead div#head-button {
-  top: -30px;
+  /* top: -30px; */
 }
 body.light.hiddenHead div#head-button:hover {
-  top: -3px;
+  /* top: -3px; */
 }
 body.light.hiddenHead .header:hover,
 body.light.small.hiddenHead .header:hover {
-  margin-top: 0px;
+  /* margin-top: 0px; */
 }
 body.light.hiddenHead .header:hover + .backHead {
-  margin-top: -2px;
+  /* margin-top: -2px; */
+}
+body.light.hiddenHead .header {
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 0;
+  border-top: 0;
+  border-bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+}
+body.light.hiddenHead .content {
+  padding: 0 0 0 45px;
+  width: 97%;
+}
+body.light.hiddenHead div#head-button {
+  margin: 0;
+  left: 4px;
+  top: 55px;
+}
+body.light.hiddenHead .header .header_nav {
+  width: 100%;
+  height: auto;
+}
+body.light.hiddenHead .header .header_nav > h4 {
+  display: none;
+}
+body.light.hiddenHead .header .header_nav > a {
+  margin: 0;
+  left: 0;
+  top: 0;
+  border-radius: 0;
+  width: 100%;
+  box-shadow: none;
+}
+body.light.hiddenHead .header #header_container {
+  position: absolute;
+  left: 42px;
+  top: -20vh;
+  height: 90px;
+  width: 98vw;
+  padding-left: 135px;
+  background-color: var(--darker);
+  transition: 0.25s linear;
+}
+body.light.hiddenHead .header:hover #header_container {
+  top: 0vh;
+}
+body.light.hiddenHead .header #header_container .header_right {
+  float: none;
+}
+body.light.hiddenHead .header #header_container .btn_main {
+  position: fixed;
+  left: 2px;
+  bottom: 0;
+  width: 40px;
+}
+body.light.hiddenHead .header #header_container .btn_main .child {
+  padding: 0;
+  width: 100%;
+  float: none !important;
+  margin: 0 !important;
+}
+body.light.hiddenHead .header #header_container .btn_main .child button {
+  border-radius: 0;
+  width: 100%;
+  min-height: 40px;
+  padding: 0;
+}
+body.light.hiddenHead #lang button:hover {
+  position: inherit;
 }
 /* body.light #lang button .fa-language:after {
   content: "E";
