@@ -130,6 +130,7 @@ $(document).ready(function() {
     chkedEasyui = result.chkedEasyui;
     chkedNewtab = result.chkedNewtab;
     chkedHidhead = result.chkedHidhead;
+    chkedVivaldihead = result.chkedVivaldihead;    
     chkedMenus = result.chkedMenus;
     chkedAnimate = result.chkedAnimate;
     chkedMainBlock = result.chkedMainBlock;
@@ -200,6 +201,11 @@ $(document).ready(function() {
       $('#check_hidhead').prop('checked', true);
     } else {
       $('#check_hidhead').prop('checked', false);
+    }
+    if (chkedVivaldihead == true) {
+      $('#check_vivaldiHead').prop('checked', true);
+    } else {
+      $('#check_vivaldiHead').prop('checked', false);
     }
     if (chkedMenus == true) {
       $('#check_menus').prop('checked', true);
@@ -331,6 +337,7 @@ $(document).ready(function() {
     var chkedEasyui = $('#check_easyui').is(":checked");
     var chkedNewtab = $('#check_newtab').is(":checked");
     var chkedHidhead = $('#check_hidhead').is(":checked");
+    var chkedVivaldihead = $('#check_vivaldiHead').is(":checked");
 
     if (chkedTheme) {
       nwk_theme = 'light';
@@ -342,6 +349,17 @@ $(document).ready(function() {
       injected = true;
     } else {
       injected = false;
+    }
+
+    if (chkedVivaldihead) {
+      chkedHeader = false;
+      chkedHidhead = false;
+    } else if (chkedHidhead) {
+      chkedHeader = false;
+      chkedVivaldihead = false;
+    } else if (chkedHeader) {
+      chkedHidhead = false;
+      chkedVivaldihead = false;
     }
 
     rules = [];
@@ -370,7 +388,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedHidhead:chkedHidhead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";

@@ -152,7 +152,7 @@ body.light #lang button:hover {
   padding: 6px 17px 6px 12px;
 }
 body.light.smlBlocks .main .BlokNav {
-  width: 132px;
+  width: 130px;
   height: 170px;
   margin: 6px;
 }
@@ -296,36 +296,32 @@ body.light .backHead:after {
   border-radius: 0 25px 25px 0;
 } */
 body.light.hiddenHead .header {
-  /* border-top-width: 0;
+  border-top-width: 0;
   top: 0;
   margin-top: -85px;
-  transition: 0.25s linear; */
-}
-body.light.small.hiddenHead .header {
-  /* margin-top: -40px; */
+  transition: 0.25s linear;
 }
 body.light.hiddenHead.RGBclass .backHead {
-  /* margin-top: -42px;
-  transition: 0.25s linear; */
+  margin-top: -42px;
+  transition: 0.25s linear;
 }
 body.light.hiddenHead .content {
-  /* padding-top: 13px;
-  transition: 0.25s linear; */
+  padding-top: 13px;
+  transition: 0.25s linear;
 }
 body.light.hiddenHead div#head-button {
-  /* top: -30px; */
+  top: -30px;
 }
 body.light.hiddenHead div#head-button:hover {
-  /* top: -3px; */
+  top: -3px;
 }
-body.light.hiddenHead .header:hover,
-body.light.small.hiddenHead .header:hover {
-  /* margin-top: 0px; */
+body.light.hiddenHead .header:hover {
+  margin-top: 0px;
 }
 body.light.hiddenHead .header:hover + .backHead {
-  /* margin-top: -2px; */
+  margin-top: -2px;
 }
-body.light.hiddenHead .header {
+body.light.vivaldiHead .header {
   left: 0;
   top: 0;
   height: 100%;
@@ -336,23 +332,23 @@ body.light.hiddenHead .header {
   padding: 0;
   width: 40px;
 }
-body.light.hiddenHead .content {
+body.light.vivaldiHead .content {
   padding: 0 0 0 45px;
   width: 97%;
 }
-body.light.hiddenHead div#head-button {
+body.light.vivaldiHead div#head-button {
   margin: 0;
   left: 4px;
   top: 55px;
 }
-body.light.hiddenHead .header .header_nav {
+body.light.vivaldiHead .header .header_nav {
   width: 100%;
   height: auto;
 }
-body.light.hiddenHead .header .header_nav > h4 {
+body.light.vivaldiHead .header .header_nav > h4 {
   display: none;
 }
-body.light.hiddenHead .header .header_nav > a {
+body.light.vivaldiHead .header .header_nav > a {
   margin: 0;
   left: 0;
   top: 0;
@@ -360,7 +356,7 @@ body.light.hiddenHead .header .header_nav > a {
   width: 100%;
   box-shadow: none;
 }
-body.light.hiddenHead .header #header_container {
+body.light.vivaldiHead .header #header_container {
   position: absolute;
   left: 42px;
   top: -20vh;
@@ -370,31 +366,33 @@ body.light.hiddenHead .header #header_container {
   background-color: var(--darker);
   transition: 0.25s linear;
 }
-body.light.hiddenHead .header:hover #header_container {
+body.light.vivaldiHead .header:hover #header_container,
+body.light.vivaldiHead .header #header_container:hover {
   top: 0vh;
 }
-body.light.hiddenHead .header #header_container .header_right {
+body.light.vivaldiHead .header #header_container .header_right {
   float: none;
 }
-body.light.hiddenHead .header #header_container .btn_main {
+body.light.vivaldiHead .header #header_container .btn_main {
   position: fixed;
   left: 2px;
   bottom: 0;
   width: 40px;
 }
-body.light.hiddenHead .header #header_container .btn_main .child {
+body.light.vivaldiHead .header #header_container .btn_main .child {
   padding: 0;
   width: 100%;
   float: none !important;
   margin: 0 !important;
 }
-body.light.hiddenHead .header #header_container .btn_main .child button {
+body.light.vivaldiHead .header #header_container .btn_main .child button {
   border-radius: 0;
   width: 100%;
   min-height: 40px;
   padding: 0;
+  margin-top: 1px;
 }
-body.light.hiddenHead #lang button:hover {
+body.light.vivaldiHead #lang button:hover {
   position: inherit;
 }
 /* body.light #lang button .fa-language:after {
@@ -406,8 +404,8 @@ body.light.hiddenHead #lang button:hover {
   text-align: center;
   font: 400 13.3333px Arial;
   display: inline;
-}
-body.light #lang button:hover .fa-language:after {
+} */
+/* body.light #lang button:hover .fa-language:after {
   display: none;
 } */
 

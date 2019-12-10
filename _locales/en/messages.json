@@ -102,7 +102,10 @@
     "message":"Note taking new tab"
   },
     "hidHead": {
-    "message":"Slide out hidden header"
+    "message":"Hidden header"
+  },
+    "vivaldiHead": {
+    "message":"Vivaldi header"
   },
     "altMenus": {
     "message":"Alternative menu look & feel"

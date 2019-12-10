@@ -78,6 +78,7 @@ function injectProcess() {
 		chkedEasyui = result.chkedEasyui;
 		chkedNewtab = result.chkedNewtab;
 		chkedHidhead = result.chkedHidhead;
+		chkedVivaldihead = result.chkedVivaldihead;
 		chkedMenus = result.chkedMenus;
 		chkedAnimate = result.chkedAnimate;
 		chkedMainBlock = result.chkedMainBlock;
@@ -220,12 +221,28 @@ function injectProcess() {
 					if (typeof chkedHidhead !== 'undefined') {
 						if (chkedHidhead == true) {
 							$("body").addClass("hiddenHead");
+							$("#ToggleNavButton").remove();
 						} else {
 							$("body").removeClass("hiddenHead");
 						}
 					} else {
 						chrome.storage.sync.set({
 							chkedHidhead: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
+					if (typeof chkedVivaldihead !== 'undefined') {
+						if (chkedVivaldihead == true) {
+							$("body").addClass("vivaldiHead");
+							$("#ToggleNavButton").remove();
+						} else {
+							$("body").removeClass("vivaldiHead");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedVivaldihead: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -300,6 +317,7 @@ function injectProcess() {
 					chkedEasyui: false,
 					chkedNewtab: false,
 					chkedHidhead: false,
+					chkedVivaldihead: false,
 					chkedMenus: false,
 					chkedAnimate: false,
 					chkedMainBlock: false
@@ -319,6 +337,7 @@ function injectProcess() {
 				chkedEasyui: false,
 				chkedNewtab: false,
 				chkedHidhead: false,
+				chkedVivaldihead: false,
 				chkedMenus: false,
 				chkedAnimate: false,
 				chkedMainBlock: false
