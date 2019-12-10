@@ -258,7 +258,7 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
-					// console.log('HIER',chkedMainBlock);
+					
 					if (typeof chkedMainBlock !== 'undefined') {
 						if (chkedMainBlock == true) {
 							$("body").addClass("smlBlocks");
@@ -276,6 +276,7 @@ function injectProcess() {
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");
+							document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
 							if (val.val != '#FFFFFF') {
 								document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
 							}

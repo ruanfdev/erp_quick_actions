@@ -43,6 +43,7 @@ $(document).ready(function() {
   var clear_button  = $(".clear_all");
   var login_btn   = $(".login_btn");
   var reset_cols   = $(".reset_cust_cols");
+  var reload_erp_tabs = $(".reload_erp_tabs")
   var save_button   = $(".save_form_field");
   var save_custom_settings   = $(".save_custom_settings");
   var menu_bars     = $("#menu_bars");
@@ -265,10 +266,22 @@ $(document).ready(function() {
 
   $(reset_cols).click(function(e){
     bar1.set(0);
-    custColsArr = [];
+    $.each( custColsArr, function(idx,val) {
+      document.getElementById(val.id).jscolor.fromString('#FFFFFF');
+    });
+    
     setTimeout(function () {
       $(save_button).trigger('click');
     }, 50);
+  });
+
+  $(reload_erp_tabs).click(function(e){
+    chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
+      for (var i = 0; i < tabs.length; i++) {
+        chrome.tabs.reload(tabs[i].id);
+      }
+      chrome.runtime.reload();
+    });
   });
 
   $(clear_button).click(function(e){
@@ -413,20 +426,6 @@ $(document).ready(function() {
   localizeHtmlPage();
 });
 
-function reloadExt() {
-  var rld = confirm("Reload required if the following changes were made:\n1. Enabling/Disabling 'Custom New Tab'\n2. Adding/Editing quick actions to update the context menu\n\nDo you want to reload all ERP tabs?");
-  if (rld == true) {
-    setTimeout(() => {
-      chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
-        for (var i = 0; i < tabs.length; i++) {
-          chrome.tabs.reload(tabs[i].id);
-        }
-        chrome.runtime.reload();
-      });
-    }, 1000);
-  }
-}
-
 function injectNow(param) {
   chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
     if (param == true) {
@@ -440,7 +439,6 @@ function injectNow(param) {
         });
       }
     }
-    reloadExt();
   });
 }
 

@@ -37,7 +37,7 @@ h1#custom_css_block_header {
 .container1 {
   width: 90%;
   text-align: center;
-  padding: 15px 5% 20px;
+  padding: 10px 5% 90px;
 }
 .container1 input[type=text] {
   padding: 10px 5px;
@@ -77,6 +77,14 @@ h1#custom_css_block_header {
   background: var(--light);
   box-shadow: var(--boxShadMed);
 }
+.note_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.note_container > p {
+  text-align: left;
+  font-size: 11px;
+}
 button {
   background-color: var(--dark);
   border: none;
@@ -97,6 +105,10 @@ button:hover {
 button.reset_cust_cols {
   min-width: 100px;
   padding: 3px 17px;
+}
+.reload_erp_tabs {
+  background-color: var(--darker);
+  border:1px solid var(--darker);
 }
 .save_form_field,
 .save_custom_settings {
@@ -518,7 +530,8 @@ body.dark .sidenav li,
 body.dark .sidenav .closebtn,
 body.dark .sidenav .small_title,
 body.dark .sidenav h3,
-body.dark .input label {
+body.dark .input label,
+body.dark .note_container p {
   color: var(--light);
 }
 body.dark .btn_container,
@@ -538,7 +551,8 @@ body.light .sidenav h1,
 body.light .sidenav li,
 body.light .sidenav .closebtn,
 body.light .sidenav .small_title,
-body.light .sidenav h3 {
+body.light .sidenav h3,
+body.light .note_container p {
   color: var(--dark);
 }
 body.light .btn_container,
