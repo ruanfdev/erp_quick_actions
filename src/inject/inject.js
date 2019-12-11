@@ -296,6 +296,8 @@ function injectProcess() {
 							document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
 							if (val.val != '#FFFFFF') {
 								document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+
+								// ADD FORCE COLOR REPLACE CHECKBOX
 							}
 						});
 					} else {
