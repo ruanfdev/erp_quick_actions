@@ -77,6 +77,7 @@ function injectProcess() {
 		chkedRGBhead = result.chkedRGBhead;
 		chkedEasyui = result.chkedEasyui;
 		chkedNewtab = result.chkedNewtab;
+		chkedForceCol = result.chkedForceCol;
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
 		chkedMenus = result.chkedMenus;
@@ -297,7 +298,17 @@ function injectProcess() {
 							if (val.val != '#FFFFFF') {
 								document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
 
-								// ADD FORCE COLOR REPLACE CHECKBOX
+								if (typeof chkedForceCol !== 'undefined') {
+									if (chkedForceCol == true) {
+										// ADD FORCE COLOR REPLACE CHECKBOX
+									}
+								} else {
+									chrome.storage.sync.set({
+										chkedForceCol: false
+									}, function () {
+										// document.getElementsByTagName("head")[0].appendChild(linkLight);
+									});
+								}
 							}
 						});
 					} else {
@@ -318,6 +329,7 @@ function injectProcess() {
 					chkedRGBhead: false,
 					chkedEasyui: false,
 					chkedNewtab: false,
+					chkedForceCol: false,
 					chkedHidhead: false,
 					chkedVivaldihead: false,
 					chkedMenus: false,
@@ -338,6 +350,7 @@ function injectProcess() {
 				chkedRGBhead: false,
 				chkedEasyui: false,
 				chkedNewtab: false,
+				chkedForceCol: false,
 				chkedHidhead: false,
 				chkedVivaldihead: false,
 				chkedMenus: false,

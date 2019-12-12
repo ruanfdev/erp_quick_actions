@@ -71,8 +71,8 @@
     "customSettings": {
     "message":"Custom Settings"
   },
-    "customColours": {
-    "message":"Custom Colours"
+    "customColors": {
+    "message":"Custom Colors"
   },
     "resetCols": {
     "message":"Reset"
@@ -106,6 +106,12 @@
   },
     "vivaldiHead": {
     "message":"Vivaldi header"
+  },
+    "forceColor": {
+    "message":"Force color replace"
+  },
+    "impactPerform": {
+    "message":"Using this option may degrade performance"
   },
     "altMenus": {
     "message":"Alternative menu look & feel"

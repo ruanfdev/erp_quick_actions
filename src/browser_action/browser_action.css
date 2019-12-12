@@ -337,15 +337,6 @@ button * {
   float: left;
   width: 100%;
 }
-.row.title_row {
-  margin-bottom: -5px;
-}
-.row.title_row_nom {
-  margin-bottom: 0px;
-}
-.row.content_row {
-  margin-bottom: 20px;
-}
 .fifty {
   float: left;
   width: 50%;
@@ -376,7 +367,7 @@ table.input input {
 }
 table.input th,
 table.input td {
-  width: 22%;
+  width: 16%;
 }
 .inject_container {
   display: block;
@@ -482,12 +473,13 @@ textarea#custom_js_block {
   margin-top: 10px;
   text-align: left;
 }
-.row.content_row h1 {
-  margin-top: 10px;
-  font-size: 1.3em;
-}
-p.small_title {
+p.section_description {
   margin: 2px 0px;
+}
+.checkbox_description {
+  float: left;
+  margin-top: -10px;
+  font-size: 11px;
 }
 .sidenav .cm-s-default .cm-qualifier {
   color: var(--orange);
@@ -508,12 +500,34 @@ p.small_title {
 .CodeMirror.cm-s-default.CodeMirror-wrap {
   border: 1px solid var(--dark);
 }
-.spacer {
-  position: relative;
-  min-height: 25px;
-  margin-top: 20px;
-  float: left;
+.accordion {
+  cursor: pointer;
+  padding: 10px 0;
   width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  box-shadow: none !important;
+}
+.panel {
+  padding: 0 0 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:before {
+  content: '+';
+  font-size: 25px;
+  line-height: 25px;
+  float: left;
+  margin-right: 10px;
+}
+.active:before {
+  content: '-';
+}
+.accordion:hover {
+  padding-left: 10px;
 }
 
 
@@ -528,7 +542,8 @@ body.dark .top_container>h1,
 body.dark .sidenav h1,
 body.dark .sidenav li,
 body.dark .sidenav .closebtn,
-body.dark .sidenav .small_title,
+body.dark .sidenav .section_description,
+body.dark .sidenav .checkbox_description,
 body.dark .sidenav h3,
 body.dark .input label,
 body.dark .note_container p {
@@ -550,7 +565,8 @@ body.light .top_container>h1,
 body.light .sidenav h1,
 body.light .sidenav li,
 body.light .sidenav .closebtn,
-body.light .sidenav .small_title,
+body.light .sidenav .section_description,
+body.light .sidenav .checkbox_description,
 body.light .sidenav h3,
 body.light .note_container p {
   color: var(--dark);

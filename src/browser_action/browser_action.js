@@ -1,18 +1,5 @@
 $(document).ready(function() {
 
-  // $('.jscolor').click(function(e){
-  //   console.log($('.jscolor').val());
-  //   setTimeout(() => {
-  //     $('.jscolor').val('#C0C0C0')
-  //     $('.jscolor').css('background-color','#C0C0C0')
-  //   }, 5000);
-  // });
-
-  // var c = document.documentElement.style.getPropertyValue('--dark');
-  // alert('The value of --myVariable is : ' + (c?c:'undefined'));
-
-
-
   var dynInject = false;
   var setDynInject = function(val){
     dynInject = val;
@@ -80,6 +67,20 @@ $(document).ready(function() {
     chrome.notifications.create('id', opt, function(id) {});
   }
 
+  var accordion = document.getElementsByClassName("accordion");
+  var accIndex;
+  for (accIndex = 0; accIndex < accordion.length; accIndex++) {
+    accordion[accIndex].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+
   var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
     latest_version = snapshot.val().latest_version;
     var changelog = snapshot.val().changelog;
@@ -129,6 +130,7 @@ $(document).ready(function() {
     chkedRGBhead = result.chkedRGBhead;
     chkedEasyui = result.chkedEasyui;
     chkedNewtab = result.chkedNewtab;
+    chkedForceCol = result.chkedForceCol;
     chkedHidhead = result.chkedHidhead;
     chkedVivaldihead = result.chkedVivaldihead;    
     chkedMenus = result.chkedMenus;
@@ -151,6 +153,7 @@ $(document).ready(function() {
     
     if (custColsArr == undefined || typeof custColsArr[0] == undefined) {
       custColsArr = [];
+      defaultColors();
     } else {
       $.each( custColsArr, function(idx,val) {
         document.getElementById(val.id).jscolor.fromString(val.val);
@@ -196,6 +199,11 @@ $(document).ready(function() {
       $('#check_newtab').prop('checked', true);
     } else {
       $('#check_newtab').prop('checked', false);
+    }
+    if (chkedForceCol == true) {
+      $('#check_forceCol').prop('checked', true);
+    } else {
+      $('#check_forceCol').prop('checked', false);
     }
     if (chkedHidhead == true) {
       $('#check_hidhead').prop('checked', true);
@@ -272,9 +280,7 @@ $(document).ready(function() {
 
   $(reset_cols).click(function(e){
     bar1.set(0);
-    $.each( custColsArr, function(idx,val) {
-      document.getElementById(val.id).jscolor.fromString('#FFFFFF');
-    });
+    defaultColors();
     
     setTimeout(function () {
       $(save_button).trigger('click');
@@ -336,6 +342,7 @@ $(document).ready(function() {
     var chkedRGBhead = $('#check_rgbhead').is(":checked");
     var chkedEasyui = $('#check_easyui').is(":checked");
     var chkedNewtab = $('#check_newtab').is(":checked");
+    var chkedForceCol = $('#check_forceCol').is(":checked");
     var chkedHidhead = $('#check_hidhead').is(":checked");
     var chkedVivaldihead = $('#check_vivaldiHead').is(":checked");
 
@@ -376,7 +383,6 @@ $(document).ready(function() {
     custColsArr = [];
     $('input.jscolor').each(function(index){
       var input = $(this);
-      console.log('HIER',input[0].style.color);
       custColsId = input[0].id;
       custColsVal = input.val();
       custColsText = input[0].style.color;
@@ -388,7 +394,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
@@ -443,6 +449,31 @@ $(document).ready(function() {
   });
   localizeHtmlPage();
 });
+
+function defaultColors() {
+  document.getElementById("greenCustCol").jscolor.fromString('#71bf44');
+  document.getElementById("greenLightCustCol").jscolor.fromString('#71bf44');
+  document.getElementById("greenDarkCustCol").jscolor.fromString('#449d44');
+  document.getElementById("orangeCustCol").jscolor.fromString('#f7931c');
+  document.getElementById("orangeLightCustCol").jscolor.fromString('#f7931c');
+  document.getElementById("orangeDarkCustCol").jscolor.fromString('#e88a19');
+  document.getElementById("redCustCol").jscolor.fromString('#c12e2a');
+  document.getElementById("redLightCustCol").jscolor.fromString('#c12e2a');
+  document.getElementById("redDarkCustCol").jscolor.fromString('#af2926');
+  document.getElementById("blueCustCol").jscolor.fromString('#2aabd2');
+  document.getElementById("blueLightCustCol").jscolor.fromString('#49bfe2');
+  document.getElementById("blueDarkCustCol").jscolor.fromString('#27a2c7');
+  document.getElementById("whiteCustCol").jscolor.fromString('#FFFFFF');
+  document.getElementById("lightCustCol").jscolor.fromString('#F2F2F2');
+  document.getElementById("offWhiteCustCol").jscolor.fromString('#DDDDDD');
+  document.getElementById("greyDarkCustCol").jscolor.fromString('#666666');
+  document.getElementById("greyLightCustCol").jscolor.fromString('#C0C0C0');
+  document.getElementById("greyLighterCustCol").jscolor.fromString('#e0e0e0');
+  document.getElementById("blackCustCol").jscolor.fromString('#000000');
+  document.getElementById("darkCustCol").jscolor.fromString('#333333');
+  document.getElementById("darkLightCustCol").jscolor.fromString('#404040');
+  document.getElementById("darkerCustCol").jscolor.fromString('#303030');
+}
 
 function injectNow(param) {
   chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){

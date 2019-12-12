@@ -71,7 +71,7 @@
     "customSettings": {
     "message":"Persoonlike Instellings"
   },
-    "customColours": {
+    "customColors": {
     "message":"Persoonlike Kleure"
   },
     "resetCols": {
@@ -106,6 +106,12 @@
   },
     "vivaldiHead": {
     "message":"Vivaldi 'Header'"
+  },
+    "forceColor": {
+    "message":"Forseer kleur vervang"
+  },
+    "impactPerform": {
+    "message":"Die gebruik van hierdie opsie kan die prestasie benadeel"
   },
     "altMenus": {
     "message":"Alternatiewe menu's"

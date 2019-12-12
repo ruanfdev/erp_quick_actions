@@ -21,12 +21,12 @@
     <div id="mySidenav" class="sidenav">
       <i class="fa fa-times fa-2x closebtn" id="closebtn" aria-hidden="true"></i>
       <button class="save_custom_settings" id="save_custom_settings"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_save__"></span></button>
-      <div class="row title_row">
-        <h1>
-          <span data-localize="__MSG_builtInCom__"></span> &nbsp;
-        </h1>
-      </div>
-      <div class="row content_row">
+      
+      <!-- Built-in Commands -->
+      <button class="accordion">
+        <h1 data-localize="__MSG_builtInCom__"></h1>
+      </button>
+      <div class="panel">
         <div class="fifty">
           <ul>
             <li>index</li>
@@ -46,10 +46,12 @@
           </ul>
         </div>
       </div>
-      <div class="row title_row">
+
+      <!-- Guide -->
+      <button class="accordion">
         <h1 data-localize="__MSG_guide__"></h1>
-      </div>
-      <div class="row content_row">
+      </button>
+      <div class="panel">
         <div class="hundred">
           <ul>
             <li><b><span data-localize="__MSG_setup__"></span>:</b> <span data-localize="__MSG_keywordL__"></span> + :: + <span data-localize="__MSG_linkL__"></span></li>
@@ -58,82 +60,85 @@
           </ul>
         </div>
       </div>
-      <div class="row title_row">
+
+      <!-- Custom Settings -->
+      <button class="accordion">
         <h1 data-localize="__MSG_customSettings__"></h1>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_header">
-            <span class="checkmark_side"></span>
-          </label>
+      </button>
+      <div class="panel">
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_header">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_altHeadMeth__"></h3>
         </div>
-        <h3 data-localize="__MSG_altHeadMeth__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_menus">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_menus">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_altMenus__"></h3>
         </div>
-        <h3 data-localize="__MSG_altMenus__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_animate">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_animate">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_animArrange__"></h3>
         </div>
-        <h3 data-localize="__MSG_animArrange__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_main_block">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_main_block">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_mainBlock__"></h3>
         </div>
-        <h3 data-localize="__MSG_mainBlock__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_glow">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_glow">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_headGlow__"></h3>
         </div>
-        <h3 data-localize="__MSG_headGlow__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_rgbhead">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_rgbhead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_rgbHead__"></h3>
         </div>
-        <h3 data-localize="__MSG_rgbHead__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_easyui">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_easyui">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_easyUIfit__"></h3>
         </div>
-        <h3 data-localize="__MSG_easyUIfit__"></h3>
-      </div>
-      <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_hidhead">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_hidhead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_hidHead__"></h3>
         </div>
-        <h3 data-localize="__MSG_hidHead__"></h3>
-      </div>
-      <div class="row sub_content_row">
+        <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
               <input type="checkbox" id="check_vivaldiHead">
@@ -142,63 +147,131 @@
           </div>
           <h3 data-localize="__MSG_vivaldiHead__"></h3>
         </div>
-      <!-- <div class="row sub_content_row">
-        <div class="inject sideinj">
-          <label class="inject_container">
-            <input type="checkbox" id="check_newtab">
-            <span class="checkmark_side"></span>
-          </label>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_newtab">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3 data-localize="__MSG_custNewTab__"></h3>
         </div>
-        <h3 data-localize="__MSG_custNewTab__"></h3>
-      </div> -->
-      <div class="row title_row">
-          <h1 id="custom_css_block_header" data-localize="__MSG_customColours__"></h1>
-          <button class="reset_cust_cols"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_resetCols__"></span></button>
       </div>
-      <!-- Custom Colors Start -->
-      <div class="row sub_content_row">
+
+      <!-- Custom Colors -->
+      <button class="accordion">
+        <h1 data-localize="__MSG_customColors__"></h1>
+      </button>
+      <div class="panel">
         <table class="input">
           <tr>
-            <th><label for="darkLightCustCol">DarkLight</label></th>
-            <th><label for="darkCustCol">Dark</label></th>
-            <th><label for="darkerCustCol">Darker</label></th>
-            <th><label for="greenCustCol">Green</label></th>
-            <!-- <th><label for="test">DarkLight</label></th> -->
+            <td><label for="greenCustCol">Green</label></td>
+            <td><label for="greenLightCustCol">Green - L</label></td>
+            <td><label for="greenDarkCustCol">Green - D</label></td>
+            <td><label for="orangeCustCol">Orange</label></td>
+            <td><label for="orangeLightCustCol">Orange - L</label></td>
+            <td><label for="orangeDarkCustCol">Orange - D</label></td>
           </tr>
           <tr>
-            <td><input id="darkLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="darkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <th><input id="darkerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></th>
-            <th><input id="greenCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></th>
-            <!-- <td><input id="test" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td> -->
+            <td><input id="greenCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="greenLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="greenDarkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="orangeCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="orangeLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="orangeDarkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
           </tr>
-          <!-- <tr>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-          </tr> -->
+          <tr>
+            <td><label for="redCustCol">Red</label></td>
+            <td><label for="redLightCustCol">Red - L</label></td>
+            <td><label for="redDarkCustCol">Red - D</label></td>
+            <td><label for="blueCustCol">Blue</label></td>
+            <td><label for="blueLightCustCol">Blue - L</label></td>
+            <td><label for="blueDarkCustCol">Blue - D</label></td>
+          </tr>
+          <tr>
+            <td><input id="redCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="redLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="redDarkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="blueCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="blueLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="blueDarkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          </tr>
+          <tr>
+            <td><label for="whiteCustCol">White</label></td>
+            <td><label for="lightCustCol">Light</label></td>
+            <td><label for="offWhiteCustCol">Offwhite</label></td>
+            <td><label for="greyDarkCustCol">Grey - D</label></td>
+            <td><label for="greyLightCustCol">Grey - L</label></td>
+            <td><label for="greyLighterCustCol">Grey - Lx2</label></td>
+          </tr>
+          <tr>
+            <td><input id="whiteCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="lightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="offWhiteCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="greyDarkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="greyLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="greyLighterCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          </tr>
+          <tr>
+            <td><label for="blackCustCol">Black</label></td>
+            <td><label for="darkCustCol">Dark</label></td>
+            <td><label for="darkLightCustCol">Dark - L</label></td>
+            <td><label for="darkerCustCol">Darker</label></td>
+          </tr>
+          <tr>
+            <td><input id="blackCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="darkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="darkLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="darkerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          </tr>
+          <tr>
+            <td colspan='6'></td>
+          </tr>
+          <tr>
+            <td colspan='6'>
+              <div class="row">
+                <div class="inject sideinj">
+                  <label class="inject_container">
+                    <input type="checkbox" id="check_forceCol">
+                    <span class="checkmark_side"></span>
+                  </label>
+                </div>
+                <h3 data-localize="__MSG_forceColor__"></h3>
+              </div>
+              <p class="checkbox_description" data-localize="__MSG_impactPerform__"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan='6'>
+              <button class="reset_cust_cols"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_resetCols__"></span></button>
+            </td>
+          </tr>
         </table>
       </div>
-      <div class="spacer"></div>
-      <!-- Custom Colors End -->
-      <div class="row title_row title_row_nom">
-          <h1 id="custom_css_block_header" data-localize="__MSG_cssBlock__"></h1>
+
+      <!-- Custom CSS -->
+      <button class="accordion">
+        <h1 data-localize="__MSG_cssBlock__"></h1>
+      </button>
+      <div class="panel">
+          <textarea id="custom_css_block"></textarea>
       </div>
-      <div class="row content_row">
-        <textarea id="custom_css_block"></textarea>
+
+      <!-- Custom JS & jQuery -->
+      <button class="accordion">
+        <h1 data-localize="__MSG_jsBlock__"></h1>
+      </button>
+      <div class="panel">
+          <p class="section_description" data-localize="__MSG_reloadReq__"></p>
+          <textarea id="custom_js_block"></textarea>
       </div>
-      <div class="row title_row title_row_nom">
-        <h1 id="custom_js_block_header" data-localize="__MSG_jsBlock__"></h1>
-      </div>
-      <div class="row content_row">
-        <p class="small_title" data-localize="__MSG_reloadReq__"></p>
-        <textarea id="custom_js_block"></textarea>
-      </div>
-      <div class="row title_row">
+
+      <!-- Experimental / Beta -->
+      <button class="accordion">
         <h1 data-localize="__MSG_experimental__"></h1>
-      </div>
-      <div class="row content_row">
-        <p class="small_title" data-localize="__MSG_msgNone__"></p>
+      </button>
+      <div class="panel">
+          <p class="section_description" data-localize="__MSG_msgNone__"></p>
       </div>
     </div>
 
