@@ -321,6 +321,10 @@ body.light.hiddenHead .header:hover {
 body.light.hiddenHead .header:hover + .backHead {
   margin-top: -2px;
 }
+body.light.vivaldiHead ul#ShortcutsList {
+  left: 0;
+  right: auto;
+}
 body.light.vivaldiHead .header {
   left: 0;
   top: 0;
@@ -369,6 +373,7 @@ body.light.vivaldiHead .header #header_container {
 body.light.vivaldiHead .header:hover #header_container,
 body.light.vivaldiHead .header #header_container:hover {
   top: 0vh;
+  box-shadow: var(--boxShadMed);
 }
 body.light.vivaldiHead .header #header_container .header_right {
   float: none;
