@@ -295,6 +295,10 @@ body.light .backHead:after {
   width: 90px;
   border-radius: 0 25px 25px 0;
 } */
+
+body.light.small div#head-button {
+  top: 8px;
+}
 body.light.hiddenHead .header {
   border-top-width: 0;
   top: 0;
@@ -302,7 +306,7 @@ body.light.hiddenHead .header {
   transition: 0.25s linear;
 }
 body.light.hiddenHead.RGBclass .backHead {
-  margin-top: -42px;
+  margin-top: -87px;
   transition: 0.25s linear;
 }
 body.light.hiddenHead .content {
@@ -320,6 +324,16 @@ body.light.hiddenHead .header:hover {
 }
 body.light.hiddenHead .header:hover + .backHead {
   margin-top: -2px;
+}
+body.light.vivaldiHead.RGBclass .backHead {
+  position: fixed;
+  height: 0px;
+  width: 110%;
+  transition: 0.15s linear;
+}
+body.light.vivaldiHead.RGBclass .header:hover + .backHead {
+  height: 90px;
+  transition: all 0.3s ease-in-out;
 }
 body.light.vivaldiHead ul#ShortcutsList {
   left: 0;
@@ -342,8 +356,11 @@ body.light.vivaldiHead .content {
 }
 body.light.vivaldiHead div#head-button {
   margin: 0;
-  left: 4px;
+  left: 3px;
   top: 55px;
+}
+body.light.vivaldiHead #lang button font.btn_text {
+  display: none;
 }
 body.light.vivaldiHead .header .header_nav {
   width: 100%;
@@ -359,6 +376,8 @@ body.light.vivaldiHead .header .header_nav > a {
   border-radius: 0;
   width: 100%;
   box-shadow: none;
+  background-position-x: 45%;
+  background-size: 23px;
 }
 body.light.vivaldiHead .header #header_container {
   position: absolute;

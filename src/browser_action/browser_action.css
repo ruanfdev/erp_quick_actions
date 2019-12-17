@@ -106,10 +106,6 @@ button.reset_cust_cols {
   min-width: 100px;
   padding: 3px 17px;
 }
-.reload_erp_tabs {
-  background-color: var(--darker);
-  border:1px solid var(--darker);
-}
 .save_form_field,
 .save_custom_settings {
   background-color: var(--green);
@@ -556,6 +552,12 @@ body.dark .top_container {
 body.dark .sidenav {
   background-color: var(--dark);
 }
+body.dark .reload_erp_tabs,
+body.dark .accordion {
+  background-color: var(--dark);
+  border:1px solid var(--dark);
+  color: var(--light);
+}
 /* LIGHT */
 body.light {
   background-color: var(--light);
@@ -577,4 +579,10 @@ body.light .top_container {
 }
 body.light .sidenav {
   background-color: var(--light);
+}
+body.light .reload_erp_tabs,
+body.light .accordion {
+  background-color: var(--light);
+  border:1px solid var(--light);
+  color: var(--dark);
 }
