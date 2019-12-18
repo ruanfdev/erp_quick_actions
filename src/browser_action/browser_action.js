@@ -452,27 +452,23 @@ $(document).ready(function() {
 
 function defaultColors() {
   document.getElementById("greenCustCol").jscolor.fromString('#71bf44');
-  document.getElementById("greenLightCustCol").jscolor.fromString('#71bf44');
-  document.getElementById("greenDarkCustCol").jscolor.fromString('#449d44');
   document.getElementById("orangeCustCol").jscolor.fromString('#f7931c');
-  document.getElementById("orangeLightCustCol").jscolor.fromString('#f7931c');
-  document.getElementById("orangeDarkCustCol").jscolor.fromString('#e88a19');
   document.getElementById("redCustCol").jscolor.fromString('#c12e2a');
-  document.getElementById("redLightCustCol").jscolor.fromString('#c12e2a');
-  document.getElementById("redDarkCustCol").jscolor.fromString('#af2926');
   document.getElementById("blueCustCol").jscolor.fromString('#2aabd2');
-  document.getElementById("blueLightCustCol").jscolor.fromString('#49bfe2');
-  document.getElementById("blueDarkCustCol").jscolor.fromString('#27a2c7');
   document.getElementById("whiteCustCol").jscolor.fromString('#FFFFFF');
   document.getElementById("lightCustCol").jscolor.fromString('#F2F2F2');
   document.getElementById("offWhiteCustCol").jscolor.fromString('#DDDDDD');
   document.getElementById("greyDarkCustCol").jscolor.fromString('#666666');
   document.getElementById("greyLightCustCol").jscolor.fromString('#C0C0C0');
-  document.getElementById("greyLighterCustCol").jscolor.fromString('#e0e0e0');
-  document.getElementById("blackCustCol").jscolor.fromString('#000000');
   document.getElementById("darkCustCol").jscolor.fromString('#333333');
   document.getElementById("darkLightCustCol").jscolor.fromString('#404040');
   document.getElementById("darkerCustCol").jscolor.fromString('#303030');
+
+  document.getElementById("btnSuccessCustCol").jscolor.fromString('#71bf44');
+  document.getElementById("btnWarningCustCol").jscolor.fromString('#f7931c');
+  document.getElementById("btnDangerCustCol").jscolor.fromString('#c12e2a');
+  document.getElementById("btnInfoCustCol").jscolor.fromString('#2aabd2');
+  document.getElementById("btnDefaultCustCol").jscolor.fromString('#F2F2F2');
 }
 
 function injectNow(param) {

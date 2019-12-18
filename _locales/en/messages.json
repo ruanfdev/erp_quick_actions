@@ -111,7 +111,7 @@
     "message":"Force color replace"
   },
     "impactPerform": {
-    "message":"Using this option WILL degrade performance"
+    "message":"Using this option WILL heavily degrade performance"
   },
     "altMenus": {
     "message":"Alternative menu look & feel"

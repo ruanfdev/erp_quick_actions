@@ -1,34 +1,26 @@
 :root {
+    --btnSuccess: #71bf44;
+    --btnWarning: #f7931c;
+    --btnDanger: #c12e2a;
+    --btnInfo: #2aabd2;
+    --btnDefault: #F2F2F2;
+
     --green: #71bf44;
-    --greenLight: #71bf44;
-    --greenDark: #449d44;
-
     --orange: #f7931c;
-    --orangeLight: #f7931c;
-    --orangeDark: #e88a19;
-
     --red: #c12e2a;
-    --redLight: #c12e2a;
-    --redDark: #af2926;
-
     --blue: #2aabd2;
-    --blueLight: #49bfe2;
-    --blueDark: #27a2c7;
 
-    --black: #000000;
     --darkLight: #404040;
     --dark: #333333;
     --darker: #303030;
 
     --greyDark: #666666;
     --greyLight: #C0C0C0;
-    --greyLighter: #e0e0e0;
 
     --white: #FFFFFF;
     --light: #F2F2F2;
     --offWhite: #DDDDDD;
 
-    --boxShadLight: 0px 0px 5px rgba(0,0,0,0.3);
     --boxShadMed: 0px 0px 5px rgba(0,0,0,0.5);
     --boxShadDark: 0px 0px 5px rgba(0,0,0,0.8);
 

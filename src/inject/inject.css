@@ -89,53 +89,28 @@ body.light .btn.btn-default {
   outline: none;
 }
 body.light .btn.btn-success {
-  background-color: var(--green);
-  border: 1px solid var(--green);
+  background-color: var(--btnSuccess);
+  border: 1px solid var(--btnSuccess);
 }
 body.light .btn.btn-warning {
-  background-color: var(--orange);
-  border: 1px solid var(--orange);
+  background-color: var(--btnWarning);
+  border: 1px solid var(--btnWarning);
 }
 body.light .btn.btn-danger {
-  background-color: var(--red);
-  border: 1px solid var(--red);
+  background-color: var(--btnDanger);
+  border: 1px solid var(--btnDanger);
 }
 body.light .btn.btn-info {
-  background-color: var(--blue);
-  border: 1px solid var(--blue);
+  background-color: var(--btnInfo);
+  border: 1px solid var(--btnInfo);
 }
 body.light .btn.btn-default {
-  background-color: var(--light);
-  border: 1px solid var(--light);
+  background-color: var(--btnDefault);
+  border: 1px solid var(--btnDefault);
 }
-body.light .btn.btn-success:hover,
-body.light .btn.btn-warning:hover,
-body.light .btn.btn-danger:hover,
-body.light .btn.btn-info:hover,
-body.light .btn.btn-default:hover {
-  box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.6);
-}
-body.light .btn.btn-success:hover {
-  border-color: var(--greenDark);
-  background-color: var(--greenDark);
-}
-body.light .btn.btn-warning:hover {
-  border-color: var(--orangeDark);
-  background-color: var(--orangeDark);
-}
-body.light .btn.btn-danger:hover {
-  background-color: var(--redDark);
-  border: 1px solid var(--redDark);
-}
-body.light .btn.btn-info:hover {
-  background-color: var(--blueDark);
-  border: 1px solid var(--blueDark);
-}
-body.light .btn.btn-default:hover {
-  background-color: var(--greyLighter);
-  border: 1px solid var(--greyLighter);
+body.light .btn:hover {
+    filter: grayscale(1);
+    box-shadow: inset 0 0 5px 1px var(--dark) !important;
 }
 body.light iframe#renderHier {
   min-width: 100%;

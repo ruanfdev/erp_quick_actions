@@ -290,7 +290,7 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
-					// console.log('HIER',custColsArr);
+					console.log('custColsArr',custColsArr);
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");
@@ -299,30 +299,24 @@ function injectProcess() {
 
 							if (typeof chkedForceCol !== 'undefined') {
 								if (chkedForceCol == true) {
+									if (custColsArrSplit[0] == "green") {if (val.val != "#71bf44" && val.val != "#71BF44") {colorReplace('#71bf44', val.val);}}
+									if (custColsArrSplit[0] == "orange") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
+									if (custColsArrSplit[0] == "red") {if (val.val != "#c12e2a" && val.val != "#C12E2A") {colorReplace('#c12e2a', val.val);}}
+									if (custColsArrSplit[0] == "blue") {if (val.val != "#2aabd2" && val.val != "#2AABD2") {colorReplace('#2aabd2', val.val);}}
+									if (custColsArrSplit[0] == "white") {if (val.val != "#ffffff" && val.val != "#FFFFFF") {colorReplace('#FFFFFF', val.val);}}
+									if (custColsArrSplit[0] == "light") {if (val.val != "#f2f2f2" && val.val != "#F2F2F2") {colorReplace('#F2F2F2', val.val);}}
+									if (custColsArrSplit[0] == "offWhite") {if (val.val != "#dddddd" && val.val != "#DDDDDD") {colorReplace('#DDDDDD', val.val);}}
+									if (custColsArrSplit[0] == "greyDark") {if (val.val != "#666666") {colorReplace('#666666', val.val);}}
+									if (custColsArrSplit[0] == "greyLight") {if (val.val != "#c0c0c0" && val.val != "#C0C0C0") {colorReplace('#C0C0C0', val.val);}}
+									if (custColsArrSplit[0] == "dark") {if (val.val != "#333333") {colorReplace('#333333', val.val);}}
+									if (custColsArrSplit[0] == "darkLight") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
+									if (custColsArrSplit[0] == "darker") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
 
-									// if (custColsArrSplit[0] == "green") {if (val.val != "#71bf44") {colorReplace('#71bf44', val.val);}}
-									// if (custColsArrSplit[0] == "greenLight") {if (val.val != "#71bf44") {colorReplace('#71bf44', val.val);}}
-									// if (custColsArrSplit[0] == "greenDark") {if (val.val != "#449d44") {colorReplace('#449d44', val.val);}}
-									// if (custColsArrSplit[0] == "orange") {if (val.val != "#f7931c") {colorReplace('#f7931c', val.val);}}
-									// if (custColsArrSplit[0] == "orangeLight") {if (val.val != "#f7931c") {colorReplace('#f7931c', val.val);}}
-									// if (custColsArrSplit[0] == "orangeDark") {if (val.val != "#e88a19") {colorReplace('#e88a19', val.val);}}
-									// if (custColsArrSplit[0] == "red") {if (val.val != "#c12e2a") {colorReplace('#c12e2a', val.val);}}
-									// if (custColsArrSplit[0] == "redLight") {if (val.val != "#c12e2a") {colorReplace('#c12e2a', val.val);}}
-									// if (custColsArrSplit[0] == "redDark") {if (val.val != "#af2926") {colorReplace('#af2926', val.val);}}
-									// if (custColsArrSplit[0] == "blue") {if (val.val != "#2aabd2") {colorReplace('#2aabd2', val.val);}}
-									// if (custColsArrSplit[0] == "blueLight") {if (val.val != "#49bfe2") {colorReplace('#49bfe2', val.val);}}
-									// if (custColsArrSplit[0] == "blueDark") {if (val.val != "#27a2c7") {colorReplace('#27a2c7', val.val);}}
-									// if (custColsArrSplit[0] == "white") {if (val.val != "#FFFFFF") {colorReplace('#FFFFFF', val.val);}}
-									// if (custColsArrSplit[0] == "light") {if (val.val != "#F2F2F2") {colorReplace('#F2F2F2', val.val);}}
-									// if (custColsArrSplit[0] == "offWhite") {if (val.val != "#DDDDDD") {colorReplace('#DDDDDD', val.val);}}
-									// if (custColsArrSplit[0] == "greyDark") {if (val.val != "#666666") {colorReplace('#666666', val.val);}}
-									// if (custColsArrSplit[0] == "greyLight") {if (val.val != "#C0C0C0") {colorReplace('#C0C0C0', val.val);}}
-									// if (custColsArrSplit[0] == "greyLighter") {if (val.val != "#e0e0e0") {colorReplace('#e0e0e0', val.val);}}
-									// if (custColsArrSplit[0] == "black") {if (val.val != "#000000") {colorReplace('#000000', val.val);}}
-									// if (custColsArrSplit[0] == "dark") {if (val.val != "#333333") {colorReplace('#333333', val.val);}}
-									// if (custColsArrSplit[0] == "darkLight") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
-									// if (custColsArrSplit[0] == "darker") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
-
+									if (custColsArrSplit[0] == "btnSuccessCustCol") {if (val.val != "#71bf44" && val.val != "#71BF44") {colorReplace('#71bf44', val.val);}}
+									if (custColsArrSplit[0] == "btnWarningCustCol") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
+									if (custColsArrSplit[0] == "btnDangerCustCol") {if (val.val != "#c12e2a" && val.val != "#C12E2A") {colorReplace('#c12e2a', val.val);}}
+									if (custColsArrSplit[0] == "btnInfoCustCol") {if (val.val != "#2aabd2" && val.val != "#2AABD2") {colorReplace('#2aabd2', val.val);}}
+									if (custColsArrSplit[0] == "btnDefaultCustCol") {if (val.val != "#f2f2f2" && val.val != "#F2F2F2") {colorReplace('#F2F2F2', val.val);}}
 								}
 							} else {
 								chrome.storage.sync.set({

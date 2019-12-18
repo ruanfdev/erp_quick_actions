@@ -365,6 +365,9 @@ table.input th,
 table.input td {
   width: 16%;
 }
+table.input tr td[colspan="6"] {
+  padding-top: 10px;
+}
 .inject_container {
   display: block;
   position: relative;
