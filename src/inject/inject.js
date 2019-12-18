@@ -116,20 +116,25 @@ function injectProcess() {
 							linkCustomJS.innerHTML = '';
 						});
 					}
-
+					
+					var useTitle = '';
+					var bigTitleTop = window.top.$('body #header_container .welcome').html();
 					var subTitleTop = window.top.$('body #header_container .welcome > b').html();
 					if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
 						window.top.$('body #header_container .welcome').css('margin-top', '35px');
+						useTitle = bigTitleTop;
 					} else {
 						window.top.$('body #header_container .welcome').css('margin-top', '25px');
+						subTitleTop = subTitleTop.split('</i>');
+						subTitleTop = subTitleTop.slice(-1)[0];
+						useTitle = subTitleTop;
 					}
-
 					if (window.location.host == 'php-dev.nwk.co.za') {
-						$('title').replaceWith('<title>DEV - NWK ERP</title>');
+						window.top.$('title').replaceWith('<title>DEV - '+useTitle+'</title>');
 					} else if (window.location.host == 'php-prd.nwk.co.za') {
-						$('title').replaceWith('<title>PRD - NWK ERP</title>');
+						window.top.$('title').replaceWith('<title>PRD - '+useTitle+'</title>');
 					} else {
-						$('title').replaceWith('<title>QA - NWK ERP</title>');
+						window.top.$('title').replaceWith('<title>QA - '+useTitle+'</title>');
 					}
 
 					$("#lang button span").removeClass("fa-retweet");
@@ -290,7 +295,7 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
-					console.log('custColsArr',custColsArr);
+					
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");

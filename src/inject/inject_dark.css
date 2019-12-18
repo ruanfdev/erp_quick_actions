@@ -156,3 +156,57 @@ body.light.dark #Tree #jsTreeMenu ul li a.jstree-search {
 body.light.dark .backHead + .header {
   background-color: var(--darker);
 }
+
+
+
+/* body.light.dark fieldset {
+  background-color: #505050;
+  color: var(--light);
+}
+body.light.dark input,
+body.light.dark .selection *,
+body.light.dark .select2-dropdown,
+body.light.dark .select2-dropdown .select2-search input,
+body.light.dark .select2-dropdown .select2-results ul li,
+body.light.dark .Zebra_Form fieldset label,
+body.light.dark .Zebra_Form_Input_Prefix,
+body.light.dark .note {
+  background-color: #505050;
+  color: var(--light);
+}
+body.light.dark .select2-dropdown .select2-results ul li:hover {
+  background-color: var(--green);
+  color: var(--light);
+}
+body.light.dark fieldset input.form-control[readonly="readonly"],
+body.light.dark fieldset input.form-control[readonly],
+body.light.dark fieldset textarea.form-control[readonly="readonly"],
+body.light.dark fieldset textarea.form-control[readonly] {
+  background-color: #505050;
+  border-color: var(--darkLight);
+}
+body.light.dark  .Zebra_Form input.text,
+body.light.dark  .Zebra_Form input.date {
+  background: #505050;
+}
+body.light.dark .datagrid *:not(.btn):not(.fa)  {
+  background-color: #505050;
+  background: #505050;
+  color: var(--light);
+}
+body.light.dark .datagrid {
+  border: 1px solid var(--light);
+} */
+
+
+
+/* body.light.dark .datagrid .datagrid-header-row {
+  background-color: #404040;
+  color: var(--light);
+  border-radius: 0;
+}
+body.light.dark .datagrid .datagrid-cell {
+  background-color: #404040;
+  color: var(--light);
+  border-radius: 0;
+} */

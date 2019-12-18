@@ -11,12 +11,6 @@ body.light .header>.header_nav a {
   -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   transition: 0.1s linear;
 }
-body.light .header_nav a:hover {
-  background-color: var(--orange);
-  box-shadow: 1px 1px 8px var(--darker);
-  -webkit-box-shadow: 1px 1px 8px var(--darker);
-  -moz-box-shadow: 1px 1px 8px var(--darker);
-}
 body.light #head-button .show-notifications {
   margin-top: 3px;
 }
@@ -108,7 +102,8 @@ body.light .btn.btn-default {
   background-color: var(--btnDefault);
   border: 1px solid var(--btnDefault);
 }
-body.light .btn:hover {
+body.light .btn:hover,
+body.light .header_nav a:hover {
     filter: grayscale(1);
     box-shadow: inset 0 0 5px 1px var(--dark) !important;
 }
@@ -423,7 +418,8 @@ body.light #cboxBottomCenter,
 body.light #cboxBottomRight {
   background-color: var(--green);
 }
-body.light .datagrid .panel-header {
+body.light .datagrid .panel-header,
+body.light .datagrid .panel-title {
   background: var(--green);
   border-color: var(--green);
   color: var(--light);
