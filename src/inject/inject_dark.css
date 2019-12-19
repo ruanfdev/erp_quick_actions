@@ -35,13 +35,14 @@ body.light.dark .select2-dropdown .select2-search input,
 body.light.dark .select2-dropdown .select2-results ul li,
 body.light.dark .Zebra_Form fieldset label,
 body.light.dark .Zebra_Form_Input_Prefix,
+body.light.dark .Zebra_Form select,
 body.light.dark .note {
   background-color: #505050;
   background: #505050;
   color: var(--light);
   border-color: #909090;
 }
-body.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load),
+body.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title),
 body.light.dark fieldset,
 body.light.dark .Zebra_Form input.text,
 body.light.dark .Zebra_Form input.date,
@@ -200,10 +201,6 @@ body.light.dark .jstree-contextmenu li.vakata-context-hover>a {
   background: var(--darkLight);
   box-shadow: none !important;
 }
-
-
-
-
 body.light.dark .select2-dropdown .select2-results ul li[class*="highlighted"]:hover,
 body.light.dark .datagrid.panel .panel-header,
 body.light.dark .datagrid.panel .panel-title {
@@ -224,7 +221,8 @@ body.light.dark .datagrid input.datagrid-filter:hover,
 body.light.dark .datagrid .datagrid-body table .datagrid-row-checked *:not(.btn):not(.fa),
 body.light.dark .datagrid .datagrid-body table .datagrid-row-selected *:not(.btn):not(.fa),
 body.light.dark .datagrid .datagrid-body table .datagrid-row-over *:not(.btn):not(.fa) {
-  background: var(--greyDark);
+  background-color: var(--greyDark) !important;
+  background: var(--greyDark) !important;
 }
 body.light.dark .datagrid .fa.fa-times,
 body.light.dark #Weeksure .fa.fa-close,
