@@ -122,7 +122,8 @@ function injectProcess() {
 					var subTitleTop = window.top.$('body #header_container .welcome > b').html();
 					if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
 						window.top.$('body #header_container .welcome').css('margin-top', '35px');
-						useTitle = bigTitleTop;
+						bigTitleTop = bigTitleTop.split('<');
+						useTitle = bigTitleTop[0];
 					} else {
 						window.top.$('body #header_container .welcome').css('margin-top', '25px');
 						subTitleTop = subTitleTop.split('</i>');

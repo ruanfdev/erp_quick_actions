@@ -82,25 +82,30 @@ body.light .btn.btn-default {
   transition: 0.1s linear;
   outline: none;
 }
-body.light .btn.btn-success {
-  background-color: var(--btnSuccess);
-  border: 1px solid var(--btnSuccess);
+body.light .btn.btn-success,
+body.light .btn.btn-success *:not(.fa) {
+  background-color: var(--btnSuccess) !important;
+  border: 1px solid var(--btnSuccess) !important;
 }
-body.light .btn.btn-warning {
-  background-color: var(--btnWarning);
-  border: 1px solid var(--btnWarning);
+body.light .btn.btn-warning,
+body.light .btn.btn-warning *:not(.fa) {
+  background-color: var(--btnWarning) !important;
+  border: 1px solid var(--btnWarning) !important;
 }
-body.light .btn.btn-danger {
-  background-color: var(--btnDanger);
-  border: 1px solid var(--btnDanger);
+body.light .btn.btn-danger,
+body.light .btn.btn-danger *:not(.fa) {
+  background-color: var(--btnDanger) !important;
+  border: 1px solid var(--btnDanger) !important;
 }
-body.light .btn.btn-info {
-  background-color: var(--btnInfo);
-  border: 1px solid var(--btnInfo);
+body.light .btn.btn-info,
+body.light .btn.btn-info *:not(.fa) {
+  background-color: var(--btnInfo) !important;
+  border: 1px solid var(--btnInfo) !important;
 }
-body.light .btn.btn-default {
-  background-color: var(--btnDefault);
-  border: 1px solid var(--btnDefault);
+body.light .btn.btn-default,
+body.light .btn.btn-default *:not(.fa) {
+  background-color: var(--btnDefault) !important;
+  border: 1px solid var(--btnDefault) !important;
 }
 body.light .btn:hover,
 body.light .header_nav a:hover {
