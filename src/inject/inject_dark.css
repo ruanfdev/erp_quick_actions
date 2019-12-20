@@ -106,7 +106,8 @@ body.light.dark #Tree #jsTreeMenu ul li a.jstree-search:hover,
 body.light.dark #Tree #jsTreeMenu ul li a.jstree-search.jstree-clicked,
 body.light.dark input[type="checkbox"] + label,
 body.light.dark .login_div *,
-body.light.dark #calendar .fc-grid .fc-day-number {
+body.light.dark #calendar .fc-grid .fc-day-number,
+body.light.dark .login_div input {
   color: var(--light);
 }
 body.light.dark .BlokNav>div .fa,
@@ -171,8 +172,7 @@ body.light.dark #calendar .fc-week .fc-sun,
 body.light.dark #calendar .fc-week .fc-sat {
   background-color: var(--greyDark);
 }
-body.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number,
-body.light.dark .login_div input {
+body.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number {
   color: var(--dark);
 }
 body.light.dark .panel,
