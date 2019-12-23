@@ -152,8 +152,12 @@ body.light.dark .login_logo img {
 }
 body.light.dark fieldset input.form-control[readonly="readonly"],
 body.light.dark fieldset input.form-control[readonly],
+body.light.dark fieldset input.form-control[disabled="disabled"],
+body.light.dark fieldset input.form-control[disabled],
 body.light.dark fieldset textarea.form-control[readonly="readonly"],
-body.light.dark fieldset textarea.form-control[readonly] {
+body.light.dark fieldset textarea.form-control[readonly],
+body.light.dark fieldset textarea.form-control[disabled="disabled"],
+body.light.dark fieldset textarea.form-control[disabled] {
   background-color: var(--greyDark);
   border-color: var(--greyDark);
   box-shadow: none;
