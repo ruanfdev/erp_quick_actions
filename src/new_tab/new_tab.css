@@ -1,7 +1,54 @@
 @import url("../custom.css");
 
+html {
+    margin: 0;
+    padding: 0;
+}
 body#body {
-    background-color: var(--darker);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark);
     color: var(--light);
+}
+div#editTabs {
+    width: 20vw;
+    min-height: 98vh;
+    padding: 1vh 1vw;
+    background-color: var(--darker);
+    box-shadow: 1px 0px 6px 1px var(--green);
+    position: relative;
+    z-index: 2;
+}
+textarea#editText {
+    width: 74vw;
+    padding: 5vh 2vw;
+    background: transparent;
+    font-size: 1.5em;
+    color: var(--light);
+    border: 0;
+    border-left: 1px solid var(--light);
+    position: relative;
+    z-index: 1;
+}
+#editTabs .item {
+    font-size: 1.2em;
+    padding: 15px 5px;
+    border-top: 1px dotted var(--green);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#editTabs .item.add_item {
+    font-size: 2.2em;
     text-align: center;
+    padding: 2px 5px 10px;
+}
+#editTabs .item:hover {
+    background-color: var(--green);
+    cursor: pointer;
+}
+#editTabs .item:first-child {
+    border-top: 0;
 }

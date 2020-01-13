@@ -31,6 +31,7 @@ $(document).ready(function() {
   var login_btn   = $(".login_btn");
   var reset_cols   = $(".reset_cust_cols");
   var reload_erp_tabs = $(".reload_erp_tabs")
+  var reload_ext = $(".reload_ext")
   var save_button   = $(".save_form_field");
   var save_custom_settings   = $(".save_custom_settings");
   var menu_bars     = $("#menu_bars");
@@ -292,8 +293,11 @@ $(document).ready(function() {
       for (var i = 0; i < tabs.length; i++) {
         chrome.tabs.reload(tabs[i].id);
       }
-      chrome.runtime.reload();
     });
+  });
+
+  $(reload_ext).click(function(e){
+    chrome.runtime.reload();
   });
 
   $(clear_button).click(function(e){

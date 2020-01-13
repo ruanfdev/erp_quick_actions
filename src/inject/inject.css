@@ -334,7 +334,7 @@ body.light.vivaldiHead div#head-button {
   left: 3px;
   top: 55px;
 }
-body.light.vivaldiHead #lang button font.btn_text {
+body.light.vivaldiHead .header #header_container .btn_main .child button font {
   display: none;
 }
 body.light.vivaldiHead .header .header_nav {
@@ -455,6 +455,10 @@ body.light.dark fieldset {
 }
 body.light #ShortcutsList {
   border: 2px solid var(--green);
+}
+body.light *::selection {
+  background: var(--greyDark);
+  color: var(--light);
 }
 
 /* *:not(.fa) {
