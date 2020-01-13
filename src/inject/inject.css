@@ -379,6 +379,7 @@ body.light.vivaldiHead .header #header_container .btn_main {
   width: 40px;
 }
 body.light.vivaldiHead .header #header_container .btn_main .child {
+  position: relative;
   padding: 0;
   width: 100%;
   float: none !important;
@@ -389,7 +390,12 @@ body.light.vivaldiHead .header #header_container .btn_main .child button {
   width: 100%;
   min-height: 40px;
   padding: 0;
-  margin-top: 1px;
+  margin-top: 0px;
+  box-shadow: none;
+  border-width: 0px !important;
+}
+body.light.vivaldiHead .header #header_container .btn_main #tuis.child button {
+  border-top-width: 1px !important;
 }
 body.light.vivaldiHead #lang button:hover {
   position: inherit;

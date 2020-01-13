@@ -37,7 +37,7 @@ h1#custom_css_block_header {
 .container1 {
   width: 90%;
   text-align: center;
-  padding: 10px 5% 182px;
+  padding: 10px 5% 169px;
 }
 .container1 input[type=text] {
   padding: 10px 5px;
@@ -84,6 +84,9 @@ h1#custom_css_block_header {
 .note_container > p {
   text-align: left;
   font-size: 11px;
+}
+.reload_container {
+  width: 140px;
 }
 .reload_container button {
   min-height: 40%;
