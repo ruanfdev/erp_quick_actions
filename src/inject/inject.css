@@ -244,9 +244,11 @@ body.light.small .backHead {
 body.light.RGBclass .header {
   top: 2px;
   width: 99.4%;
-  border: none;
   padding: 2px;
   background-color: var(--white);
+}
+body.light.RGBclass:not(.vivaldiHead) .header {
+  border: none;
 }
 body.light .backHead:before,
 body.light .backHead:after {
@@ -261,6 +263,11 @@ body.light .backHead:after {
   z-index: -1;
   animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
+}
+body.light.vivaldiHead.RGBclass .header .header_nav > a {
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 1500% !important;
+  animation: rgbanimate 30s linear infinite;
 }
 body.light .backHead:after {
 	filter: blur(2px);
