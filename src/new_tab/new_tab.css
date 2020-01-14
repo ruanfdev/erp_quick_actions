@@ -31,6 +31,8 @@ textarea#editText {
     border-left: 1px solid var(--light);
     position: relative;
     z-index: 1;
+    outline: none;
+    resize: none;
 }
 #editTabs .item {
     font-size: 1.2em;
