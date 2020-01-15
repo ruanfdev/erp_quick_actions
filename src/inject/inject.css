@@ -174,7 +174,8 @@ body.light.altMenus ul#ShortcutsList {
   right: 0;
   min-width: 300px;
   max-height: none;
-  height: 98%;
+  padding: 1vh;
+  height: 98vh;
   border-top: 0;
   border-bottom: 0;
   border-right: 0;
@@ -264,20 +265,20 @@ body.light .backHead:after {
   animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
 }
-body.light.vivaldiHead.RGBclass .header .header_nav > a {
-  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
-  background-size: 1500% !important;
+/* body.light.vivaldiHead.RGBclass .header .header_nav > a {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC),
+                    linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
+  background-position:  45% center,
+                        center center;
+  background-repeat:  no-repeat,
+                      no-repeat;
+  background-size:  23px,
+                    1500% !important;
   animation: rgbanimate 30s linear infinite;
-}
+} */
 body.light .backHead:after {
 	filter: blur(2px);
 }
-/* body.light.hidHead .header {
-  height: 99.3%;
-  width: 90px;
-  border-radius: 0 25px 25px 0;
-} */
-
 body.light.small div#head-button {
   top: 8px;
 }
@@ -334,7 +335,7 @@ body.light.vivaldiHead .header {
 }
 body.light.vivaldiHead .content {
   padding: 0 0 0 45px;
-  width: 97%;
+  width: 96.7%; /*97%;*/
 }
 body.light.vivaldiHead div#head-button {
   margin: 0;

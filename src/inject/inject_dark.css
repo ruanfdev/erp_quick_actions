@@ -251,3 +251,34 @@ body.light.dark .datagrid-footer td {
 body.light.dark .tooltipevent  {
   background: var(--dark) !important;
 }
+::-webkit-scrollbar {
+  width: 17px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--darker);
+  box-shadow: inset 0 0 3px 0 var(--green);
+}
+/* Custom Button */
+::-webkit-scrollbar-button:single-button {
+  border: 7px solid var(--green);
+}
+/* Up Button */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-radius: 100% 100% 0 0;
+}
+/* Down Button */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-radius: 0 0 100% 100%;
+}
+/* Right Button */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  border-radius: 0 100% 100% 0;
+}
+/* Left Button */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  border-radius: 100% 0 0 100%;
+}
