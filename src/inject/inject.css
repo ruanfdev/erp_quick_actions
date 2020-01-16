@@ -475,6 +475,14 @@ body.light *::selection {
   color: var(--light);
 }
 
+
+
+body.light.RGBclass * {
+  cursor: url(http://cur.cursors-4u.net/nature/nat-10/nat926.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat926.png), auto !important;
+}
+
+
+
 /* *:not(.fa) {
   font-family: myRoboto !important;
 } */
