@@ -249,6 +249,9 @@ body.light.dark .datagrid-footer td {
   border-style: solid;
   border-color: #808080;
 }
+body.light.dark .datagrid .datagrid-filter-row input {
+  background: #606060 !important;
+}
 body.light.dark .tooltipevent  {
   background: var(--dark) !important;
 }
