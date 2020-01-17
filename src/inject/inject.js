@@ -56,6 +56,24 @@ var readyStateCheckInterval = setInterval(function() {
 	}
 }, 10);
 
+var windowMouse = window.top.$('html');
+windowMouse.mouseout(function() {
+	if (window.location.pathname == "/nwk/") {
+		var bodyHasVivaldiHead = $('body').hasClass("vivaldiHead");
+		if (bodyHasVivaldiHead == true) {
+			$(".header").addClass("hovered");
+		}
+	}
+});
+windowMouse.mouseover(function() {
+	if (window.location.pathname == "/nwk/") {
+		var bodyHasVivaldiHead = $('body').hasClass("vivaldiHead");
+		if (bodyHasVivaldiHead == true) {
+			$(".header").removeClass("hovered");
+		}
+	}
+});
+
 // chrome.extension.sendMessage({}, function(response) {
 // 	var readyStateCheckInterval = setInterval(function() {
 // 		if (document.readyState === "complete") {
@@ -141,6 +159,8 @@ function injectProcess() {
 					$("#lang button span").removeClass("fa-retweet");
 					$("#lang button span").addClass("fa-language");
 
+					$("#ToggleNavButton").remove();
+
 					if (typeof chkedHeader !== 'undefined') {
 						var headerResized = localStorage.getItem("small_header");
 						if (headerResized != null) {
@@ -149,7 +169,6 @@ function injectProcess() {
 						if (chkedHeader == true) {
 							localStorage.setItem("header_hide", 'false');
 							smallerHeader();
-							$("#ToggleNavButton").remove();
 						}
 					} else {
 						chrome.storage.sync.set({
@@ -228,7 +247,6 @@ function injectProcess() {
 					if (typeof chkedHidhead !== 'undefined') {
 						if (chkedHidhead == true) {
 							$("body").addClass("hiddenHead");
-							$("#ToggleNavButton").remove();
 						} else {
 							$("body").removeClass("hiddenHead");
 						}
@@ -243,7 +261,6 @@ function injectProcess() {
 					if (typeof chkedVivaldihead !== 'undefined') {
 						if (chkedVivaldihead == true) {
 							$("body").addClass("vivaldiHead");
-							$("#ToggleNavButton").remove();
 						} else {
 							$("body").removeClass("vivaldiHead");
 						}

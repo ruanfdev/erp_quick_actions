@@ -314,7 +314,8 @@ body.light.vivaldiHead.RGBclass .backHead {
   width: 110%;
   transition: 0.15s linear;
 }
-body.light.vivaldiHead.RGBclass .header:hover + .backHead {
+body.light.vivaldiHead.RGBclass .header:hover + .backHead,
+body.light.vivaldiHead.RGBclass .header.hovered + .backHead {
   height: 90px;
   transition: all 0.3s ease-in-out;
 }
@@ -373,6 +374,7 @@ body.light.vivaldiHead .header #header_container {
   transition: 0.25s linear;
 }
 body.light.vivaldiHead .header:hover #header_container,
+body.light.vivaldiHead .header.hovered #header_container,
 body.light.vivaldiHead .header #header_container:hover {
   top: 0vh;
   box-shadow: var(--boxShadMed);
@@ -474,9 +476,6 @@ body.light *::selection {
   background: var(--greyDark);
   color: var(--light);
 }
-
-
-
 body.light.RGBclass * {
   cursor: url(http://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), auto !important;
 }
