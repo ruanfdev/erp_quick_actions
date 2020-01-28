@@ -21,31 +21,6 @@
     <div id="mySidenav" class="sidenav">
       <i class="fa fa-times fa-2x closebtn" id="closebtn" aria-hidden="true"></i>
       <button class="save_custom_settings" id="save_custom_settings"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_save__"></span></button>
-      
-      <!-- Built-in Commands -->
-      <button class="accordion">
-        <h1 data-localize="__MSG_builtInCom__"></h1>
-      </button>
-      <div class="panel">
-        <div class="fifty">
-          <ul>
-            <li>index</li>
-            <li>toegang / access</li>
-            <li>taal / lang</li>
-            <li>versoek / request</li>
-            <li>php</li>
-          </ul>
-        </div>
-        <div class="fifty">
-          <ul>
-            <li>nat</li>
-            <li>builder</li>
-            <li>codiad</li>
-            <li>tye / times</li>
-            <li>kontak / contact</li>
-          </ul>
-        </div>
-      </div>
 
       <!-- Guide -->
       <button class="accordion">
@@ -61,100 +36,140 @@
         </div>
       </div>
 
+      <!-- Built-in Commands -->
+      <button class="accordion">
+        <h1 data-localize="__MSG_builtInCom__"></h1>
+      </button>
+      <div class="panel">
+        <div class="fifty">
+          <ul>
+            <li>index</li>
+            <li>toegang / access</li>
+            <li>taal / lang</li>
+            <li>versoek / request</li>
+            <li>php</li>
+            <li>nat</li>
+          </ul>
+        </div>
+        <div class="fifty">
+          <ul>
+            <li>builder</li>
+            <li>codiad</li>
+            <li>tye / times</li>
+            <li>kontak / contact</li>
+            <li>ses</li>
+            <li>pers</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Custom Settings -->
       <button class="accordion">
         <h1 data-localize="__MSG_customSettings__"></h1>
       </button>
       <div class="panel">
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_header">
-              <span class="checkmark_side"></span>
-            </label>
+        <div class="fifty">
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_header">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_altHeadMeth__"></h3>
           </div>
-          <h3 data-localize="__MSG_altHeadMeth__"></h3>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_hidhead">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_hidHead__"></h3>
+          </div>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_vivaldiHead">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_vivaldiHead__"></h3>
+          </div>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_glow">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_headGlow__"></h3>
+          </div>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_rgbhead">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_rgbHead__"></h3>
+          </div>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_nyan_cursor">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_rgbHeadCursor__"></h3>
+          </div>
         </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_menus">
-              <span class="checkmark_side"></span>
-            </label>
+        <div class="fifty">
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_menus">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_altMenus__"></h3>
           </div>
-          <h3 data-localize="__MSG_altMenus__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_animate">
-              <span class="checkmark_side"></span>
-            </label>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_animate">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_animArrange__"></h3>
           </div>
-          <h3 data-localize="__MSG_animArrange__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_main_block">
-              <span class="checkmark_side"></span>
-            </label>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_main_block">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_mainBlock__"></h3>
           </div>
-          <h3 data-localize="__MSG_mainBlock__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_glow">
-              <span class="checkmark_side"></span>
-            </label>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_easyui">
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_easyUIfit__"></h3>
           </div>
-          <h3 data-localize="__MSG_headGlow__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_rgbhead">
-              <span class="checkmark_side"></span>
-            </label>
+          <div class="row">
+            <div class="inject sideinj">
+              <label class="inject_container">
+                <input type="checkbox" id="check_newtab" disabled>
+                <span class="checkmark_side"></span>
+              </label>
+            </div>
+            <h3 data-localize="__MSG_custNewTab__"></h3>
           </div>
-          <h3 data-localize="__MSG_rgbHead__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_easyui">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3 data-localize="__MSG_easyUIfit__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_hidhead">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3 data-localize="__MSG_hidHead__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_vivaldiHead">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3 data-localize="__MSG_vivaldiHead__"></h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_newtab">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3 data-localize="__MSG_custNewTab__"></h3>
         </div>
       </div>
 

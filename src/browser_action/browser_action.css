@@ -442,6 +442,9 @@ table.input tr td[colspan="6"] {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+input[disabled] + span.checkmark_side {
+  background-color: var(--red);
+}
 #ldContain {
   position: absolute;
   width: 100%;

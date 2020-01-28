@@ -1,258 +1,267 @@
-body.light.dark,
-body.light.dark div#cboxContent,
-body.light.dark div#cboxOverlay,
-body.light.dark .tabs-panels .panel-body {
+html.light.dark body,
+html.light.dark div#cboxContent,
+html.light.dark div#cboxOverlay,
+html.light.dark .tabs-panels .panel-html,
+html.light.dark div#cboxLoadedContent iframe {
   background-color: var(--darkLight) !important;
   background: var(--darkLight) !important;
   color: var(--light) !important;
 }
 
-/* body.light.dark label,
-body.light.dark .Zebra_Form fieldset label,
-body.light.dark input,
-body.light.dark .login_div input,
-body.light.dark div,
-body.light.dark .datagrid-pager.pagination * {
+/* html.light.dark label,
+html.light.dark .Zebra_Form fieldset label,
+html.light.dark input,
+html.light.dark .login_div input,
+html.light.dark div,
+html.light.dark .datagrid-pager.pagination * {
   color: var(--darker);
 } */
 
-/* body.light.dark .select2-results__option[aria-selected],
-body.light.dark fieldset p,
-body.light.dark fieldset td,
-body.light.dark fieldset div,
-body.light.dark strong.select2-results__group,
-body.light.dark input.select2-search__field,
-body.light.dark fieldset .Zebra_Form label,
-body.light.dark .Zebra_Form fieldset label {
+/* html.light.dark .select2-results__option[aria-selected],
+html.light.dark fieldset p,
+html.light.dark fieldset td,
+html.light.dark fieldset div,
+html.light.dark strong.select2-results__group,
+html.light.dark input.select2-search__field,
+html.light.dark fieldset .Zebra_Form label,
+html.light.dark .Zebra_Form fieldset label {
   color: var(--darker);
 } */
 
-body.light.dark input,
-body.light.dark textarea,
-body.light.dark .selection *,
-body.light.dark .select2-dropdown,
-body.light.dark .select2-dropdown .select2-search input,
-body.light.dark .select2-dropdown .select2-results ul li,
-body.light.dark .Zebra_Form fieldset label,
-body.light.dark .Zebra_Form_Input_Prefix,
-body.light.dark .Zebra_Form select,
-body.light.dark .note {
+html.light.dark input,
+html.light.dark textarea,
+html.light.dark .selection *,
+html.light.dark .select2-dropdown,
+html.light.dark .select2-dropdown .select2-search input,
+html.light.dark .select2-dropdown .select2-results ul li,
+html.light.dark .Zebra_Form fieldset label,
+html.light.dark .Zebra_Form_Input_Prefix,
+html.light.dark .Zebra_Form select,
+html.light.dark .note {
   background-color: #505050;
   background: #505050;
   color: var(--light);
   border-color: #909090;
 }
-body.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title),
-body.light.dark fieldset,
-body.light.dark .Zebra_Form input.text,
-body.light.dark .Zebra_Form input.date,
-body.light.dark .BlokNav,
-body.light.dark ul#ShortcutsList {
+html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title),
+html.light.dark fieldset,
+html.light.dark .Zebra_Form input.text,
+html.light.dark .Zebra_Form input.date,
+html.light.dark .BlokNav,
+html.light.dark ul#ShortcutsList {
   background-color: #505050;
   background: #505050;
   color: var(--light);
 }
-body.light.dark ul#ShortcutsList>li {
+html.light.dark ul#ShortcutsList>li {
   background-color: var(--darkLight);
   background: var(--darkLight);
   color: var(--light);
   box-shadow: none;
   transition: 0.1s linear;
 }
-body.light.dark ul#ShortcutsList>li:hover {
+html.light.dark ul#ShortcutsList>li:hover {
   background-color: var(--greyDark);
   background: var(--greyDark);
   box-shadow: 1px 1px 5px var(--darkLight);
 }
-body.light.dark .BlokNav:hover {
+html.light.dark .BlokNav:hover {
   background-color: var(--greyDark);
 }
-body.light.dark .noty_type_confirm,
-body.light.dark .noty_type_confirm>* {
+html.light.dark .noty_type_confirm,
+html.light.dark .noty_type_confirm>* {
   background-color: #505050 !important;
   background: #505050 !important;
   color: var(--light);
 }
-body.light.dark .noty_type_confirm>*:nth-child(2),
-body.light.dark ul#noty_top_layout_container>li {
+html.light.dark .noty_type_confirm>*:nth-child(2),
+html.light.dark ul#noty_top_layout_container>li {
   border-color: var(--darkLight) !important;
 }
-body.light.dark .Zebra_Form .checkbox2 + label {
+html.light.dark .Zebra_Form .checkbox2 + label {
   background-color: var(--red);
   border-color: var(--red);
   color: var(--light);
 }
-body.light.dark .Zebra_Form .checkbox2:checked + label {
+html.light.dark .Zebra_Form .checkbox2:checked + label {
   background-color: var(--green);
   border-color: var(--green);
   color: var(--dark);
 }
-body.light.dark div span.ui-dialog-title,
-body.light.dark .welcome,
-body.light.dark .header_right *,
-body.light.dark .login_logo,
-body.light.dark div#Tree a,
-body.light.dark .fc-event-title,
-body.light.dark .date-time,
-body.light.dark.container #enkodeer,
-body.light.dark.container #enkodeer label,
-body.light.dark xmp,
-body.light.dark #ShortcutsList > li:not(:hover) > a > font,
-body.light.dark #div-bly h3,
-body.light.dark ul.dropdown-menu li a,
-body.light.dark .Zebra_Form label,
-body.light.dark div.Zebra_Form_error_message .message,
-body.light.dark #Tree #jsTreeMenu ul li a.jstree-search:hover,
-body.light.dark #Tree #jsTreeMenu ul li a.jstree-search.jstree-clicked,
-body.light.dark input[type="checkbox"] + label,
-body.light.dark .login_div *,
-body.light.dark #calendar .fc-grid .fc-day-number,
-body.light.dark .login_div input {
+html.light.dark .subfuns[type="checkbox"]:checked + label {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+html.light.dark .subfuns[type="checkbox"] + label {
+  border: var(--red) thin solid;
+  background-color: var(--red);
+}
+html.light.dark div span.ui-dialog-title,
+html.light.dark .welcome,
+html.light.dark .header_right *,
+html.light.dark .login_logo,
+html.light.dark div#Tree a,
+html.light.dark .fc-event-title,
+html.light.dark .date-time,
+html.light.dark.container #enkodeer,
+html.light.dark.container #enkodeer label,
+html.light.dark xmp,
+html.light.dark #ShortcutsList > li:not(:hover) > a > font,
+html.light.dark #div-bly h3,
+html.light.dark ul.dropdown-menu li a,
+html.light.dark .Zebra_Form label,
+html.light.dark div.Zebra_Form_error_message .message,
+html.light.dark #Tree #jsTreeMenu ul li a.jstree-search:hover,
+html.light.dark #Tree #jsTreeMenu ul li a.jstree-search.jstree-clicked,
+html.light.dark input[type="checkbox"] + label,
+html.light.dark .login_div *,
+html.light.dark #calendar .fc-grid .fc-day-number,
+html.light.dark .login_div input {
   color: var(--light);
 }
-body.light.dark .BlokNav>div .fa,
-body.light.dark .BlokNav:not(:hover)>a {
+html.light.dark .BlokNav>div .fa,
+html.light.dark .BlokNav:not(:hover)>a {
   color: var(--offWhite);
 }
-body.light.dark .BlokNav>a font.OnderBeskryf {
+html.light.dark .BlokNav>a font.OnderBeskryf {
   color: var(--greyLight);
 }
-body.light.dark .logo img {
+html.light.dark .logo img {
   box-shadow: 0px 0px 5px 3px var(--white);
   border-radius: 5px;
   background-color: var(--white);
 }
-body.light.dark .header,
-body.light.dark .ui-widget-content,
-body.light.dark ul.dropdown-menu,
-body.light.dark .backHead + .header {
+html.light.dark .header,
+html.light.dark .ui-widget-content,
+html.light.dark ul.dropdown-menu,
+html.light.dark .backHead + .header {
   background-color: var(--darker);
   color: var(--light);
 }
-body.light.dark .show-notifications #icon-bell {
+html.light.dark .show-notifications #icon-bell {
   fill: var(--greyLight);
 }
-body.light.dark .show-notifications:hover #icon-bell,
-body.light.dark .show-notifications:focus #icon-bell,
-body.light.dark .show-notifications.active #icon-bell {
+html.light.dark .show-notifications:hover #icon-bell,
+html.light.dark .show-notifications:focus #icon-bell,
+html.light.dark .show-notifications.active #icon-bell {
   fill: var(--light);
 }
-body.light.dark .nav-tabs {
+html.light.dark .nav-tabs {
   border-bottom: 1px solid var(--green);
 }
-body.light.dark .nav>li>a {
+html.light.dark .nav>li>a {
   color: var(--white);
 }
-body.light.dark .login_logo img {
+html.light.dark .login_logo img {
   max-width: 100%;
   padding: 3px;
   box-shadow: 0px 0px 5px 3px var(--white);
   border-radius: 5px;
   background-color: var(--white);
 }
-body.light.dark fieldset input.form-control[readonly="readonly"],
-body.light.dark fieldset input.form-control[readonly="readonly"] + .Zebra_Form_Input_Prefix,
-body.light.dark fieldset input.form-control[readonly],
-body.light.dark fieldset input.form-control[readonly="readonly"] + .Zebra_Form_Input_Prefix,
-body.light.dark fieldset input.form-control[readonly] + .Zebra_Form_Input_Prefix,
-body.light.dark fieldset input.form-control[disabled="disabled"],
-body.light.dark fieldset input.form-control[disabled],
-body.light.dark fieldset input.form-control[disabled="disabled"] + .Zebra_Form_Input_Prefix,
-body.light.dark fieldset input.form-control[disabled] + .Zebra_Form_Input_Prefix,
-body.light.dark fieldset textarea.form-control[readonly="readonly"],
-body.light.dark fieldset textarea.form-control[readonly],
-body.light.dark fieldset textarea.form-control[disabled="disabled"],
-body.light.dark fieldset textarea.form-control[disabled] {
+html.light.dark fieldset input.form-control[readonly="readonly"],
+html.light.dark fieldset input.form-control[readonly="readonly"] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[readonly],
+html.light.dark fieldset input.form-control[readonly="readonly"] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[readonly] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[disabled="disabled"],
+html.light.dark fieldset input.form-control[disabled],
+html.light.dark fieldset input.form-control[disabled="disabled"] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[disabled] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset textarea.form-control[readonly="readonly"],
+html.light.dark fieldset textarea.form-control[readonly],
+html.light.dark fieldset textarea.form-control[disabled="disabled"],
+html.light.dark fieldset textarea.form-control[disabled] {
   background-color: var(--greyDark);
   border-color: var(--greyDark);
   box-shadow: none;
 }
-body.light.dark .datagrid {
+html.light.dark .datagrid {
   border-radius: 5px;
   background-color: var(--white);
 }
-body.light.dark .panel.datagrid .panel-body {
+html.light.dark .panel.datagrid .panel-html {
   border: 0px;
 }
-body.light.dark h3 {
+html.light.dark h3 {
   color: var(--dark);
 }
-body.light.dark #calendar .fc-week .fc-sun,
-body.light.dark #calendar .fc-week .fc-sat {
+html.light.dark #calendar .fc-week .fc-sun,
+html.light.dark #calendar .fc-week .fc-sat {
   background-color: var(--greyDark);
 }
-body.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number {
+html.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number {
   color: var(--dark);
 }
-body.light.dark .panel,
-body.light.dark .tabs-header {
+html.light.dark .panel,
+html.light.dark .tabs-header {
   background-color: transparent;
 }
-body.light.dark .HetWSDL,
-body.light.dark .noty_type_error * {
+html.light.dark .HetWSDL,
+html.light.dark .noty_type_error * {
   color: var(--white);
 }
-body.light.dark #Tree #jsTreeMenu ul li a.jstree-search {
+html.light.dark #Tree #jsTreeMenu ul li a.jstree-search {
   color: var(--green);
   font-size: 1.1em;
 }
-body.light.dark .jstree-contextmenu,
-body.light.dark .jstree-contextmenu li ul {
+html.light.dark .jstree-contextmenu,
+html.light.dark .jstree-contextmenu li ul {
   background: var(--dark);
 }
-body.light.dark .jstree-contextmenu li a,
-body.light.dark .loading {
+html.light.dark .jstree-contextmenu li a,
+html.light.dark .loading {
   color: var(--light);
   text-shadow: none;
 }
-body.light.dark .jstree-contextmenu li.vakata-context-hover,
-body.light.dark .jstree-contextmenu li.vakata-context-hover>a {
+html.light.dark .jstree-contextmenu li.vakata-context-hover,
+html.light.dark .jstree-contextmenu li.vakata-context-hover>a {
   background: var(--darkLight);
   box-shadow: none !important;
 }
-body.light.dark .select2-dropdown .select2-results ul li[class*="highlighted"],
-body.light.dark .datagrid.panel .panel-header,
-body.light.dark .datagrid.panel .panel-title {
+html.light.dark .select2-dropdown .select2-results ul li[class*="highlighted"],
+html.light.dark .datagrid.panel .panel-header,
+html.light.dark .datagrid.panel .panel-title {
   background-color: var(--green);
   color: var(--light);
 }
-body.light.dark .select2-dropdown .select2-results ul li:hover:not([class*="highlighted"]) {
+html.light.dark .select2-dropdown .select2-results ul li:hover:not([class*="highlighted"]) {
   background-color: var(--greyDark);
 }
-body.light.dark .datagrid {
+html.light.dark .datagrid {
   border: 1px solid var(--light);
 }
-body.light.dark .datagrid input.datagrid-filter {
+html.light.dark .datagrid input.datagrid-filter {
   border: none;
 }
-body.light.dark .datagrid input.datagrid-filter:focus,
-body.light.dark .datagrid input.datagrid-filter:hover,
-body.light.dark .datagrid .datagrid-body table .datagrid-row-checked *:not(.btn):not(.fa),
-body.light.dark .datagrid .datagrid-body table .datagrid-row-selected *:not(.btn):not(.fa),
-body.light.dark .datagrid .datagrid-body table .datagrid-row-over *:not(.btn):not(.fa) {
+html.light.dark .datagrid input.datagrid-filter:focus,
+html.light.dark .datagrid input.datagrid-filter:hover,
+html.light.dark .datagrid .datagrid-html table .datagrid-row-checked *:not(.btn):not(.fa),
+html.light.dark .datagrid .datagrid-html table .datagrid-row-selected *:not(.btn):not(.fa),
+html.light.dark .datagrid .datagrid-html table .datagrid-row-over *:not(.btn):not(.fa) {
   background-color: var(--greyDark) !important;
   background: var(--greyDark) !important;
 }
-body.light.dark .datagrid *:not(.btn)>.fa.fa-times,
-body.light.dark .datagrid *:not(.btn)>.fa.fa-close,
-body.light.dark #Weeksure .fa.fa-close,
-body.light.dark .required  {
+html.light.dark .datagrid *:not(.btn)>.fa.fa-times,
+html.light.dark .datagrid *:not(.btn)>.fa.fa-close,
+html.light.dark #Weeksure .fa.fa-close,
+html.light.dark .required  {
   color: var(--red) !important;
 }
-body.light.dark .datagrid *:not(.btn)>.fa.fa-check,
-body.light.dark #Weeksure .fa.fa-check  {
+html.light.dark .datagrid *:not(.btn)>.fa.fa-check,
+html.light.dark #Weeksure .fa.fa-check  {
   color: var(--green) !important;
 }
-body.light.dark .datagrid-header td,
-body.light.dark .datagrid-body td,
-body.light.dark .datagrid-footer td {
+html.light.dark .datagrid-header td,
+html.light.dark .datagrid-html td,
+html.light.dark .datagrid-footer td {
   border-style: solid;
   border-color: #808080;
 }
-body.light.dark .datagrid .datagrid-filter-row input {
+html.light.dark .datagrid .datagrid-filter-row input {
   background: #606060 !important;
 }
-body.light.dark .tooltipevent  {
+html.light.dark .tooltipevent  {
   background: var(--dark) !important;
 }
 ::-webkit-scrollbar {
@@ -263,6 +272,6 @@ body.light.dark .tooltipevent  {
   background-color: var(--dark);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #505050;
+  background-color: #606060;
   /* box-shadow: inset 0 0 3px 0px var(--green); */
 }

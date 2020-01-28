@@ -87,13 +87,16 @@
     "message":"Custom JS & jQuery"
   },
     "altHeadMeth": {
-    "message":"Alternative smaller header (hide button)"
+    "message":"Alternative smaller header"
   },
     "headGlow": {
     "message":"Environment header glow"
   },
     "rgbhead": {
     "message":"Animated RGB header glow"
+  },
+    "rgbHeadCursor": {
+    "message":"Nyan Cat Cursor"
   },
     "easyUIfit": {
     "message":"Fit easyUI to available screen height"

@@ -1,80 +1,80 @@
-body.light .header {
+html.light .header {
   border: 2px solid var(--green);
   height: 90px;
 }
-body.light .header>.header_nav>h4 {
+html.light .header>.header_nav>h4 {
   visibility: hidden;
 }
-body.light .header>.header_nav a {
+html.light .header>.header_nav a {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   transition: 0.1s linear;
 }
-body.light #head-button .show-notifications {
+html.light #head-button .show-notifications {
   margin-top: 3px;
 }
-body.light #head-button .show-notifications.active #icon-bell {
+html.light #head-button .show-notifications.active #icon-bell {
   fill: var(--light);
 }
-body.light #head-button .show-notifications.active~.notifications {
+html.light #head-button .show-notifications.active~.notifications {
   top: 48px;
   left: -3px;
 }
-body.light .main .BlokNav {
+html.light .main .BlokNav {
   border-radius: 5px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
-body.light .main .BlokNav:hover {
+html.light .main .BlokNav:hover {
   background: var(--light);
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
-body.light .main .BlokNav > div {
+html.light .main .BlokNav > div {
   padding-left: 10px;
   padding-right: 10px;
 }
-body.light .main .openPage > .fa-stack {
+html.light .main .openPage > .fa-stack {
   transition: all 0.3s ease-in-out;
 }
-body.light .ui-dialog .ui-dialog-titlebar {
+html.light .ui-dialog .ui-dialog-titlebar {
   background: var(--green);
 }
-body.light .header .logo {
+html.light .header .logo {
   height: auto;
   float: left;
   margin-top: 20px;
 }
-body.light .header .logo img {
+html.light .header .logo img {
   max-width: 100%;
   max-height: 47px;
   padding-left: 3px;
 }
-body.light .header .header_right {
+html.light .header .header_right {
   width: auto;
   min-width: 6.5%;
   float: right;
 }
-body.light #header_container .welcome {
+html.light #header_container .welcome {
   margin-top: 25px;
   margin-right: 8%;
   transition: 0.1s linear;
 }
-body.light #header_container .welcome > b {
+html.light #header_container .welcome > b {
   transition: 0.1s linear;
 }
-body.light .header .child {
+html.light .header .child {
   padding-top: 25px;
 }
-body.light .login_div {
+html.light .login_div {
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
 }
-body.light .btn.btn-success,
-body.light .btn.btn-warning,
-body.light .btn.btn-danger,
-body.light .btn.btn-info,
-body.light .btn.btn-default {
+html.light .btn.btn-success,
+html.light .btn.btn-warning,
+html.light .btn.btn-danger,
+html.light .btn.btn-info,
+html.light .btn.btn-default {
   background-image: none;
   box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.4);
@@ -82,60 +82,60 @@ body.light .btn.btn-default {
   transition: 0.1s linear;
   outline: none;
 }
-body.light .btn.btn-success,
-body.light .btn.btn-success *:not(.fa) {
+html.light .btn.btn-success,
+html.light .btn.btn-success *:not(.fa) {
   background-color: var(--btnSuccess) !important;
   border: 1px solid var(--btnSuccess) !important;
 }
-body.light .btn.btn-warning,
-body.light .btn.btn-warning *:not(.fa) {
+html.light .btn.btn-warning,
+html.light .btn.btn-warning *:not(.fa) {
   background-color: var(--btnWarning) !important;
   border: 1px solid var(--btnWarning) !important;
 }
-body.light .btn.btn-danger,
-body.light .btn.btn-danger *:not(.fa) {
+html.light .btn.btn-danger,
+html.light .btn.btn-danger *:not(.fa) {
   background-color: var(--btnDanger) !important;
   border: 1px solid var(--btnDanger) !important;
 }
-body.light .btn.btn-info,
-body.light .btn.btn-info *:not(.fa) {
+html.light .btn.btn-info,
+html.light .btn.btn-info *:not(.fa) {
   background-color: var(--btnInfo) !important;
   border: 1px solid var(--btnInfo) !important;
 }
-body.light .btn.btn-default,
-body.light .btn.btn-default *:not(.fa) {
+html.light .btn.btn-default,
+html.light .btn.btn-default *:not(.fa) {
   background-color: var(--btnDefault) !important;
   border: 1px solid var(--btnDefault) !important;
 }
-body.light .btn:hover,
-body.light .header_nav a:hover {
+html.light .btn:hover,
+html.light .header_nav a:hover {
     filter: grayscale(1);
     box-shadow: inset 0 0 5px 1px var(--dark) !important;
 }
-body.light iframe#renderHier {
+html.light iframe#renderHier {
   min-width: 100%;
   min-height: 92vh;
 }
-body.light #lang button font.btn_text {
+html.light #lang button font.btn_text {
   display: none;
 }
-body.light #lang button:hover font.btn_text {
+html.light #lang button:hover font.btn_text {
   display: inline;
 }
-body.light #lang button:hover {
+html.light #lang button:hover {
   position: absolute;
   padding: 6px 17px 6px 12px;
 }
-body.light.smlBlocks .main .BlokNav {
+html.light.smlBlocks .main .BlokNav {
   width: 130px;
   height: 170px;
   margin: 6px;
 }
-body.light.smlBlocks .main .BlokNav a.openPage span {
+html.light.smlBlocks .main .BlokNav a.openPage span {
   transform: scale(0.6);
   margin-top: -22px;
 }
-body.light.smlBlocks .main .BlokNav a.openPage .ca-content {
+html.light.smlBlocks .main .BlokNav a.openPage .ca-content {
   font-size: 14px;
   width: 100%;
   /* white-space: nowrap; */
@@ -144,30 +144,30 @@ body.light.smlBlocks .main .BlokNav a.openPage .ca-content {
   padding: 0 5px;
   line-height: 18px;
 }
-body.light.altEasyui .panel.datagrid .panel-body {
+html.light.altEasyui .panel.datagrid .panel-html {
   overflow: auto;
   max-height: calc(100% - 50px);
 }
-body.light.headGlowDEV .header {
+html.light.headGlowDEV .header {
   box-shadow: inset 0px 0px 6px 0px #c12e2a;
   border-color: var(--red);
 }
-body.light.headGlowPRD .header {
+html.light.headGlowPRD .header {
   box-shadow: inset 0px 0px 6px 0px #71bf44;
   border-color: var(--green);
 }
-body.light.headGlowQA .header {
+html.light.headGlowQA .header {
   box-shadow: inset 0px 0px 6px 0px #f7931c;
   border-color: var(--orange);
 }
-body.light.altMenus .ui-widget-overlay {
+html.light.altMenus .ui-widget-overlay {
   background: rgba(0,0,0,0.5);
   opacity: unset !important;
 }
-body.light.altMenus .ui-widget-content.ui-dialog {
+html.light.altMenus .ui-widget-content.ui-dialog {
   box-shadow: 1px 0px 7px 1px rgba(0,0,0,0.5);
 }
-body.light.altMenus ul#ShortcutsList {
+html.light.altMenus ul#ShortcutsList {
   box-shadow: -1px 0px 7px 1px rgba(0,0,0,0.5);
   border-radius: 0;
   top: 0;
@@ -180,79 +180,79 @@ body.light.altMenus ul#ShortcutsList {
   border-bottom: 0;
   border-right: 0;
 }
-body.light ul#ShortcutsList>li .fa-stack {
+html.light ul#ShortcutsList>li .fa-stack {
   float: left;
   margin-right: 5px;
   margin-top: 2px;
 }
-body.light ul#ShortcutsList>li:first-child .fa-stack {
+html.light ul#ShortcutsList>li:first-child .fa-stack {
   float: none;
   margin-right: 0px;
   margin-top: 1px;
 }
-body.light.animArrange .main ul.ca-menu.ui-sortable > * {
+html.light.animArrange .main ul.ca-menu.ui-sortable > * {
   animation-name: quiverAnimate;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-body.light.animArrange .main ul.ca-menu.ui-sortable.ui-sortable-disabled > * {
+html.light.animArrange .main ul.ca-menu.ui-sortable.ui-sortable-disabled > * {
   animation-name: none;
 }
-body.light .header .header_nav {
+html.light .header .header_nav {
   padding: 0;
 }
-body.light .nav > li > a {
+html.light .nav > li > a {
   cursor: pointer !important;
 }
-body.light .header div#header_container {
+html.light .header div#header_container {
   height: 100%;
 }
-body.light.small .header {
+html.light.small .header {
   height: 45px;
 }
-body.light.small .header .logo {
+html.light.small .header .logo {
   margin-top: 6px;
   height: 72%;
 }
-body.light.small .header .header_right > div > div {
+html.light.small .header .header_right > div > div {
   display: table-cell !important;
 }
-body.light.small .header .child {
+html.light.small .header .child {
   padding-top: 3px;
 }
-body.light.small .header > .header_nav a {
+html.light.small .header > .header_nav a {
   top: -19px;
   width: 32px;
   height: 32px;
   background-size: 20px;
 }
-body.light.small .content {
+html.light.small .content {
   padding-top: 55px;
 }
-body.light.small .header .logo img {
+html.light.small .header .logo img {
   max-height: 33px;
 }
-body.light .backHead {
+html.light .backHead {
   width: 99.7%;
   margin-left: 2px;
   height: 96px;
   position: absolute;
   z-index: 95;
 }
-body.light.small .backHead {
+html.light.small .backHead {
   height: 51px;
 }
-body.light.RGBclass .header {
+html.light.RGBclass .header {
   top: 2px;
   width: 99.4%;
   padding: 2px;
   background-color: var(--white);
 }
-body.light.RGBclass:not(.vivaldiHead) .header {
+html.light.RGBclass:not(.vivaldiHead) .header {
   border: none;
 }
-body.light .backHead:before,
-body.light .backHead:after {
+html.light .backHead:before,
+html.light .backHead:after {
   content: '';
   position: absolute;
   left: -2px;
@@ -265,7 +265,7 @@ body.light .backHead:after {
   animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
 }
-/* body.light.vivaldiHead.RGBclass .header .header_nav > a {
+/* html.light.vivaldiHead.RGBclass .header .header_nav > a {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC),
                     linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
   background-position:  45% center,
@@ -276,54 +276,54 @@ body.light .backHead:after {
                     1500% !important;
   animation: rgbanimate 30s linear infinite;
 } */
-body.light .backHead:after {
+html.light .backHead:after {
 	filter: blur(2px);
 }
-body.light.small div#head-button {
+html.light.small div#head-button {
   top: 8px;
 }
-body.light.hiddenHead .header {
+html.light.hiddenHead .header {
   border-top-width: 0;
   top: 0;
   margin-top: -85px;
   transition: 0.25s linear;
 }
-body.light.hiddenHead.RGBclass .backHead {
+html.light.hiddenHead.RGBclass .backHead {
   margin-top: -87px;
   transition: 0.25s linear;
 }
-body.light.hiddenHead .content {
+html.light.hiddenHead .content {
   padding-top: 13px;
   transition: 0.25s linear;
 }
-body.light.hiddenHead div#head-button {
+html.light.hiddenHead div#head-button {
   top: -30px;
 }
-body.light.hiddenHead div#head-button:hover {
+html.light.hiddenHead div#head-button:hover {
   top: -3px;
 }
-body.light.hiddenHead .header:hover {
+html.light.hiddenHead .header:hover {
   margin-top: 0px;
 }
-body.light.hiddenHead .header:hover + .backHead {
+html.light.hiddenHead .header:hover + .backHead {
   margin-top: -2px;
 }
-body.light.vivaldiHead.RGBclass .backHead {
+html.light.vivaldiHead.RGBclass .backHead {
   position: fixed;
   height: 0px;
   width: 110%;
   transition: 0.15s linear;
 }
-body.light.vivaldiHead.RGBclass .header:hover + .backHead,
-body.light.vivaldiHead.RGBclass .header.hovered + .backHead {
+html.light.vivaldiHead.RGBclass .header:hover + .backHead,
+html.light.vivaldiHead.RGBclass .header.hovered + .backHead {
   height: 90px;
   transition: all 0.3s ease-in-out;
 }
-body.light.vivaldiHead ul#ShortcutsList {
+html.light.vivaldiHead ul#ShortcutsList {
   left: 0;
   right: auto;
 }
-body.light.vivaldiHead .header {
+html.light.vivaldiHead .header {
   left: 0;
   top: 0;
   height: 100%;
@@ -334,26 +334,26 @@ body.light.vivaldiHead .header {
   padding: 0;
   width: 40px;
 }
-body.light.vivaldiHead .content {
+html.light.vivaldiHead .content {
   padding: 0 0 0 45px;
   width: 96.7%; /*97%;*/
 }
-body.light.vivaldiHead div#head-button {
+html.light.vivaldiHead div#head-button {
   margin: 0;
   left: 3px;
   top: 55px;
 }
-body.light.vivaldiHead .header #header_container .btn_main .child button font {
+html.light.vivaldiHead .header #header_container .btn_main .child button font {
   display: none;
 }
-body.light.vivaldiHead .header .header_nav {
+html.light.vivaldiHead .header .header_nav {
   width: 100%;
   height: auto;
 }
-body.light.vivaldiHead .header .header_nav > h4 {
+html.light.vivaldiHead .header .header_nav > h4 {
   display: none;
 }
-body.light.vivaldiHead .header .header_nav > a {
+html.light.vivaldiHead .header .header_nav > a {
   margin: 0;
   left: 0;
   top: 0;
@@ -363,7 +363,7 @@ body.light.vivaldiHead .header .header_nav > a {
   background-position-x: 45%;
   background-size: 23px;
 }
-body.light.vivaldiHead .header #header_container {
+html.light.vivaldiHead .header #header_container {
   position: absolute;
   left: 42px;
   top: -20vh;
@@ -373,29 +373,29 @@ body.light.vivaldiHead .header #header_container {
   background-color: var(--darker);
   transition: 0.25s linear;
 }
-body.light.vivaldiHead .header:hover #header_container,
-body.light.vivaldiHead .header.hovered #header_container,
-body.light.vivaldiHead .header #header_container:hover {
+html.light.vivaldiHead .header:hover #header_container,
+html.light.vivaldiHead .header.hovered #header_container,
+html.light.vivaldiHead .header #header_container:hover {
   top: 0vh;
   box-shadow: var(--boxShadMed);
 }
-body.light.vivaldiHead .header #header_container .header_right {
+html.light.vivaldiHead .header #header_container .header_right {
   float: none;
 }
-body.light.vivaldiHead .header #header_container .btn_main {
+html.light.vivaldiHead .header #header_container .btn_main {
   position: fixed;
   left: 2px;
   bottom: 0;
   width: 40px;
 }
-body.light.vivaldiHead .header #header_container .btn_main .child {
+html.light.vivaldiHead .header #header_container .btn_main .child {
   position: relative;
   padding: 0;
   width: 100%;
   float: none !important;
   margin: 0 !important;
 }
-body.light.vivaldiHead .header #header_container .btn_main .child button {
+html.light.vivaldiHead .header #header_container .btn_main .child button {
   border-radius: 0;
   width: 100%;
   min-height: 40px;
@@ -404,13 +404,13 @@ body.light.vivaldiHead .header #header_container .btn_main .child button {
   box-shadow: none;
   border-width: 0px !important;
 }
-body.light.vivaldiHead .header #header_container .btn_main #tuis.child button {
+html.light.vivaldiHead .header #header_container .btn_main #tuis.child button {
   border-top-width: 1px !important;
 }
-body.light.vivaldiHead #lang button:hover {
+html.light.vivaldiHead #lang button:hover {
   position: inherit;
 }
-body.light.vivaldiHead #lang button .fa-language:after {
+html.light.vivaldiHead #lang button .fa-language:after {
   content: "E";
   padding: 0px 1px 0px 4px;
   font-size: 14px;
@@ -420,63 +420,64 @@ body.light.vivaldiHead #lang button .fa-language:after {
   font: 400 13.3333px Arial;
   display: none;
 }
-body.light.vivaldiHead #lang button:hover .fa-language:after {
+html.light.vivaldiHead #lang button:hover .fa-language:after {
   display: inline;
 }
 /* Custom color
 switch vars */
-body.light .header_nav a,
-body.light .dropdown-menu>li>a:hover,
-body.light .jstree-proton .jstree-clicked,
-body.light .jstree-proton .jstree-hovered,
-body.light #cboxMiddleLeft,
-body.light #cboxMiddleRight,
-body.light #cboxTopLeft,
-body.light #cboxTopCenter,
-body.light #cboxTopRight,
-body.light #cboxBottomLeft,
-body.light #cboxBottomCenter,
-body.light #cboxBottomRight {
+html.light .header_nav a,
+html.light .dropdown-menu>li>a:hover,
+html.light .jstree-proton .jstree-clicked,
+html.light .jstree-proton .jstree-hovered,
+html.light #cboxMiddleLeft,
+html.light #cboxMiddleRight,
+html.light #cboxTopLeft,
+html.light #cboxTopCenter,
+html.light #cboxTopRight,
+html.light #cboxBottomLeft,
+html.light #cboxBottomCenter,
+html.light #cboxBottomRight {
   background-color: var(--green);
 }
-body.light .datagrid .panel-header,
-body.light .datagrid .panel-title {
+html.light .datagrid .panel-header,
+html.light .datagrid .panel-title {
   background: var(--green);
   border-color: var(--green);
   color: var(--light);
 }
-body.light .BlokNav .fa-stack,
-body.light #ShortcutsList > li > a,
-body.light #ShortcutsList > li:hover > a > font {
+html.light .BlokNav .fa-stack,
+html.light #ShortcutsList > li > a,
+html.light #ShortcutsList > li:hover > a > font {
   color: var(--green);
 }
-body.light .nav-tabs>li.active>a,
-body.light .nav-tabs>li.active>a:focus {
+html.light .nav-tabs>li.active>a,
+html.light .nav-tabs>li.active>a:focus {
   background-color: var(--green);
   border: 1px solid var(--green);
 }
-body.light .nav-tabs>li.active>a:hover,
-body.light .nav > li > a:hover {
+html.light .nav-tabs>li.active>a:hover,
+html.light .nav > li > a:hover {
   background-color: var(--green);
   border-color: var(--light);
 }
-body.light legend,
-body.light li.dropdown-header {
+html.light legend,
+html.light li.dropdown-header {
   background: var(--orange);
   color: var(--light);
 }
-body.light.dark fieldset {
+html.light.dark fieldset {
   background-color: var(--greyLight);
   color: var(--darker);
 }
-body.light #ShortcutsList {
+html.light #ShortcutsList {
   border: 2px solid var(--green);
 }
-body.light *::selection {
+html.light *::selection {
   background: var(--greyDark);
   color: var(--light);
 }
-body.light.RGBclass * {
+html.light.nyanCursor,
+html.light.nyanCursor * {
   cursor: url(http://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), auto !important;
 }
 

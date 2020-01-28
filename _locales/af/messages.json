@@ -87,13 +87,16 @@
     "message":"Aangepaste JS & jQuery"
   },
     "altHeadMeth": {
-    "message":"Alternatiewe kleiner 'header' metode (sonder knoppie)"
+    "message":"Alternatiewe kleiner 'header' metode"
   },
     "headGlow": {
     "message":"Omgewing 'header' gloei"
   },
     "rgbhead": {
     "message":"Animeerende 'header' gloei"
+  },
+    "rgbHeadCursor": {
+    "message":"'Nyan Cat' Wyser"
   },
     "easyUIfit": {
     "message":"Pas 'easyUI' by beskikbare skermhoogte"

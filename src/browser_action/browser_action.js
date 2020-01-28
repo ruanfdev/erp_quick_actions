@@ -129,6 +129,7 @@ $(document).ready(function() {
     chkedHeader = result.chkedHeader;
     chkedGlow = result.chkedGlow;
     chkedRGBhead = result.chkedRGBhead;
+    chkedNyanCursor = result.chkedNyanCursor;
     chkedEasyui = result.chkedEasyui;
     chkedNewtab = result.chkedNewtab;
     chkedForceCol = result.chkedForceCol;
@@ -190,6 +191,11 @@ $(document).ready(function() {
       $('#check_rgbhead').prop('checked', true);
     } else {
       $('#check_rgbhead').prop('checked', false);
+    }
+    if (chkedNyanCursor == true) {
+      $('#check_nyan_cursor').prop('checked', true);
+    } else {
+      $('#check_nyan_cursor').prop('checked', false);
     }
     if (chkedEasyui == true) {
       $('#check_easyui').prop('checked', true);
@@ -344,6 +350,7 @@ $(document).ready(function() {
     var chkedMainBlock = $('#check_main_block').is(":checked");
     var chkedGlow = $('#check_glow').is(":checked");
     var chkedRGBhead = $('#check_rgbhead').is(":checked");
+    var chkedNyanCursor = $('#check_nyan_cursor').is(":checked");
     var chkedEasyui = $('#check_easyui').is(":checked");
     var chkedNewtab = $('#check_newtab').is(":checked");
     var chkedForceCol = $('#check_forceCol').is(":checked");
@@ -398,7 +405,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
@@ -430,7 +437,7 @@ $(document).ready(function() {
     document.getElementById("mySidenav").style.padding = "5%";
     document.getElementById("mySidenav").style.opacity = "1";
     document.getElementById("body").style.minHeight = "550px";
-    document.getElementById("body").style.minWidth = "700px";
+    document.getElementById("body").style.minWidth = "750px";
     document.getElementById("container1").style.overflow = "hidden";
     document.getElementById("container1").style.maxHeight = "560px";
     document.getElementById("closebtn").style.right = "30px";
