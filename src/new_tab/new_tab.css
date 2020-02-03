@@ -36,18 +36,38 @@ textarea#editText {
 }
 #editTabs .item {
     font-size: 1.2em;
-    padding: 15px 5px;
     border-top: 1px dotted var(--green);
+    display: flex;
+    justify-content: space-between;
+}
+#editTabs .item > div:first-child {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 15px 15px 15px 5px;
+    width: 100%;
 }
-#editTabs .item.add_item {
+#editTabs .item > div:nth-child(2) {
+    padding: 15px 10px;
+}
+#editTabs .item.selected {
+    background-color: rgba(0,0,0,0.25);
+}
+#editTabs .options {
+    display: flex;
+    justify-content: space-evenly;
+}
+#editTabs .add_item,
+#editTabs .save_item {
     font-size: 2.2em;
     text-align: center;
-    padding: 2px 5px 10px;
+    padding: 10px;
+    display: block;
+    width: 50%;
 }
-#editTabs .item:hover {
+#editTabs .add_item:hover,
+#editTabs .save_item:hover,
+#editTabs .item > div:hover {
     background-color: var(--green);
     cursor: pointer;
 }
