@@ -176,6 +176,10 @@ html.light.dark fieldset textarea.form-control[disabled] {
   border-color: var(--greyDark);
   box-shadow: none;
 }
+html.light.dark li.disabled,
+html.light.dark li.disabled * {
+  color: var(--greyDark) !important;
+}
 html.light.dark .datagrid {
   border-radius: 5px;
   background-color: var(--white);
