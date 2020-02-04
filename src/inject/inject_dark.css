@@ -226,7 +226,7 @@ html.light.dark .datagrid.panel .panel-title {
   color: var(--light);
 }
 html.light.dark .select2-dropdown .select2-results ul li:hover:not([class*="highlighted"]) {
-  background-color: var(--greyDark);
+  background-color: var(--greyDark) !important;
 }
 html.light.dark .datagrid {
   border: 1px solid var(--light);
@@ -236,9 +236,9 @@ html.light.dark .datagrid input.datagrid-filter {
 }
 html.light.dark .datagrid input.datagrid-filter:focus,
 html.light.dark .datagrid input.datagrid-filter:hover,
-html.light.dark .datagrid .datagrid-html table .datagrid-row-checked *:not(.btn):not(.fa),
-html.light.dark .datagrid .datagrid-html table .datagrid-row-selected *:not(.btn):not(.fa),
-html.light.dark .datagrid .datagrid-html table .datagrid-row-over *:not(.btn):not(.fa) {
+html.light.dark .datagrid .datagrid-view table .datagrid-row-checked *:not(.btn):not(.fa),
+html.light.dark .datagrid .datagrid-view table .datagrid-row-selected *:not(.btn):not(.fa),
+html.light.dark .datagrid .datagrid-view table .datagrid-row-over *:not(.btn):not(.fa) {
   background-color: var(--greyDark) !important;
   background: var(--greyDark) !important;
 }
@@ -253,7 +253,7 @@ html.light.dark #Weeksure .fa.fa-check  {
   color: var(--green) !important;
 }
 html.light.dark .datagrid-header td,
-html.light.dark .datagrid-html td,
+html.light.dark .datagrid-view td,
 html.light.dark .datagrid-footer td {
   border-style: solid;
   border-color: #808080;
@@ -273,5 +273,4 @@ html.light.dark .tooltipevent  {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #606060;
-  /* box-shadow: inset 0 0 3px 0px var(--green); */
 }

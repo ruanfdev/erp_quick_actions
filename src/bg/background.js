@@ -285,7 +285,7 @@ chrome.omnibox.onInputEntered.addListener(function(text, currentTab) {
 });
 
 chrome.tabs.onCreated.addListener(function(tab) {
-  if (tab.url === "chrome://newtab/" || tab.url === "") {
+  if (tab.url === "chrome://newtab/" || tab.pendingUrl === "chrome://newtab/") {
     if (shouldReplaceNewTab === true) {
       chrome.tabs.update({url:chrome.extension.getURL("src/new_tab/new_tab.html")},function(data) {});
     }
