@@ -36,10 +36,11 @@ $(document).ready(function() {
 
                 highNumber++;
             }
+            $('#item1').trigger('click');
         } else {
             $(addNote).trigger('click');
+            $('#item1').trigger('click');
         }
-        $('#item1').trigger('click');
     });
 
     let timeout = null;
