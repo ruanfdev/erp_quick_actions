@@ -198,8 +198,11 @@ html.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number {
   color: var(--dark);
 }
 html.light.dark .panel,
+html.light.dark .panel .panel-body,
 html.light.dark .tabs-header {
-  background-color: transparent;
+  background-color: var(--darkLight) !important;
+  background: var(--darkLight) !important;
+  color: var(--light) !important;
 }
 html.light.dark .HetWSDL,
 html.light.dark .noty_type_error * {

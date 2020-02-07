@@ -56,8 +56,8 @@
     "builtInCom": {
     "message":"Built-in Commands"
   },
-    "guide": {
-    "message":"Guide"
+    "guideInfo": {
+    "message":"Guide & Info"
   },
     "currentVer": {
     "message":"Current Version"
@@ -76,6 +76,12 @@
   },
     "resetCols": {
     "message":"Reset"
+  },
+    "exportCols": {
+    "message":"Export"
+  },
+    "importCols": {
+    "message":"Import"
   },
     "experimental": {
     "message":"Experimental / Beta"

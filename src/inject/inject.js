@@ -56,22 +56,18 @@ var readyStateCheckInterval = setInterval(function() {
 	}
 }, 10);
 
-var windowMouse = window.top.$('html');
-windowMouse.mouseout(function() {
-	// if (window.location.pathname == "/nwk/") {
+var windowMouse = window.top.$('#head-button');
+windowMouse.mouseover(function() {
 		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
 		if (htmlHasVivaldiHead == true) {
 			$(".header").addClass("hovered");
 		}
-	// }
 });
-windowMouse.mouseover(function() {
-	// if (window.location.pathname == "/nwk/") {
+windowMouse.mouseout(function() {
 		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
 		if (htmlHasVivaldiHead == true) {
 			$(".header").removeClass("hovered");
 		}
-	// }
 });
 
 // chrome.extension.sendMessage({}, function(response) {

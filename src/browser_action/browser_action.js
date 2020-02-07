@@ -30,6 +30,8 @@ $(document).ready(function() {
   var clear_button  = $(".clear_all");
   var login_btn   = $(".login_btn");
   var reset_cols   = $(".reset_cust_cols");
+  var export_cols   = $(".export_cust_cols");
+  var import_cols   = $(".import_cust_cols");
   var reload_erp_tabs = $(".reload_erp_tabs")
   var reload_ext = $(".reload_ext")
   var save_button   = $(".save_form_field");
@@ -292,6 +294,33 @@ $(document).ready(function() {
     setTimeout(function () {
       $(save_button).trigger('click');
     }, 50);
+  });
+
+  $(export_cols).click(function(e){
+    custColsArr = [];
+    $('input.jscolor').each(function(index){
+      var input = $(this);
+      custColsId = input[0].id;
+      custColsVal = input.val();
+      custColsText = input[0].style.color;
+      custColsArr.push({
+        id: custColsId,
+        val:  custColsVal,
+        textCol: custColsText
+      });
+    });
+
+    prompt("Theme Exported.\nCopy the text below to be used for import.", encodeURI(JSON.stringify(custColsArr)));
+  });
+
+  $(import_cols).click(function(e){
+    var tempURL = prompt("Enter exported theme text here:", "");
+    if (tempURL != null && tempURL != "") {
+      tempURL = JSON.parse(decodeURI(tempURL));
+      $.each( tempURL, function(idx,val) {
+        document.getElementById(val.id).jscolor.fromString(val.val);
+      });
+    }
   });
 
   $(reload_erp_tabs).click(function(e){

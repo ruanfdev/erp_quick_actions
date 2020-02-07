@@ -56,8 +56,8 @@
     "builtInCom": {
     "message":"Ingeboude Opdragte"
   },
-    "guide": {
-    "message":"Riglyn"
+    "guideInfo": {
+    "message":"Riglyn & Inligting"
   },
     "currentVer": {
     "message":"Huidige weergawe"
@@ -76,6 +76,12 @@
   },
     "resetCols": {
     "message":"Herstel"
+  },
+    "exportCols": {
+    "message":"Uitvoer"
+  },
+    "importCols": {
+    "message":"Invoer"
   },
     "experimental": {
     "message":"Eksperimenteel / Beta"

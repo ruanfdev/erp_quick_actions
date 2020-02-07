@@ -111,17 +111,23 @@ button {
 button:hover {
   box-shadow: var(--boxShadMed);
 }
-button.reset_cust_cols {
+button.reset_cust_cols,
+button.export_cust_cols,
+button.import_cust_cols {
   min-width: 100px;
-  padding: 3px 17px;
+  padding: 5px 17px;
+}
+.reset_cust_cols,
+.export_cust_cols,
+.import_cust_cols {
+  border:1px solid var(--btnWarning);
 }
 .save_form_field,
 .save_custom_settings {
   background-color: var(--green);
   border:1px solid var(--green);
 }
-.add_form_field,
-.reset_cust_cols {
+.add_form_field {
   background-color: var(--btnWarning);
   border:1px solid var(--btnWarning);
 }
