@@ -58,19 +58,36 @@ textarea#editText {
     justify-content: space-evenly;
 }
 #editTabs .add_item,
-#editTabs .save_item {
+#editTabs .save_item,
+#editTabs .download_item {
     font-size: 2.2em;
     text-align: center;
     padding: 10px;
     display: block;
-    width: 50%;
+    width: 33%;
 }
 #editTabs .add_item:hover,
 #editTabs .save_item:hover,
+#editTabs .download_item:hover,
 #editTabs .item > div:hover {
     background-color: var(--green);
     cursor: pointer;
 }
 #editTabs .item:first-child {
     border-top: 0;
+}
+div#notification {
+    position: fixed;
+    top: -100px;
+    right: 10px;
+    width: 200px;
+    z-index: 105;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--light);
+    background-color: var(--green);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: var(--boxShadDark);
 }

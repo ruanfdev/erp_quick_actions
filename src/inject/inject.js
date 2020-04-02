@@ -135,16 +135,19 @@ function injectProcess() {
 					var useTitle = '';
 					var bigTitleTop = window.top.$('html #header_container .welcome').html();
 					var subTitleTop = window.top.$('html #header_container .welcome > b').html();
-					if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
-						window.top.$('html #header_container .welcome').css('margin-top', '35px');
-						bigTitleTop = bigTitleTop.split('<');
-						useTitle = bigTitleTop[0];
-					} else {
-						window.top.$('html #header_container .welcome').css('margin-top', '25px');
-						subTitleTop = subTitleTop.split('</i>');
-						subTitleTop = subTitleTop.slice(-1)[0];
-						useTitle = subTitleTop;
+					if (typeof subTitleTop !== 'undefined') {
+						if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
+							window.top.$('html #header_container .welcome').css('margin-top', '35px');
+							bigTitleTop = bigTitleTop.split('<');
+							useTitle = bigTitleTop[0];
+						} else {
+							window.top.$('html #header_container .welcome').css('margin-top', '25px');
+							subTitleTop = subTitleTop.split('</i>');
+							subTitleTop = subTitleTop.slice(-1)[0];
+							useTitle = subTitleTop;
+						}
 					}
+					
 					if (window.location.host == 'php-dev.nwk.co.za') {
 						window.top.$('title').replaceWith('<title>DEV - '+useTitle+'</title>');
 					} else if (window.location.host == 'php-prd.nwk.co.za') {
