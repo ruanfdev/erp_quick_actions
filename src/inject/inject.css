@@ -109,8 +109,8 @@ html.light .btn.btn-default *:not(.fa) {
 }
 html.light .btn:hover,
 html.light .header_nav a:hover {
-    filter: grayscale(1);
-    box-shadow: inset 0 0 5px 1px var(--dark) !important;
+  filter: saturate(1.2) brightness(1.1);
+  /* box-shadow: inset 0 0 3px 0px var(--dark) !important; */
 }
 html.light iframe#renderHier {
   min-width: 100%;
@@ -410,8 +410,9 @@ html.light.vivaldiHead .header #header_container .btn_main #tuis.child button {
 html.light.vivaldiHead #lang button:hover {
   position: inherit;
 }
-html.light.vivaldiHead #lang button .fa-language:after {
-  content: "E";
+html.light.vivaldiHead #lang button.afrikaans .fa-language:after,
+html.light.vivaldiHead #lang button.english .fa-language:after {
+  content: " ";
   padding: 0px 1px 0px 4px;
   font-size: 14px;
   font-weight: normal;
@@ -420,8 +421,19 @@ html.light.vivaldiHead #lang button .fa-language:after {
   font: 400 13.3333px Arial;
   display: none;
 }
+html.light.vivaldiHead #lang button.afrikaans .fa-language:after {
+  content: "English";
+}
+html.light.vivaldiHead #lang button.english .fa-language:after {
+  content: "Afrikaans";
+}
 html.light.vivaldiHead #lang button:hover .fa-language:after {
   display: inline;
+}
+html.light.vivaldiHead #lang button:hover {
+  width: auto !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
 }
 /* Custom color
 switch vars */

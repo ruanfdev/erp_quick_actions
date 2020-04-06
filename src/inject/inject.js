@@ -135,6 +135,7 @@ function injectProcess() {
 					var useTitle = '';
 					var bigTitleTop = window.top.$('html #header_container .welcome').html();
 					var subTitleTop = window.top.$('html #header_container .welcome > b').html();
+					
 					if (typeof subTitleTop !== 'undefined') {
 						if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
 							window.top.$('html #header_container .welcome').css('margin-top', '35px');
@@ -146,14 +147,22 @@ function injectProcess() {
 							subTitleTop = subTitleTop.slice(-1)[0];
 							useTitle = subTitleTop;
 						}
-					}
-					
-					if (window.location.host == 'php-dev.nwk.co.za') {
-						window.top.$('title').replaceWith('<title>DEV - '+useTitle+'</title>');
-					} else if (window.location.host == 'php-prd.nwk.co.za') {
-						window.top.$('title').replaceWith('<title>PRD - '+useTitle+'</title>');
-					} else {
-						window.top.$('title').replaceWith('<title>QA - '+useTitle+'</title>');
+						
+						if (bigTitleTop[0].replace(/\s/g,'').slice(0,4) == 'Welk') {
+							$("#lang button").removeClass("english");
+							$("#lang button").addClass("afrikaans");
+						} else {
+							$("#lang button").removeClass("afrikaans");
+							$("#lang button").addClass("english");
+						}
+
+						if (window.location.host == 'php-dev.nwk.co.za') {
+							window.top.$('title').replaceWith('<title>DEV - '+useTitle+'</title>');
+						} else if (window.location.host == 'php-prd.nwk.co.za') {
+							window.top.$('title').replaceWith('<title>PRD - '+useTitle+'</title>');
+						} else {
+							window.top.$('title').replaceWith('<title>QA - '+useTitle+'</title>');
+						}
 					}
 
 					$("#lang button span").removeClass("fa-retweet");
