@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extName__",
-  "version": "4.8",
+  "version": "4.9",
   "manifest_version": 2,
   "description": "__MSG_extName__",
   "homepage_url": "https://ruanf.co.za",
@@ -38,7 +38,7 @@
       "exclude_matches": ["http://imap.nwk.co.za/*","http://*.nwk.co.za/phpMyAdmin/*","http://*.nwk.co.za/Betrokka/*"],
       "all_frames": true,
       "js": ["js/jquery/jquery.min.js","src/inject/inject.js"],
-      "css": ["src/custom.css","src/inject/inject.css","src/inject/inject_dark.css"]
+      "css": ["src/custom.css","src/inject/inject.css","src/inject/inject_dark.css","src/user.css"]
     }
   ]
 }

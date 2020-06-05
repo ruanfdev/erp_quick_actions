@@ -135,6 +135,7 @@ $(document).ready(function() {
     chkedEasyui = result.chkedEasyui;
     chkedNewtab = result.chkedNewtab;
     chkedForceCol = result.chkedForceCol;
+    chkedCustomCol = result.chkedCustomCol;
     chkedHidhead = result.chkedHidhead;
     chkedVivaldihead = result.chkedVivaldihead;    
     chkedMenus = result.chkedMenus;
@@ -214,6 +215,11 @@ $(document).ready(function() {
     } else {
       $('#check_forceCol').prop('checked', false);
     }
+    if (chkedCustomCol == true) {
+      $('#check_custom_col').prop('checked', true);
+    } else {
+      $('#check_custom_col').prop('checked', false);
+    }
     if (chkedHidhead == true) {
       $('#check_hidhead').prop('checked', true);
     } else {
@@ -289,6 +295,7 @@ $(document).ready(function() {
 
   $(reset_cols).click(function(e){
     bar1.set(0);
+    $('#check_custom_col').prop('checked', false);
     defaultColors();
     
     setTimeout(function () {
@@ -383,6 +390,7 @@ $(document).ready(function() {
     var chkedEasyui = $('#check_easyui').is(":checked");
     var chkedNewtab = $('#check_newtab').is(":checked");
     var chkedForceCol = $('#check_forceCol').is(":checked");
+    var chkedCustomCol = $('#check_custom_col').is(":checked");
     var chkedHidhead = $('#check_hidhead').is(":checked");
     var chkedVivaldihead = $('#check_vivaldiHead').is(":checked");
 
@@ -434,7 +442,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
@@ -503,6 +511,12 @@ function defaultColors() {
   document.getElementById("darkCustCol").jscolor.fromString('#333333');
   document.getElementById("darkLightCustCol").jscolor.fromString('#404040');
   document.getElementById("darkerCustCol").jscolor.fromString('#303030');
+
+  document.getElementById("userBgCustCol").jscolor.fromString('#404040');
+  document.getElementById("userHeaderCustCol").jscolor.fromString('#303030');
+  document.getElementById("userMenusCustCol").jscolor.fromString('#303030');
+  document.getElementById("userHomeItemsCustCol").jscolor.fromString('#505050');
+  document.getElementById("userFieldsetCustCol").jscolor.fromString('#505050');
 
   document.getElementById("btnSuccessCustCol").jscolor.fromString('#71bf44');
   document.getElementById("btnWarningCustCol").jscolor.fromString('#f7931c');

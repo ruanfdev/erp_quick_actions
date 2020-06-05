@@ -43,16 +43,22 @@ html.light.dark .note {
   color: var(--light);
   border-color: #909090;
 }
-html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title),
+html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon),
 html.light.dark fieldset,
+html.light.dark li.BlokNav,
 html.light.dark .Zebra_Form input.text,
 html.light.dark .Zebra_Form input.date,
-html.light.dark .BlokNav,
 html.light.dark ul#ShortcutsList {
   background-color: #505050;
   background: #505050;
   color: var(--light);
 }
+/* html.light.dark span.textbox-addon-right,
+html.light.dark a.combo-arrow {
+  background-color: var(--green) !important;
+  background: var(--green) !important;
+  color: var(--light);
+} */
 html.light.dark ul#ShortcutsList>li {
   background-color: var(--darkLight);
   background: var(--darkLight);

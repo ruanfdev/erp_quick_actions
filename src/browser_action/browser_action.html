@@ -180,6 +180,31 @@
       <div class="panel">
         <table class="input">
           <tr>
+            <td colspan='2'>
+              <div class="row">
+                <div class="inject sideinj">
+                  <label class="inject_container">
+                    <input type="checkbox" id="check_custom_col">
+                    <span class="checkmark_side"></span>
+                  </label>
+                </div>
+                <h3 data-localize="__MSG_enabled__"></h3>
+              </div>
+            </td>
+            <td colspan='4'>
+              <div class="row">
+                <div class="inject sideinj">
+                  <label class="inject_container">
+                    <input type="checkbox" id="check_forceCol">
+                    <span class="checkmark_side"></span>
+                  </label>
+                </div>
+                <h3 data-localize="__MSG_forceColor__"></h3>
+              </div>
+              <p class="checkbox_description" data-localize="__MSG_impactPerform__"></p>
+            </td>
+          </tr>
+          <tr>
             <td><label for="greenCustCol">Green</label></td>
             <td><label for="orangeCustCol">Orange</label></td>
             <td><label for="redCustCol">Red</label></td>
@@ -215,6 +240,25 @@
             <td colspan='6'></td>
           </tr>
           <tr>
+            <td><label for="userBgCustCol">Background</label></td>
+            <td><label for="userHeaderCustCol">Header</label></td>
+            <td><label for="userMenusCustCol">Menu's</label></td>
+            <td><label for="userHomeItemsCustCol">Home Items</label></td>
+            <td><label for="userFieldsetCustCol">Fieldsets</label></td>
+            <!-- <td><label for="darkerCustCol">Darker</label></td> -->
+          </tr>
+          <tr>
+            <td><input id="userBgCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="userHeaderCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="userMenusCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="userHomeItemsCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="userFieldsetCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <!-- <td><input id="darkerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td> -->
+          </tr>
+          <tr>
+            <td colspan='6'></td>
+          </tr>
+          <tr>
             <td><label for="btnSuccessCustCol">Success<br>Button</label></td>
             <td><label for="btnWarningCustCol">Warning<br>Button</label></td>
             <td><label for="btnDangerCustCol">Danger<br>Button</label></td>
@@ -230,20 +274,6 @@
           </tr>
           <tr>
             <td colspan='6'></td>
-          </tr>
-          <tr>
-            <td colspan='6'>
-              <div class="row">
-                <div class="inject sideinj">
-                  <label class="inject_container">
-                    <input type="checkbox" id="check_forceCol">
-                    <span class="checkmark_side"></span>
-                  </label>
-                </div>
-                <h3 data-localize="__MSG_forceColor__"></h3>
-              </div>
-              <p class="checkbox_description" data-localize="__MSG_impactPerform__"></p>
-            </td>
           </tr>
           <tr>
             <td colspan='2'>

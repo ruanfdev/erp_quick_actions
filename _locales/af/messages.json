@@ -11,6 +11,9 @@
     "login": {
     "message":"Teken In"
   },
+    "enabled": {
+    "message":"Enabled"
+  },
     "addRule": {
     "message":"Voeg Reël by"
   },

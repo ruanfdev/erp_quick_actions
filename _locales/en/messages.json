@@ -11,6 +11,9 @@
     "login": {
     "message":"Login"
   },
+    "enabled": {
+    "message":"Enabled"
+  },
     "addRule": {
     "message":"Add Rule"
   },

@@ -1,0 +1,24 @@
+html.light.userCSS body,
+html.light.userCSS div#cboxContent,
+html.light.userCSS div#cboxOverlay,
+html.light.userCSS .tabs-panels .panel-html,
+html.light.userCSS div#cboxLoadedContent iframe {
+    background-color: var(--userBg) !important;
+    background: var(--userBg) !important;
+}
+html.light.userCSS fieldset {
+    background-color: var(--userFieldset) !important;
+    background: var(--userFieldset) !important;
+}
+html.light.userCSS li.BlokNav {
+    background-color: var(--userHomeItems) !important;
+    background: var(--userHomeItems) !important;
+}
+html.light.userCSS .header,
+html.light.userCSS .header #header_container {
+    background-color: var(--userHeader) !important;
+}
+html.light.userCSS .ui-widget-content,
+html.light.userCSS ul#ShortcutsList {
+    background-color: var(--userMenus) !important;
+}

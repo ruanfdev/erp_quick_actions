@@ -93,6 +93,7 @@ function injectProcess() {
 		chkedEasyui = result.chkedEasyui;
 		chkedNewtab = result.chkedNewtab;
 		chkedForceCol = result.chkedForceCol;
+		chkedCustomCol = result.chkedCustomCol;
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
 		chkedMenus = result.chkedMenus;
@@ -358,6 +359,12 @@ function injectProcess() {
 									if (custColsArrSplit[0] == "darkLight") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
 									if (custColsArrSplit[0] == "darker") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
 
+									if (custColsArrSplit[0] == "userBgCustCol") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
+									if (custColsArrSplit[0] == "userHeaderCustCol") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
+									if (custColsArrSplit[0] == "userMenusCustCol") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
+									if (custColsArrSplit[0] == "userHomeItemsCustCol") {if (val.val != "#505050") {colorReplace('#505050', val.val);}}
+									if (custColsArrSplit[0] == "userFieldsetCustCol") {if (val.val != "#505050") {colorReplace('#505050', val.val);}}
+
 									if (custColsArrSplit[0] == "btnSuccessCustCol") {if (val.val != "#71bf44" && val.val != "#71BF44") {colorReplace('#71bf44', val.val);}}
 									if (custColsArrSplit[0] == "btnWarningCustCol") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
 									if (custColsArrSplit[0] == "btnDangerCustCol") {if (val.val != "#c12e2a" && val.val != "#C12E2A") {colorReplace('#c12e2a', val.val);}}
@@ -380,6 +387,19 @@ function injectProcess() {
 						});
 					}
 
+					if (typeof chkedCustomCol !== 'undefined') {
+						if (chkedCustomCol == true) {
+							$("html").addClass("userCSS");
+						} else {
+							$("html").removeClass("userCSS");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedCustomCol: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
 				}
 			} else {
 				chrome.storage.sync.set({
@@ -392,6 +412,7 @@ function injectProcess() {
 					chkedEasyui: false,
 					chkedNewtab: false,
 					chkedForceCol: false,
+					chkedCustomCol: false,
 					chkedHidhead: false,
 					chkedVivaldihead: false,
 					chkedMenus: false,
@@ -414,6 +435,7 @@ function injectProcess() {
 				chkedEasyui: false,
 				chkedNewtab: false,
 				chkedForceCol: false,
+				chkedCustomCol: false,
 				chkedHidhead: false,
 				chkedVivaldihead: false,
 				chkedMenus: false,
