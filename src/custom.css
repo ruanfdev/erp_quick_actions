@@ -34,7 +34,7 @@
 }
 @font-face {
     font-family: myRoboto;
-    src: url(../../fonts/Roboto-Regular.ttf);
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 @keyframes scaleX {
     0% {transform: scaleX(1);}
