@@ -490,7 +490,7 @@ html.light *::selection {
 }
 html.light.nyanCursor,
 html.light.nyanCursor * {
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), auto !important;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat925.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat925.png), auto !important;
 }
 html.light.nyanCursor a,
 html.light.nyanCursor a *,
@@ -498,7 +498,7 @@ html.light.nyanCursor button,
 html.light.nyanCursor button *,
 html.light.nyanCursor .btn,
 html.light.nyanCursor .btn * {
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat924.cur), auto !important;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), auto !important;
 }
 
 
