@@ -84,42 +84,7 @@ $(document).ready(function() {
     });
   }
 
-  var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
-    latest_version = snapshot.val().latest_version;
-    var changelog = snapshot.val().changelog;
-
-    for (let index = 2; index < changelog.length; index++) {
-      $('#changeHead').html('Changelog for version '+changelog[1]);
-      $('#changeList').append('<li id="changeItem changeItem'+index+'">'+changelog[index]+'</li>');
-    }
-
-    chrome.management.getSelf(function(extData) {
-      current_version = extData.version;
-      current_version = parseFloat(current_version);
-      $('#currentVer').html(current_version);
-      $('#latestVer').html(latest_version);
-
-      if (current_version < latest_version) {
-        $('#versionText').html('Do you like living in the past?');
-        $('#tooltip').css('color','#c12e2a');
-        $('#tooltip .tooltiptext').css('background-color','#c12e2a');
-        createNotif();
-      } else if (current_version > latest_version) {
-        $('#versionText').html('Are you a time traveller?');
-        $('#tooltip').css('color','#71bf44');
-        $('#tooltip .tooltiptext').css('background-color','#71bf44');
-      } else {
-        $('#versionText').html('Up-to-date');
-        $('#tooltip').css('color','#71bf44');
-        $('#tooltip .tooltiptext').css('background-color','#71bf44');
-      }
-      $('#tooltip').css('display', 'inline-block');
-      $('#tooltipChange').css('display', 'inline-block');
-
-      firebase.app().delete();
-    });
-
-  });
+  // Version Check Old Position
 
   chrome.storage.sync.get(null, function(result) {
     nwk_theme = result.nwk_theme;
@@ -496,6 +461,43 @@ $(document).ready(function() {
     document.getElementById("save_custom_settings").style.bottom = "-45px";
   });
   localizeHtmlPage();
+
+  var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
+    latest_version = snapshot.val().latest_version;
+    var changelog = snapshot.val().changelog;
+
+    for (let index = 2; index < changelog.length; index++) {
+      $('#changeHead').html('Changelog for version '+changelog[1]);
+      $('#changeList').append('<li id="changeItem changeItem'+index+'">'+changelog[index]+'</li>');
+    }
+
+    chrome.management.getSelf(function(extData) {
+      current_version = extData.version;
+      current_version = parseFloat(current_version);
+      $('#currentVer').html(current_version);
+      $('#latestVer').html(latest_version);
+
+      if (current_version < latest_version) {
+        $('#versionText').html('Do you like living in the past?');
+        $('#tooltip').css('color','#c12e2a');
+        $('#tooltip .tooltiptext').css('background-color','#c12e2a');
+        createNotif();
+      } else if (current_version > latest_version) {
+        $('#versionText').html('Are you a time traveller?');
+        $('#tooltip').css('color','#71bf44');
+        $('#tooltip .tooltiptext').css('background-color','#71bf44');
+      } else {
+        $('#versionText').html('Up-to-date');
+        $('#tooltip').css('color','#71bf44');
+        $('#tooltip .tooltiptext').css('background-color','#71bf44');
+      }
+      $('#tooltip').css('display', 'inline-block');
+      $('#tooltipChange').css('display', 'inline-block');
+
+      firebase.app().delete();
+    });
+
+  });
 });
 
 function defaultColors() {
@@ -517,6 +519,7 @@ function defaultColors() {
   document.getElementById("userMenusCustCol").jscolor.fromString('#303030');
   document.getElementById("userHomeItemsCustCol").jscolor.fromString('#505050');
   document.getElementById("userFieldsetCustCol").jscolor.fromString('#505050');
+  document.getElementById("userLegendsCustCol").jscolor.fromString('#F7931C');
 
   document.getElementById("btnSuccessCustCol").jscolor.fromString('#71bf44');
   document.getElementById("btnWarningCustCol").jscolor.fromString('#f7931c');

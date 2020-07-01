@@ -10,6 +10,10 @@ html.light.userCSS fieldset {
     background-color: var(--userFieldset) !important;
     background: var(--userFieldset) !important;
 }
+html.light.userCSS legend {
+    background-color: var(--userLegends) !important;
+    background: var(--userLegends) !important;
+}
 html.light.userCSS li.BlokNav {
     background-color: var(--userHomeItems) !important;
     background: var(--userHomeItems) !important;

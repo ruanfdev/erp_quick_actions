@@ -337,12 +337,30 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
+
+					if (typeof chkedCustomCol !== 'undefined') {
+						if (chkedCustomCol == true) {
+							$("html").addClass("userCSS");
+						} else {
+							$("html").removeClass("userCSS");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedCustomCol: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
 					
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");
 							// document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
-							document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+							if ($("html").hasClass("userCSS")) {
+								document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+							} else {
+								document.documentElement.style.removeProperty('--'+custColsArrSplit[0]);
+							}
 
 							if (typeof chkedForceCol !== 'undefined') {
 								if (chkedForceCol == true) {
@@ -364,6 +382,7 @@ function injectProcess() {
 									if (custColsArrSplit[0] == "userMenusCustCol") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
 									if (custColsArrSplit[0] == "userHomeItemsCustCol") {if (val.val != "#505050") {colorReplace('#505050', val.val);}}
 									if (custColsArrSplit[0] == "userFieldsetCustCol") {if (val.val != "#505050") {colorReplace('#505050', val.val);}}
+									if (custColsArrSplit[0] == "userLegendsCustCol") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#F7931C', val.val);}}
 
 									if (custColsArrSplit[0] == "btnSuccessCustCol") {if (val.val != "#71bf44" && val.val != "#71BF44") {colorReplace('#71bf44', val.val);}}
 									if (custColsArrSplit[0] == "btnWarningCustCol") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
@@ -382,20 +401,6 @@ function injectProcess() {
 					} else {
 						chrome.storage.sync.set({
 							custColsArr: []
-						}, function () {
-							// document.getElementsByTagName("head")[0].appendChild(linkLight);
-						});
-					}
-
-					if (typeof chkedCustomCol !== 'undefined') {
-						if (chkedCustomCol == true) {
-							$("html").addClass("userCSS");
-						} else {
-							$("html").removeClass("userCSS");
-						}
-					} else {
-						chrome.storage.sync.set({
-							chkedCustomCol: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
