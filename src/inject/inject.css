@@ -485,8 +485,8 @@ html.light #ShortcutsList {
   border: 2px solid var(--green);
 }
 html.light *::selection {
-  background: var(--greyDark);
-  color: var(--light);
+  background: var(--green);
+  color: var(--darker);
 }
 html.light.nyanCursor,
 html.light.nyanCursor * {

@@ -23,7 +23,12 @@ $(document).ready(function() {
     if (typeof saveArrNotes !== 'undefined' && saveArrNotes !== null) {
         if (saveArrNotes.length !== 0) {
             for (let i = 0; i < saveArrNotes.length; i++) {
-                $("#editTabs").append('<div class="item"><div id="item'+highNumber+'">'+saveArrNotes[i]+'</div><div id="delete'+highNumber+'">X</div></div>');
+                var tempSelectedVar = "";
+                if (i == saveArrNotes.length) {
+                    tempSelectedVar = "selected";
+                }
+
+                $("#editTabs").append(`<div class="item ${tempSelectedVar}"><div id="item${highNumber}">${saveArrNotes[i]}</div><div id="delete${highNumber}">X</div></div>`);
 
                 $('#delete'+highNumber).click(function(e){
                     $(this).parent().remove();
@@ -59,7 +64,7 @@ $(document).ready(function() {
             selectedNote = $("#editTabs .item.selected>div:first-child");
             $(selectedNote).html($(textArea).val());
             writeLocalStorage();
-        }, 500);
+        }, 100);
     });
 
     function showNotif(msg) {
@@ -104,7 +109,12 @@ $(document).ready(function() {
                             $(this).remove();
                         });
                         for (let i = 0; i < saveArrNotes.length; i++) {
-                            $("#editTabs").append('<div class="item"><div id="item'+highNumber+'">'+saveArrNotes[i]+'</div><div id="delete'+highNumber+'">X</div></div>');
+                            var tempSelectedVar = "";
+                            if (i == saveArrNotes.length) {
+                                tempSelectedVar = "selected";
+                            }
+
+                            $("#editTabs").append(`<div class="item ${tempSelectedVar}"><div id="item${highNumber}">${saveArrNotes[i]}</div><div id="delete${highNumber}">X</div></div>`);
         
                             $('#delete'+highNumber).click(function(e){
                                 $(this).parent().remove();
@@ -141,7 +151,7 @@ $(document).ready(function() {
         menuItem = $("#editTabs .item");
         count = menuItem.length;
 
-        $("#editTabs").append('<div class="item"><div id="item'+highNumber+'">'+'</div><div id="delete'+highNumber+'">X</div></div>');
+        $("#editTabs").append(`<div class="item selected"><div id="item${highNumber}"></div><div id="delete${highNumber}">X</div></div>`);
 
         $('#delete'+highNumber).click(function(e){
             $(this).parent().remove();
@@ -160,7 +170,7 @@ $(document).ready(function() {
             $(textArea).focus();
         });
 
-        $('#item'+highNumber).trigger('click');
+        // $('#item'+highNumber).trigger('click');
 
         highNumber++;
         count++;
