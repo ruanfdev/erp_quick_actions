@@ -84,6 +84,8 @@ function injectProcess() {
 		nwk_theme = result.nwk_theme;
 		custom_css_block = result.custom_css_block;
 		custom_js_block = result.custom_js_block;
+		auto_login_user = result.auto_login_user;
+    	auto_login_pass = result.auto_login_pass;
 		injected = result.injected;
 		custColsArr = result.custColsArr;
 		chkedHeader = result.chkedHeader;
@@ -268,6 +270,26 @@ function injectProcess() {
 						});
 					}
 
+					if (typeof auto_login_user !== 'undefined') {
+
+						// 107 - Num+
+
+						if (auto_login_user != '') {
+							document.addEventListener("keyup", function(event) {
+								console.log(event);
+							});
+							// $("#txtGebruiker").val(auto_login_user);
+							// $("#pwdWagwoord").val(auto_login_pass);
+						}
+					} else {
+						chrome.storage.sync.set({
+							auto_login_user: '',
+							auto_login_pass: ''
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
 					if (typeof chkedMenus !== 'undefined') {
 						if (chkedMenus == true) {
 							$("html").addClass("altMenus");
@@ -422,7 +444,9 @@ function injectProcess() {
 					chkedVivaldihead: false,
 					chkedMenus: false,
 					chkedAnimate: false,
-					chkedMainBlock: false
+					chkedMainBlock: false,
+					auto_login_user: '',
+					auto_login_pass: ''
 				}, function () {
 					// document.getElementsByTagName("head")[0].appendChild(linkLight);
 				});
@@ -445,7 +469,9 @@ function injectProcess() {
 				chkedVivaldihead: false,
 				chkedMenus: false,
 				chkedAnimate: false,
-				chkedMainBlock: false
+				chkedMainBlock: false,
+				auto_login_user: '',
+				auto_login_pass: ''
 			}, function () {
 				// document.getElementsByTagName("head")[0].appendChild(linkLight);
 			});

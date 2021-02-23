@@ -39,7 +39,9 @@ h1#custom_css_block_header {
   text-align: center;
   padding: 10px 5% 169px;
 }
-.container1 input[type=text] {
+.container1 input[type=text],
+.auto_login #auto_login_user,
+.auto_login #auto_login_pass {
   padding: 10px 5px;
   margin: 5px 0px;
   float: left;
@@ -54,10 +56,16 @@ h1#custom_css_block_header {
 .container1 input[type=text]:hover {
   background-color: var(--light);
 }
-.container1 div:nth-child(2) input[type=text] {
+.container1 div:nth-child(2) input[type=text],
+.auto_login #auto_login_user,
+.auto_login #auto_login_pass {
   width: 96%;
   border-radius: 5px;
   margin-top: 10px;
+}
+.auto_login #auto_login_user,
+.auto_login #auto_login_pass {
+  width: 85%;
 }
 .container1 > div {
   min-height: 50px;

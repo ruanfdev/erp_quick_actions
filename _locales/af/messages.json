@@ -133,5 +133,8 @@
   },
     "mainBlock": {
     "message":"Kleiner Tuis Items"
+  },
+    "autoLogin": {
+    "message":"Outomatiese Aanmelding"
   }
 }

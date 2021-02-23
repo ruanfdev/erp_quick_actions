@@ -133,5 +133,8 @@
   },
     "mainBlock": {
     "message":"Smaller Home Items"
+  },
+    "autoLogin": {
+    "message":"Automatic Login"
   }
 }
