@@ -162,7 +162,7 @@ button.import_cust_cols {
 }
 .onoffswitch {
   position: absolute; width: 85px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  user-select:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
   top: 6px;
   right: 45px;
 }
