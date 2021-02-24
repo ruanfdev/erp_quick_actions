@@ -40,8 +40,8 @@ h1#custom_css_block_header {
   padding: 10px 5% 169px;
 }
 .container1 input[type=text],
-.auto_login #auto_login_user,
-.auto_login #auto_login_pass {
+.autofill #autofill_user,
+.autofill #autofill_pass {
   padding: 10px 5px;
   margin: 5px 0px;
   float: left;
@@ -57,14 +57,14 @@ h1#custom_css_block_header {
   background-color: var(--light);
 }
 .container1 div:nth-child(2) input[type=text],
-.auto_login #auto_login_user,
-.auto_login #auto_login_pass {
+.autofill #autofill_user,
+.autofill #autofill_pass {
   width: 96%;
   border-radius: 5px;
   margin-top: 10px;
 }
-.auto_login #auto_login_user,
-.auto_login #auto_login_pass {
+.autofill #autofill_user,
+.autofill #autofill_pass {
   width: 85%;
 }
 .container1 > div {

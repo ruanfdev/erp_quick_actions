@@ -87,11 +87,13 @@ $(document).ready(function() {
   // Version Check Old Position
 
   chrome.storage.sync.get(null, function(result) {
+    // console.log('Sync Result',result);
+
     nwk_theme = result.nwk_theme;
     custom_css_block = result.custom_css_block;
     custom_js_block = result.custom_js_block;
-    autoLoginUser = result.auto_login_user;
-    autoLoginPass = result.auto_login_pass;
+    autofill_user = result.autofill_user;
+    autofill_pass = result.autofill_pass;
     injected = result.injected;
     rules = result.rules;
     custColsArr = result.custColsArr;
@@ -213,11 +215,11 @@ $(document).ready(function() {
       $('#check_main_block').prop('checked', false);
     }
 
-    if (autoLoginUser != undefined) {
-      $('#auto_login_user').val(autoLoginUser);
+    if (autofill_user != undefined && autofill_user != '') {
+      $('#autofill_user').val(autofill_user);
     }
-    if (autoLoginPass != undefined) {
-      $('#auto_login_pass').val(autoLoginPass);
+    if (autofill_pass != undefined && autofill_pass != '') {
+      $('#autofill_pass').val(autofill_pass);
     }
 
     if (custom_css_block != undefined) {
@@ -351,8 +353,8 @@ $(document).ready(function() {
 
     custom_css_block = myCssCode.getValue();
     custom_js_block = myJsCode.getValue();
-    autoLoginUser = $('#auto_login_user').val();
-    autoLoginPass = $('#auto_login_pass').val();
+    autofill_user = $('#autofill_user').val();
+    autofill_pass = $('#autofill_pass').val();
 
     var chkedTheme = $('#myonoffswitch').is(":checked");
     var chkedInject = $('#checkinject').is(":checked");
@@ -394,7 +396,7 @@ $(document).ready(function() {
     }
 
     rules = [];
-    $('input[type=text]').each(function(index){
+    $('input[name = "mytext[]"]').each(function(index){
       var input = $(this);
       qActions = input.val();
       qActions = qActions.split("::");
@@ -418,7 +420,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock,auto_login_user:autoLoginUser,auto_login_pass:autoLoginPass}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedForceCol:chkedForceCol,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock,autofill_user:autofill_user,autofill_pass:autofill_pass}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";

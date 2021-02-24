@@ -84,8 +84,8 @@ function injectProcess() {
 		nwk_theme = result.nwk_theme;
 		custom_css_block = result.custom_css_block;
 		custom_js_block = result.custom_js_block;
-		auto_login_user = result.auto_login_user;
-    	auto_login_pass = result.auto_login_pass;
+		autofill_user = result.autofill_user;
+    	autofill_pass = result.autofill_pass;
 		injected = result.injected;
 		custColsArr = result.custColsArr;
 		chkedHeader = result.chkedHeader;
@@ -270,21 +270,20 @@ function injectProcess() {
 						});
 					}
 
-					if (typeof auto_login_user !== 'undefined') {
-
-						// 107 - Num+
-
-						if (auto_login_user != '') {
+					if (typeof autofill_user !== 'undefined') {
+						if (autofill_user != '') {
 							document.addEventListener("keyup", function(event) {
-								console.log(event);
+								if (window.location.pathname == '/nwk/login.php' && event.key == '+') {
+									$("#txtGebruiker").val(autofill_user);
+									$("#pwdWagwoord").val(autofill_pass);
+									$('#btnSubmit').trigger('click');
+								}
 							});
-							// $("#txtGebruiker").val(auto_login_user);
-							// $("#pwdWagwoord").val(auto_login_pass);
 						}
 					} else {
 						chrome.storage.sync.set({
-							auto_login_user: '',
-							auto_login_pass: ''
+							autofill_user: '',
+							autofill_pass: ''
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -445,8 +444,8 @@ function injectProcess() {
 					chkedMenus: false,
 					chkedAnimate: false,
 					chkedMainBlock: false,
-					auto_login_user: '',
-					auto_login_pass: ''
+					autofill_user: '',
+					autofill_pass: ''
 				}, function () {
 					// document.getElementsByTagName("head")[0].appendChild(linkLight);
 				});
@@ -470,8 +469,8 @@ function injectProcess() {
 				chkedMenus: false,
 				chkedAnimate: false,
 				chkedMainBlock: false,
-				auto_login_user: '',
-				auto_login_pass: ''
+				autofill_user: '',
+				autofill_pass: ''
 			}, function () {
 				// document.getElementsByTagName("head")[0].appendChild(linkLight);
 			});
