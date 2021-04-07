@@ -271,14 +271,23 @@ function injectProcess() {
 					}
 
 					if (typeof autofill_user !== 'undefined') {
-						if (autofill_user != '') {
-							document.addEventListener("keyup", function(event) {
-								if (window.location.pathname == '/nwk/login.php' && event.key == '+') {
-									$("#txtGebruiker").val(autofill_user);
-									$("#pwdWagwoord").val(autofill_pass);
-									$('#btnSubmit').trigger('click');
-								}
-							});
+						if (autofill_user != '' && autofill_pass != '') {
+							var prevUrlLen = window.top.document.referrer.length;
+							var prevUrl = window.top.document.referrer.substr(prevUrlLen - 14);
+							if (window.location.pathname == '/nwk/login.php' && prevUrl == '/nwk/index.php') {
+								document.addEventListener("keyup", function(event) {
+									if (event.key == 'Enter') {
+										$("#txtGebruiker").val(autofill_user);
+										$("#pwdWagwoord").val(autofill_pass);
+										$('#btnSubmit').trigger('click');
+									}
+								});
+							} else {
+								$("#txtGebruiker").val(autofill_user);
+								$("#pwdWagwoord").val(autofill_pass);
+								$('#btnSubmit').trigger('click');
+							}
+							
 						}
 					} else {
 						chrome.storage.sync.set({
