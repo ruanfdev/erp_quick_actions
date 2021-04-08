@@ -282,7 +282,7 @@ function injectProcess() {
 										$('#btnSubmit').trigger('click');
 									}
 								});
-							} else {
+							} else if (window.location.pathname == '/nwk/login.php') {
 								$("#txtGebruiker").val(autofill_user);
 								$("#pwdWagwoord").val(autofill_pass);
 								$('#btnSubmit').trigger('click');
