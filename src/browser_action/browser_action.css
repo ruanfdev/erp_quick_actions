@@ -67,6 +67,22 @@ h1#custom_css_block_header {
 .autofill #autofill_pass {
   width: 85%;
 }
+.autofill #pass_show,
+.autofill #pass_hide {
+  position: relative;
+  top: 15px;
+  right: 30px;
+  margin-left: 88%;
+  font-size: 2em;
+  color: var(--dark);
+  cursor: pointer;
+}
+.autofill #pass_show {
+  display: block;
+}
+.autofill #pass_hide {
+  display: none;
+}
 .container1 > div {
   min-height: 50px;
 }

@@ -40,6 +40,8 @@ $(document).ready(function() {
   var close_menu    = $(".closebtn");
   var checkmark    = $(".checkmark");
   var onoffswitch    = $(".onoffswitch-label");
+  var pass_show     = $("#pass_show");
+  var pass_hide     = $("#pass_hide");
   var qActions;
   var rules;
   var custom_css_block;
@@ -293,16 +295,34 @@ $(document).ready(function() {
       });
     });
 
-    prompt("Theme Exported.\nCopy the text below to be used for import.", encodeURI(JSON.stringify(custColsArr)));
+    var personURL = encodeURI(JSON.stringify(custColsArr));
+    var personKeyword = prompt("Theme Exported.\nEnter a keyword to be used for import.", '');
+    
+    if (personKeyword != null && personKeyword != "") {
+      firebase.database().ref('themes/' + personKeyword).set({
+        theme: personURL
+      });
+    }
   });
 
   $(import_cols).click(function(e){
-    var tempURL = prompt("Enter exported theme text here:", "");
-    if (tempURL != null && tempURL != "") {
-      tempURL = JSON.parse(decodeURI(tempURL));
-      $.each( tempURL, function(idx,val) {
-        document.getElementById(val.id).jscolor.fromString(val.val);
+    var keywordPrompt = prompt("Enter exported keyword here:", "");
+    if (keywordPrompt != null && keywordPrompt != "") {
+      firebase.database().ref().once('value').then(function(snapshot){
+        var tempThemeData = snapshot.val().themes;
+        if (typeof tempThemeData[keywordPrompt] != 'undefined') {
+          var tempURL = tempThemeData[keywordPrompt].theme;
+          tempURL = JSON.parse(decodeURI(tempURL));
+  
+          $.each( tempURL, function(idx,val) {
+            document.getElementById(val.id).jscolor.fromString(val.val);
+          });
+        } else {
+          alert('Invalid Keyword');
+        }
       });
+    } else {
+      alert('Invalid Keyword');
     }
   });
 
@@ -446,6 +466,18 @@ $(document).ready(function() {
     x--;
   });
 
+  $(pass_show).click(function(e){
+    document.getElementById("pass_show").style.display = "none";
+    document.getElementById("pass_hide").style.display = "block";
+    $('#autofill_pass').attr('type','text');
+  });
+
+  $(pass_hide).click(function(e){
+    document.getElementById("pass_hide").style.display = "none";
+    document.getElementById("pass_show").style.display = "block";
+    $('#autofill_pass').attr('type','password');
+  });
+
   $(menu_bars).click(function(e){
     document.getElementById("mySidenav").style.width = "90%";
     document.getElementById("mySidenav").style.height = "90%";
@@ -507,7 +539,7 @@ $(document).ready(function() {
       $('#tooltip').css('display', 'inline-block');
       $('#tooltipChange').css('display', 'inline-block');
 
-      firebase.app().delete();
+      // firebase.app().delete();
     });
 
   });
