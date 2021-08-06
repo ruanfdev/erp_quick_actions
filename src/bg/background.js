@@ -18,6 +18,16 @@ var fixedRules = [
   'pers',
 ];
 var suggestions = [];
+var startTime = 0;
+var endTime = 0;
+var todayActiveTime = 0;
+startTime = new Date();
+startTime = startTime.getTime();
+var todayDate = 0;
+var history_log = [];
+
+// var time = new Date();
+// console.log("date: ",time.getDate());
 
 function alertInvalid() {
   alert("Invalid command!");
@@ -227,7 +237,7 @@ chrome.storage.sync.get(null, function(result) {
       parent = "erpID_QA";
       pre = 'Q';
     }
-    
+
     if (rules != undefined && rules[0].keyword != '') {
       for (var i = 0; i < rules.length; i++) {
         chrome.contextMenus.create({
@@ -282,6 +292,31 @@ chrome.omnibox.onInputEntered.addListener(function(text, currentTab) {
       callDefaults(envPage);
     }
   }
+});
+
+chrome.idle.onStateChanged.addListener(function(state) {
+  var dayFull = new Date();
+  var day = dayFull.getDate();
+  if (day != todayDate) {
+    todayDate = day;
+    todayActiveTime = 0;
+  }
+
+  if (state == "active") {
+    startTime = new Date();
+    startTime = startTime.getTime();
+  } else if (state == "idle" || state == "locked") {
+    endTime = new Date();
+    endTime = endTime.getTime();
+    var timeDiff = endTime - startTime;
+    timeDiff /= 1000;
+
+    todayActiveTime = todayActiveTime+Math.round(timeDiff);
+  }
+
+  chrome.storage.sync.set({idle_date:todayDate,idle_time:todayActiveTime}, function() {
+    // alertReload();
+  });
 });
 
 chrome.tabs.onCreated.addListener(function(tab) {

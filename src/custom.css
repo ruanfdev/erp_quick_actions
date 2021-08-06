@@ -13,6 +13,7 @@
     --userLegends: #F7931C;
 
     --green: #71bf44;
+    --greenHover: rgba(113,191,68,0.25);
     --orange: #f7931c;
     --red: #c12e2a;
     --blue: #2aabd2;
@@ -31,7 +32,7 @@
     --boxShadMed: 0px 0px 5px rgba(0,0,0,0.5);
     --boxShadDark: 0px 0px 5px rgba(0,0,0,0.8);
 
-    --mainPadding: 15px;  
+    --mainPadding: 15px;
 }
 @font-face {
     font-family: myRoboto;

@@ -1,8 +1,8 @@
 {
-  "name": "__MSG_extName__",
-  "version": "5.4",
+  "name": "ERP - Quick Actions",
+  "version": "5.5",
   "manifest_version": 2,
-  "description": "__MSG_extName__",
+  "description": "ERP - Quick Actions",
   "homepage_url": "https://ruanf.co.za",
   "content_security_policy": "script-src 'self' https://www.gstatic.com/firebasejs/6.0.2/firebase.js https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js https://cdn.firebase.com https://*.firebaseio.com 'unsafe-eval'; object-src 'self'",
   "icons": {
@@ -17,7 +17,7 @@
   },
   "browser_action": {
     "default_icon": "icons/icon_19.png",
-    "default_title": "__MSG_extName__",
+    "default_title": "ERP - Quick Actions",
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
@@ -27,6 +27,7 @@
     "activeTab",
     "notifications",
     "storage",
+    "idle",
     "http://*.nwk.co.za/*"
   ],
   "omnibox": {

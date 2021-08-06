@@ -6,7 +6,7 @@
 }
 body {
   margin: 0;
-  min-width: 420px;
+  min-width: 700px;
   min-height: 0px;
 }
 h1 {
@@ -21,6 +21,25 @@ h3 {
 .sidenav h1 {
   padding-left: 0px;
   margin: 0;
+}
+.top_container>h1 {
+  text-align: center;
+  font-size: 1.8em;
+  line-height: 18px;
+}
+i#menu_bars {
+  position: absolute;
+  left: 7px;
+  top: 22px;
+  padding: 8px;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+i#menu_bars:hover {
+  background-color: var(--greenHover);
+}
+span#smallVersion {
+  font-size: 0.7em;
 }
 h1#custom_css_block_header {
   display: inline-block;
@@ -37,42 +56,43 @@ h1#custom_css_block_header {
 .container1 {
   width: 90%;
   text-align: center;
-  padding: 10px 5% 169px;
+  padding: 60px 5% 15px;
 }
-.container1 input[type=text],
-.autofill #autofill_user,
-.autofill #autofill_pass {
+.container1 input[type=text] {
   padding: 10px 5px;
   margin: 5px 0px;
   float: left;
   border: 1px solid var(--green);
-  width: 86%;
+  width: 92%;
   border-radius: 5px 0px 0px 5px;
   outline: none;
   cursor: text;
-  float: left;
 }
 .container1 input[type=text]:focus,
 .container1 input[type=text]:hover {
   background-color: var(--light);
 }
-.container1 div:nth-child(2) input[type=text],
-.autofill #autofill_user,
-.autofill #autofill_pass {
-  width: 96%;
+.container1 div:nth-child(2) input[type=text] {
+  width: 98%;
   border-radius: 5px;
   margin-top: 10px;
 }
-.autofill #autofill_user,
-.autofill #autofill_pass {
+.autofill #autofill_user, .autofill #autofill_pass {
   width: 85%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--green);
+  outline: none;
+  cursor: text;
 }
 .autofill #pass_show,
 .autofill #pass_hide {
   position: relative;
-  top: 15px;
-  right: 30px;
+  top: -43px;
+  right: 10px;
   margin-left: 88%;
+  margin-bottom: -25px;
   font-size: 2em;
   color: var(--dark);
   cursor: pointer;
@@ -94,6 +114,7 @@ h1#custom_css_block_header {
 }
 .btn_container {
   position: fixed;
+  display: flex;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -107,7 +128,7 @@ h1#custom_css_block_header {
 }
 .note_container > p {
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
 }
 .reload_container {
   width: 140px;
@@ -147,6 +168,13 @@ button.import_cust_cols {
   border:1px solid var(--btnWarning);
 }
 .save_form_field,
+.add_form_field,
+.clear_all {
+  margin: 0;
+  border-radius: 0;
+  flex: auto;
+}
+.save_form_field,
 .save_custom_settings {
   background-color: var(--green);
   border:1px solid var(--green);
@@ -179,7 +207,7 @@ button.import_cust_cols {
 .onoffswitch {
   position: absolute; width: 85px;
   user-select:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-  top: 6px;
+  top: 25px;
   right: 45px;
 }
 .onoffswitch * {
@@ -255,12 +283,13 @@ button.import_cust_cols {
 p#versionText {
   font-size: 0.6em;
 }
-.tooltiptext > p {
+.tooltiptext > p,
+.tooltiptextChange > p {
   font-size: 0.8em;
   margin: 0.7em 0px;
 }
-.tooltiptextChange > p {
-  font-size: 0.8em;
+.tooltiptextActive > p {
+  font-size: 1.1em;
   margin: 0.7em 0px;
 }
 .tooltiptextChange > ul {
@@ -272,11 +301,16 @@ p#versionText {
 .tooltiptextChange > ul li {
   margin-bottom: 0.3em;
 }
-#tooltipChange {
+#tooltipChange,
+#tooltipActive {
   position: relative;
   color: var(--green);
   display: none;
   cursor: help;
+  font-size: 0.8em;
+}
+#tooltipActive {
+  display: inline-block;
 }
 #tooltip {
   position: relative;
@@ -285,7 +319,8 @@ p#versionText {
   cursor: help;
 }
 #tooltip .tooltiptext,
-#tooltipChange .tooltiptextChange {
+#tooltipChange .tooltiptextChange,
+#tooltipActive .tooltiptextActive {
   visibility: hidden;
   width: 160px;
   background-color: var(--red);
@@ -304,8 +339,14 @@ p#versionText {
   width: 280px;
   margin-left: -140px;
 }
+#tooltipActive .tooltiptextActive {
+  background-color: var(--green);
+  width: 200px;
+  margin-left: -100px;
+}
 #tooltip .tooltiptext::after,
-#tooltipChange .tooltiptextChange::after {
+#tooltipChange .tooltiptextChange::after,
+#tooltipActive .tooltiptextActive::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -316,7 +357,8 @@ p#versionText {
   border-color: transparent transparent var(--dark) transparent;
 }
 #tooltip:hover .tooltiptext,
-#tooltipChange:hover .tooltiptextChange {
+#tooltipChange:hover .tooltiptextChange,
+#tooltipActive:hover .tooltiptextActive {
   visibility: visible;
   box-shadow: var(--boxShadMed);
 }
@@ -326,12 +368,13 @@ button,
 button * {
   cursor: pointer;
 }
-.closebtn {
+#mySidenav .closebtn {
   position: fixed;
   z-index: 8;
   top: 10px;
   right: 100%;
   text-shadow: var(--boxShadDark);
+  font-size: 2.5em;
 }
 .save_custom_settings {
   position: fixed;
@@ -340,32 +383,41 @@ button * {
   right: 100%;
 }
 .sidenav {
-  height: 87%;
-  width: 0;
+  height: 0;
+  width: 90%;
   position: fixed;
   z-index: 3;
   top: 0;
   left: 0;
   background-color: var(--dark);
   overflow-x: hidden;
-  padding-top: 60px;
+  padding: 0 5%;
   text-align: left;
   box-shadow: var(--boxShadMed);
   opacity: 0;
   border-left: 0px solid var(--light);
   border-right: 0px solid var(--light);
+  transition: 0.1s linear;
 }
 .sidenav h1,
 .sidenav li,
 .sidenav .closebtn {
   color: var(--light);
 }
-.sidenav ul {
+.sidenav ul.firstList {
   padding-left: 18px;
 }
-.sidenav li {
+.sidenav .panel ul.firstList>li {
   text-align: left;
   font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.sidenav ul.secondList {
+  padding-left: 20px;
+}
+.sidenav .panel ul li {
+  font-size: 1.4em;
+  margin-bottom: 2px;
 }
 .row {
   position: relative;
@@ -389,7 +441,7 @@ button * {
 }
 .inject {
   position: absolute;
-  top: 10px;
+  top: 29px;
   right: 10px;
 }
 table.input label {
@@ -543,7 +595,8 @@ p.section_description {
 }
 .accordion {
   cursor: pointer;
-  padding: 10px 0;
+  padding: 15px 0;
+  margin: 0;
   width: 100%;
   text-align: left;
   border: none;
@@ -552,9 +605,13 @@ p.section_description {
   box-shadow: none !important;
 }
 .panel {
-  padding: 0 0 0 20px;
+  padding: 0 5%;
+  margin-left: -5%;
+  min-width: 100%;
   max-height: 0;
   overflow: hidden;
+  background: var(--greenHover);
+  border-radius: 5px;
   transition: max-height 0.2s ease-out;
 }
 .accordion:before {
@@ -568,7 +625,10 @@ p.section_description {
   content: '-';
 }
 .accordion:hover {
-  padding-left: 10px;
+  padding-left: 5%;
+  background-color: var(--greenHover) !important;
+  margin-left: -5%;
+  width: 110%;
 }
 
 
@@ -596,12 +656,6 @@ body.dark .top_container {
 }
 body.dark .sidenav {
   background-color: var(--dark);
-}
-body.dark .reload_erp_tabs,
-body.dark .reload_ext {
-  background-color: var(--darker);
-  border:1px solid var(--darker);
-  color: var(--light);
 }
 body.dark .accordion {
   background-color: var(--dark);

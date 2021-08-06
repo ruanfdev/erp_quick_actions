@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title data-localize="__MSG_extName__"></title>
+    <title>ERP - Quick Actions</title>
     <!-- <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script> -->
@@ -20,25 +20,69 @@
   <body id="body">
     <div id="mySidenav" class="sidenav">
       <i class="fa fa-times fa-2x closebtn" id="closebtn" aria-hidden="true"></i>
-      <button class="save_custom_settings" id="save_custom_settings"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_save__"></span></button>
+      <button class="save_custom_settings" id="save_custom_settings"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span>Save</span></button>
+
+      <!-- Reloads & Troubleshooting -->
+      <button class="accordion">
+        <h1>Reloads & Troubleshooting</h1>
+      </button>
+      <div class="panel">
+        <div class="note_container">
+          <div class="reload_container">
+            <button class="reload_ext">
+              <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
+              <br/>
+              <i>Extension</i>
+            </button>
+            <button class="reload_erp_tabs">
+              <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
+              <br/>
+              <i>ERP Tabs</i>
+            </button>
+          </div>
+          <p>
+            Reload required if the following changes were made:<br/><br/>
+            1. Disabling 'Force color replace'<br/>
+            2. Enabling/Disabling 'Custom New Tab'<br/>
+            3. Adding/Editing quick actions to update context menu<br/>
+            4. Extension Update while ERP Tab is open<br/><br/>
+            Do you want to reload the Extension?<br/>
+            (remember to reload all ERP tabs if the extension was reloaded)
+          </p>
+        </div>
+      </div>
 
       <!-- Guide -->
       <button class="accordion">
-        <h1 data-localize="__MSG_guideInfo__"></h1>
+        <h1>Guide & Info</h1>
       </button>
       <div class="panel">
         <div class="hundred">
-          <ul>
-            <li><b><span data-localize="__MSG_setup__"></span>:</b> <span data-localize="__MSG_keywordL__"></span> + :: + <span data-localize="__MSG_linkL__"></span></li>
-            <li><b><span data-localize="__MSG_example__"></span>:</b> index::nwk/index.php</li>
-            <li><b><span data-localize="__MSG_usage__"></span>:</b> prdindex / devindex / qaindex</li>
+          <ul class="firstList">
+            <li><span>How to set up Omnibox links</span>:
+              <ul class="secondList">
+                <li><span>keyword</span> + :: + <span>link</span></li>
+              </ul>
+            </li>
+            <li><span>Example of custom Omnibox link</span>:
+              <ul class="secondList">
+                <li>index::nwk/index.php</li>
+              </ul>
+            </li>
+            <li><span>How to use the link created</span>:
+              <ul class="secondList">
+                <li>Type "erp" into the Omnibox</li>
+                <li>Press "Tab"</li>
+                <li>Use your command, e.g. prdindex / devindex / qaindex</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- Built-in Commands -->
       <button class="accordion">
-        <h1 data-localize="__MSG_builtInCom__"></h1>
+        <h1>Built-in Commands</h1>
       </button>
       <div class="panel">
         <div class="fifty">
@@ -65,7 +109,7 @@
 
       <!-- Automatic Login -->
       <button class="accordion">
-        <h1 data-localize="__MSG_autoLogin__"></h1>
+        <h1>Automatic Login</h1>
       </button>
       <div class="panel autofill">
         <div class="fifty">
@@ -80,7 +124,7 @@
 
       <!-- Custom Settings -->
       <button class="accordion">
-        <h1 data-localize="__MSG_customSettings__"></h1>
+        <h1>Custom Settings</h1>
       </button>
       <div class="panel">
         <div class="fifty">
@@ -91,7 +135,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_altHeadMeth__"></h3>
+            <h3>Alternative smaller header</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -100,7 +144,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_hidHead__"></h3>
+            <h3>Hidden Header</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -109,7 +153,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_vivaldiHead__"></h3>
+            <h3>Vivaldi Header</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -118,7 +162,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_headGlow__"></h3>
+            <h3>Environment header glow</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -127,7 +171,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_rgbHead__"></h3>
+            <h3>Animated RGB header glow</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -136,7 +180,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_rgbHeadCursor__"></h3>
+            <h3>Nyan Cat Cursor</h3>
           </div>
         </div>
         <div class="fifty">
@@ -147,7 +191,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_altMenus__"></h3>
+            <h3>Alternative menu look & feel</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -156,7 +200,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_animArrange__"></h3>
+            <h3>Animate 'Arrange Shortcuts'</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -165,7 +209,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_mainBlock__"></h3>
+            <h3>Smaller Home Items</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -174,7 +218,7 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_easyUIfit__"></h3>
+            <h3>Fit easyUI to available screen height</h3>
           </div>
           <div class="row">
             <div class="inject sideinj">
@@ -183,14 +227,14 @@
                 <span class="checkmark_side"></span>
               </label>
             </div>
-            <h3 data-localize="__MSG_custNewTab__"></h3>
+            <h3>Note taking new tab</h3>
           </div>
         </div>
       </div>
 
       <!-- Custom Colors -->
       <button class="accordion">
-        <h1 data-localize="__MSG_customColors__"></h1>
+        <h1>Custom Colors</h1>
       </button>
       <div class="panel">
         <table class="input">
@@ -203,7 +247,7 @@
                     <span class="checkmark_side"></span>
                   </label>
                 </div>
-                <h3 data-localize="__MSG_enabled__"></h3>
+                <h3>Enabled</h3>
               </div>
             </td>
             <td colspan='4'>
@@ -214,9 +258,9 @@
                     <span class="checkmark_side"></span>
                   </label>
                 </div>
-                <h3 data-localize="__MSG_forceColor__"></h3>
+                <h3>Force color replace</h3>
               </div>
-              <p class="checkbox_description" data-localize="__MSG_impactPerform__"></p>
+              <p class="checkbox_description">Using this option will HEAVILY degrade performance</p>
             </td>
           </tr>
           <tr>
@@ -298,13 +342,13 @@
           </tr>
           <tr>
             <td colspan='2'>
-              <button class="reset_cust_cols"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_resetCols__"></span></button>
+              <button class="reset_cust_cols"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp; <span>Reset</span></button>
             </td>
             <td colspan='2'>
-              <button class="export_cust_cols"><i class="fa fa-upload  fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_exportCols__"></span></button>
+              <button class="export_cust_cols"><i class="fa fa-upload  fa-lg" aria-hidden="true"></i> &nbsp; <span>Export</span></button>
             </td>
             <td colspan='2'>
-              <button class="import_cust_cols"><i class="fa fa-download  fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_importCols__"></span></button>
+              <button class="import_cust_cols"><i class="fa fa-download  fa-lg" aria-hidden="true"></i> &nbsp; <span>Import</span></button>
             </td>
           </tr>
         </table>
@@ -312,7 +356,7 @@
 
       <!-- Custom CSS -->
       <button class="accordion">
-        <h1 data-localize="__MSG_cssBlock__"></h1>
+        <h1>Custom CSS</h1>
       </button>
       <div class="panel">
           <textarea id="custom_css_block"></textarea>
@@ -320,19 +364,19 @@
 
       <!-- Custom JS & jQuery -->
       <button class="accordion">
-        <h1 data-localize="__MSG_jsBlock__"></h1>
+        <h1>Custom JS & jQuery</h1>
       </button>
       <div class="panel">
-          <p class="section_description" data-localize="__MSG_reloadReq__"></p>
+          <p class="section_description">(reload required)</p>
           <textarea id="custom_js_block"></textarea>
       </div>
 
       <!-- Experimental / Beta -->
       <button class="accordion">
-        <h1 data-localize="__MSG_experimental__"></h1>
+        <h1>Experimental / Beta</h1>
       </button>
       <div class="panel">
-          <p class="section_description" data-localize="__MSG_msgNone__"></p>
+          <p class="section_description">None</p>
       </div>
     </div>
 
@@ -343,20 +387,21 @@
     <div class="top_container">
       <h1>
         <i id="menu_bars" class="fa fa-bars" aria-hidden="true"></i>
-        <span data-localize="__MSG_extName__"></span> &nbsp;
-        <i id="tooltip" class="fa fa-info-circle" aria-hidden="true">
-          <span class="tooltiptext">
-            <p id="versionText"></p>
-            <p><span data-localize="__MSG_currentVer__"></span>: <b id="currentVer"></b></p>
-            <p><span data-localize="__MSG_latestVer__"></span>: <b id="latestVer"></b></p>
-          </span>
-        </i>
+        <span>ERP - Quick Actions</span>
+        <br>
+        <span id="smallVersion">Version - <span id="currentVer"></span> (Latest Version - <span id="latestVer"></span>)</span>
+        <br>
         <i id="tooltipChange" class="fa fa-history" aria-hidden="true">
           <span class="tooltiptextChange">
             <p id="changeHead"></p>
             <ul id="changeList">
 
             </ul>
+          </span>
+        </i>
+        <i id="tooltipActive" class="fa fa-clock-o" aria-hidden="true">
+          <span class="tooltiptextActive">
+            <p id="activeTimeText"></p>
           </span>
         </i>
       </h1>
@@ -384,32 +429,9 @@
     </div>
 
     <div class="btn_container">
-      <button class="clear_all"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp; <span data-localize="__MSG_clearAll__"></span></button>
-      <button class="add_form_field"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_addRule__"></span></button>
-      <button class="save_form_field"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span data-localize="__MSG_saveRules__"></span></button>
-      <div class="note_container">
-        <div class="reload_container">
-          <button class="reload_ext">
-            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
-            <br/>
-            <i>Extension</i>
-          </button>
-          <button class="reload_erp_tabs">
-            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
-            <br/>
-            <i>ERP Tabs</i>
-          </button>
-        </div>
-        <p>
-          Reload required if the following changes were made:<br/><br/>
-          1. Disabling 'Force color replace'<br/>
-          2. Enabling/Disabling 'Custom New Tab'<br/>
-          3. Adding/Editing quick actions to update context menu<br/>
-          4. Extension Update while ERP Tab is open<br/><br/>
-          Do you want to reload the Extension?<br/>
-          (remember to reload all ERP tabs if the extension was reloaded)
-        </p>
-      </div>
+      <button class="clear_all"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp; <span>Clear All</span></button>
+      <button class="add_form_field"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp; <span>Add Rule</span></button>
+      <button class="save_form_field"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span>Save Rules</span></button>
     </div>
   </body>
 </html>
