@@ -82,7 +82,7 @@
 
       <!-- Built-in Commands -->
       <button class="accordion">
-        <h1>Built-in Commands</h1>
+        <h1>Built-in Omnibox Commands</h1>
       </button>
       <div class="panel">
         <div class="fifty">
@@ -264,22 +264,26 @@
             </td>
           </tr>
           <tr>
-            <td><!--<input type="checkbox" id="greenCustColX">--><label for="greenCustCol">Green</label></td>
+            <td><label for="greenCustCol">Green</label></td>
             <td><label for="orangeCustCol">Orange</label></td>
             <td><label for="redCustCol">Red</label></td>
             <td><label for="blueCustCol">Blue</label></td>
-            <td><label for="whiteCustCol">White</label></td>
-            <td><label for="lightCustCol">Light</label></td>
+            <td></td>
+            <td></td>
+            <!-- <td><label for="whiteCustCol">White</label></td>
+            <td><label for="lightCustCol">Light</label></td> -->
           </tr>
           <tr>
             <td><input id="greenCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="orangeCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="redCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="blueCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="whiteCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="lightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td></td>
+            <td></td>
+            <!-- <td><input id="whiteCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="lightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td> -->
           </tr>
-          <tr>
+          <!-- <tr>
             <td><label for="offWhiteCustCol">Offwhite</label></td>
             <td><label for="greyDarkCustCol">Grey - D</label></td>
             <td><label for="greyLightCustCol">Grey - L</label></td>
@@ -294,7 +298,7 @@
             <td><input id="darkCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="darkLightCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="darkerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-          </tr>
+          </tr> -->
           <tr>
             <td colspan='6'></td>
           </tr>
@@ -401,6 +405,7 @@
         </i>
         <i id="tooltipActive" class="fa fa-clock-o" aria-hidden="true">
           <span class="tooltiptextActive">
+            <p id="activeTimeHeader">Non-Idle Time Today</p>
             <p id="activeTimeText"></p>
           </span>
         </i>

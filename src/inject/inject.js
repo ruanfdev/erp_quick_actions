@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(function(message, callback) {
 			nwk_theme = result.nwk_theme;
 			custom_css_block = result.custom_css_block;
 			custom_js_block = result.custom_js_block;
-			
+
 			removeTheme();
 
 			linkCustomCSS.innerHTML = custom_css_block;
@@ -70,15 +70,6 @@ windowMouse.mouseout(function() {
 		}
 });
 
-// chrome.extension.sendMessage({}, function(response) {
-// 	var readyStateCheckInterval = setInterval(function() {
-// 		if (document.readyState === "complete") {
-// 			clearInterval(readyStateCheckInterval);
-// 			injectProcess();
-// 		}
-// 	}, 10);
-// });
-
 function injectProcess() {
 	chrome.storage.sync.get(null, function (result) {
 		nwk_theme = result.nwk_theme;
@@ -134,11 +125,11 @@ function injectProcess() {
 							linkCustomJS.innerHTML = '';
 						});
 					}
-					
+
 					var useTitle = '';
 					var bigTitleTop = window.top.$('html #header_container .welcome').html();
 					var subTitleTop = window.top.$('html #header_container .welcome > b').html();
-					
+
 					if (typeof subTitleTop !== 'undefined') {
 						if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
 							window.top.$('html #header_container .welcome').css('margin-top', '35px');
@@ -150,7 +141,7 @@ function injectProcess() {
 							subTitleTop = subTitleTop.slice(-1)[0];
 							useTitle = subTitleTop;
 						}
-						
+
 						if (bigTitleTop[0].replace(/\s/g,'').slice(0,4) == 'Welk') {
 							$("#lang button").removeClass("english");
 							$("#lang button").addClass("afrikaans");
@@ -287,7 +278,7 @@ function injectProcess() {
 								$("#pwdWagwoord").val(autofill_pass);
 								$('#btnSubmit').trigger('click');
 							}
-							
+
 						}
 					} else {
 						chrome.storage.sync.set({
@@ -381,7 +372,7 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
-					
+
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");
@@ -398,14 +389,6 @@ function injectProcess() {
 									if (custColsArrSplit[0] == "orange") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
 									if (custColsArrSplit[0] == "red") {if (val.val != "#c12e2a" && val.val != "#C12E2A") {colorReplace('#c12e2a', val.val);}}
 									if (custColsArrSplit[0] == "blue") {if (val.val != "#2aabd2" && val.val != "#2AABD2") {colorReplace('#2aabd2', val.val);}}
-									if (custColsArrSplit[0] == "white") {if (val.val != "#ffffff" && val.val != "#FFFFFF") {colorReplace('#FFFFFF', val.val);}}
-									if (custColsArrSplit[0] == "light") {if (val.val != "#f2f2f2" && val.val != "#F2F2F2") {colorReplace('#F2F2F2', val.val);}}
-									if (custColsArrSplit[0] == "offWhite") {if (val.val != "#dddddd" && val.val != "#DDDDDD") {colorReplace('#DDDDDD', val.val);}}
-									if (custColsArrSplit[0] == "greyDark") {if (val.val != "#666666") {colorReplace('#666666', val.val);}}
-									if (custColsArrSplit[0] == "greyLight") {if (val.val != "#c0c0c0" && val.val != "#C0C0C0") {colorReplace('#C0C0C0', val.val);}}
-									if (custColsArrSplit[0] == "dark") {if (val.val != "#333333") {colorReplace('#333333', val.val);}}
-									if (custColsArrSplit[0] == "darkLight") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
-									if (custColsArrSplit[0] == "darker") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
 
 									if (custColsArrSplit[0] == "userBgCustCol") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
 									if (custColsArrSplit[0] == "userHeaderCustCol") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
@@ -490,7 +473,7 @@ function injectProcess() {
 function smallerHeader() {
 	$("html").addClass("small");
 	var subTitleTop = window.top.$('html #header_container .welcome > b').html();
-	
+
 	if (subTitleTop == '' || subTitleTop == ' ' || subTitleTop == '  ') {
 		window.top.$('html #header_container .welcome').css('margin-top', '12px');
 	} else {
@@ -546,12 +529,12 @@ function colorReplace(findHexColor, replaceWith) {
 	  }
 	  return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 	}
-  
+
 	// Select and run a map function on every tag
 	$('*').map(function(i, el) {
 	  // Get the computed styles of each tag
 	  var styles = window.getComputedStyle(el);
-  
+
 	  // Go through each computed style and search for "color"
 	  Object.keys(styles).reduce(function(acc, k) {
 		var name = styles[k];

@@ -91,8 +91,6 @@ $(document).ready(function() {
   // Version Check Old Position
 
   chrome.storage.sync.get(null, function(result) {
-    console.log('Sync Result',result);
-
     nwk_theme = result.nwk_theme;
     custom_css_block = result.custom_css_block;
     custom_js_block = result.custom_js_block;
@@ -134,6 +132,7 @@ $(document).ready(function() {
     if (idle_date == undefined || typeof idle_date == undefined) {
       idle_date = 0;
       idle_time = 0;
+      $('#activeTimeText').html(0+'hrs '+0+'min '+0+'sec');
     } else {
     	var idle_time_HRS_fin = 0;
     	var idle_time_MIN_fin = 0;
@@ -161,7 +160,9 @@ $(document).ready(function() {
       defaultColors();
     } else {
       $.each( custColsArr, function(idx,val) {
-        document.getElementById(val.id).jscolor.fromString(val.val);
+        if (document.getElementById(val.id) != null) {
+          document.getElementById(val.id).jscolor.fromString(val.val);
+        }
       });
     }
 
@@ -570,14 +571,6 @@ function defaultColors() {
   document.getElementById("orangeCustCol").jscolor.fromString('#f7931c');
   document.getElementById("redCustCol").jscolor.fromString('#c12e2a');
   document.getElementById("blueCustCol").jscolor.fromString('#2aabd2');
-  document.getElementById("whiteCustCol").jscolor.fromString('#FFFFFF');
-  document.getElementById("lightCustCol").jscolor.fromString('#F2F2F2');
-  document.getElementById("offWhiteCustCol").jscolor.fromString('#DDDDDD');
-  document.getElementById("greyDarkCustCol").jscolor.fromString('#666666');
-  document.getElementById("greyLightCustCol").jscolor.fromString('#C0C0C0');
-  document.getElementById("darkCustCol").jscolor.fromString('#333333');
-  document.getElementById("darkLightCustCol").jscolor.fromString('#404040');
-  document.getElementById("darkerCustCol").jscolor.fromString('#303030');
 
   document.getElementById("userBgCustCol").jscolor.fromString('#404040');
   document.getElementById("userHeaderCustCol").jscolor.fromString('#303030');

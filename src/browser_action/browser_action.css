@@ -52,11 +52,13 @@ h1#custom_css_block_header {
   width: 100%;
   background: var(--light);
   box-shadow: var(--boxShadMed);
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
 }
 .container1 {
   width: 90%;
   text-align: center;
-  padding: 60px 5% 15px;
+  padding: 60px 5% 22px;
 }
 .container1 input[type=text] {
   padding: 10px 5px;
@@ -116,11 +118,14 @@ h1#custom_css_block_header {
   position: fixed;
   display: flex;
   width: 100%;
+  min-height: 40px;
   left: 0;
   bottom: 0;
   text-align: center;
   background: var(--light);
   box-shadow: var(--boxShadMed);
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
 }
 .note_container {
   display: flex;
@@ -154,7 +159,7 @@ button {
   border-radius: 5px;
 }
 button:hover {
-  box-shadow: var(--boxShadMed);
+  filter: brightness(0.9);
 }
 button.reset_cust_cols,
 button.export_cust_cols,
@@ -290,7 +295,11 @@ p#versionText {
 }
 .tooltiptextActive > p {
   font-size: 1.1em;
-  margin: 0.7em 0px;
+  margin: 0.5em 0px 0.7em;
+}
+.tooltiptextActive > p#activeTimeHeader {
+  font-size: 0.7em;
+  margin: 1em 0px 0.2em;
 }
 .tooltiptextChange > ul {
   font-size: 0.7em;
@@ -371,7 +380,7 @@ button * {
 #mySidenav .closebtn {
   position: fixed;
   z-index: 8;
-  top: 10px;
+  top: 25px;
   right: 100%;
   text-shadow: var(--boxShadDark);
   font-size: 2.5em;
@@ -381,6 +390,7 @@ button * {
   z-index: 8;
   bottom: -45px;
   right: 100%;
+  padding: 8px 20px;
 }
 .sidenav {
   height: 0;
@@ -410,10 +420,13 @@ button * {
 .sidenav .panel ul.firstList>li {
   text-align: left;
   font-size: 1.4em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .sidenav ul.secondList {
   padding-left: 20px;
+}
+.sidenav ul.firstList>li ul.secondList>li {
+  font-size: 1.2em;
 }
 .sidenav .panel ul li {
   font-size: 1.4em;
@@ -435,6 +448,7 @@ button * {
 .inject.sideinj {
   float: left;
   position: relative;
+  top: 10px;
 }
 .inject.sideinj + h3 {
   float: left;
