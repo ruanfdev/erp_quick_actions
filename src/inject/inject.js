@@ -85,7 +85,6 @@ function injectProcess() {
 		chkedNyanCursor = result.chkedNyanCursor;
 		chkedEasyui = result.chkedEasyui;
 		chkedNewtab = result.chkedNewtab;
-		chkedForceCol = result.chkedForceCol;
 		chkedCustomCol = result.chkedCustomCol;
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
@@ -382,34 +381,6 @@ function injectProcess() {
 							} else {
 								document.documentElement.style.removeProperty('--'+custColsArrSplit[0]);
 							}
-
-							if (typeof chkedForceCol !== 'undefined') {
-								if (chkedForceCol == true) {
-									if (custColsArrSplit[0] == "green") {if (val.val != "#71bf44" && val.val != "#71BF44") {colorReplace('#71bf44', val.val);}}
-									if (custColsArrSplit[0] == "orange") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
-									if (custColsArrSplit[0] == "red") {if (val.val != "#c12e2a" && val.val != "#C12E2A") {colorReplace('#c12e2a', val.val);}}
-									if (custColsArrSplit[0] == "blue") {if (val.val != "#2aabd2" && val.val != "#2AABD2") {colorReplace('#2aabd2', val.val);}}
-
-									if (custColsArrSplit[0] == "userBgCustCol") {if (val.val != "#404040") {colorReplace('#404040', val.val);}}
-									if (custColsArrSplit[0] == "userHeaderCustCol") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
-									if (custColsArrSplit[0] == "userMenusCustCol") {if (val.val != "#303030") {colorReplace('#303030', val.val);}}
-									if (custColsArrSplit[0] == "userHomeItemsCustCol") {if (val.val != "#505050") {colorReplace('#505050', val.val);}}
-									if (custColsArrSplit[0] == "userFieldsetCustCol") {if (val.val != "#505050") {colorReplace('#505050', val.val);}}
-									if (custColsArrSplit[0] == "userLegendsCustCol") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#F7931C', val.val);}}
-
-									if (custColsArrSplit[0] == "btnSuccessCustCol") {if (val.val != "#71bf44" && val.val != "#71BF44") {colorReplace('#71bf44', val.val);}}
-									if (custColsArrSplit[0] == "btnWarningCustCol") {if (val.val != "#f7931c" && val.val != "#F7931C") {colorReplace('#f7931c', val.val);}}
-									if (custColsArrSplit[0] == "btnDangerCustCol") {if (val.val != "#c12e2a" && val.val != "#C12E2A") {colorReplace('#c12e2a', val.val);}}
-									if (custColsArrSplit[0] == "btnInfoCustCol") {if (val.val != "#2aabd2" && val.val != "#2AABD2") {colorReplace('#2aabd2', val.val);}}
-									if (custColsArrSplit[0] == "btnDefaultCustCol") {if (val.val != "#f2f2f2" && val.val != "#F2F2F2") {colorReplace('#F2F2F2', val.val);}}
-								}
-							} else {
-								chrome.storage.sync.set({
-									chkedForceCol: false
-								}, function () {
-									// document.getElementsByTagName("head")[0].appendChild(linkLight);
-								});
-							}
 						});
 					} else {
 						chrome.storage.sync.set({
@@ -429,7 +400,6 @@ function injectProcess() {
 					chkedNyanCursor: false,
 					chkedEasyui: false,
 					chkedNewtab: false,
-					chkedForceCol: false,
 					chkedCustomCol: false,
 					chkedHidhead: false,
 					chkedVivaldihead: false,
@@ -454,7 +424,6 @@ function injectProcess() {
 				chkedNyanCursor: false,
 				chkedEasyui: false,
 				chkedNewtab: false,
-				chkedForceCol: false,
 				chkedCustomCol: false,
 				chkedHidhead: false,
 				chkedVivaldihead: false,

@@ -1,4 +1,15 @@
 :root {
+    --green: #71bf44;
+    --greenHover: rgba(113,191,68,0.25);
+    --orange: #f7931c;
+    --red: #c12e2a;
+    --blue: #2aabd2;
+
+    --notyS: #bcf5bc;
+    --notyE: #ff8181;
+    --notyI: #78c5e7;
+    --notyV: #ffffff;
+
     --btnSuccess: #71bf44;
     --btnWarning: #f7931c;
     --btnDanger: #c12e2a;
@@ -11,12 +22,6 @@
     --userHomeItems: #505050;
     --userFieldset: #505050;
     --userLegends: #F7931C;
-
-    --green: #71bf44;
-    --greenHover: rgba(113,191,68,0.25);
-    --orange: #f7931c;
-    --red: #c12e2a;
-    --blue: #2aabd2;
 
     --darkLight: #404040;
     --dark: #333333;

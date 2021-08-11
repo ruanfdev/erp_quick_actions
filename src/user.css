@@ -26,3 +26,19 @@ html.light.userCSS legend {
     background-color: var(--userLegends) !important;
     background: var(--userLegends) !important;
 }
+html.light.userCSS .noty_type_success {
+  background-color: var(--notyS);
+  color: var(--light);
+}
+html.light.userCSS .noty_type_error {
+  background-color: var(--notyE);
+  color: var(--light);
+}
+html.light.userCSS .noty_type_information {
+  background-color: var(--notyI);
+  color: var(--light);
+}
+html.light.userCSS .noty_type_ {
+  background-color: var(--notyV);
+  color: var(--light);
+}

@@ -264,17 +264,6 @@ html.light .backHead:after {
   animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
 }
-/* html.light.vivaldiHead.RGBclass .header .header_nav > a {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC),
-                    linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
-  background-position:  45% center,
-                        center center;
-  background-repeat:  no-repeat,
-                      no-repeat;
-  background-size:  23px,
-                    1500% !important;
-  animation: rgbanimate 30s linear infinite;
-} */
 html.light .backHead:after {
 	filter: blur(2px);
 }

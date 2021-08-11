@@ -24,6 +24,7 @@ html.light.dark .note {
 }
 html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon),
 html.light.dark li.BlokNav,
+html.light.dark fieldset,
 html.light.dark .Zebra_Form input.text,
 html.light.dark .Zebra_Form input.date,
 html.light.dark ul#ShortcutsList {
@@ -186,6 +187,10 @@ html.light.dark .tabs-header {
 html.light.dark .HetWSDL,
 html.light.dark .noty_type_error * {
   color: var(--white);
+}
+html.light.dark .noty_type_ {
+  background-color: var(--dark);
+  color: var(--light);
 }
 html.light.dark #Tree #jsTreeMenu ul li a.jstree-search {
   color: var(--green);
