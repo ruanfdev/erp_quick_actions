@@ -110,7 +110,6 @@ html.light .btn.btn-default *:not(.fa) {
 html.light .btn:hover,
 html.light .header_nav a:hover {
   filter: saturate(1.2) brightness(1.1);
-  /* box-shadow: inset 0 0 3px 0px var(--dark) !important; */
 }
 html.light iframe#renderHier {
   min-width: 100%;
@@ -462,6 +461,13 @@ html.light #ShortcutsList > li > a,
 html.light #ShortcutsList > li:hover > a > font {
   color: var(--green);
 }
+html.light .BlokNav:hover {
+  background-color: var(--green) !important;
+}
+html.light .BlokNav:hover a,
+html.light .BlokNav:hover font {
+  color: var(--light) !important;
+}
 html.light .nav-tabs>li.active>a,
 html.light .nav-tabs>li.active>a:focus {
   background-color: var(--green);
@@ -477,7 +483,7 @@ html.light li.dropdown-header {
   background: var(--orange);
   color: var(--light);
 }
-html.light.dark fieldset {
+html.light fieldset {
   background-color: var(--greyLight);
   color: var(--darker);
 }
@@ -500,9 +506,3 @@ html.light.nyanCursor .btn,
 html.light.nyanCursor .btn * {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), auto !important;
 }
-
-
-
-/* *:not(.fa) {
-  font-family: myRoboto !important;
-} */

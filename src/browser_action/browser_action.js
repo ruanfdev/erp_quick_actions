@@ -544,15 +544,12 @@ $(document).ready(function() {
       current_version = extData.version;
       current_version = parseFloat(current_version);
       $('#currentVer').html(current_version);
-      $('#latestVer').html(latest_version);
 
       if (current_version < latest_version) {
         $('#tooltip').css('color','#c12e2a');
         $('#tooltip .tooltiptext').css('background-color','#c12e2a');
+        $('#latestVer').html(' (Latest Version '+latest_version+')');
         createNotif();
-      } else if (current_version > latest_version) {
-        $('#tooltip').css('color','#71bf44');
-        $('#tooltip .tooltiptext').css('background-color','#71bf44');
       } else {
         $('#tooltip').css('color','#71bf44');
         $('#tooltip .tooltiptext').css('background-color','#71bf44');
@@ -572,18 +569,23 @@ function defaultColors() {
   document.getElementById("redCustCol").jscolor.fromString('#c12e2a');
   document.getElementById("blueCustCol").jscolor.fromString('#2aabd2');
 
-  document.getElementById("userBgCustCol").jscolor.fromString('#404040');
-  document.getElementById("userHeaderCustCol").jscolor.fromString('#303030');
-  document.getElementById("userMenusCustCol").jscolor.fromString('#303030');
-  document.getElementById("userHomeItemsCustCol").jscolor.fromString('#505050');
-  document.getElementById("userFieldsetCustCol").jscolor.fromString('#505050');
-  document.getElementById("userLegendsCustCol").jscolor.fromString('#F7931C');
+  document.getElementById("notySCustCol").jscolor.fromString('#bcf5bc');
+  document.getElementById("notyECustCol").jscolor.fromString('#ff8181');
+  document.getElementById("notyICustCol").jscolor.fromString('#78c5e7');
+  document.getElementById("notyVCustCol").jscolor.fromString('#ffffff');
 
   document.getElementById("btnSuccessCustCol").jscolor.fromString('#71bf44');
   document.getElementById("btnWarningCustCol").jscolor.fromString('#f7931c');
   document.getElementById("btnDangerCustCol").jscolor.fromString('#c12e2a');
   document.getElementById("btnInfoCustCol").jscolor.fromString('#2aabd2');
   document.getElementById("btnDefaultCustCol").jscolor.fromString('#F2F2F2');
+
+  document.getElementById("userBgCustCol").jscolor.fromString('#404040');
+  document.getElementById("userHeaderCustCol").jscolor.fromString('#303030');
+  document.getElementById("userMenusCustCol").jscolor.fromString('#303030');
+  document.getElementById("userHomeItemsCustCol").jscolor.fromString('#505050');
+  document.getElementById("userFieldsetCustCol").jscolor.fromString('#505050');
+  document.getElementById("userLegendsCustCol").jscolor.fromString('#F7931C');
 }
 
 function injectNow(param) {

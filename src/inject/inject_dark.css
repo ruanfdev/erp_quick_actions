@@ -7,27 +7,6 @@ html.light.dark div#cboxLoadedContent iframe {
   background: var(--darkLight) !important;
   color: var(--light) !important;
 }
-
-/* html.light.dark label,
-html.light.dark .Zebra_Form fieldset label,
-html.light.dark input,
-html.light.dark .login_div input,
-html.light.dark div,
-html.light.dark .datagrid-pager.pagination * {
-  color: var(--darker);
-} */
-
-/* html.light.dark .select2-results__option[aria-selected],
-html.light.dark fieldset p,
-html.light.dark fieldset td,
-html.light.dark fieldset div,
-html.light.dark strong.select2-results__group,
-html.light.dark input.select2-search__field,
-html.light.dark fieldset .Zebra_Form label,
-html.light.dark .Zebra_Form fieldset label {
-  color: var(--darker);
-} */
-
 html.light.dark input,
 html.light.dark textarea,
 html.light.dark .selection *,
@@ -38,27 +17,20 @@ html.light.dark .Zebra_Form fieldset label,
 html.light.dark .Zebra_Form_Input_Prefix,
 html.light.dark .Zebra_Form select,
 html.light.dark .note {
-  background-color: #505050;
-  background: #505050;
+  background-color: var(--userFieldset);
+  background: var(--userFieldset);
   color: var(--light);
-  border-color: #909090;
+  border-color: var(--greyLight);
 }
 html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon),
-html.light.dark fieldset,
 html.light.dark li.BlokNav,
 html.light.dark .Zebra_Form input.text,
 html.light.dark .Zebra_Form input.date,
 html.light.dark ul#ShortcutsList {
-  background-color: #505050;
-  background: #505050;
+  background-color: var(--userFieldset);
+  background: var(--userFieldset);
   color: var(--light);
 }
-/* html.light.dark span.textbox-addon-right,
-html.light.dark a.combo-arrow {
-  background-color: var(--green) !important;
-  background: var(--green) !important;
-  color: var(--light);
-} */
 html.light.dark ul#ShortcutsList>li {
   background-color: var(--darkLight);
   background: var(--darkLight);
@@ -178,8 +150,9 @@ html.light.dark fieldset textarea.form-control[readonly="readonly"],
 html.light.dark fieldset textarea.form-control[readonly],
 html.light.dark fieldset textarea.form-control[disabled="disabled"],
 html.light.dark fieldset textarea.form-control[disabled] {
-  background-color: var(--greyDark);
-  border-color: var(--greyDark);
+  background-color: var(--userFieldset);
+  filter: brightness(0.9);
+  border-color: var(--userFieldset);
   box-shadow: none;
 }
 html.light.dark li.disabled,

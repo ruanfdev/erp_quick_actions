@@ -131,16 +131,13 @@ function callDefaults(envPage) {
 
     case 'kontak':
     case 'contact':
-    case 'kontak / contact':
+    case 'pers':
+    case 'kontak / contact / pers':
       chrome.tabs.create({url:envURL+'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php'},function(data) {});
       break;
 
     case 'ses':
       chrome.tabs.create({url:envURL+'session.php'},function(data) {});
-      break;
-
-    case 'pers':
-      chrome.tabs.create({url:envURL+'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php'},function(data) {});
       break;
 
     default:

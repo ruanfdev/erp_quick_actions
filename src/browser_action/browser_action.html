@@ -285,6 +285,50 @@
             <td colspan='6'></td>
           </tr>
           <tr>
+            <td><label for="notySCustCol">notySuccess</label></td>
+            <td><label for="notyECustCol">notyError</label></td>
+            <td><label for="notyICustCol">notyInfo</label></td>
+            <td><label for="notyVCustCol">notyVerwerk</label></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input id="notySCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="notyECustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="notyICustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="notyVCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan='6'></td>
+          </tr>
+          <tr>
+            <td colspan='6'></td>
+          </tr>
+          <tr>
+            <td><label for="btnSuccessCustCol">btnSuccess</label></td>
+            <td><label for="btnWarningCustCol">btnWarning</label></td>
+            <td><label for="btnDangerCustCol">btnDanger</label></td>
+            <td><label for="btnInfoCustCol">btnInfo</label></td>
+            <td><label for="btnDefaultCustCol">btnDefault</label></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input id="btnSuccessCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="btnWarningCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="btnDangerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="btnInfoCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td><input id="btnDefaultCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan='6'></td>
+          </tr>
+          <tr>
+            <td colspan='6'></td>
+          </tr>
+          <tr>
             <td><label for="userBgCustCol">Background</label></td>
             <td><label for="userHeaderCustCol">Header</label></td>
             <td><label for="userMenusCustCol">Menu's</label></td>
@@ -299,26 +343,6 @@
             <td><input id="userHomeItemsCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="userFieldsetCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
             <td><input id="userLegendsCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-          </tr>
-          <tr>
-            <td colspan='6'></td>
-          </tr>
-          <tr>
-            <td colspan='6'></td>
-          </tr>
-          <tr>
-            <td><label for="btnSuccessCustCol">Success<br>Button</label></td>
-            <td><label for="btnWarningCustCol">Warning<br>Button</label></td>
-            <td><label for="btnDangerCustCol">Danger<br>Button</label></td>
-            <td><label for="btnInfoCustCol">Info<br>Button</label></td>
-            <td><label for="btnDefaultCustCol">Default<br>Button</label></td>
-          </tr>
-          <tr>
-            <td><input id="btnSuccessCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnWarningCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnDangerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnInfoCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnDefaultCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
           </tr>
           <tr>
             <td colspan='6'></td>
@@ -372,7 +396,7 @@
         <i id="menu_bars" class="fa fa-bars" aria-hidden="true"></i>
         <span>ERP - Quick Actions</span>
         <br>
-        <span id="smallVersion">Version - <span id="currentVer"></span> (Latest Version - <span id="latestVer"></span>)</span>
+        <span id="smallVersion">Version <span id="currentVer"></span><span id="latestVer"></span></span>
         <br>
         <i id="tooltipChange" class="fa fa-history" aria-hidden="true">
           <span class="tooltiptextChange">
@@ -384,7 +408,7 @@
         </i>
         <i id="tooltipActive" class="fa fa-clock-o" aria-hidden="true">
           <span class="tooltiptextActive">
-            <p id="activeTimeHeader">Non-Idle Time Today</p>
+            <p id="activeTimeHeader">Non-Idle Time Today<br>(updates on idle or PC lock)</p>
             <p id="activeTimeText"></p>
           </span>
         </i>
