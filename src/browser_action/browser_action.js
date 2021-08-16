@@ -111,7 +111,6 @@ $(document).ready(function() {
     chkedHidhead = result.chkedHidhead;
     chkedVivaldihead = result.chkedVivaldihead;
     chkedMenus = result.chkedMenus;
-    chkedAnimate = result.chkedAnimate;
     chkedMainBlock = result.chkedMainBlock;
 
     var i = 0;
@@ -228,11 +227,6 @@ $(document).ready(function() {
       $('#check_menus').prop('checked', true);
     } else {
       $('#check_menus').prop('checked', false);
-    }
-    if (chkedAnimate == true) {
-      $('#check_animate').prop('checked', true);
-    } else {
-      $('#check_animate').prop('checked', false);
     }
     if (chkedMainBlock == true) {
       $('#check_main_block').prop('checked', true);
@@ -403,7 +397,6 @@ $(document).ready(function() {
     var chkedInject = $('#checkinject').is(":checked");
     var chkedHeader = $('#check_header').is(":checked");
     var chkedMenus = $('#check_menus').is(":checked");
-    var chkedAnimate = $('#check_animate').is(":checked");
     var chkedMainBlock = $('#check_main_block').is(":checked");
     var chkedGlow = $('#check_glow').is(":checked");
     var chkedRGBhead = $('#check_rgbhead').is(":checked");
@@ -462,7 +455,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedAnimate:chkedAnimate,chkedMainBlock:chkedMainBlock,autofill_user:autofill_user,autofill_pass:autofill_pass}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedEasyui:chkedEasyui,chkedNewtab:chkedNewtab,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedMenus:chkedMenus,chkedMainBlock:chkedMainBlock,autofill_user:autofill_user,autofill_pass:autofill_pass}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";

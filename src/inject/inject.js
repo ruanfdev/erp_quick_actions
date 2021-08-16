@@ -89,7 +89,6 @@ function injectProcess() {
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
 		chkedMenus = result.chkedMenus;
-		chkedAnimate = result.chkedAnimate;
 		chkedMainBlock = result.chkedMainBlock;
 
 		if (typeof nwk_theme !== 'undefined') {
@@ -302,20 +301,6 @@ function injectProcess() {
 						});
 					}
 
-					if (typeof chkedAnimate !== 'undefined') {
-						if (chkedAnimate == true) {
-							$("html").addClass("animArrange");
-						} else {
-							$("html").removeClass("animArrange");
-						}
-					} else {
-						chrome.storage.sync.set({
-							chkedAnimate: false
-						}, function () {
-							// document.getElementsByTagName("head")[0].appendChild(linkLight);
-						});
-					}
-
 					if (typeof chkedMainBlock !== 'undefined') {
 						if (chkedMainBlock == true) {
 							$("html").addClass("smlBlocks");
@@ -404,7 +389,6 @@ function injectProcess() {
 					chkedHidhead: false,
 					chkedVivaldihead: false,
 					chkedMenus: false,
-					chkedAnimate: false,
 					chkedMainBlock: false,
 					autofill_user: '',
 					autofill_pass: ''
@@ -428,7 +412,6 @@ function injectProcess() {
 				chkedHidhead: false,
 				chkedVivaldihead: false,
 				chkedMenus: false,
-				chkedAnimate: false,
 				chkedMainBlock: false,
 				autofill_user: '',
 				autofill_pass: ''

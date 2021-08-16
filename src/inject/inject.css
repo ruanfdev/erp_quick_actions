@@ -26,8 +26,14 @@ html.light .main .BlokNav {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 html.light .main .BlokNav:hover {
-  background: var(--light);
+  background-color: var(--green) !important;
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
+}
+html.light .BlokNav:hover * {
+  color: var(--light) !important;
+}
+html.light .BlokNav:hover > a > span > i:nth-child(2) {
+    color: var(--green) !important;
 }
 html.light .main .BlokNav > div {
   padding-left: 10px;
@@ -189,12 +195,12 @@ html.light ul#ShortcutsList>li:first-child .fa-stack {
   margin-right: 0px;
   margin-top: 1px;
 }
-html.light.animArrange .main ul.ca-menu.ui-sortable > * {
+html.light .main ul.ca-menu.ui-sortable > * {
   animation-name: quiverAnimate;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-html.light.animArrange .main ul.ca-menu.ui-sortable.ui-sortable-disabled > * {
+html.light .main ul.ca-menu.ui-sortable.ui-sortable-disabled > * {
   animation-name: none;
 }
 html.light .header .header_nav {
@@ -449,13 +455,6 @@ html.light .BlokNav .fa-stack,
 html.light #ShortcutsList > li > a,
 html.light #ShortcutsList > li:hover > a > font {
   color: var(--green);
-}
-html.light .BlokNav:hover {
-  background-color: var(--green) !important;
-}
-html.light .BlokNav:hover a,
-html.light .BlokNav:hover font {
-  color: var(--light) !important;
 }
 html.light .nav-tabs>li.active>a,
 html.light .nav-tabs>li.active>a:focus {
