@@ -23,7 +23,6 @@ html.light.dark .note {
   border-color: var(--greyLight);
 }
 html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon),
-html.light.dark li.BlokNav,
 html.light.dark fieldset,
 html.light.dark .Zebra_Form input.text,
 html.light.dark .Zebra_Form input.date,

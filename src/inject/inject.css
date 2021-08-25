@@ -115,7 +115,7 @@ html.light .btn.btn-default *:not(.fa) {
 }
 html.light .btn:hover,
 html.light .header_nav a:hover {
-  filter: saturate(1.2) brightness(1.1);
+  filter: brightness(0.8);
 }
 html.light iframe#renderHier {
   min-width: 100%;
@@ -148,10 +148,6 @@ html.light.smlBlocks .main .BlokNav a.openPage .ca-content {
   text-overflow: ellipsis;
   padding: 0 5px;
   line-height: 18px;
-}
-html.light.altEasyui .panel.datagrid .panel-html {
-  overflow: auto;
-  max-height: calc(100% - 50px);
 }
 html.light.headGlowDEV .header {
   box-shadow: inset 0px 0px 6px 0px #c12e2a;
