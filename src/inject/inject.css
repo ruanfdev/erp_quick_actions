@@ -115,7 +115,7 @@ html.light .btn.btn-default *:not(.fa) {
 }
 html.light .btn:hover,
 html.light .header_nav a:hover {
-  filter: brightness(0.8);
+  filter: grayscale(0.1) brightness(0.9);
 }
 html.light iframe#renderHier {
   min-width: 100%;
@@ -133,7 +133,7 @@ html.light #lang button:hover {
 }
 html.light.smlBlocks .main .BlokNav {
   width: 130px;
-  height: 170px;
+  height: calc(130px*1.30769230769);
   margin: 6px;
 }
 html.light.smlBlocks .main .BlokNav a.openPage span {
