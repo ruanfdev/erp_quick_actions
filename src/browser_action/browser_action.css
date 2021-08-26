@@ -645,6 +645,36 @@ p.section_description {
 }
 
 
+.slidecontainer {
+  width: 150%;
+  margin-bottom: 27px;
+  margin-left: 42px;
+}
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  background: var(--greyLight);
+  outline: none;
+  border-radius: 5px;
+  -webkit-transition: .2s;
+  transition: background-color .2s;
+}
+.slider:hover {
+  background: var(--light);
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--green);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
 
 /* Theming always bottom */
 /* DARK */

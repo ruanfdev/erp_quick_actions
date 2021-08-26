@@ -25,14 +25,17 @@ html.light .main .BlokNav {
   border-radius: 5px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
-html.light .main .BlokNav:hover {
+html.light .main .BlokNav:hover,
+html.light ul#ShortcutsList > li:hover {
   background-color: var(--green) !important;
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
-html.light .BlokNav:hover * {
+html.light .BlokNav:hover *,
+html.light ul#ShortcutsList > li:hover * {
   color: var(--light) !important;
 }
-html.light .BlokNav:hover > a > span > i:nth-child(2) {
+html.light .BlokNav:hover > a > span > i:nth-child(2),
+html.light ul#ShortcutsList > li:hover > a > span > i:nth-child(2) {
     color: var(--green) !important;
 }
 html.light .main .BlokNav > div {
