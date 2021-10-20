@@ -22,21 +22,21 @@ html.light #head-button .show-notifications.active~.notifications {
   left: -3px;
 }
 html.light .main .BlokNav {
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 html.light .main .BlokNav:hover,
 html.light ul#ShortcutsList > li:hover {
-  background-color: var(--green) !important;
+  background-color: var(--green);
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
 html.light .BlokNav:hover *,
 html.light ul#ShortcutsList > li:hover * {
-  color: var(--light) !important;
+  color: var(--light);
 }
 html.light .BlokNav:hover > a > span > i:nth-child(2),
 html.light ul#ShortcutsList > li:hover > a > span > i:nth-child(2) {
-    color: var(--green) !important;
+    color: var(--green);
 }
 html.light .main .BlokNav > div {
   padding-left: 10px;
@@ -427,6 +427,100 @@ html.light.vivaldiHead #lang button:hover {
   width: auto !important;
   padding-left: 14px !important;
   padding-right: 14px !important;
+}
+html.light.dockHead .header {
+  bottom: 5px;
+  left: auto;
+  top: auto;
+  height: 60px;
+  width: 273px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+html.light.dockHead ul#ShortcutsList {
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  transform: translate(-50%, 15%);
+  border: 2px solid var(--green);
+}
+html.light.dockHead ul#ShortcutsList li {
+  width: 47%;
+  float: left;
+  margin: 4px 8px;
+  min-height: 36px;
+}
+html.light.dockHead .content {
+  padding: 0;
+  width: 100%;
+}
+html.light.dockHead .header .header_nav {
+  width: 10%;
+  height: auto;
+}
+html.light.dockHead .header .header_nav > h4 {
+  display: none;
+}
+html.light.dockHead .header .header_nav > a {
+  left: 12px;
+  top: 7px;
+  width: 45px;
+  background-size: 22px;
+  background-position-x: 48%;
+  border-radius: 8px;
+  margin: 0;
+  box-shadow: none;
+}
+html.light.dockHead .header #header_container {
+  position: absolute;
+  left: -39.7vw;
+  top: -106vh;
+  height: 90px;
+  width: 84.4vw;
+  padding-left: 15vw;
+  border-radius: 8px;
+  background-color: var(--darker);
+  transition: all 0.25s linear 0s;
+}
+html.light.dockHead .header:hover #header_container,
+html.light.dockHead .header.hovered #header_container,
+html.light.dockHead .header #header_container:hover {
+  top: -89vh;
+  box-shadow: var(--boxShadMed);
+}
+html.light.dockHead .header #header_container .header_right {
+  float: none;
+}
+html.light.dockHead .header #header_container .btn_main {
+  position: fixed;
+  left: 61px;
+  bottom: -37px;
+  width: 202px;
+}
+html.light.dockHead .header #header_container .btn_main .child {
+  position: relative;
+  padding: 0 4px 0 0;
+  width: 45px;
+  height: 45px;
+  margin: 0 !important;
+}
+html.light.dockHead .header #header_container .btn_main .child button {
+  width: 100%;
+  min-height: 45px;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 8px;
+  padding: 0;
+  border-width: 0 !important;
+}
+html.light.dockHead .header #header_container .btn_main .child#lang {
+  width: 100px;
+}
+html.light.dockHead .header #header_container .btn_main .child#lang button font.btn_text {
+  display: inline;
 }
 /* Custom color
 switch vars */

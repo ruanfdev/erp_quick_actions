@@ -43,8 +43,8 @@ html.light.dark ul#ShortcutsList>li:hover {
   background: var(--greyDark);
   box-shadow: 1px 1px 5px var(--darkLight);
 }
-html.light.dark .BlokNav:hover {
-  background-color: var(--greyDark);
+html.light.dark .BlokNav {
+  background-color: var(--userHomeItems);
 }
 html.light.dark .noty_type_confirm,
 html.light.dark .noty_type_confirm>* {

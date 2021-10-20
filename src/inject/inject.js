@@ -59,13 +59,15 @@ var readyStateCheckInterval = setInterval(function() {
 var windowMouse = window.top.$('#head-button');
 windowMouse.mouseover(function() {
 		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
-		if (htmlHasVivaldiHead == true) {
+    var htmlHasDockHead = $('html').hasClass("dockHead");
+		if (htmlHasVivaldiHead == true || htmlHasDockHead == true) {
 			$(".header").addClass("hovered");
 		}
 });
 windowMouse.mouseout(function() {
 		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
-		if (htmlHasVivaldiHead == true) {
+    var htmlHasDockHead = $('html').hasClass("dockHead");
+		if (htmlHasVivaldiHead == true || htmlHasDockHead == true) {
 			$(".header").removeClass("hovered");
 		}
 });
@@ -87,6 +89,7 @@ function injectProcess() {
 		chkedCustomCol = result.chkedCustomCol;
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
+    chkedDockhead = result.chkedDockhead;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -202,6 +205,20 @@ function injectProcess() {
 					} else {
 						chrome.storage.sync.set({
 							chkedVivaldihead: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
+          if (typeof chkedDockhead !== 'undefined') {
+						if (chkedDockhead == true) {
+							$("html").addClass("dockHead");
+						} else {
+							$("html").removeClass("dockHead");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedDockhead: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -387,6 +404,7 @@ function injectProcess() {
 					chkedCustomCol: false,
 					chkedHidhead: false,
 					chkedVivaldihead: false,
+          chkedDockhead: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
           smallBlockSlider: '130',
@@ -410,6 +428,7 @@ function injectProcess() {
 				chkedCustomCol: false,
 				chkedHidhead: false,
 				chkedVivaldihead: false,
+        chkedDockhead: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
         smallBlockSlider: '130',
