@@ -433,7 +433,7 @@ html.light.dockHead .header {
   left: auto;
   top: auto;
   height: 60px;
-  width: 273px;
+  width: 333px;
   border-radius: 8px;
   padding: 0;
   margin: 0;
@@ -465,7 +465,7 @@ html.light.dockHead .header .header_nav > h4 {
   display: none;
 }
 html.light.dockHead .header .header_nav > a {
-  left: 12px;
+  left: 7px;
   top: 7px;
   width: 45px;
   background-size: 22px;
@@ -475,28 +475,48 @@ html.light.dockHead .header .header_nav > a {
   box-shadow: none;
 }
 html.light.dockHead .header #header_container {
-  position: absolute;
-  left: -39.7vw;
-  top: -106vh;
+  position: fixed;
+  z-index: -1;
+  left: -20vw;
+  top: -112vh;
   height: 90px;
-  width: 84.4vw;
-  padding-left: 15vw;
-  border-radius: 8px;
+  width: 61vw;
+  padding-left: 2vw;
   background-color: var(--darker);
+  border-radius: 8px;
+  box-shadow: var(--boxShadMed);
   transition: all 0.25s linear 0s;
 }
 html.light.dockHead .header:hover #header_container,
 html.light.dockHead .header.hovered #header_container,
 html.light.dockHead .header #header_container:hover {
-  top: -89vh;
+  top: -88vh;
   box-shadow: var(--boxShadMed);
 }
+html.light.dockHead .header:hover ~ .content,
+html.light.dockHead .header.hovered ~ .content {
+  filter: brightness(0.4) opacity(0.4) blur(2px);
+  transition: all 0.25s linear 0s;
+}
+html.light.dockHead #header_container .logo {
+  width: 11%;
+  margin-top: 6vh;
+}
+html.light.dockHead #header_container .welcome {
+  margin-top: 25px;
+  margin-left: 6%;
+  margin-right: 2%;
+  width: 65%;
+  transition: all 0.1s linear 0s;
+}
 html.light.dockHead .header #header_container .header_right {
-  float: none;
+  float: right;
+  padding-right: 2vw;
+  padding-top: 1.5vh;
 }
 html.light.dockHead .header #header_container .btn_main {
   position: fixed;
-  left: 61px;
+  left: 126px;
   bottom: -37px;
   width: 202px;
 }
@@ -521,6 +541,20 @@ html.light.dockHead .header #header_container .btn_main .child#lang {
 }
 html.light.dockHead .header #header_container .btn_main .child#lang button font.btn_text {
   display: inline;
+}
+html.light.dockHead div#head-button {
+  margin: 0;
+  left: 43vw;
+  top: 91vh;
+}
+html.light.dockHead #head-button .show-notifications.active ~ .notifications {
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%,-50%);
+}
+html.light.dockHead #head-button .show-notifications.active ~ .notifications:after {
+    display: none;
 }
 /* Custom color
 switch vars */
