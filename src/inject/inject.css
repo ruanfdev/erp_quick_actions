@@ -27,7 +27,7 @@ html.light .main .BlokNav {
 }
 html.light .main .BlokNav:hover,
 html.light ul#ShortcutsList > li:hover {
-  background-color: var(--green);
+  background-color: var(--green) !important;
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
 html.light .BlokNav:hover *,
@@ -555,6 +555,18 @@ html.light.dockHead #head-button .show-notifications.active ~ .notifications {
 }
 html.light.dockHead #head-button .show-notifications.active ~ .notifications:after {
     display: none;
+}
+html.light.dockHead.RGBclass .backHead {
+  position: fixed;
+  bottom: 5px;
+  height: 60px;
+  width: 24.5%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+html.light.dockHead.RGBclass .backHead:before,
+html.light.dockHead.RGBclass .backHead:after {
+  border-radius: 8px;
 }
 /* Custom color
 switch vars */
