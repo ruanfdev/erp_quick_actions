@@ -130,10 +130,6 @@ html.light #lang button font.btn_text {
 html.light #lang button:hover font.btn_text {
   display: inline;
 }
-html.light #lang button:hover {
-  position: absolute;
-  padding: 6px 17px 6px 12px;
-}
 html.light.smlBlocks .main .BlokNav {
   width: 130px;
   height: calc(130px*1.30769230769);
