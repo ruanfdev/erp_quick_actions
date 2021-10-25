@@ -161,9 +161,11 @@ function injectProcess() {
 					}
 
           var timeServer = window.top.$('html #header_container #tyd .date-time').html();
-          timeServer = timeServer.split(' Datum');
-          if (timeServer[0] == 'Geen') {
-            window.top.$('html #header_container #tyd .date-time').css('display','none');
+          if (typeof timeServer !== 'undefined') {
+            timeServer = timeServer.split(' Datum');
+            if (timeServer[0] == 'Geen') {
+              window.top.$('html #header_container #tyd .date-time').css('display','none');
+            }
           }
 
 					$("#lang button span").removeClass("fa-retweet");
