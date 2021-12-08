@@ -436,6 +436,15 @@ html.light.dockHead .header {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+html.light.dockHead.dockBL .header {
+  margin-left: 13%;
+}
+html.light.dockHead.dockBL .header #header_container {
+  left: 17.5vw;
+}
+html.light.dockHead.dockBL div#head-button {
+    left: 6vw;
+}
 html.light.dockHead ul#ShortcutsList {
   left: 50%;
   width: 70%;

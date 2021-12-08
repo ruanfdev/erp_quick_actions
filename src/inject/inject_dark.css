@@ -43,6 +43,9 @@ html.light.dark ul#ShortcutsList>li:hover {
   background: var(--greyDark);
   box-shadow: 1px 1px 5px var(--darkLight);
 }
+html.light.dark ul#ShortcutsList>li:hover font {
+  color: var(--light);
+}
 html.light.dark .BlokNav {
   background-color: var(--userHomeItems);
 }
@@ -208,6 +211,13 @@ html.light.dark .jstree-contextmenu li.vakata-context-hover,
 html.light.dark .jstree-contextmenu li.vakata-context-hover>a {
   background: var(--darkLight);
   box-shadow: none !important;
+}
+html.light.dark #Tree ul.jstree-children li a.jstree-search {
+    color: var(--green);
+}
+html.light.dark #Tree ul.jstree-children li a.jstree-search.jstree-clicked,
+html.light.dark #Tree ul.jstree-children li a.jstree-search:hover {
+    color: var(--light);
 }
 html.light.dark .select2-dropdown .select2-results ul li[class*="highlighted"],
 html.light.dark .datagrid.panel .panel-header,
