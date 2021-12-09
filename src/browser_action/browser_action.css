@@ -436,6 +436,9 @@ button * {
   float: left;
   width: 100%;
 }
+.row.indent {
+  padding-left: 30px;
+}
 .fifty {
   float: left;
   width: 50%;

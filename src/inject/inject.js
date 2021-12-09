@@ -90,6 +90,7 @@ function injectProcess() {
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
     chkedDockhead = result.chkedDockhead;
+    chkedDockBL = result.chkedDockBL;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -227,6 +228,20 @@ function injectProcess() {
 					} else {
 						chrome.storage.sync.set({
 							chkedDockhead: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
+          if (typeof chkedDockBL !== 'undefined') {
+						if (chkedDockBL == true) {
+							$("html").addClass("dockBL");
+						} else {
+							$("html").removeClass("dockBL");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedDockBL: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -413,6 +428,7 @@ function injectProcess() {
 					chkedHidhead: false,
 					chkedVivaldihead: false,
           chkedDockhead: false,
+          chkedDockBL: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
           smallBlockSlider: '130',
@@ -437,6 +453,7 @@ function injectProcess() {
 				chkedHidhead: false,
 				chkedVivaldihead: false,
         chkedDockhead: false,
+        chkedDockBL: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
         smallBlockSlider: '130',
