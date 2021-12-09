@@ -95,6 +95,48 @@ function injectProcess() {
 		chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
 
+    if (window.location.pathname == '/ALGEMEEN/VERSOEKE/alg_ver_138_Z_swn.php') {
+      document.addEventListener("keyup", function(event) {
+        if (event.key == 'F2') {
+          $('#_SELECT1').val('3').trigger('change');
+          $('#_SELECT2').val('3').trigger('change');
+          $('#_SELECT3').val('3').trigger('change');
+          $('#_SELECT4').val('3').trigger('change');
+          $('#_SELECT5').val('3').trigger('change');
+          $('#_SELECT6').val('3').trigger('change');
+          $('#_SELECT7').val('3').trigger('change');
+          $('#_SELECT8').val('3').trigger('change');
+          $('#_SELECT9').val('3').trigger('change');
+          $('#_SELECT10').val('3').trigger('change');
+          $('#_SELECT11').val('3').trigger('change');
+          $('#_SELECT12').val('3').trigger('change');
+          $('#_SELECT13').val('3').trigger('change');
+          $('#_SELECT14').val('3').trigger('change');
+          $('#_SELECT15').val('3').trigger('change');
+          $('#_SELECT16').val('3').trigger('change');
+          $('#_SELECT17').val('3').trigger('change');
+          $('#_SELECT18').val('3').trigger('change');
+          $('#_SELECT19').val('3').trigger('change');
+          $('#_SELECT20').val('3').trigger('change');
+          $('#_SELECT21').val('3').trigger('change');
+          $('#_SELECT22').val('3').trigger('change');
+          $('#_SELECT23').val('3').trigger('change');
+          $('#_SELECT24').val('3').trigger('change');
+          $('#_SELECT25').val('3').trigger('change');
+          $('#_SELECT26').val('3').trigger('change');
+          $('#_SELECT27').val('3').trigger('change');
+          $('#_SELECT28').val('3').trigger('change');
+          $('#_SELECT29').val('3').trigger('change');
+          $('#_SELECT30').val('3').trigger('change');
+          $('#_SELECT31').val('3').trigger('change');
+          $('#_SELECT32').val('3').trigger('change');
+          $('#_SELECT33').val('3').trigger('change');
+          $('#_SELECT34').val('3').trigger('change');
+          $('#_SELECT35').val('3').trigger('change');
+        }
+      });
+    }
+
 		if (typeof nwk_theme !== 'undefined') {
 			if (typeof injected !== 'undefined') {
 				if (injected == true) {
