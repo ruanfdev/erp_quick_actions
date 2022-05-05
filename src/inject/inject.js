@@ -91,6 +91,7 @@ function injectProcess() {
 		chkedVivaldihead = result.chkedVivaldihead;
     chkedDockhead = result.chkedDockhead;
     chkedDockBL = result.chkedDockBL;
+    chkedDockHid = result.chkedDockHid;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -208,6 +209,7 @@ function injectProcess() {
             timeServer = timeServer.split(' Datum');
             if (timeServer[0] == 'Geen') {
               window.top.$('html #header_container #tyd .date-time').css('display','none');
+              window.top.$('html #header_container .werkstasie').css('padding-top','13px');
             }
           }
 
@@ -284,6 +286,20 @@ function injectProcess() {
 					} else {
 						chrome.storage.sync.set({
 							chkedDockBL: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
+          if (typeof chkedDockHid !== 'undefined') {
+						if (chkedDockHid == true) {
+							$("html").addClass("dockHid");
+						} else {
+							$("html").removeClass("dockHid");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedDockHid: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -471,6 +487,7 @@ function injectProcess() {
 					chkedVivaldihead: false,
           chkedDockhead: false,
           chkedDockBL: false,
+          chkedDockHid: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
           smallBlockSlider: '130',
@@ -496,6 +513,7 @@ function injectProcess() {
 				chkedVivaldihead: false,
         chkedDockhead: false,
         chkedDockBL: false,
+        chkedDockHid: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
         smallBlockSlider: '130',

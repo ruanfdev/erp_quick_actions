@@ -429,7 +429,7 @@ html.light.dockHead .header {
   left: auto;
   top: auto;
   height: 60px;
-  width: 333px;
+  width: 261px;
   border-radius: 8px;
   padding: 0;
   margin: 0;
@@ -442,8 +442,12 @@ html.light.dockHead.dockBL .header {
 html.light.dockHead.dockBL .header #header_container {
   left: 17.5vw;
 }
-html.light.dockHead.dockBL div#head-button {
-    left: 6vw;
+html.light.dockHead.dockHid .header {
+    margin-bottom: -55px;
+    transition: 0.25s linear;
+}
+html.light.dockHead.dockHid .header:hover {
+    margin-bottom: 0px;
 }
 html.light.dockHead ul#ShortcutsList {
   left: 50%;
@@ -505,7 +509,7 @@ html.light.dockHead .header.hovered ~ .content {
 }
 html.light.dockHead #header_container .logo {
   width: 11%;
-  margin-top: 6vh;
+  margin-top: 5vh;
 }
 html.light.dockHead #header_container .welcome {
   margin-top: 25px;
@@ -521,7 +525,7 @@ html.light.dockHead .header #header_container .header_right {
 }
 html.light.dockHead .header #header_container .btn_main {
   position: fixed;
-  left: 126px;
+  left: 56px;
   bottom: -37px;
   width: 202px;
 }
@@ -549,8 +553,12 @@ html.light.dockHead .header #header_container .btn_main .child#lang button font.
 }
 html.light.dockHead div#head-button {
   margin: 0;
-  left: 43vw;
-  top: 91vh;
+  left: 0;
+  top: 50%;
+  min-height: 38px;
+  background: var(--userHeader);
+  padding: 4px 8px 4px 2px;
+  border-radius: 0 8px 8px 0;
 }
 html.light.dockHead #head-button .show-notifications.active ~ .notifications {
   position: fixed;
