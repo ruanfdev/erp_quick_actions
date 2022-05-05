@@ -30,8 +30,8 @@ h3 {
 i#menu_bars {
   position: absolute;
   left: 7px;
-  top: 22px;
-  padding: 8px;
+  top: 14px;
+  padding: 8px 8px 5px 8px;
   font-size: 1.2em;
   border-radius: 5px;
 }
@@ -211,7 +211,7 @@ button.import_cust_cols {
 .onoffswitch {
   position: absolute; width: 85px;
   user-select:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-  top: 25px;
+  top: 17px;
   right: 45px;
 }
 .onoffswitch * {
@@ -292,14 +292,6 @@ p#versionText {
   font-size: 0.8em;
   margin: 0.7em 0px;
 }
-.tooltiptextActive > p {
-  font-size: 1.1em;
-  margin: 0.5em 0px 0.7em;
-}
-.tooltiptextActive > p#activeTimeHeader {
-  font-size: 0.7em;
-  margin: 1em 0px 0.2em;
-}
 .tooltiptextChange > ul {
   font-size: 0.7em;
   margin: 0.8em 0px;
@@ -309,26 +301,17 @@ p#versionText {
 .tooltiptextChange > ul li {
   margin-bottom: 0.3em;
 }
-#tooltipChange,
-#tooltipActive {
-  position: relative;
+#tooltipChange {
+  position: absolute;
   color: var(--green);
   display: none;
   cursor: help;
   font-size: 0.8em;
+  left: 50px;
+  top: 17px;
+  padding: 8px;
 }
-#tooltipActive {
-  display: inline-block;
-}
-#tooltip {
-  position: relative;
-  color: var(--red);
-  display: none;
-  cursor: help;
-}
-#tooltip .tooltiptext,
-#tooltipChange .tooltiptextChange,
-#tooltipActive .tooltiptextActive {
+#tooltipChange .tooltiptextChange {
   visibility: hidden;
   width: 160px;
   background-color: var(--red);
@@ -345,16 +328,10 @@ p#versionText {
 #tooltipChange .tooltiptextChange {
   background-color: var(--green);
   width: 280px;
-  margin-left: -140px;
+  margin-left: -20px;
+  margin-top: -17px;
 }
-#tooltipActive .tooltiptextActive {
-  background-color: var(--green);
-  width: 200px;
-  margin-left: -100px;
-}
-#tooltip .tooltiptext::after,
-#tooltipChange .tooltiptextChange::after,
-#tooltipActive .tooltiptextActive::after {
+#tooltipChange .tooltiptextChange::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -364,9 +341,7 @@ p#versionText {
   border-style: solid;
   border-color: transparent transparent var(--dark) transparent;
 }
-#tooltip:hover .tooltiptext,
-#tooltipChange:hover .tooltiptextChange,
-#tooltipActive:hover .tooltiptextActive {
+#tooltipChange:hover .tooltiptextChange {
   visibility: visible;
   box-shadow: var(--boxShadMed);
 }
@@ -457,7 +432,7 @@ button * {
 }
 .inject {
   position: absolute;
-  top: 29px;
+  top: 21px;
   right: 10px;
 }
 table.input label {

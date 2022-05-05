@@ -46,8 +46,6 @@ $(document).ready(function() {
   var smallBlockSliderOutput = $('#small_Block_Slider_Size');
   var qActions;
   var rules;
-  var idle_date;
-  var idle_time;
   var custom_css_block;
   var custom_js_block;
   var custColsArr;
@@ -98,8 +96,6 @@ $(document).ready(function() {
     custom_js_block = result.custom_js_block;
     autofill_user = result.autofill_user;
     autofill_pass = result.autofill_pass;
-    idle_date = result.idle_date;
-    idle_time = result.idle_time;
     injected = result.injected;
     rules = result.rules;
     custColsArr = result.custColsArr;
@@ -129,32 +125,6 @@ $(document).ready(function() {
         }
         i++;
       });
-    }
-
-    if (idle_date == undefined || typeof idle_date == undefined) {
-      idle_date = 0;
-      idle_time = 0;
-      $('#activeTimeText').html(0+'hrs '+0+'min '+0+'sec');
-    } else {
-    	var idle_time_HRS_fin = 0;
-    	var idle_time_MIN_fin = 0;
-    	var idle_time_SEC_fin = 0;
-
-    	if (idle_time > 0) {
-    		var idle_time_HRS = (idle_time/60)/60;
-
-    		var idle_time_MIN = idle_time_HRS.toString().split(".");
-    		idle_time_HRS_fin = idle_time_MIN[0];
-    		idle_time_MIN = parseFloat("0."+idle_time_MIN[1])*60;
-
-    		var idle_time_SEC = idle_time_MIN.toString().split(".");
-    		idle_time_MIN_fin = idle_time_SEC[0];
-    		idle_time_SEC = parseFloat("0."+idle_time_SEC[1])*60;
-    		idle_time_SEC = idle_time_SEC.toString().split(".");
-    		idle_time_SEC_fin = idle_time_SEC[0];
-    	}
-
-      $('#activeTimeText').html(idle_time_HRS_fin+'hrs '+idle_time_MIN_fin+'min '+idle_time_SEC_fin+'sec');
     }
 
     if (custColsArr == undefined || typeof custColsArr[0] == undefined) {
@@ -561,15 +531,14 @@ $(document).ready(function() {
       $('#currentVer').html(current_version);
 
       if (current_version < latest_version) {
-        $('#tooltip').css('color','#c12e2a');
-        $('#tooltip .tooltiptext').css('background-color','#c12e2a');
+        $('#tooltipChange').css('color','#c12e2a');
+        $('#tooltipChange .tooltiptextChange').css('background-color','#c12e2a');
         $('#latestVer').html(' (Latest Version '+latest_version+')');
         createNotif();
       } else {
-        $('#tooltip').css('color','#71bf44');
-        $('#tooltip .tooltiptext').css('background-color','#71bf44');
+        $('#tooltipChange').css('color','#71bf44');
+        $('#tooltipChange .tooltiptextChange').css('background-color','#71bf44');
       }
-      $('#tooltip').css('display', 'inline-block');
       $('#tooltipChange').css('display', 'inline-block');
 
       // firebase.app().delete();
