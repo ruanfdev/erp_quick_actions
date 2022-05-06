@@ -92,6 +92,7 @@ function injectProcess() {
     chkedDockhead = result.chkedDockhead;
     chkedDockBL = result.chkedDockBL;
     chkedDockHid = result.chkedDockHid;
+    chkedDockCol = result.chkedDockCol;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -305,6 +306,20 @@ function injectProcess() {
 						});
 					}
 
+          if (typeof chkedDockCol !== 'undefined') {
+						if (chkedDockCol == true) {
+							$("html").addClass("dockCol");
+						} else {
+							$("html").removeClass("dockCol");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedDockCol: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
 					if (typeof chkedGlow !== 'undefined') {
 						if (chkedGlow == true) {
 							if (window.location.host == 'php-dev.nwk.co.za') {
@@ -488,6 +503,7 @@ function injectProcess() {
           chkedDockhead: false,
           chkedDockBL: false,
           chkedDockHid: false,
+          chkedDockCol: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
           smallBlockSlider: '130',
@@ -514,6 +530,7 @@ function injectProcess() {
         chkedDockhead: false,
         chkedDockBL: false,
         chkedDockHid: false,
+        chkedDockCol: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
         smallBlockSlider: '130',

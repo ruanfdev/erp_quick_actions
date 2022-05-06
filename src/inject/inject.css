@@ -160,6 +160,34 @@ html.light.headGlowQA .header {
   box-shadow: inset 0px 0px 6px 0px #f7931c;
   border-color: var(--orange);
 }
+html.light.headGlowDEV.dockCol .header,
+html.light.headGlowPRD.dockCol .header,
+html.light.headGlowQA.dockCol .header,
+html.light.headGlowDEV.dockCol #head-button,
+html.light.headGlowPRD.dockCol #head-button,
+html.light.headGlowQA.dockCol #head-button {
+  border: none;
+  background-color: var(--red) !important;
+  box-shadow: none;
+}
+html.light.headGlowPRD.dockCol .header,
+html.light.headGlowPRD.dockCol #head-button {
+  background-color: var(--green) !important;
+}
+html.light.headGlowQA.dockCol .header,
+html.light.headGlowQA.dockCol #head-button {
+  background-color: var(--orange) !important;
+}
+html.light.dockCol .header .header_nav a,
+html.light.dockCol .header #header_container .btn_main * {
+  background-color: transparent !important;
+  border: none !important;
+}
+html.light.dockCol .header .header_nav a:hover,
+html.light.dockCol .header #header_container .btn_main .child button:hover {
+  background-color: var(--dark) !important;
+  opacity: 0.8;
+}
 html.light.altMenus .ui-widget-overlay {
   background: rgba(0,0,0,0.5);
   opacity: unset !important;
@@ -443,11 +471,11 @@ html.light.dockHead.dockBL .header #header_container {
   left: 17.5vw;
 }
 html.light.dockHead.dockHid .header {
-    margin-bottom: -55px;
-    transition: 0.25s linear;
+  margin-bottom: -50px;
+  transition: 0.25s linear;
 }
 html.light.dockHead.dockHid .header:hover {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 html.light.dockHead ul#ShortcutsList {
   left: 50%;

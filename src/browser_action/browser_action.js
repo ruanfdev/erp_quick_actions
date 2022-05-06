@@ -110,6 +110,7 @@ $(document).ready(function() {
     chkedDockhead = result.chkedDockhead;
     chkedDockBL = result.chkedDockBL;
     chkedDockHid = result.chkedDockHid;
+    chkedDockCol = result.chkedDockCol;
     chkedMenus = result.chkedMenus;
     chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -207,6 +208,11 @@ $(document).ready(function() {
       $('#check_dockHid').prop('checked', true);
     } else {
       $('#check_dockHid').prop('checked', false);
+    }
+    if (chkedDockCol == true) {
+      $('#check_dockCol').prop('checked', true);
+    } else {
+      $('#check_dockCol').prop('checked', false);
     }
     if (chkedMenus == true) {
       $('#check_menus').prop('checked', true);
@@ -398,6 +404,7 @@ $(document).ready(function() {
     var chkedDockhead = $('#check_dockHead').is(":checked");
     var chkedDockBL = $('#check_dockBL').is(":checked");
     var chkedDockHid = $('#check_dockHid').is(":checked");
+    var chkedDockCol = $('#check_dockCol').is(":checked");
 
     if (chkedTheme) {
       nwk_theme = 'light';
@@ -421,18 +428,21 @@ $(document).ready(function() {
       chkedDockhead = false;
       chkedDockBL = false;
       chkedDockHid = false;
+      chkedDockCol = false;
     } else if (chkedHidhead) {
       chkedHeader = false;
       chkedVivaldihead = false;
       chkedDockhead = false;
       chkedDockBL = false;
       chkedDockHid = false;
+      chkedDockCol = false;
     } else if (chkedHeader) {
       chkedHidhead = false;
       chkedVivaldihead = false;
       chkedDockhead = false;
       chkedDockBL = false;
       chkedDockHid = false;
+      chkedDockCol = false;
     }
 
     rules = [];
@@ -460,7 +470,7 @@ $(document).ready(function() {
     });
 
     chrome.storage.sync.clear(function() {
-      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedNewtab:chkedNewtab,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedDockhead:chkedDockhead,chkedDockBL:chkedDockBL,chkedDockHid:chkedDockHid,chkedMenus:chkedMenus,chkedMainBlock:chkedMainBlock,smallBlockSlider:smallBlockSlider,autofill_user:autofill_user,autofill_pass:autofill_pass}, function() {
+      chrome.storage.sync.set({rules:rules,custColsArr:custColsArr,nwk_theme:nwk_theme,injected:injected,custom_css_block:custom_css_block,custom_js_block:custom_js_block,chkedHeader:chkedHeader,chkedGlow:chkedGlow,chkedRGBhead:chkedRGBhead,chkedNyanCursor:chkedNyanCursor,chkedNewtab:chkedNewtab,chkedCustomCol:chkedCustomCol,chkedHidhead:chkedHidhead,chkedVivaldihead:chkedVivaldihead,chkedDockhead:chkedDockhead,chkedDockBL:chkedDockBL,chkedDockHid:chkedDockHid,chkedDockCol:chkedDockCol,chkedMenus:chkedMenus,chkedMainBlock:chkedMainBlock,smallBlockSlider:smallBlockSlider,autofill_user:autofill_user,autofill_pass:autofill_pass}, function() {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
