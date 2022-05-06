@@ -205,15 +205,6 @@ function injectProcess() {
 						}
 					}
 
-          var timeServer = window.top.$('html #header_container #tyd .date-time').html();
-          if (typeof timeServer !== 'undefined') {
-            timeServer = timeServer.split(' Datum');
-            if (timeServer[0] == 'Geen') {
-              window.top.$('html #header_container #tyd .date-time').css('display','none');
-              window.top.$('html #header_container .werkstasie').css('padding-top','13px');
-            }
-          }
-
 					$("#lang button span").removeClass("fa-retweet");
 					$("#lang button span").addClass("fa-language");
 
@@ -487,6 +478,15 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
+
+          var timeServer = window.top.$('html #header_container #tyd .date-time').html();
+          if (typeof timeServer !== 'undefined') {
+            timeServer = timeServer.split(' Datum');
+            if (timeServer[0] == 'Geen') {
+              window.top.$('html #header_container #tyd .date-time').css('display','none');
+              window.top.$('html #header_container .werkstasie').css('padding-top','13px');
+            }
+          }
 				}
 			} else {
 				chrome.storage.sync.set({
