@@ -42,19 +42,19 @@ function customRule(envPage) {
     rules = result.rules;
     var i = 0;
     if (rules == undefined) {
-      chrome.tabs.create({url:envURL+'nwk/index.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'nwk/index.php'},function(data) {});
     } else {
       var rulesLen = rules.length;
       $.each( rules, function( idx, val ) {
         if (envPage == val.keyword) {
-          chrome.tabs.create({url:envURL+val.link},function(data) {});
+          chrome.scripting.create({url:envURL+val.link},function(data) {});
           return false;
         } else {
           i++;
         }
       });
       if (i == rulesLen) {
-        chrome.tabs.create({url:envURL+'nwk/index.php'},function(data) {});
+        chrome.scripting.create({url:envURL+'nwk/index.php'},function(data) {});
       }
     }
   });
@@ -86,58 +86,58 @@ function filterCalculations(text) {
 function callDefaults(envPage) {
   switch(envPage) {
     case 'index':
-      chrome.tabs.create({url:envURL+'nwk/index.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'nwk/index.php'},function(data) {});
       break;
 
     case 'toegang':
     case 'access':
     case 'toegang / access':
-      chrome.tabs.create({url:envURL+'ALGEMEEN/MENU/alg_men_010_S_skp.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'ALGEMEEN/MENU/alg_men_010_S_skp.php'},function(data) {});
       break;
 
     case 'taal':
     case 'lang':
     case 'taal / lang':
-      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php'},function(data) {});
       break;
 
     case 'versoek':
     case 'request':
     case 'versoek / request':
-      chrome.tabs.create({url:envURL+'ALGEMEEN/VERSOEKE/alg_ver_001_M_kse.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'ALGEMEEN/VERSOEKE/alg_ver_001_M_kse.php'},function(data) {});
       break;
 
     case 'php':
-      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/STELSELS%20ONDERHOUD/inl_sto_086_E_kse.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'INLIGTINGSTEGNOLOGIE/STELSELS%20ONDERHOUD/inl_sto_086_E_kse.php'},function(data) {});
       break;
 
     case 'nat':
-      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/NATURAL%20STELSELONDERHOUD/inl_nso_001_M_kse.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'INLIGTINGSTEGNOLOGIE/NATURAL%20STELSELONDERHOUD/inl_nso_001_M_kse.php'},function(data) {});
       break;
 
     case 'builder':
-      chrome.tabs.create({url:envURL+'INLIGTINGSTEGNOLOGIE/FORM%20BUILDER/inl_fbr_001_Z_skp.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'INLIGTINGSTEGNOLOGIE/FORM%20BUILDER/inl_fbr_001_Z_skp.php'},function(data) {});
       break;
 
     case 'codiad':
-      chrome.tabs.create({url:envURL+'Codiad/'},function(data) {});
+      chrome.scripting.create({url:envURL+'Codiad/'},function(data) {});
       break;
 
     case 'tye':
     case 'times':
     case 'tye / times':
-      chrome.tabs.create({url:envURL+'MENSEKAPITAAL/AANTEKENREGISTER/mhb_aan_014_Z_wsg.php?blad=wysig'},function(data) {});
+      chrome.scripting.create({url:envURL+'MENSEKAPITAAL/AANTEKENREGISTER/mhb_aan_014_Z_wsg.php?blad=wysig'},function(data) {});
       break;
 
     case 'kontak':
     case 'contact':
     case 'pers':
     case 'kontak / contact / pers':
-      chrome.tabs.create({url:envURL+'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php'},function(data) {});
       break;
 
     case 'ses':
-      chrome.tabs.create({url:envURL+'session.php'},function(data) {});
+      chrome.scripting.create({url:envURL+'session.php'},function(data) {});
       break;
 
     default:
@@ -291,35 +291,10 @@ chrome.omnibox.onInputEntered.addListener(function(text, currentTab) {
   }
 });
 
-chrome.idle.onStateChanged.addListener(function(state) {
-  var dayFull = new Date();
-  var day = dayFull.getDate();
-  if (day != todayDate) {
-    todayDate = day;
-    todayActiveTime = 0;
-  }
-
-  if (state == "active") {
-    startTime = new Date();
-    startTime = startTime.getTime();
-  } else if (state == "idle" || state == "locked") {
-    endTime = new Date();
-    endTime = endTime.getTime();
-    var timeDiff = endTime - startTime;
-    timeDiff /= 1000;
-
-    todayActiveTime = todayActiveTime+Math.round(timeDiff);
-  }
-
-  chrome.storage.sync.set({idle_date:todayDate,idle_time:todayActiveTime}, function() {
-    // alertReload();
-  });
-});
-
-chrome.tabs.onCreated.addListener(function(tab) {
+chrome.scripting.onCreated.addListener(function(tab) {
   if (tab.url === "chrome://newtab/" || tab.pendingUrl === "chrome://newtab/") {
     if (shouldReplaceNewTab === true) {
-      chrome.tabs.update({url:chrome.extension.getURL("src/new_tab/new_tab.html")},function(data) {});
+      chrome.scripting.update({url:chrome.extension.getURL("src/new_tab/new_tab.html")},function(data) {});
     }
   }
 });

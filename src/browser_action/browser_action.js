@@ -339,9 +339,9 @@ $(document).ready(function() {
   });
 
   $(reload_erp_tabs).click(function(e){
-    chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
+    chrome.scripting.query({url: "http://*.nwk.co.za/*"}, function(tabs){
       for (var i = 0; i < tabs.length; i++) {
-        chrome.tabs.reload(tabs[i].id);
+        chrome.scripting.reload(tabs[i].id);
       }
     });
   });
@@ -593,15 +593,15 @@ function defaultColors() {
 }
 
 function injectNow(param) {
-  chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
+  chrome.scripting.query({url: "http://*.nwk.co.za/*"}, function(tabs){
     if (param == true) {
       for (var i = 0; i < tabs.length; i++) {
-        chrome.tabs.sendMessage(tabs[i].id, {action: "dynInject"}, function(response) {
+        chrome.scripting.sendMessage(tabs[i].id, {action: "dynInject"}, function(response) {
         });
       }
     } else {
       for (var j = 0; j < tabs.length; j++) {
-        chrome.tabs.sendMessage(tabs[j].id, {action: "dynInjectCustom"}, function(response) {
+        chrome.scripting.sendMessage(tabs[j].id, {action: "dynInjectCustom"}, function(response) {
         });
       }
     }
