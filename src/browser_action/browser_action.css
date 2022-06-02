@@ -248,14 +248,14 @@ button.import_cust_cols {
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-  content: "__MSG_lblLight__";
+  content: "Light";
   padding-left: 10px;
   background-color: var(--light);
   color: var(--dark);
   text-align: left;
 }
 .onoffswitch-inner:after {
-  content: "__MSG_lblDark__";
+  content: "Dark";
   padding-right: 10px;
   background-color: var(--dark);
   color: var(--light);

@@ -49,30 +49,7 @@ $(document).ready(function() {
   var custom_css_block;
   var custom_js_block;
   var custColsArr;
-  var latest_version;
-  var current_version;
-
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB1XcpxDxatOvYXM_l-rsNFi5CVuUNPoNM",
-    authDomain: "erp-quick-actions.firebaseapp.com",
-    databaseURL: "https://erp-quick-actions.firebaseio.com",
-    projectId: "erp-quick-actions",
-    storageBucket: "erp-quick-actions.appspot.com",
-    messagingSenderId: "673200916854"
-  };
-  firebase.initializeApp(config);
-
-  function createNotif() {
-    var opt = {
-      type: 'basic',
-      title: 'Update Available',
-      message: 'Chrome will update your extensions automatically to keep you from living in the past...',
-      priority: 2,
-      iconUrl:'../../icon_128.png'
-    };
-    chrome.notifications.create('id', opt, function(id) {});
-  }
+  var themeURL;
 
   var accordion = document.getElementsByClassName("accordion");
   var accIndex;
@@ -87,8 +64,6 @@ $(document).ready(function() {
       }
     });
   }
-
-  // Version Check Old Position
 
   chrome.storage.sync.get(null, function(result) {
     nwk_theme = result.nwk_theme;
@@ -114,6 +89,7 @@ $(document).ready(function() {
     chkedMenus = result.chkedMenus;
     chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
+    themeURL = result.themeURL;
 
     var i = 0;
     if (rules == undefined || rules[0].keyword == '') {
@@ -308,40 +284,35 @@ $(document).ready(function() {
     });
 
     var personURL = encodeURI(JSON.stringify(custColsArr));
-    var personKeyword = prompt("Theme Exported.\nEnter a keyword to be used for import.", '');
-
-    if (personKeyword != null && personKeyword != "") {
-      firebase.database().ref('themes/' + personKeyword).set({
-        theme: personURL
-      });
-    }
+    themeURL = personURL;
+    chrome.storage.sync.set({themeURL:personURL}, function() {
+      bar1.set(100);
+      setTimeout(function () {
+        alert("Theme Saved to Storage");
+      }, 800);
+    });
   });
 
   $(import_cols).click(function(e){
-    var keywordPrompt = prompt("Enter exported keyword here:", "");
-    if (keywordPrompt != null && keywordPrompt != "") {
-      firebase.database().ref().once('value').then(function(snapshot){
-        var tempThemeData = snapshot.val().themes;
-        if (typeof tempThemeData[keywordPrompt] != 'undefined') {
-          var tempURL = tempThemeData[keywordPrompt].theme;
-          tempURL = JSON.parse(decodeURI(tempURL));
-
-          $.each( tempURL, function(idx,val) {
-            document.getElementById(val.id).jscolor.fromString(val.val);
-          });
-        } else {
-          alert('Invalid Keyword');
-        }
-      });
+    var confirmAsk = prompt("Type YES to import your theme:", "");
+    if (confirmAsk != null && confirmAsk != "") {
+      if (confirmAsk == "YES") {
+        var tempURL = JSON.parse(decodeURI(themeURL));
+        $.each( tempURL, function(idx,val) {
+          document.getElementById(val.id).jscolor.fromString(val.val);
+        });
+      } else {
+        alert('Confirmation not received to import!');
+      }
     } else {
-      alert('Invalid Keyword');
+      alert('Confirmation not received to import!');
     }
   });
 
   $(reload_erp_tabs).click(function(e){
-    chrome.scripting.query({url: "http://*.nwk.co.za/*"}, function(tabs){
+    chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
       for (var i = 0; i < tabs.length; i++) {
-        chrome.scripting.reload(tabs[i].id);
+        chrome.tabs.reload(tabs[i].id);
       }
     });
   });
@@ -536,35 +507,21 @@ $(document).ready(function() {
     document.getElementById("save_custom_settings").style.bottom = "-45px";
   });
 
-  var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
-    latest_version = snapshot.val().latest_version;
-    var changelog = snapshot.val().changelog;
-
-    for (let index = 2; index < changelog.length; index++) {
-      $('#changeHead').html('Changelog for version '+changelog[1]);
-      $('#changeList').append('<li id="changeItem changeItem'+index+'">'+changelog[index]+'</li>');
-    }
-
-    chrome.management.getSelf(function(extData) {
-      current_version = extData.version;
-      current_version = parseFloat(current_version);
-      $('#currentVer').html(current_version);
-
-      if (current_version < latest_version) {
-        $('#tooltipChange').css('color','#c12e2a');
-        $('#tooltipChange .tooltiptextChange').css('background-color','#c12e2a');
-        $('#latestVer').html(' (Latest Version '+latest_version+')');
-        createNotif();
-      } else {
-        $('#tooltipChange').css('color','#71bf44');
-        $('#tooltipChange .tooltiptextChange').css('background-color','#71bf44');
-      }
+  // var latest_version_DB = firebase.database().ref().once('value').then(function(snapshot){
+  //   chrome.management.getSelf(function(extData) {
+  //     if (current_version < latest_version) {
+  //       $('#tooltipChange').css('color','#c12e2a');
+  //       $('#tooltipChange .tooltiptextChange').css('background-color','#c12e2a');
+  //       createNotif();
+  //     } else {
+  //       $('#tooltipChange').css('color','#71bf44');
+  //       $('#tooltipChange .tooltiptextChange').css('background-color','#71bf44');
+  //     }
+  //     $('#tooltipChange').css('display', 'inline-block');
+  //   });
+  //
+  // });
       $('#tooltipChange').css('display', 'inline-block');
-
-      // firebase.app().delete();
-    });
-
-  });
 });
 
 function defaultColors() {
@@ -593,15 +550,15 @@ function defaultColors() {
 }
 
 function injectNow(param) {
-  chrome.scripting.query({url: "http://*.nwk.co.za/*"}, function(tabs){
+  chrome.tabs.query({url: "http://*.nwk.co.za/*"}, function(tabs){
     if (param == true) {
       for (var i = 0; i < tabs.length; i++) {
-        chrome.scripting.sendMessage(tabs[i].id, {action: "dynInject"}, function(response) {
+        chrome.tabs.sendMessage(tabs[i].id, {action: "dynInject"}, function(response) {
         });
       }
     } else {
       for (var j = 0; j < tabs.length; j++) {
-        chrome.scripting.sendMessage(tabs[j].id, {action: "dynInjectCustom"}, function(response) {
+        chrome.tabs.sendMessage(tabs[j].id, {action: "dynInjectCustom"}, function(response) {
         });
       }
     }

@@ -1,34 +1,23 @@
 {
-  "name": "ERP - Quick Actions",
-  "version": "6.5",
   "manifest_version": 3,
+  "version": "6.5",
+  "name": "ERP - Quick Actions",
   "description": "ERP - Quick Actions",
   "homepage_url": "https://ruanf.co.za",
   "content_security_policy": {
-    "extension_pages": "script-src 'self' object-src 'self'",
-    "sandbox": {
-      "pages": [
-        "https://www.gstatic.com/firebasejs/6.0.2/firebase.js",
-        "https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js",
-        "https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js",
-        "https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js",
-        "https://cdn.firebase.com",
-        "https://*.firebaseio.com"
-      ]
-    }
+    "extension_pages": "script-src 'self'; object-src 'self';"
   },
   "icons": {
     "16": "icons/icon_16.png",
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
   },
-  "default_locale": "en",
   "background": {
-    "service_worker": "src/bg/background.html"
+    "service_worker": "src/bg/background.js"
   },
   "action": {
-    "default_popup": "src/browser_action/browser_action.html",
     "default_title": "ERP - Quick Actions",
+    "default_popup": "src/browser_action/browser_action.html",
     "default_icon": {
       "16": "icons/icon_16.png"
     }
@@ -36,7 +25,6 @@
   "permissions": [
     "contextMenus",
     "tabs",
-    "notifications",
     "storage"
   ],
   "host_permissions": [
