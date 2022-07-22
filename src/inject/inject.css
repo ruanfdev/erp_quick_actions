@@ -325,6 +325,9 @@ html.light.hiddenHead .header:hover {
 html.light.hiddenHead .header:hover + .backHead {
   margin-top: -2px;
 }
+html.light.dockHid .header:hover + .backHead {
+  margin-top: -15px;
+}
 html.light.vivaldiHead.RGBclass .backHead {
   position: fixed;
   height: 0px;
@@ -601,13 +604,20 @@ html.light.dockHead.RGBclass .backHead {
   position: fixed;
   bottom: 5px;
   height: 60px;
-  width: 24.5%;
+  width: 19%;
   margin-left: 50%;
   transform: translateX(-50%);
 }
 html.light.dockHead.RGBclass .backHead:before,
 html.light.dockHead.RGBclass .backHead:after {
   border-radius: 8px;
+}
+html.light.dockHid.RGBclass .backHead {
+  bottom: -45px;
+  transition: 0.25s linear;
+}
+html.light.dockHid .header:hover + .backHead {
+  bottom: 5px;
 }
 /* Custom color
 switch vars */
@@ -622,11 +632,16 @@ html.light #cboxTopCenter,
 html.light #cboxTopRight,
 html.light #cboxBottomLeft,
 html.light #cboxBottomCenter,
-html.light #cboxBottomRight {
+html.light #cboxBottomRight,
+html.light .notifications.js-notifications,
+html.light .notifications.js-notifications .notificationTypeDiv button.tablinks,
+html.light .notifications.js-notifications .notificationTypeDiv a i,
+html.light .notifications.js-notifications .show-all {
   background-color: var(--green);
 }
 html.light .datagrid .panel-header,
-html.light .datagrid .panel-title {
+html.light .datagrid .panel-title,
+html.light .panel .panel-header {
   background: var(--green);
   border-color: var(--green);
   color: var(--light);
@@ -650,6 +665,9 @@ html.light legend,
 html.light li.dropdown-header {
   background: var(--orange);
   color: var(--light);
+}
+html.light .notifications.js-notifications .notificationTypeDiv button.tablinks.active {
+  border-bottom-color: var(--orange);
 }
 html.light fieldset {
   background-color: var(--greyLight);

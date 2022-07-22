@@ -22,7 +22,7 @@ html.light.dark .note {
   color: var(--light);
   border-color: var(--greyLight);
 }
-html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon),
+html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon):not(.datagrid-row-expander),
 html.light.dark fieldset,
 html.light.dark .Zebra_Form input.text,
 html.light.dark .Zebra_Form input.date,
@@ -190,7 +190,9 @@ html.light.dark .HetWSDL,
 html.light.dark .noty_type_error * {
   color: var(--white);
 }
-html.light.dark .noty_type_ {
+html.light.dark .noty_type_,
+html.light.dark .notifications.js-notifications ul.notifications-list,
+html.light.dark .notifications.js-notifications ul.notifications-list li.item {
   background-color: var(--dark);
   color: var(--light);
 }
@@ -236,9 +238,9 @@ html.light.dark .datagrid input.datagrid-filter {
 }
 html.light.dark .datagrid input.datagrid-filter:focus,
 html.light.dark .datagrid input.datagrid-filter:hover,
-html.light.dark .datagrid .datagrid-view table .datagrid-row-checked *:not(.btn):not(.fa),
-html.light.dark .datagrid .datagrid-view table .datagrid-row-selected *:not(.btn):not(.fa),
-html.light.dark .datagrid .datagrid-view table .datagrid-row-over *:not(.btn):not(.fa) {
+html.light.dark .datagrid .datagrid-view table .datagrid-row-checked *:not(.btn):not(.fa):not(.datagrid-row-expander),
+html.light.dark .datagrid .datagrid-view table .datagrid-row-selected *:not(.btn):not(.fa):not(.datagrid-row-expander),
+html.light.dark .datagrid .datagrid-view table .datagrid-row-over *:not(.btn):not(.fa):not(.datagrid-row-expander) {
   background-color: var(--greyDark) !important;
   background: var(--greyDark) !important;
 }

@@ -168,20 +168,14 @@ function testEnv(text) {
   return true;
 }
 
-var openPRD = function(e) {
-  envURL = 'http://php-prd.nwk.co.za/';
-  var itemID = e.menuItemId;
-  callDefaults(itemID.substring(1));
-};
-
-var openDEV = function(e) {
-  envURL = 'http://php-dev.nwk.co.za/';
-  var itemID = e.menuItemId;
-  callDefaults(itemID.substring(1));
-};
-
-var openQA = function(e) {
-  envURL = 'http://php-qa.nwk.co.za/';
+var openERP = function(e) {
+  if (e.parentMenuItemId == "erpID_PRD") {
+    envURL = 'http://php-prd.nwk.co.za/';
+  } else if (e.parentMenuItemId == "erpID_DEV") {
+    envURL = 'http://php-dev.nwk.co.za/';
+  } else {
+    envURL = 'http://php-qa.nwk.co.za/';
+  }
   var itemID = e.menuItemId;
   callDefaults(itemID.substring(1));
 };
@@ -219,15 +213,12 @@ chrome.storage.sync.get(null, function(result) {
 
   for (let indFor = 1; indFor < 4; indFor++) {
     if (indFor == 1) {
-      event = openPRD;
       parent = "erpID_PRD";
       pre = 'P';
     } else if (indFor == 2) {
-      event = openDEV;
       parent = "erpID_DEV";
       pre = 'D';
     } else {
-      event = openQA;
       parent = "erpID_QA";
       pre = 'Q';
     }
@@ -237,21 +228,19 @@ chrome.storage.sync.get(null, function(result) {
         chrome.contextMenus.create({
           "id": pre+rules[i].keyword,
           "title": rules[i].keyword,
-          "parentId": parent,
-          "onclick": event
+          "parentId": parent
         });
       }
-      chrome.contextMenus.create({"type": "separator","parentId": parent});
     }
     for (var i = 0; i < fixedRules.length; i++) {
       chrome.contextMenus.create({
         "id": pre+fixedRules[i],
         "title": fixedRules[i],
-        "parentId": parent,
-        "onclick": event
+        "parentId": parent
       });
     }
   }
+  chrome.contextMenus.onClicked.addListener(openERP);
 });
 
 chrome.omnibox.onInputChanged.addListener(function(text, suggest) {

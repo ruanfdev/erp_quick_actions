@@ -89,55 +89,55 @@ function injectProcess() {
 		chkedCustomCol = result.chkedCustomCol;
 		chkedHidhead = result.chkedHidhead;
 		chkedVivaldihead = result.chkedVivaldihead;
-    chkedDockhead = result.chkedDockhead;
-    chkedDockBL = result.chkedDockBL;
-    chkedDockHid = result.chkedDockHid;
-    chkedDockCol = result.chkedDockCol;
+		chkedDockhead = result.chkedDockhead;
+		chkedDockBL = result.chkedDockBL;
+		chkedDockHid = result.chkedDockHid;
+		chkedDockCol = result.chkedDockCol;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
-    smallBlockSlider = result.smallBlockSlider;
+    	smallBlockSlider = result.smallBlockSlider;
 
-    if (window.location.pathname == '/ALGEMEEN/VERSOEKE/alg_ver_138_Z_swn.php') {
-      document.addEventListener("keyup", function(event) {
-        if (event.key == 'F2') {
-          $('#_SELECT1').val('3').trigger('change');
-          $('#_SELECT2').val('3').trigger('change');
-          $('#_SELECT3').val('3').trigger('change');
-          $('#_SELECT4').val('3').trigger('change');
-          $('#_SELECT5').val('3').trigger('change');
-          $('#_SELECT6').val('3').trigger('change');
-          $('#_SELECT7').val('3').trigger('change');
-          $('#_SELECT8').val('3').trigger('change');
-          $('#_SELECT9').val('3').trigger('change');
-          $('#_SELECT10').val('3').trigger('change');
-          $('#_SELECT11').val('3').trigger('change');
-          $('#_SELECT12').val('3').trigger('change');
-          $('#_SELECT13').val('3').trigger('change');
-          $('#_SELECT14').val('3').trigger('change');
-          $('#_SELECT15').val('3').trigger('change');
-          $('#_SELECT16').val('3').trigger('change');
-          $('#_SELECT17').val('3').trigger('change');
-          $('#_SELECT18').val('3').trigger('change');
-          $('#_SELECT19').val('3').trigger('change');
-          $('#_SELECT20').val('3').trigger('change');
-          $('#_SELECT21').val('3').trigger('change');
-          $('#_SELECT22').val('3').trigger('change');
-          $('#_SELECT23').val('3').trigger('change');
-          $('#_SELECT24').val('3').trigger('change');
-          $('#_SELECT25').val('3').trigger('change');
-          $('#_SELECT26').val('3').trigger('change');
-          $('#_SELECT27').val('3').trigger('change');
-          $('#_SELECT28').val('3').trigger('change');
-          $('#_SELECT29').val('3').trigger('change');
-          $('#_SELECT30').val('3').trigger('change');
-          $('#_SELECT31').val('3').trigger('change');
-          $('#_SELECT32').val('3').trigger('change');
-          $('#_SELECT33').val('3').trigger('change');
-          $('#_SELECT34').val('3').trigger('change');
-          $('#_SELECT35').val('3').trigger('change');
-        }
-      });
-    }
+		if (window.location.pathname == '/ALGEMEEN/VERSOEKE/alg_ver_138_Z_swn.php') {
+			document.addEventListener("keyup", function(event) {
+				if (event.key == 'F2') {
+				$('#_SELECT1').val('3').trigger('change');
+				$('#_SELECT2').val('3').trigger('change');
+				$('#_SELECT3').val('3').trigger('change');
+				$('#_SELECT4').val('3').trigger('change');
+				$('#_SELECT5').val('3').trigger('change');
+				$('#_SELECT6').val('3').trigger('change');
+				$('#_SELECT7').val('3').trigger('change');
+				$('#_SELECT8').val('3').trigger('change');
+				$('#_SELECT9').val('3').trigger('change');
+				$('#_SELECT10').val('3').trigger('change');
+				$('#_SELECT11').val('3').trigger('change');
+				$('#_SELECT12').val('3').trigger('change');
+				$('#_SELECT13').val('3').trigger('change');
+				$('#_SELECT14').val('3').trigger('change');
+				$('#_SELECT15').val('3').trigger('change');
+				$('#_SELECT16').val('3').trigger('change');
+				$('#_SELECT17').val('3').trigger('change');
+				$('#_SELECT18').val('3').trigger('change');
+				$('#_SELECT19').val('3').trigger('change');
+				$('#_SELECT20').val('3').trigger('change');
+				$('#_SELECT21').val('3').trigger('change');
+				$('#_SELECT22').val('3').trigger('change');
+				$('#_SELECT23').val('3').trigger('change');
+				$('#_SELECT24').val('3').trigger('change');
+				$('#_SELECT25').val('3').trigger('change');
+				$('#_SELECT26').val('3').trigger('change');
+				$('#_SELECT27').val('3').trigger('change');
+				$('#_SELECT28').val('3').trigger('change');
+				$('#_SELECT29').val('3').trigger('change');
+				$('#_SELECT30').val('3').trigger('change');
+				$('#_SELECT31').val('3').trigger('change');
+				$('#_SELECT32').val('3').trigger('change');
+				$('#_SELECT33').val('3').trigger('change');
+				$('#_SELECT34').val('3').trigger('change');
+				$('#_SELECT35').val('3').trigger('change');
+				}
+			});
+		}
 
 		if (typeof nwk_theme !== 'undefined') {
 			if (typeof injected !== 'undefined') {
@@ -255,7 +255,7 @@ function injectProcess() {
 						});
 					}
 
-          if (typeof chkedDockhead !== 'undefined') {
+          			if (typeof chkedDockhead !== 'undefined') {
 						if (chkedDockhead == true) {
 							$("html").addClass("dockHead");
 						} else {
@@ -269,7 +269,7 @@ function injectProcess() {
 						});
 					}
 
-          if (typeof chkedDockBL !== 'undefined') {
+          			if (typeof chkedDockBL !== 'undefined') {
 						if (chkedDockBL == true) {
 							$("html").addClass("dockBL");
 						} else {
@@ -283,7 +283,7 @@ function injectProcess() {
 						});
 					}
 
-          if (typeof chkedDockHid !== 'undefined') {
+          			if (typeof chkedDockHid !== 'undefined') {
 						if (chkedDockHid == true) {
 							$("html").addClass("dockHid");
 						} else {
@@ -297,7 +297,7 @@ function injectProcess() {
 						});
 					}
 
-          if (typeof chkedDockCol !== 'undefined') {
+          			if (typeof chkedDockCol !== 'undefined') {
 						if (chkedDockCol == true) {
 							$("html").addClass("dockCol");
 						} else {
@@ -419,11 +419,11 @@ function injectProcess() {
 						});
 					}
 
-          if (typeof smallBlockSlider !== 'undefined') {
+          			if (typeof smallBlockSlider !== 'undefined') {
 						if (chkedMainBlock == true) {
-              var smallBlockSliderVar = smallBlockSlider*1.30769230769;
-              $('.BlokNav').css('width',smallBlockSlider);
-              $('.BlokNav').css('height',smallBlockSliderVar);
+							var smallBlockSliderVar = smallBlockSlider*1.30769230769;
+							$('.BlokNav').css('width',smallBlockSlider);
+							$('.BlokNav').css('height',smallBlockSliderVar);
 						}
 					} else {
 						chrome.storage.sync.set({
@@ -460,13 +460,13 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
-
+					
 					if (typeof custColsArr !== 'undefined') {
 						$.each( custColsArr, function(idx,val) {
 							custColsArrSplit = val.id.split("CustCol");
 							// document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
 							if ($("html").hasClass("userCSS")) {
-								document.documentElement.style.setProperty('--'+custColsArrSplit[0], val.val);
+								document.documentElement.style.setProperty('--'+custColsArrSplit[0], '#'+val.val);
 							} else {
 								document.documentElement.style.removeProperty('--'+custColsArrSplit[0]);
 							}
@@ -479,14 +479,14 @@ function injectProcess() {
 						});
 					}
 
-          var timeServer = window.top.$('html #header_container #tyd .date-time').html();
-          if (typeof timeServer !== 'undefined') {
-            timeServer = timeServer.split(' Datum');
-            if (timeServer[0] == 'Geen') {
-              window.top.$('html #header_container #tyd .date-time').css('display','none');
-              window.top.$('html #header_container .werkstasie').css('padding-top','13px');
-            }
-          }
+					var timeServer = window.top.$('html #header_container #tyd .date-time').html();
+					if (typeof timeServer !== 'undefined') {
+						timeServer = timeServer.split(' Datum');
+						if (timeServer[0] == 'Geen') {
+							window.top.$('html #header_container #tyd .date-time').css('display','none');
+							window.top.$('html #header_container .werkstasie').css('padding-top','13px');
+						}
+					}
 				}
 			} else {
 				chrome.storage.sync.set({
@@ -500,13 +500,13 @@ function injectProcess() {
 					chkedCustomCol: false,
 					chkedHidhead: false,
 					chkedVivaldihead: false,
-          chkedDockhead: false,
-          chkedDockBL: false,
-          chkedDockHid: false,
-          chkedDockCol: false,
+					chkedDockhead: false,
+					chkedDockBL: false,
+					chkedDockHid: false,
+					chkedDockCol: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
-          smallBlockSlider: '130',
+          			smallBlockSlider: '130',
 					autofill_user: '',
 					autofill_pass: ''
 				}, function () {

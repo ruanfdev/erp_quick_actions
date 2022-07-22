@@ -313,23 +313,18 @@ p#versionText {
 }
 #tooltipChange .tooltiptextChange {
   visibility: hidden;
-  width: 160px;
-  background-color: var(--red);
   color: var(--light);
   text-align: center;
   border-radius: 6px;
-  padding: 0;
   position: absolute;
   z-index: 1;
   top: 150%;
   left: 50%;
-  margin-left: -80px;
-}
-#tooltipChange .tooltiptextChange {
   background-color: var(--green);
-  width: 280px;
-  margin-left: -20px;
-  margin-top: -17px;
+  width: 300px;
+  margin-left: 16px;
+  margin-top: -42px;
+  padding: 0 10px 0 0;
 }
 #tooltipChange .tooltiptextChange::after {
   content: "";
@@ -354,7 +349,7 @@ button * {
 #mySidenav .closebtn {
   position: fixed;
   z-index: 8;
-  top: 25px;
+  top: 19px;
   right: 100%;
   text-shadow: var(--boxShadDark);
   font-size: 2.5em;

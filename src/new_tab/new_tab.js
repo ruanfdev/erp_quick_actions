@@ -1,4 +1,30 @@
 $(document).ready(function() {
+
+    chrome.storage.sync.get(null, function(result) {
+        chkedCustomCol = result.chkedCustomCol;
+        custColsArr = result.custColsArr;
+        
+        if (typeof chkedCustomCol !== 'undefined') {
+            if (chkedCustomCol == true) {
+                $("html").addClass("userCSS");
+            } else {
+                $("html").removeClass("userCSS");
+            }
+        }
+        
+        if (typeof custColsArr !== 'undefined') {
+            $.each( custColsArr, function(idx,val) {
+                custColsArrSplit = val.id.split("CustCol");
+                // document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
+                if ($("html").hasClass("userCSS")) {
+                    document.documentElement.style.setProperty('--'+custColsArrSplit[0], '#'+val.val);
+                } else {
+                    document.documentElement.style.removeProperty('--'+custColsArrSplit[0]);
+                }
+            });
+        }
+    });
+
     // history.pushState(null, null, "/");
     var selectedNote;
     var saveArrNotes = [];
