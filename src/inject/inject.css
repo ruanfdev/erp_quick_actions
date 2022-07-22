@@ -490,8 +490,9 @@ html.light.dockHead ul#ShortcutsList {
 html.light.dockHead ul#ShortcutsList li {
   width: 30%;
   float: left;
-  margin: 6px 12px;
+  margin: 6px;
   min-height: 36px;
+  padding: 9px 11px;
 }
 html.light.dockHead .content {
   padding: 0;
