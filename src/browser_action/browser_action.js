@@ -288,24 +288,20 @@ $(document).ready(function() {
     chrome.storage.sync.set({themeURL:personURL}, function() {
       bar1.set(100);
       setTimeout(function () {
-        alert("Theme Saved to Storage");
+        prompt("Shareable code can be copied below:", personURL);
       }, 800);
     });
   });
 
   $(import_cols).click(function(e){
-    var confirmAsk = prompt("Type YES to import your theme:", "");
+    var confirmAsk = prompt("Paste import code here:", "");
     if (confirmAsk != null && confirmAsk != "") {
-      if (confirmAsk == "YES") {
-        var tempURL = JSON.parse(decodeURI(themeURL));
-        $.each( tempURL, function(idx,val) {
-          document.getElementById(val.id).jscolor.fromString(val.val);
-        });
-      } else {
-        alert('Confirmation not received to import!');
-      }
+      var tempURL = JSON.parse(decodeURI(confirmAsk));
+      $.each( tempURL, function(idx,val) {
+        document.getElementById(val.id).jscolor.fromString(val.val);
+      });
     } else {
-      alert('Confirmation not received to import!');
+      alert('No import provided!');
     }
   });
 
