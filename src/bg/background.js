@@ -280,9 +280,9 @@ chrome.omnibox.onInputEntered.addListener(function(text, currentTab) {
 chrome.tabs.onCreated.addListener(function(tab) {
   if (tab.url == "chrome://newtab/" || tab.pendingUrl == "chrome://newtab/") {
     if (shouldReplaceNewTab === true) {
-      chrome.tabs.query({active:true,currentWindow:true},function(tabs){
-        chrome.tabs.remove(tabs[0].id);
-        chrome.tabs.create({url:chrome.runtime.getURL("src/new_tab/new_tab.html")});
+      chrome.tabs.update(tab.id, {
+        active: true,
+        url:chrome.runtime.getURL("src/new_tab/new_tab.html")
       });
     }
   }
