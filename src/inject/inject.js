@@ -58,11 +58,11 @@ var readyStateCheckInterval = setInterval(function() {
 
 var windowMouse = window.top.$('#head-button');
 windowMouse.mouseover(function() {
-		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
+	var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
     var htmlHasDockHead = $('html').hasClass("dockHead");
-		if (htmlHasVivaldiHead == true || htmlHasDockHead == true) {
-			$(".header").addClass("hovered");
-		}
+	if (htmlHasVivaldiHead == true || htmlHasDockHead == true) {
+		$(".header").addClass("hovered");
+	}
 });
 windowMouse.mouseout(function() {
 		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");

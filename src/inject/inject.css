@@ -523,7 +523,7 @@ html.light.dockHead .header #header_container {
   height: 90px;
   width: 61vw;
   padding-left: 2vw;
-  background-color: var(--darker);
+  background-color: var(--light);
   border-radius: 8px;
   box-shadow: var(--boxShadMed);
   transition: all 0.25s linear 0s;
@@ -648,9 +648,11 @@ html.light .panel .panel-header {
   color: var(--light);
 }
 html.light .BlokNav .fa-stack,
-html.light #ShortcutsList > li > a,
-html.light #ShortcutsList > li:hover > a > font {
+html.light #ShortcutsList > li > a {
   color: var(--green);
+}
+html.light #ShortcutsList > li:hover > a > font {
+  color: var(--light);
 }
 html.light .nav-tabs>li.active>a,
 html.light .nav-tabs>li.active>a:focus {

@@ -7,7 +7,10 @@ html.light.userCSS div#cboxLoadedContent iframe {
     background: var(--userBg) !important;
 }
 html.light.userCSS .header,
-html.light.userCSS .header #header_container {
+html.light.userCSS.dockHead .header:hover #header_container,
+html.light.userCSS.dockHead .header.hovered #header_container,
+html.light.userCSS.vivaldiHead .header:hover #header_container,
+html.light.userCSS.vivaldiHead .header.hovered #header_container {
     background-color: var(--userHeader) !important;
 }
 html.light.userCSS .ui-widget-content,

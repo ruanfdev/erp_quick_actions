@@ -266,6 +266,12 @@ html.light.dark .datagrid .datagrid-filter-row input {
 html.light.dark .tooltipevent  {
   background: var(--dark) !important;
 }
+html.light.dark.dockHead .header #header_container {
+  background-color: var(--darker);
+}
+html.light.dark #ShortcutsList > li:hover > a > font {
+  color: var(--light);
+}
 ::-webkit-scrollbar {
   width: 17px;
 }
