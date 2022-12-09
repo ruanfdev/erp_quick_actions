@@ -683,6 +683,61 @@ html.light *::selection {
   background: var(--green);
   color: var(--darker);
 }
+html.light>body>div.page>div.content>div#innerTab {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  background-color: var(--green);
+  z-index: 1;
+  box-shadow: var(--boxShadMed);
+}
+html.light>body>div.page>div.content>div#innerTab>div {
+  font-size: 1.5em;
+  text-align: center;
+  border-top: 1px solid var(--light);
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html.light>body>div.page>div.content>div#innerTab>div.selected {
+  background-color: var(--light);
+  color: var(--green);
+}
+html.light>body>div.page>div.content>div#innerTab>div>i,
+html.light>body>div.page>div.content>div#innerTab>div>div {
+  padding: 7px 8px 5px 8px;
+}
+html.light>body>div.page>div.content>div#innerTab>div.addInnerTab>div.addInnerTabDelete {
+  background-color: var(--dark);
+  color: var(--red);
+}
+html.light>body>div.page>div.content>div#innerTab>div.selected {
+  background-color: var(--light);
+  color: var(--green);
+}
+html.light>body>div.page>div.content>div#innerTab>div:first-child {
+  border-top: none;
+}
+html.light>body>div.page>div.content>iframe.addInnerTabContent {
+  position: absolute;
+  top: -105%;
+  left: 0;
+  opacity: 0;
+  background-color: transparent;
+  border: 0px none transparent;
+  padding: 0px;
+  overflow: hidden;
+}
+html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
 html.light.nyanCursor,
 html.light.nyanCursor * {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat925.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat925.png), auto !important;
