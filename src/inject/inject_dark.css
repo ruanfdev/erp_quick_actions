@@ -22,6 +22,9 @@ html.light.dark .note {
   color: var(--light);
   border-color: var(--greyLight);
 }
+html.light.dark .selection .select2-selection__choice {
+  background-color: var(--userFieldset) !important;
+}
 html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon):not(.datagrid-row-expander),
 html.light.dark fieldset,
 html.light.dark .Zebra_Form input.text,
@@ -244,8 +247,8 @@ html.light.dark .datagrid .datagrid-view table .datagrid-row-over *:not(.btn):no
   background-color: var(--greyDark) !important;
   background: var(--greyDark) !important;
 }
-html.light.dark .datagrid *:not(.btn)>.fa.fa-times,
-html.light.dark .datagrid *:not(.btn)>.fa.fa-close,
+html.light.dark .datagrid *:not(.btn)>.fa.fa-times:not(.btn),
+html.light.dark .datagrid *:not(.btn)>.fa.fa-close:not(.btn),
 html.light.dark #Weeksure .fa.fa-close,
 html.light.dark .required  {
   color: var(--red) !important;
