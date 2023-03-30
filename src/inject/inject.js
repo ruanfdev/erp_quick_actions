@@ -56,16 +56,16 @@ var readyStateCheckInterval = setInterval(function() {
 
 		// $("html>body>div.page>div.content").append(`<div id="innerTab"><div id="addInnerTabAdd"><i class="fa fa-plus" aria-hidden="true"></i></div><div id="addInnerTab1" class="addInnerTab selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab1').addClass('selected');$('#contentFrame').addClass('selected');"><i class="fa fa-desktop" aria-hidden="true"></i></div></div>`);
 		// $("html>body>div.page>div.content>iframe#contentFrame").addClass('selected');
-		var innerTabNumber = 2;
+		// var innerTabNumber = 2;
 
-		var varaddInnerTabAdd = document.getElementById("addInnerTabAdd");
-		varaddInnerTabAdd.onclick = function() {
-			$("html>body>div.page>div.content .selected").removeClass('selected');
-			$("html>body>div.page>div.content>#innerTab").append(`<div id="addInnerTab${innerTabNumber}" class="addInnerTab selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab${innerTabNumber}').addClass('selected');$('#addInnerTabContent${innerTabNumber}').addClass('selected');"><i class="fa fa-desktop" aria-hidden="true"></i></div>`);
-			$("html>body>div.page>div.content>#innerTab>#addInnerTab"+innerTabNumber).append(`<div id="addInnerTabDelete${innerTabNumber}" class="addInnerTabDelete selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab1').addClass('selected');$('html>body>div.page>div.content>iframe#contentFrame').addClass('selected');$('#addInnerTab${innerTabNumber}').remove();$('#addInnerTabContent${innerTabNumber}').remove();"><i class="fa fa-trash" aria-hidden="true"></i></div>`);
-			$("html>body>div.page>div.content").append(`<iframe id="addInnerTabContent${innerTabNumber}" ng-src="index.php" class="content_obj addInnerTabContent selected" width="100%" height="100%" seamless="" src="index.php"></iframe>`);
-			innerTabNumber++;
-		}
+		// var varaddInnerTabAdd = document.getElementById("addInnerTabAdd");
+		// varaddInnerTabAdd.onclick = function() {
+		// 	$("html>body>div.page>div.content .selected").removeClass('selected');
+		// 	$("html>body>div.page>div.content>#innerTab").append(`<div id="addInnerTab${innerTabNumber}" class="addInnerTab selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab${innerTabNumber}').addClass('selected');$('#addInnerTabContent${innerTabNumber}').addClass('selected');"><i class="fa fa-desktop" aria-hidden="true"></i></div>`);
+		// 	$("html>body>div.page>div.content>#innerTab>#addInnerTab"+innerTabNumber).append(`<div id="addInnerTabDelete${innerTabNumber}" class="addInnerTabDelete selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab1').addClass('selected');$('html>body>div.page>div.content>iframe#contentFrame').addClass('selected');$('#addInnerTab${innerTabNumber}').remove();$('#addInnerTabContent${innerTabNumber}').remove();"><i class="fa fa-trash" aria-hidden="true"></i></div>`);
+		// 	$("html>body>div.page>div.content").append(`<iframe id="addInnerTabContent${innerTabNumber}" ng-src="index.php" class="content_obj addInnerTabContent selected" width="100%" height="100%" seamless="" src="index.php"></iframe>`);
+		// 	innerTabNumber++;
+		// }
 	}
 }, 10);
 
@@ -73,16 +73,18 @@ var windowMouse = window.top.$('#head-button');
 windowMouse.mouseover(function() {
 	var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
     var htmlHasDockHead = $('html').hasClass("dockHead");
-	if (htmlHasVivaldiHead == true || htmlHasDockHead == true) {
+	var htmlHasHidHead = $('html').hasClass("hiddenHead");
+	if (htmlHasVivaldiHead == true || htmlHasDockHead == true || htmlHasHidHead == true) {
 		$(".header").addClass("hovered");
 	}
 });
 windowMouse.mouseout(function() {
-		var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
+	var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
     var htmlHasDockHead = $('html').hasClass("dockHead");
-		if (htmlHasVivaldiHead == true || htmlHasDockHead == true) {
-			$(".header").removeClass("hovered");
-		}
+	var htmlHasHidHead = $('html').hasClass("hiddenHead");
+	if (htmlHasVivaldiHead == true || htmlHasDockHead == true || htmlHasHidHead == true) {
+		$(".header").removeClass("hovered");
+	}
 });
 
 function injectProcess() {
@@ -635,26 +637,3 @@ function colorReplace(findHexColor, replaceWith) {
 	  });
 	});
 }
-
-
-
-$(document).ready(function() {
-	// $("html>body>div.page>div.content").append(`<div id="innerTab"><div id="addInnerTabAdd"><i class="fa fa-plus" aria-hidden="true"></i></div><div id="addInnerTab1" class="addInnerTab selected" onclick="testFunc(this)"><i class="fa fa-desktop" aria-hidden="true"></i></div></div>`);
-	// $("html>body>div.page>div.content>iframe#contentFrame").addClass('selected');
-	// var innerTabNumber = 2;
-
-	// var varaddInnerTabAdd = document.getElementById("addInnerTabAdd");
-	// varaddInnerTabAdd.onclick = function() {
-	// 	$(".selected").removeClass('selected');
-	// 	$("html>body>div.page>div.content>#innerTab").append(`<div id="addInnerTab${innerTabNumber}" class="addInnerTab selected" onclick="testFunc(this)"><i class="fa fa-desktop" aria-hidden="true"></i></div>`);
-	// 	$("html>body>div.page>div.content").append(`<iframe id="contentFrame addInnerTabContent${innerTabNumber}" ng-src="start.php" class="content_obj addInnerTabContent selected" width="100%" height="100%" seamless="" src="index.php"></iframe>`);
-
-	// 	innerTabNumber++;
-	// };
-
-	// document.getElementById("addInnerTab").onclick = function(e) {
-		// document.getElementsByClassName
-	// 	$("addInnerTab"+innerTabNumber).addClass('selected');
-	// 	$("html>body>div.page>div.content>iframe#addInnerTabContent"+innerTabNumber).addClass('selected');
-	// };
-});

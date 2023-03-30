@@ -165,17 +165,22 @@ html.light.headGlowPRD.dockCol .header,
 html.light.headGlowQA.dockCol .header,
 html.light.headGlowDEV.dockCol #head-button,
 html.light.headGlowPRD.dockCol #head-button,
-html.light.headGlowQA.dockCol #head-button {
+html.light.headGlowQA.dockCol #head-button,
+html.light.headGlowDEV.hiddenHead #head-button,
+html.light.headGlowPRD.hiddenHead #head-button,
+html.light.headGlowQA.hiddenHead #head-button {
   border: none;
   background-color: var(--red) !important;
   box-shadow: none;
 }
 html.light.headGlowPRD.dockCol .header,
-html.light.headGlowPRD.dockCol #head-button {
+html.light.headGlowPRD.dockCol #head-button
+html.light.headGlowPRD.hiddenHead #head-button {
   background-color: var(--green) !important;
 }
 html.light.headGlowQA.dockCol .header,
-html.light.headGlowQA.dockCol #head-button {
+html.light.headGlowQA.dockCol #head-button,
+html.light.headGlowQA.hiddenHead #head-button {
   background-color: var(--orange) !important;
 }
 html.light.dockCol .header .header_nav a,
@@ -312,12 +317,6 @@ html.light.hiddenHead.RGBclass .backHead {
 html.light.hiddenHead .content {
   padding-top: 13px;
   transition: 0.25s linear;
-}
-html.light.hiddenHead div#head-button {
-  top: -30px;
-}
-html.light.hiddenHead div#head-button:hover {
-  top: -3px;
 }
 html.light.hiddenHead .header:hover {
   margin-top: 0px;
@@ -482,17 +481,17 @@ html.light.dockHead.dockHid .header:hover {
 }
 html.light.dockHead ul#ShortcutsList {
   left: 50%;
-  width: 80%;
-  height: 75%;
+  width: 90%;
+  height: 80%;
   transform: translate(-50%, 10%);
   border: 2px solid var(--green);
 }
 html.light.dockHead ul#ShortcutsList li {
-  width: 30%;
+  width: 22%;
   float: left;
-  margin: 6px;
+  margin: 7px;
   min-height: 36px;
-  padding: 9px 11px;
+  padding: 10px 14px;
 }
 html.light.dockHead .content {
   padding: 0;
@@ -529,9 +528,12 @@ html.light.dockHead .header #header_container {
   transition: all 0.25s linear 0s;
 }
 html.light.dockHead .header:hover #header_container,
-html.light.dockHead .header.hovered #header_container,
 html.light.dockHead .header #header_container:hover {
   top: -88vh;
+  box-shadow: var(--boxShadMed);
+}
+html.light.dockHead .header.hovered #header_container {
+  top: -95vh;
   box-shadow: var(--boxShadMed);
 }
 html.light.dockHead .header:hover ~ .content,
@@ -583,7 +585,8 @@ html.light.dockHead .header #header_container .btn_main .child#lang {
 html.light.dockHead .header #header_container .btn_main .child#lang button font.btn_text {
   display: inline;
 }
-html.light.dockHead div#head-button {
+html.light.dockHead div#head-button,
+html.light.hiddenHead div#head-button {
   margin: 0;
   left: 0;
   top: 50%;
@@ -592,13 +595,29 @@ html.light.dockHead div#head-button {
   padding: 4px 8px 4px 2px;
   border-radius: 0 8px 8px 0;
 }
-html.light.dockHead #head-button .show-notifications.active ~ .notifications {
+html.light.dockHead #head-button .show-notifications ~ .notifications,
+html.light.hiddenHead #head-button .show-notifications ~ .notifications {
   position: fixed;
-  left: 50%;
-  top: 10%;
+  left: -15%;
+  top: -15%;
   transform: translate(-50%,-50%);
 }
-html.light.dockHead #head-button .show-notifications.active ~ .notifications:after {
+html.light.dockHead #head-button .show-notifications.active ~ .notifications,
+html.light.hiddenHead #head-button .show-notifications.active ~ .notifications {
+  position: fixed;
+  left: 50%;
+  top: 12%;
+  transform: translate(-50%,-50%);
+}
+html.light.dockHead #head-button .show-notifications.active ~ .notifications,
+html.light.hiddenHead #head-button .show-notifications.active ~ .notifications {
+  position: fixed;
+  left: 50%;
+  top: 12%;
+  transform: translate(-50%,-50%);
+}
+html.light.dockHead #head-button .show-notifications.active ~ .notifications:after,
+html.light.hiddenHead #head-button .show-notifications.active ~ .notifications:after {
     display: none;
 }
 html.light.dockHead.RGBclass .backHead {
