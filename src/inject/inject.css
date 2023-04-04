@@ -174,7 +174,7 @@ html.light.headGlowQA.hiddenHead #head-button {
   box-shadow: none;
 }
 html.light.headGlowPRD.dockCol .header,
-html.light.headGlowPRD.dockCol #head-button
+html.light.headGlowPRD.dockCol #head-button,
 html.light.headGlowPRD.hiddenHead #head-button {
   background-color: var(--green) !important;
 }
