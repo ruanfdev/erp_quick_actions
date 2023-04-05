@@ -1,442 +1,465 @@
 <!doctype html>
 <html>
-  <head>
-    <title>ERP - Quick Actions</title>
-    <script src="../../js/jquery/jquery.min.js"></script>
-    <script src="../../loading/loading-bar.js"></script>
-    <script src="browser_action.js"></script>
-    <script src="../../editor/lib/codemirror.js"></script>
-    <script src="../../editor/mode/css/css.js"></script>
-    <script src="../jscolor.js"></script>
-    <link rel="stylesheet" href="browser_action.css" />
-    <link rel="stylesheet" href="../../loading/loading-bar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../editor/lib/codemirror.css">
-  </head>
-  <body id="body">
-    <div id="mySidenav" class="sidenav">
-      <i class="fa fa-times fa-2x closebtn" id="closebtn" aria-hidden="true"></i>
-      <button class="save_custom_settings" id="save_custom_settings"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span>Save</span></button>
 
-      <!-- Reloads & Troubleshooting -->
-      <button class="accordion">
-        <h1>Reloads &amp Troubleshooting</h1>
-      </button>
-      <div class="panel">
-        <div class="note_container">
-          <div class="reload_container">
-            <button class="reload_ext">
-              <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
-              <br/>
-              <i>Extension</i>
-            </button>
-            <button class="reload_erp_tabs">
-              <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
-              <br/>
-              <i>ERP Tabs</i>
-            </button>
-          </div>
-          <p>
-            Reload required if the following changes were made:<br/><br/>
-            1. Enabling/Disabling 'Custom New Tab'<br/>
-            2. Adding/Editing quick actions to update context menu<br/>
-            3. Extension Update while ERP Tab is open<br/><br/>
-            Do you want to reload the Extension?<br/>
-            (remember to reload all ERP tabs if the extension was reloaded)
-          </p>
-        </div>
-      </div>
+<head>
+  <title>ERP - Quick Actions</title>
+  <script src="../../js/jquery/jquery.min.js"></script>
+  <script src="../../loading/loading-bar.js"></script>
+  <script src="browser_action.js"></script>
+  <script src="../../editor/lib/codemirror.js"></script>
+  <script src="../../editor/mode/css/css.js"></script>
+  <script src="../jscolor.js"></script>
+  <link rel="stylesheet" href="browser_action.css" />
+  <link rel="stylesheet" href="../../loading/loading-bar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../editor/lib/codemirror.css">
+</head>
 
-      <!-- Guide -->
-      <button class="accordion">
-        <h1>Guide &amp Info</h1>
-      </button>
-      <div class="panel">
-        <div class="hundred">
-          <ul class="firstList">
-            <li><span>How to set up Omnibox links</span>:
-              <ul class="secondList">
-                <li><span>keyword</span> + :: + <span>link</span></li>
-              </ul>
-            </li>
-            <li><span>Example of custom Omnibox link</span>:
-              <ul class="secondList">
-                <li>index::nwk/index.php</li>
-              </ul>
-            </li>
-            <li><span>How to use the link created</span>:
-              <ul class="secondList">
-                <li>Type "erp" into the Omnibox</li>
-                <li>Press "Tab"</li>
-                <li>Use your command, e.g. prdindex / devindex / qaindex</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+<body id="body">
+  <div id="mySidenav" class="sidenav">
+    <i class="fa fa-times fa-2x closebtn" id="closebtn" aria-hidden="true"></i>
+    <button class="save_custom_settings" id="save_custom_settings"><i class="fa fa-save fa-lg" aria-hidden="true"></i>
+      &nbsp; <span>Save</span></button>
 
-      <!-- Built-in Commands -->
-      <button class="accordion">
-        <h1>Built-in Omnibox Commands</h1>
-      </button>
-      <div class="panel">
-        <div class="fifty">
-          <ul>
-            <li>index</li>
-            <li>toegang / access</li>
-            <li>taal / lang</li>
-            <li>versoek / request</li>
-            <li>php</li>
-            <li>nat</li>
-          </ul>
+    <!-- Reloads & Troubleshooting -->
+    <button class="accordion">
+      <h1>Reloads &amp Troubleshooting</h1>
+    </button>
+    <div class="panel">
+      <div class="note_container">
+        <div class="reload_container">
+          <button class="reload_ext">
+            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
+            <br />
+            <i>Extension</i>
+          </button>
+          <button class="reload_erp_tabs">
+            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i>
+            <br />
+            <i>ERP Tabs</i>
+          </button>
         </div>
-        <div class="fifty">
-          <ul>
-            <li>builder</li>
-            <li>codiad</li>
-            <li>tye / times</li>
-            <li>kontak / contact / pers</li>
-            <li>ses</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Automatic Login -->
-      <button class="accordion">
-        <h1>Automatic Login</h1>
-      </button>
-      <div class="panel autofill">
-        <p class="section_description">Press "Enter" on active ERP Tab when logged out or reload Tab for Automatic Login</p>
-        <div class="fifty">
-          <input type="text" id="autofill_user" placeholder="Username"/>
-        </div>
-        <div class="fifty">
-          <input type="password" id="autofill_pass" placeholder="Password"/>
-          <i id="pass_show" class="fa fa-eye" aria-hidden="true"></i>
-          <i id="pass_hide" class="fa fa-eye-slash" aria-hidden="true"></i>
-        </div>
-      </div>
-
-      <!-- Custom Settings -->
-      <button class="accordion">
-        <h1>Custom Settings</h1>
-      </button>
-      <div class="panel">
-        <div class="fifty">
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_header">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Alternative smaller header</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_hidhead">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Hidden Header</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_vivaldiHead">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Vivaldi Header</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_dockHead">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Dock Header</h3>
-          </div>
-          <div class="row indent">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_dockBL">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Bottom Left</h3>
-          </div>
-          <div class="row indent">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_dockHid">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Hidden (Slide Out)</h3>
-          </div>
-          <div class="row indent">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_dockCol">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Colored (header glow required)</h3>
-          </div>
-        </div>
-        <div class="fifty">
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_glow">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Environment header glow</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_rgbhead">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Animated RGB header glow</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_menus">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Alternative menu look &amp feel</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_main_block">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Smaller Home Items <span id="small_Block_Slider_Size"></span></h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <div class="slidecontainer">
-                <input type="range" min="100" max="300" value="130" class="slider" id="small_Block_Slider">
-              </div>
-            </div>
-            <!-- <h3>Smaller Home Items</h3> -->
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_newtab">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Note taking new tab</h3>
-          </div>
-          <div class="row">
-            <div class="inject sideinj">
-              <label class="inject_container">
-                <input type="checkbox" id="check_nyan_cursor">
-                <span class="checkmark_side"></span>
-              </label>
-            </div>
-            <h3>Nyan Cat Cursor</h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Custom Colors -->
-      <button class="accordion">
-        <h1>Custom Colors</h1>
-      </button>
-      <div class="panel">
-        <table class="input">
-          <tr>
-            <td colspan="6">
-              <div class="row">
-                <div class="inject sideinj">
-                  <label class="inject_container">
-                    <input type="checkbox" id="check_custom_col">
-                    <span class="checkmark_side"></span>
-                  </label>
-                </div>
-                <h3>Enabled</h3>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><label for="greenCustCol">Green</label></td>
-            <td><label for="orangeCustCol">Orange</label></td>
-            <td><label for="redCustCol">Red</label></td>
-            <td><label for="blueCustCol">Blue</label></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><input id="greenCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="orangeCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="redCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="blueCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td><label for="notySCustCol">notySuccess</label></td>
-            <td><label for="notyECustCol">notyError</label></td>
-            <td><label for="notyICustCol">notyInfo</label></td>
-            <td><label for="notyVCustCol">notyVerwerk</label></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><input id="notySCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="notyECustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="notyICustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="notyVCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td><label for="btnSuccessCustCol">btnSuccess</label></td>
-            <td><label for="btnWarningCustCol">btnWarning</label></td>
-            <td><label for="btnDangerCustCol">btnDanger</label></td>
-            <td><label for="btnInfoCustCol">btnInfo</label></td>
-            <td><label for="btnDefaultCustCol">btnDefault</label></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><input id="btnSuccessCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnWarningCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnDangerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnInfoCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="btnDefaultCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td><label for="userBgCustCol">Background</label></td>
-            <td><label for="userHeaderCustCol">Header</label></td>
-            <td><label for="userMenusCustCol">Menu's</label></td>
-            <td><label for="userHomeItemsCustCol">Home Items</label></td>
-            <td><label for="userFieldsetCustCol">Fieldsets</label></td>
-            <td><label for="userLegendsCustCol">Legends</label></td>
-          </tr>
-          <tr>
-            <td><input id="userBgCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="userHeaderCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="userMenusCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="userHomeItemsCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="userFieldsetCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-            <td><input id="userLegendsCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
-          </tr>
-          <tr>
-            <td colspan="6"></td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <button class="reset_cust_cols"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp; <span>Reset</span></button>
-            </td>
-            <td colspan="2">
-              <button class="export_cust_cols"><i class="fa fa-upload  fa-lg" aria-hidden="true"></i> &nbsp; <span>Export</span></button>
-            </td>
-            <td colspan="2">
-              <button class="import_cust_cols"><i class="fa fa-download  fa-lg" aria-hidden="true"></i> &nbsp; <span>Import</span></button>
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- Custom CSS -->
-      <button class="accordion">
-        <h1>Custom CSS</h1>
-      </button>
-      <div class="panel">
-          <textarea id="custom_css_block"></textarea>
-      </div>
-
-      <!-- Custom JS & jQuery -->
-      <button class="accordion">
-        <h1>Custom JS &amp jQuery</h1>
-      </button>
-      <div class="panel">
-          <p class="section_description">(reload required)</p>
-          <textarea id="custom_js_block"></textarea>
+        <p>
+          Reload required if the following changes were made:<br /><br />
+          1. Enabling/Disabling 'Custom New Tab'<br />
+          2. Adding/Editing quick actions to update context menu<br />
+          3. Extension Update while ERP Tab is open<br /><br />
+          Do you want to reload the Extension?<br />
+          (remember to reload all ERP tabs if the extension was reloaded)
+        </p>
       </div>
     </div>
 
-    <div id="ldContain">
-      <div class="ldBar" data-type="fill" data-img="nwk.svg" data-value="0" data-fill-dir="btt"></div>
-    </div>
-
-    <div class="top_container">
-      <h1>
-        <i id="menu_bars" class="fa fa-bars" aria-hidden="true"></i>
-        <span>ERP - Quick Actions</span>
-        <br>
-        <span id="smallVersion">Version 6.9.1</span>
-        <br>
-        <i id="tooltipChange" class="fa fa-history" aria-hidden="true">
-          <span class="tooltiptextChange">
-            <p id="changeHead">Changelog for version 6.9</p>
-            <ul id="changeList">
-              <li>FIX - Invisible Notification overlay</li>
-              <li>FIX - Styles &amp Various Bugs</li>
+    <!-- Guide -->
+    <button class="accordion">
+      <h1>Guide &amp Info</h1>
+    </button>
+    <div class="panel">
+      <div class="hundred">
+        <ul class="firstList">
+          <li><span>How to set up Omnibox links</span>:
+            <ul class="secondList">
+              <li><span>keyword</span> + :: + <span>link</span></li>
             </ul>
-          </span>
-        </i>
-      </h1>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-        <label class="onoffswitch-label" for="myonoffswitch">
-          <span class="onoffswitch-inner"></span>
-          <span class="onoffswitch-switch"></span>
-        </label>
-      </div>
-      <div class="inject">
-        <label class="inject_container">
-          <input type="checkbox" id="checkinject" checked>
-          <span class="checkmark"></span>
-        </label>
+          </li>
+          <li><span>Example of custom Omnibox link</span>:
+            <ul class="secondList">
+              <li>index::nwk/index.php</li>
+            </ul>
+          </li>
+          <li><span>How to use the link created</span>:
+            <ul class="secondList">
+              <li>Type "erp" into the Omnibox</li>
+              <li>Press "Tab"</li>
+              <li>Use your command, e.g. prdindex / devindex / qaindex</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="container1" id="container1">
-      <div class="top_pad"></div>
-      <div>
-        <input type="text" name="mytext[]" placeholder="index::nwk/index.php">
+    <!-- Built-in Commands -->
+    <button class="accordion">
+      <h1>Built-in Omnibox Commands</h1>
+    </button>
+    <div class="panel">
+      <div class="fifty">
+        <ul>
+          <li>index</li>
+          <li>toegang / access</li>
+          <li>taal / lang</li>
+          <li>versoek / request</li>
+          <li>php</li>
+          <li>nat</li>
+        </ul>
       </div>
-      <div class="bottom_pad"></div>
+      <div class="fifty">
+        <ul>
+          <li>builder</li>
+          <li>codiad</li>
+          <li>tye / times</li>
+          <li>kontak / contact / pers</li>
+          <li>ses</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="btn_container">
-      <button class="clear_all"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp; <span>Clear All</span></button>
-      <button class="add_form_field"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp; <span>Add Rule</span></button>
-      <button class="save_form_field"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span>Save Rules</span></button>
+    <!-- Automatic Login -->
+    <button class="accordion">
+      <h1>Automatic Login</h1>
+    </button>
+    <div class="panel autofill">
+      <p class="section_description">Press "Enter" on active ERP Tab when logged out or reload Tab for Automatic Login
+      </p>
+      <div class="fifty">
+        <input type="text" id="autofill_user" placeholder="Username" />
+      </div>
+      <div class="fifty">
+        <input type="password" id="autofill_pass" placeholder="Password" />
+        <i id="pass_show" class="fa fa-eye" aria-hidden="true"></i>
+        <i id="pass_hide" class="fa fa-eye-slash" aria-hidden="true"></i>
+      </div>
     </div>
-  </body>
+
+    <!-- Custom Settings -->
+    <button class="accordion">
+      <h1>Custom Settings</h1>
+    </button>
+    <div class="panel">
+      <div class="fifty">
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_header">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Alternative smaller header</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_hidhead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Hidden Header</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_vivaldiHead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Vivaldi Header</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_dockHead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Dock Header</h3>
+        </div>
+        <div class="row indent">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_dockBL">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Bottom Left</h3>
+        </div>
+        <div class="row indent">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_dockHid">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Hidden (Slide Out)</h3>
+        </div>
+        <div class="row indent">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_dockCol">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Colored (header glow required)</h3>
+        </div>
+      </div>
+      <div class="fifty">
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_glow">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Environment header glow</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_rgbhead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Animated RGB header glow</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_menus">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Alternative menu look &amp feel</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_main_block">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Smaller Home Items <span id="small_Block_Slider_Size"></span></h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <div class="slidecontainer">
+              <input type="range" min="100" max="300" value="130" class="slider" id="small_Block_Slider">
+            </div>
+          </div>
+          <!-- <h3>Smaller Home Items</h3> -->
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_newtab">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Note taking new tab</h3>
+        </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_nyan_cursor">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Nyan Cat Cursor</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Colors -->
+    <button class="accordion">
+      <h1>Custom Colors</h1>
+    </button>
+    <div class="panel">
+      <table class="input">
+        <tr>
+          <td colspan="6">
+            <div class="row">
+              <div class="inject sideinj">
+                <label class="inject_container">
+                  <input type="checkbox" id="check_custom_col">
+                  <span class="checkmark_side"></span>
+                </label>
+              </div>
+              <h3>Enabled</h3>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="greenCustCol">Green</label></td>
+          <td><label for="orangeCustCol">Orange</label></td>
+          <td><label for="redCustCol">Red</label></td>
+          <td><label for="blueCustCol">Blue</label></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input id="greenCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="orangeCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="redCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="blueCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td><label for="notySCustCol">notySuccess</label></td>
+          <td><label for="notyECustCol">notyError</label></td>
+          <td><label for="notyICustCol">notyInfo</label></td>
+          <td><label for="notyVCustCol">notyVerwerk</label></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input id="notySCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="notyECustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="notyICustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="notyVCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td><label for="btnSuccessCustCol">btnSuccess</label></td>
+          <td><label for="btnWarningCustCol">btnWarning</label></td>
+          <td><label for="btnDangerCustCol">btnDanger</label></td>
+          <td><label for="btnInfoCustCol">btnInfo</label></td>
+          <td><label for="btnDefaultCustCol">btnDefault</label></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input id="btnSuccessCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="btnWarningCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="btnDangerCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="btnInfoCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="btnDefaultCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td><label for="userBgCustCol">Background</label></td>
+          <td><label for="userHeaderCustCol">Header</label></td>
+          <td><label for="userMenusCustCol">Menu's</label></td>
+          <td><label for="userHomeItemsCustCol">Home Items</label></td>
+          <td><label for="userFieldsetCustCol">Fieldsets</label></td>
+          <td><label for="userLegendsCustCol">Legends</label></td>
+        </tr>
+        <tr>
+          <td><input id="userBgCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="userHeaderCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="userMenusCustCol" class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}">
+          </td>
+          <td><input id="userHomeItemsCustCol"
+              class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="userFieldsetCustCol"
+              class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+          <td><input id="userLegendsCustCol"
+              class="jscolor {hash:true,uppercase:true,closable:true,closeText:'Update'}"></td>
+        </tr>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button class="reset_cust_cols"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp;
+              <span>Reset</span></button>
+          </td>
+          <td colspan="2">
+            <button class="export_cust_cols"><i class="fa fa-upload  fa-lg" aria-hidden="true"></i> &nbsp;
+              <span>Export</span></button>
+          </td>
+          <td colspan="2">
+            <button class="import_cust_cols"><i class="fa fa-download  fa-lg" aria-hidden="true"></i> &nbsp;
+              <span>Import</span></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Custom CSS -->
+    <button class="accordion">
+      <h1>Custom CSS</h1>
+    </button>
+    <div class="panel">
+      <textarea id="custom_css_block"></textarea>
+    </div>
+
+    <!-- Custom JS & jQuery -->
+    <button class="accordion">
+      <h1>Custom JS &amp jQuery</h1>
+    </button>
+    <div class="panel">
+      <p class="section_description">(reload required)</p>
+      <textarea id="custom_js_block"></textarea>
+    </div>
+  </div>
+
+  <div id="ldContain">
+    <div class="ldBar" data-type="fill" data-img="nwk.svg" data-value="0" data-fill-dir="btt"></div>
+  </div>
+
+  <div class="top_container">
+    <h1>
+      <i id="menu_bars" class="fa fa-bars" aria-hidden="true"></i>
+      <span>ERP - Quick Actions</span>
+      <br>
+      <span id="smallVersion">Version 6.9.2</span>
+      <br>
+      <i id="tooltipChange" class="fa fa-history" aria-hidden="true">
+        <span class="tooltiptextChange">
+          <p id="changeHead">Changelog for version 6.9.2</p>
+          <ul id="changeList">
+            <li>FIX - Invisible Notification overlay</li>
+            <li>FIX - PRD notification color class</li>
+            <li>FIX - Styles &amp Various Bugs</li>
+          </ul>
+        </span>
+      </i>
+    </h1>
+    <div class="onoffswitch">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+      <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+      </label>
+    </div>
+    <div class="inject">
+      <label class="inject_container">
+        <input type="checkbox" id="checkinject" checked>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="container1" id="container1">
+    <div class="top_pad"></div>
+    <div>
+      <input type="text" name="mytext[]" placeholder="index::nwk/index.php">
+    </div>
+    <div class="bottom_pad"></div>
+  </div>
+
+  <div class="btn_container">
+    <button class="clear_all"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp; <span>Clear All</span></button>
+    <button class="add_form_field"><i class="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp; <span>Add
+        Rule</span></button>
+    <button class="save_form_field"><i class="fa fa-save fa-lg" aria-hidden="true"></i> &nbsp; <span>Save
+        Rules</span></button>
+  </div>
+</body>
+
 </html>

@@ -7,6 +7,7 @@ html.light.dark div#cboxLoadedContent iframe {
   background: var(--darkLight) !important;
   color: var(--light) !important;
 }
+
 html.light.dark input,
 html.light.dark textarea,
 html.light.dark .selection *,
@@ -22,9 +23,11 @@ html.light.dark .note {
   color: var(--light);
   border-color: var(--greyLight);
 }
+
 html.light.dark .selection .select2-selection__choice {
   background-color: var(--userFieldset) !important;
 }
+
 html.light.dark .datagrid *:not(.btn):not(.fa):not(.pagination-first):not(.pagination-prev):not(.pagination-last):not(.pagination-next):not(.pagination-load):not(.panel-header):not(.panel-title):not(.l-btn-icon):not(.datagrid-row-expander),
 html.light.dark fieldset,
 html.light.dark .Zebra_Form input.text,
@@ -34,6 +37,7 @@ html.light.dark ul#ShortcutsList {
   background: var(--userFieldset);
   color: var(--light);
 }
+
 html.light.dark ul#ShortcutsList>li {
   background-color: var(--darkLight);
   background: var(--darkLight);
@@ -41,45 +45,55 @@ html.light.dark ul#ShortcutsList>li {
   box-shadow: none;
   transition: 0.1s linear;
 }
+
 html.light.dark ul#ShortcutsList>li:hover {
   background-color: var(--greyDark);
   background: var(--greyDark);
   box-shadow: 1px 1px 5px var(--darkLight);
 }
+
 html.light.dark ul#ShortcutsList>li:hover font {
   color: var(--light);
 }
+
 html.light.dark .BlokNav {
   background-color: var(--userHomeItems);
 }
+
 html.light.dark .noty_type_confirm,
 html.light.dark .noty_type_confirm>* {
   background-color: #505050 !important;
   background: #505050 !important;
   color: var(--light);
 }
+
 html.light.dark .noty_type_confirm>*:nth-child(2),
 html.light.dark ul#noty_top_layout_container>li {
   border-color: var(--darkLight) !important;
 }
-html.light.dark .Zebra_Form .checkbox2 + label {
+
+html.light.dark .Zebra_Form .checkbox2+label {
   background-color: var(--red);
   border-color: var(--red);
   color: var(--light);
 }
-html.light.dark .Zebra_Form .checkbox2:checked + label {
+
+html.light.dark .Zebra_Form .checkbox2:checked+label {
   background-color: var(--green);
   border-color: var(--green);
   color: var(--dark);
 }
-html.light.dark .subfuns[type="checkbox"]:checked + label {
+
+html.light.dark .subfuns[type="checkbox"]:checked+label {
   background-color: var(--green);
   border-color: var(--green);
 }
-html.light.dark .subfuns[type="checkbox"] + label {
+
+html.light.dark .subfuns[type="checkbox"]+label {
   border: var(--red) thin solid;
   background-color: var(--red);
 }
+
 html.light.dark div span.ui-dialog-title,
 html.light.dark .welcome,
 html.light.dark .header_right *,
@@ -90,52 +104,61 @@ html.light.dark .date-time,
 html.light.dark.container #enkodeer,
 html.light.dark.container #enkodeer label,
 html.light.dark xmp,
-html.light.dark #ShortcutsList > li:not(:hover) > a > font,
+html.light.dark #ShortcutsList>li:not(:hover)>a>font,
 html.light.dark #div-bly h3,
 html.light.dark ul.dropdown-menu li a,
 html.light.dark .Zebra_Form label,
 html.light.dark div.Zebra_Form_error_message .message,
 html.light.dark #Tree #jsTreeMenu ul li a.jstree-search:hover,
 html.light.dark #Tree #jsTreeMenu ul li a.jstree-search.jstree-clicked,
-html.light.dark input[type="checkbox"] + label,
+html.light.dark input[type="checkbox"]+label,
 html.light.dark .login_div *,
 html.light.dark #calendar .fc-grid .fc-day-number,
 html.light.dark .login_div input {
   color: var(--light);
 }
+
 html.light.dark .BlokNav>div .fa,
 html.light.dark .BlokNav:not(:hover)>a {
   color: var(--offWhite);
 }
+
 html.light.dark .BlokNav>a font.OnderBeskryf {
   color: var(--greyLight);
 }
+
 html.light.dark .logo img {
   box-shadow: 0px 0px 5px 3px var(--white);
   border-radius: 5px;
   background-color: var(--white);
 }
+
 html.light.dark .header,
 html.light.dark .ui-widget-content,
 html.light.dark ul.dropdown-menu,
-html.light.dark .backHead + .header {
+html.light.dark .backHead+.header {
   background-color: var(--darker);
   color: var(--light);
 }
+
 html.light.dark .show-notifications #icon-bell {
   fill: var(--greyLight);
 }
+
 html.light.dark .show-notifications:hover #icon-bell,
 html.light.dark .show-notifications:focus #icon-bell,
 html.light.dark .show-notifications.active #icon-bell {
   fill: var(--light);
 }
+
 html.light.dark .nav-tabs {
   border-bottom: 1px solid var(--green);
 }
+
 html.light.dark .nav>li>a {
   color: var(--white);
 }
+
 html.light.dark .login_logo img {
   max-width: 100%;
   padding: 3px;
@@ -143,15 +166,16 @@ html.light.dark .login_logo img {
   border-radius: 5px;
   background-color: var(--white);
 }
+
 html.light.dark fieldset input.form-control[readonly="readonly"],
-html.light.dark fieldset input.form-control[readonly="readonly"] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[readonly="readonly"]+.Zebra_Form_Input_Prefix,
 html.light.dark fieldset input.form-control[readonly],
-html.light.dark fieldset input.form-control[readonly="readonly"] + .Zebra_Form_Input_Prefix,
-html.light.dark fieldset input.form-control[readonly] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[readonly="readonly"]+.Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[readonly]+.Zebra_Form_Input_Prefix,
 html.light.dark fieldset input.form-control[disabled="disabled"],
 html.light.dark fieldset input.form-control[disabled],
-html.light.dark fieldset input.form-control[disabled="disabled"] + .Zebra_Form_Input_Prefix,
-html.light.dark fieldset input.form-control[disabled] + .Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[disabled="disabled"]+.Zebra_Form_Input_Prefix,
+html.light.dark fieldset input.form-control[disabled]+.Zebra_Form_Input_Prefix,
 html.light.dark fieldset textarea.form-control[readonly="readonly"],
 html.light.dark fieldset textarea.form-control[readonly],
 html.light.dark fieldset textarea.form-control[disabled="disabled"],
@@ -161,27 +185,34 @@ html.light.dark fieldset textarea.form-control[disabled] {
   border-color: var(--userFieldset);
   box-shadow: none;
 }
+
 html.light.dark li.disabled,
 html.light.dark li.disabled * {
   color: var(--greyDark) !important;
 }
+
 html.light.dark .datagrid {
   border-radius: 5px;
   background-color: var(--white);
 }
+
 html.light.dark .panel.datagrid .panel-html {
   border: 0px;
 }
+
 html.light.dark h3 {
   color: var(--dark);
 }
+
 html.light.dark #calendar .fc-week .fc-sun,
 html.light.dark #calendar .fc-week .fc-sat {
   background-color: var(--greyDark);
 }
+
 html.light.dark #calendar .fc-grid .fc-state-highlight .fc-day-number {
   color: var(--dark);
 }
+
 html.light.dark .panel,
 html.light.dark .panel .panel-body,
 html.light.dark .tabs-header {
@@ -189,56 +220,69 @@ html.light.dark .tabs-header {
   background: var(--darkLight) !important;
   color: var(--light) !important;
 }
+
 html.light.dark .HetWSDL,
 html.light.dark .noty_type_error * {
   color: var(--white);
 }
+
 html.light.dark .noty_type_,
 html.light.dark .notifications.js-notifications ul.notifications-list,
 html.light.dark .notifications.js-notifications ul.notifications-list li.item {
   background-color: var(--dark);
   color: var(--light);
 }
+
 html.light.dark #Tree #jsTreeMenu ul li a.jstree-search {
   color: var(--green);
   font-size: 1.1em;
 }
+
 html.light.dark .jstree-contextmenu,
 html.light.dark .jstree-contextmenu li ul {
   background: var(--dark);
 }
+
 html.light.dark .jstree-contextmenu li a,
 html.light.dark .loading {
   color: var(--light);
   text-shadow: none;
 }
+
 html.light.dark .jstree-contextmenu li.vakata-context-hover,
 html.light.dark .jstree-contextmenu li.vakata-context-hover>a {
   background: var(--darkLight);
   box-shadow: none !important;
 }
+
 html.light.dark #Tree ul.jstree-children li a.jstree-search {
-    color: var(--green);
+  color: var(--green);
 }
+
 html.light.dark #Tree ul.jstree-children li a.jstree-search.jstree-clicked,
 html.light.dark #Tree ul.jstree-children li a.jstree-search:hover {
-    color: var(--light);
+  color: var(--light);
 }
+
 html.light.dark .select2-dropdown .select2-results ul li[class*="highlighted"],
 html.light.dark .datagrid.panel .panel-header,
 html.light.dark .datagrid.panel .panel-title {
   background-color: var(--green);
   color: var(--light);
 }
+
 html.light.dark .select2-dropdown .select2-results ul li:hover:not([class*="highlighted"]) {
   background-color: var(--greyDark) !important;
 }
+
 html.light.dark .datagrid {
   border: 1px solid var(--light);
 }
+
 html.light.dark .datagrid input.datagrid-filter {
   border: none;
 }
+
 html.light.dark .datagrid input.datagrid-filter:focus,
 html.light.dark .datagrid input.datagrid-filter:hover,
 html.light.dark .datagrid .datagrid-view table .datagrid-row-checked *:not(.btn):not(.fa):not(.datagrid-row-expander),
@@ -247,41 +291,51 @@ html.light.dark .datagrid .datagrid-view table .datagrid-row-over *:not(.btn):no
   background-color: var(--greyDark) !important;
   background: var(--greyDark) !important;
 }
+
 html.light.dark .datagrid *:not(.btn)>.fa.fa-times:not(.btn),
 html.light.dark .datagrid *:not(.btn)>.fa.fa-close:not(.btn),
 html.light.dark #Weeksure .fa.fa-close,
-html.light.dark .required  {
+html.light.dark .required {
   color: var(--red) !important;
 }
+
 html.light.dark .datagrid *:not(.btn)>.fa.fa-check,
-html.light.dark #Weeksure .fa.fa-check  {
+html.light.dark #Weeksure .fa.fa-check {
   color: var(--green) !important;
 }
+
 html.light.dark .datagrid-header td,
 html.light.dark .datagrid-view td,
 html.light.dark .datagrid-footer td {
   border-style: solid;
   border-color: #808080;
 }
+
 html.light.dark .datagrid .datagrid-filter-row input {
   background: #606060 !important;
 }
-html.light.dark .tooltipevent  {
+
+html.light.dark .tooltipevent {
   background: var(--dark) !important;
 }
+
 html.light.dark.dockHead .header #header_container {
   background-color: var(--darker);
 }
-html.light.dark #ShortcutsList > li:hover > a > font {
+
+html.light.dark #ShortcutsList>li:hover>a>font {
   color: var(--light);
 }
+
 ::-webkit-scrollbar {
   width: 17px;
 }
+
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
   background-color: var(--dark);
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #606060;
 }

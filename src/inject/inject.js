@@ -7,9 +7,9 @@ var linkCustomJS = document.createElement("script");
 linkCustomJS.type = "text/javascript";
 linkCustomJS.innerHTML = '';
 
-chrome.runtime.onMessage.addListener(function(message, callback) {
-  if (message.action == "dynInject"){
-		chrome.storage.sync.get(null, function(result) {
+chrome.runtime.onMessage.addListener(function (message, callback) {
+	if (message.action == "dynInject") {
+		chrome.storage.sync.get(null, function (result) {
 			nwk_theme = result.nwk_theme;
 			custom_css_block = result.custom_css_block;
 			custom_js_block = result.custom_js_block;
@@ -33,8 +33,8 @@ chrome.runtime.onMessage.addListener(function(message, callback) {
 
 			injectProcess();
 		});
-  } else {
-		chrome.storage.sync.get(null, function(result) {
+	} else {
+		chrome.storage.sync.get(null, function (result) {
 			// nwk_theme = result.nwk_theme;
 			custom_css_block = result.custom_css_block;
 			custom_js_block = result.custom_js_block;
@@ -49,7 +49,7 @@ chrome.runtime.onMessage.addListener(function(message, callback) {
 	}
 });
 
-var readyStateCheckInterval = setInterval(function() {
+var readyStateCheckInterval = setInterval(function () {
 	if (document.readyState === "complete") {
 		clearInterval(readyStateCheckInterval);
 		injectProcess();
@@ -70,17 +70,17 @@ var readyStateCheckInterval = setInterval(function() {
 }, 10);
 
 var windowMouse = window.top.$('#head-button');
-windowMouse.mouseover(function() {
+windowMouse.mouseover(function () {
 	var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
-    var htmlHasDockHead = $('html').hasClass("dockHead");
+	var htmlHasDockHead = $('html').hasClass("dockHead");
 	var htmlHasHidHead = $('html').hasClass("hiddenHead");
 	if (htmlHasVivaldiHead == true || htmlHasDockHead == true || htmlHasHidHead == true) {
 		$(".header").addClass("hovered");
 	}
 });
-windowMouse.mouseout(function() {
+windowMouse.mouseout(function () {
 	var htmlHasVivaldiHead = $('html').hasClass("vivaldiHead");
-    var htmlHasDockHead = $('html').hasClass("dockHead");
+	var htmlHasDockHead = $('html').hasClass("dockHead");
 	var htmlHasHidHead = $('html').hasClass("hiddenHead");
 	if (htmlHasVivaldiHead == true || htmlHasDockHead == true || htmlHasHidHead == true) {
 		$(".header").removeClass("hovered");
@@ -93,7 +93,7 @@ function injectProcess() {
 		custom_css_block = result.custom_css_block;
 		custom_js_block = result.custom_js_block;
 		autofill_user = result.autofill_user;
-    	autofill_pass = result.autofill_pass;
+		autofill_pass = result.autofill_pass;
 		injected = result.injected;
 		custColsArr = result.custColsArr;
 		chkedHeader = result.chkedHeader;
@@ -110,49 +110,7 @@ function injectProcess() {
 		chkedDockCol = result.chkedDockCol;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
-    	smallBlockSlider = result.smallBlockSlider;
-
-		if (window.location.pathname == '/ALGEMEEN/VERSOEKE/alg_ver_138_Z_swn.php') {
-			document.addEventListener("keyup", function(event) {
-				if (event.key == 'F2') {
-				$('#_SELECT1').val('3').trigger('change');
-				$('#_SELECT2').val('3').trigger('change');
-				$('#_SELECT3').val('3').trigger('change');
-				$('#_SELECT4').val('3').trigger('change');
-				$('#_SELECT5').val('3').trigger('change');
-				$('#_SELECT6').val('3').trigger('change');
-				$('#_SELECT7').val('3').trigger('change');
-				$('#_SELECT8').val('3').trigger('change');
-				$('#_SELECT9').val('3').trigger('change');
-				$('#_SELECT10').val('3').trigger('change');
-				$('#_SELECT11').val('3').trigger('change');
-				$('#_SELECT12').val('3').trigger('change');
-				$('#_SELECT13').val('3').trigger('change');
-				$('#_SELECT14').val('3').trigger('change');
-				$('#_SELECT15').val('3').trigger('change');
-				$('#_SELECT16').val('3').trigger('change');
-				$('#_SELECT17').val('3').trigger('change');
-				$('#_SELECT18').val('3').trigger('change');
-				$('#_SELECT19').val('3').trigger('change');
-				$('#_SELECT20').val('3').trigger('change');
-				$('#_SELECT21').val('3').trigger('change');
-				$('#_SELECT22').val('3').trigger('change');
-				$('#_SELECT23').val('3').trigger('change');
-				$('#_SELECT24').val('3').trigger('change');
-				$('#_SELECT25').val('3').trigger('change');
-				$('#_SELECT26').val('3').trigger('change');
-				$('#_SELECT27').val('3').trigger('change');
-				$('#_SELECT28').val('3').trigger('change');
-				$('#_SELECT29').val('3').trigger('change');
-				$('#_SELECT30').val('3').trigger('change');
-				$('#_SELECT31').val('3').trigger('change');
-				$('#_SELECT32').val('3').trigger('change');
-				$('#_SELECT33').val('3').trigger('change');
-				$('#_SELECT34').val('3').trigger('change');
-				$('#_SELECT35').val('3').trigger('change');
-				}
-			});
-		}
+		smallBlockSlider = result.smallBlockSlider;
 
 		if (typeof nwk_theme !== 'undefined') {
 			if (typeof injected !== 'undefined') {
@@ -203,7 +161,7 @@ function injectProcess() {
 							useTitle = subTitleTop;
 						}
 
-						if (bigTitleTop[0].replace(/\s/g,'').slice(0,4) == 'Welk') {
+						if (bigTitleTop[0].replace(/\s/g, '').slice(0, 4) == 'Welk') {
 							$("#lang button").removeClass("english");
 							$("#lang button").addClass("afrikaans");
 						} else {
@@ -212,11 +170,11 @@ function injectProcess() {
 						}
 
 						if (window.location.host == 'php-dev.nwk.co.za') {
-							window.top.$('title').replaceWith('<title>DEV - '+useTitle+'</title>');
+							window.top.$('title').replaceWith('<title>DEV - ' + useTitle + '</title>');
 						} else if (window.location.host == 'php-prd.nwk.co.za') {
-							window.top.$('title').replaceWith('<title>PRD - '+useTitle+'</title>');
+							window.top.$('title').replaceWith('<title>PRD - ' + useTitle + '</title>');
 						} else {
-							window.top.$('title').replaceWith('<title>QA - '+useTitle+'</title>');
+							window.top.$('title').replaceWith('<title>QA - ' + useTitle + '</title>');
 						}
 					}
 
@@ -270,7 +228,7 @@ function injectProcess() {
 						});
 					}
 
-          			if (typeof chkedDockhead !== 'undefined') {
+					if (typeof chkedDockhead !== 'undefined') {
 						if (chkedDockhead == true) {
 							$("html").addClass("dockHead");
 						} else {
@@ -284,7 +242,7 @@ function injectProcess() {
 						});
 					}
 
-          			if (typeof chkedDockBL !== 'undefined') {
+					if (typeof chkedDockBL !== 'undefined') {
 						if (chkedDockBL == true) {
 							$("html").addClass("dockBL");
 						} else {
@@ -298,7 +256,7 @@ function injectProcess() {
 						});
 					}
 
-          			if (typeof chkedDockHid !== 'undefined') {
+					if (typeof chkedDockHid !== 'undefined') {
 						if (chkedDockHid == true) {
 							$("html").addClass("dockHid");
 						} else {
@@ -312,7 +270,7 @@ function injectProcess() {
 						});
 					}
 
-          			if (typeof chkedDockCol !== 'undefined') {
+					if (typeof chkedDockCol !== 'undefined') {
 						if (chkedDockCol == true) {
 							$("html").addClass("dockCol");
 						} else {
@@ -383,7 +341,7 @@ function injectProcess() {
 							var prevUrlLen = window.top.document.referrer.length;
 							var prevUrl = window.top.document.referrer.substr(prevUrlLen - 14);
 							if (window.location.pathname == '/nwk/login.php' && prevUrl == '/nwk/index.php') {
-								document.addEventListener("keyup", function(event) {
+								document.addEventListener("keyup", function (event) {
 									if (event.key == 'Enter') {
 										$("#txtGebruiker").val(autofill_user);
 										$("#pwdWagwoord").val(autofill_pass);
@@ -434,11 +392,11 @@ function injectProcess() {
 						});
 					}
 
-          			if (typeof smallBlockSlider !== 'undefined') {
+					if (typeof smallBlockSlider !== 'undefined') {
 						if (chkedMainBlock == true) {
-							var smallBlockSliderVar = smallBlockSlider*1.30769230769;
-							$('.BlokNav').css('width',smallBlockSlider);
-							$('.BlokNav').css('height',smallBlockSliderVar);
+							var smallBlockSliderVar = smallBlockSlider * 1.30769230769;
+							$('.BlokNav').css('width', smallBlockSlider);
+							$('.BlokNav').css('height', smallBlockSliderVar);
 						}
 					} else {
 						chrome.storage.sync.set({
@@ -475,15 +433,15 @@ function injectProcess() {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
-					
+
 					if (typeof custColsArr !== 'undefined') {
-						$.each( custColsArr, function(idx,val) {
+						$.each(custColsArr, function (idx, val) {
 							custColsArrSplit = val.id.split("CustCol");
 							// document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
 							if ($("html").hasClass("userCSS")) {
-								document.documentElement.style.setProperty('--'+custColsArrSplit[0], '#'+val.val);
+								document.documentElement.style.setProperty('--' + custColsArrSplit[0], '#' + val.val);
 							} else {
-								document.documentElement.style.removeProperty('--'+custColsArrSplit[0]);
+								document.documentElement.style.removeProperty('--' + custColsArrSplit[0]);
 							}
 						});
 					} else {
@@ -498,8 +456,8 @@ function injectProcess() {
 					if (typeof timeServer !== 'undefined') {
 						timeServer = timeServer.split(' Datum');
 						if (timeServer[0] == 'Geen') {
-							window.top.$('html #header_container #tyd .date-time').css('display','none');
-							window.top.$('html #header_container .werkstasie').css('padding-top','13px');
+							window.top.$('html #header_container #tyd .date-time').css('display', 'none');
+							window.top.$('html #header_container .werkstasie').css('padding-top', '13px');
 						}
 					}
 				}
@@ -521,7 +479,7 @@ function injectProcess() {
 					chkedDockCol: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
-          			smallBlockSlider: '130',
+					smallBlockSlider: '130',
 					autofill_user: '',
 					autofill_pass: ''
 				}, function () {
@@ -542,13 +500,13 @@ function injectProcess() {
 				chkedCustomCol: false,
 				chkedHidhead: false,
 				chkedVivaldihead: false,
-        chkedDockhead: false,
-        chkedDockBL: false,
-        chkedDockHid: false,
-        chkedDockCol: false,
+				chkedDockhead: false,
+				chkedDockBL: false,
+				chkedDockHid: false,
+				chkedDockCol: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
-        smallBlockSlider: '130',
+				smallBlockSlider: '130',
 				autofill_user: '',
 				autofill_pass: ''
 			}, function () {
@@ -610,30 +568,30 @@ function colorReplace(findHexColor, replaceWith) {
 	// REF: https://stackoverflow.com/a/3627747/1938889
 	// Original Article: https://stackoverflow.com/questions/30723177/replacing-specific-color-code-in-css-using-jquery
 	function rgb2hex(rgb) {
-	  if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
-	  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-	  function hex(x) {
-		return ("0" + parseInt(x).toString(16)).slice(-2);
-	  }
-	  return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+		if (/^#[0-9A-F]{6}$/i.test(rgb)) return rgb;
+		rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		function hex(x) {
+			return ("0" + parseInt(x).toString(16)).slice(-2);
+		}
+		return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 	}
 
 	// Select and run a map function on every tag
-	$('*').map(function(i, el) {
-	  // Get the computed styles of each tag
-	  var styles = window.getComputedStyle(el);
+	$('*').map(function (i, el) {
+		// Get the computed styles of each tag
+		var styles = window.getComputedStyle(el);
 
-	  // Go through each computed style and search for "color"
-	  Object.keys(styles).reduce(function(acc, k) {
-		var name = styles[k];
-		var value = styles.getPropertyValue(name);
-		if (value !== null && name.indexOf("color") >= 0) {
-		  // Convert the rgb color to hex and compare with the target color
-		  if (value.indexOf("rgb(") >= 0 && rgb2hex(value) === findHexColor) {
-			// Replace the color on this found color attribute
-			$(el).css(name, replaceWith);
-		  }
-		}
-	  });
+		// Go through each computed style and search for "color"
+		Object.keys(styles).reduce(function (acc, k) {
+			var name = styles[k];
+			var value = styles.getPropertyValue(name);
+			if (value !== null && name.indexOf("color") >= 0) {
+				// Convert the rgb color to hex and compare with the target color
+				if (value.indexOf("rgb(") >= 0 && rgb2hex(value) === findHexColor) {
+					// Replace the color on this found color attribute
+					$(el).css(name, replaceWith);
+				}
+			}
+		});
 	});
 }

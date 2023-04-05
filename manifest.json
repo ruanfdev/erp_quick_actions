@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "version": "6.9.1",
+  "version": "6.9.2",
   "name": "ERP - Quick Actions",
   "description": "ERP - Quick Actions",
-  "homepage_url": "https://ruanf.co.za",
+  "homepage_url": "",
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   },
@@ -35,11 +35,25 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*.nwk.co.za/*"],
-      "exclude_matches": ["http://imap.nwk.co.za/*","http://*.nwk.co.za/phpMyAdmin/*","http://*.nwk.co.za/Betrokka/*"],
+      "matches": [
+        "http://*.nwk.co.za/*"
+      ],
+      "exclude_matches": [
+        "http://imap.nwk.co.za/*",
+        "http://*.nwk.co.za/phpMyAdmin/*",
+        "http://*.nwk.co.za/Betrokka/*"
+      ],
       "all_frames": true,
-      "js": ["js/jquery/jquery.min.js","src/inject/inject.js"],
-      "css": ["src/custom.css","src/inject/inject.css","src/inject/inject_dark.css","src/user.css"]
+      "js": [
+        "js/jquery/jquery.min.js",
+        "src/inject/inject.js"
+      ],
+      "css": [
+        "src/custom.css",
+        "src/inject/inject.css",
+        "src/inject/inject_dark.css",
+        "src/user.css"
+      ]
     }
   ]
 }

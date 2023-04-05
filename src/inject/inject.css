@@ -2,83 +2,103 @@ html.light .header {
   border: 2px solid var(--green);
   height: 90px;
 }
+
 html.light .header>.header_nav>h4 {
   visibility: hidden;
 }
+
 html.light .header>.header_nav a {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   transition: 0.1s linear;
 }
+
 html.light #head-button .show-notifications {
   margin-top: 3px;
 }
+
 html.light #head-button .show-notifications.active #icon-bell {
   fill: var(--light);
 }
+
 html.light #head-button .show-notifications.active~.notifications {
   top: 48px;
   left: -3px;
 }
+
 html.light .main .BlokNav {
   border-radius: 8px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
+
 html.light .main .BlokNav:hover,
-html.light ul#ShortcutsList > li:hover {
+html.light ul#ShortcutsList>li:hover {
   background-color: var(--green) !important;
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
 }
+
 html.light .BlokNav:hover *,
-html.light ul#ShortcutsList > li:hover * {
+html.light ul#ShortcutsList>li:hover * {
   color: var(--light);
 }
-html.light .BlokNav:hover > a > span > i:nth-child(2),
-html.light ul#ShortcutsList > li:hover > a > span > i:nth-child(2) {
-    color: var(--green);
+
+html.light .BlokNav:hover>a>span>i:nth-child(2),
+html.light ul#ShortcutsList>li:hover>a>span>i:nth-child(2) {
+  color: var(--green);
 }
-html.light .main .BlokNav > div {
+
+html.light .main .BlokNav>div {
   padding-left: 10px;
   padding-right: 10px;
 }
-html.light .main .openPage > .fa-stack {
+
+html.light .main .openPage>.fa-stack {
   transition: all 0.3s ease-in-out;
 }
+
 html.light .ui-dialog .ui-dialog-titlebar {
   background: var(--green);
 }
+
 html.light .header .logo {
   height: auto;
   float: left;
   margin-top: 20px;
 }
+
 html.light .header .logo img {
   max-width: 100%;
   max-height: 47px;
   padding-left: 3px;
 }
+
 html.light .header .header_right {
   width: auto;
   min-width: 6.5%;
   float: right;
 }
+
 html.light #header_container .welcome {
   margin-top: 25px;
   margin-right: 8%;
   transition: 0.1s linear;
 }
-html.light #header_container .welcome > b {
+
+html.light #header_container .welcome>b {
   transition: 0.1s linear;
 }
+
 html.light .header .child {
   padding-top: 25px;
 }
+
 html.light .login_div {
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
 }
+
 html.light .btn.btn-success,
 html.light .btn.btn-warning,
 html.light .btn.btn-danger,
@@ -91,54 +111,66 @@ html.light .btn.btn-default {
   transition: 0.1s linear;
   outline: none;
 }
+
 html.light .btn.btn-success,
 html.light .btn.btn-success *:not(.fa) {
   background-color: var(--btnSuccess) !important;
   border: 1px solid var(--btnSuccess) !important;
 }
+
 html.light .btn.btn-warning,
 html.light .btn.btn-warning *:not(.fa) {
   background-color: var(--btnWarning) !important;
   border: 1px solid var(--btnWarning) !important;
 }
+
 html.light .btn.btn-danger,
 html.light .btn.btn-danger *:not(.fa) {
   background-color: var(--btnDanger) !important;
   border: 1px solid var(--btnDanger) !important;
 }
+
 html.light .btn.btn-info,
 html.light .btn.btn-info *:not(.fa) {
   background-color: var(--btnInfo) !important;
   border: 1px solid var(--btnInfo) !important;
 }
+
 html.light .btn.btn-default,
 html.light .btn.btn-default *:not(.fa) {
   background-color: var(--btnDefault) !important;
   border: 1px solid var(--btnDefault) !important;
 }
+
 html.light .btn:hover,
 html.light .header_nav a:hover {
   filter: grayscale(0.1) brightness(0.9);
 }
+
 html.light iframe#renderHier {
   min-width: 100%;
   min-height: 92vh;
 }
+
 html.light #lang button font.btn_text {
   display: none;
 }
+
 html.light #lang button:hover font.btn_text {
   display: inline;
 }
+
 html.light.smlBlocks .main .BlokNav {
   width: 130px;
   height: calc(130px*1.30769230769);
   margin: 6px;
 }
+
 html.light.smlBlocks .main .BlokNav a.openPage span {
   transform: scale(0.6);
   margin-top: -22px;
 }
+
 html.light.smlBlocks .main .BlokNav a.openPage .ca-content {
   font-size: 14px;
   width: 100%;
@@ -148,18 +180,22 @@ html.light.smlBlocks .main .BlokNav a.openPage .ca-content {
   padding: 0 5px;
   line-height: 18px;
 }
+
 html.light.headGlowDEV .header {
   box-shadow: inset 0px 0px 6px 0px #c12e2a;
   border-color: var(--red);
 }
+
 html.light.headGlowPRD .header {
   box-shadow: inset 0px 0px 6px 0px #71bf44;
   border-color: var(--green);
 }
+
 html.light.headGlowQA .header {
   box-shadow: inset 0px 0px 6px 0px #f7931c;
   border-color: var(--orange);
 }
+
 html.light.headGlowDEV.dockCol .header,
 html.light.headGlowPRD.dockCol .header,
 html.light.headGlowQA.dockCol .header,
@@ -173,35 +209,42 @@ html.light.headGlowQA.hiddenHead #head-button {
   background-color: var(--red) !important;
   box-shadow: none;
 }
+
 html.light.headGlowPRD.dockCol .header,
 html.light.headGlowPRD.dockCol #head-button,
 html.light.headGlowPRD.hiddenHead #head-button {
   background-color: var(--green) !important;
 }
+
 html.light.headGlowQA.dockCol .header,
 html.light.headGlowQA.dockCol #head-button,
 html.light.headGlowQA.hiddenHead #head-button {
   background-color: var(--orange) !important;
 }
+
 html.light.dockCol .header .header_nav a,
 html.light.dockCol .header #header_container .btn_main * {
   background-color: transparent !important;
   border: none !important;
 }
+
 html.light.dockCol .header .header_nav a:hover,
 html.light.dockCol .header #header_container .btn_main .child button:hover {
   background-color: var(--dark) !important;
   opacity: 0.8;
 }
+
 html.light.altMenus .ui-widget-overlay {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   opacity: unset !important;
 }
+
 html.light.altMenus .ui-widget-content.ui-dialog {
-  box-shadow: 1px 0px 7px 1px rgba(0,0,0,0.5);
+  box-shadow: 1px 0px 7px 1px rgba(0, 0, 0, 0.5);
 }
+
 html.light.altMenus ul#ShortcutsList {
-  box-shadow: -1px 0px 7px 1px rgba(0,0,0,0.5);
+  box-shadow: -1px 0px 7px 1px rgba(0, 0, 0, 0.5);
   border-radius: 0;
   top: 0;
   right: 0;
@@ -213,58 +256,73 @@ html.light.altMenus ul#ShortcutsList {
   border-bottom: 0;
   border-right: 0;
 }
+
 html.light ul#ShortcutsList>li .fa-stack {
   float: left;
   margin-right: 5px;
   margin-top: 2px;
 }
+
 html.light ul#ShortcutsList>li:first-child .fa-stack {
   float: none;
   margin-right: 0px;
   margin-top: 1px;
 }
-html.light .main ul.ca-menu.ui-sortable > * {
+
+html.light .main ul.ca-menu.ui-sortable>* {
   animation-name: quiverAnimate;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-html.light .main ul.ca-menu.ui-sortable.ui-sortable-disabled > * {
+
+html.light .main ul.ca-menu.ui-sortable.ui-sortable-disabled>* {
   animation-name: none;
 }
+
 html.light .header .header_nav {
   padding: 0;
 }
-html.light .nav > li > a {
+
+html.light .nav>li>a {
   cursor: pointer !important;
 }
+
 html.light .header div#header_container {
   height: 100%;
 }
+
 html.light.small .header {
   height: 45px;
 }
+
 html.light.small .header .logo {
   margin-top: 6px;
   height: 72%;
 }
-html.light.small .header .header_right > div > div {
+
+html.light.small .header .header_right>div>div {
   display: table-cell !important;
 }
+
 html.light.small .header .child {
   padding-top: 3px;
 }
-html.light.small .header > .header_nav a {
+
+html.light.small .header>.header_nav a {
   top: -19px;
   width: 32px;
   height: 32px;
   background-size: 20px;
 }
+
 html.light.small .content {
   padding-top: 55px;
 }
+
 html.light.small .header .logo img {
   max-height: 33px;
 }
+
 html.light .backHead {
   width: 99.7%;
   margin-left: 2px;
@@ -272,25 +330,29 @@ html.light .backHead {
   position: absolute;
   z-index: 95;
 }
+
 html.light.small .backHead {
   height: 51px;
 }
+
 html.light.RGBclass .header {
   top: 2px;
   width: 99.4%;
   padding: 2px;
   background-color: var(--white);
 }
+
 html.light.RGBclass:not(.vivaldiHead) .header {
   border: none;
 }
+
 html.light .backHead:before,
 html.light .backHead:after {
   content: '';
   position: absolute;
   left: -2px;
   top: -2px;
-  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
   background-size: 400%;
   width: calc(100% + 4px);
   height: calc(100% + 4px);
@@ -298,50 +360,62 @@ html.light .backHead:after {
   animation: rgbanimate 50s linear infinite;
   border-radius: 0 0 25px 25px;
 }
+
 html.light .backHead:after {
-	filter: blur(2px);
+  filter: blur(2px);
 }
+
 html.light.small div#head-button {
   top: 8px;
 }
+
 html.light.hiddenHead .header {
   border-top-width: 0;
   top: 0;
   margin-top: -85px;
   transition: 0.25s linear;
 }
+
 html.light.hiddenHead.RGBclass .backHead {
   margin-top: -87px;
   transition: 0.25s linear;
 }
+
 html.light.hiddenHead .content {
   padding-top: 13px;
   transition: 0.25s linear;
 }
+
 html.light.hiddenHead .header:hover {
   margin-top: 0px;
 }
-html.light.hiddenHead .header:hover + .backHead {
+
+html.light.hiddenHead .header:hover+.backHead {
   margin-top: -2px;
 }
-html.light.dockHid .header:hover + .backHead {
+
+html.light.dockHid .header:hover+.backHead {
   margin-top: -15px;
 }
+
 html.light.vivaldiHead.RGBclass .backHead {
   position: fixed;
   height: 0px;
   width: 110%;
   transition: 0.15s linear;
 }
-html.light.vivaldiHead.RGBclass .header:hover + .backHead,
-html.light.vivaldiHead.RGBclass .header.hovered + .backHead {
+
+html.light.vivaldiHead.RGBclass .header:hover+.backHead,
+html.light.vivaldiHead.RGBclass .header.hovered+.backHead {
   height: 90px;
   transition: all 0.3s ease-in-out;
 }
+
 html.light.vivaldiHead ul#ShortcutsList {
   left: 0;
   right: auto;
 }
+
 html.light.vivaldiHead .header {
   left: 0;
   top: 0;
@@ -353,26 +427,33 @@ html.light.vivaldiHead .header {
   padding: 0;
   width: 40px;
 }
+
 html.light.vivaldiHead .content {
   padding: 0 0 0 45px;
-  width: 96.7%; /*97%;*/
+  width: 96.7%;
+  /*97%;*/
 }
+
 html.light.vivaldiHead div#head-button {
   margin: 0;
   left: 3px;
   top: 55px;
 }
+
 html.light.vivaldiHead .header #header_container .btn_main .child button font {
   display: none;
 }
+
 html.light.vivaldiHead .header .header_nav {
   width: 100%;
   height: auto;
 }
-html.light.vivaldiHead .header .header_nav > h4 {
+
+html.light.vivaldiHead .header .header_nav>h4 {
   display: none;
 }
-html.light.vivaldiHead .header .header_nav > a {
+
+html.light.vivaldiHead .header .header_nav>a {
   margin: 0;
   left: 0;
   top: 0;
@@ -382,6 +463,7 @@ html.light.vivaldiHead .header .header_nav > a {
   background-position-x: 45%;
   background-size: 23px;
 }
+
 html.light.vivaldiHead .header #header_container {
   position: absolute;
   left: 42px;
@@ -392,21 +474,25 @@ html.light.vivaldiHead .header #header_container {
   background-color: var(--darker);
   transition: 0.25s linear;
 }
+
 html.light.vivaldiHead .header:hover #header_container,
 html.light.vivaldiHead .header.hovered #header_container,
 html.light.vivaldiHead .header #header_container:hover {
   top: 0vh;
   box-shadow: var(--boxShadMed);
 }
+
 html.light.vivaldiHead .header #header_container .header_right {
   float: none;
 }
+
 html.light.vivaldiHead .header #header_container .btn_main {
   position: fixed;
   left: 2px;
   bottom: 0;
   width: 40px;
 }
+
 html.light.vivaldiHead .header #header_container .btn_main .child {
   position: relative;
   padding: 0;
@@ -414,6 +500,7 @@ html.light.vivaldiHead .header #header_container .btn_main .child {
   float: none !important;
   margin: 0 !important;
 }
+
 html.light.vivaldiHead .header #header_container .btn_main .child button {
   border-radius: 0;
   width: 100%;
@@ -423,12 +510,15 @@ html.light.vivaldiHead .header #header_container .btn_main .child button {
   box-shadow: none;
   border-width: 0px !important;
 }
+
 html.light.vivaldiHead .header #header_container .btn_main #tuis.child button {
   border-top-width: 1px !important;
 }
+
 html.light.vivaldiHead #lang button:hover {
   position: inherit;
 }
+
 html.light.vivaldiHead #lang button.afrikaans .fa-language:after,
 html.light.vivaldiHead #lang button.english .fa-language:after {
   content: " ";
@@ -440,20 +530,25 @@ html.light.vivaldiHead #lang button.english .fa-language:after {
   font: 400 13.3333px Arial;
   display: none;
 }
+
 html.light.vivaldiHead #lang button.afrikaans .fa-language:after {
   content: "English";
 }
+
 html.light.vivaldiHead #lang button.english .fa-language:after {
   content: "Afrikaans";
 }
+
 html.light.vivaldiHead #lang button:hover .fa-language:after {
   display: inline;
 }
+
 html.light.vivaldiHead #lang button:hover {
   width: auto !important;
   padding-left: 14px !important;
   padding-right: 14px !important;
 }
+
 html.light.dockHead .header {
   bottom: 5px;
   left: auto;
@@ -466,19 +561,24 @@ html.light.dockHead .header {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
 html.light.dockHead.dockBL .header {
-  margin-left: 13%;
+  margin-left: 9%;
 }
+
 html.light.dockHead.dockBL .header #header_container {
-  left: 17.5vw;
+  left: 15vw;
 }
+
 html.light.dockHead.dockHid .header {
   margin-bottom: -50px;
   transition: 0.25s linear;
 }
+
 html.light.dockHead.dockHid .header:hover {
   margin-bottom: 0px;
 }
+
 html.light.dockHead ul#ShortcutsList {
   left: 50%;
   width: 90%;
@@ -486,6 +586,7 @@ html.light.dockHead ul#ShortcutsList {
   transform: translate(-50%, 10%);
   border: 2px solid var(--green);
 }
+
 html.light.dockHead ul#ShortcutsList li {
   width: 22%;
   float: left;
@@ -493,18 +594,22 @@ html.light.dockHead ul#ShortcutsList li {
   min-height: 36px;
   padding: 10px 14px;
 }
+
 html.light.dockHead .content {
   padding: 0;
   width: 100%;
 }
+
 html.light.dockHead .header .header_nav {
   width: 10%;
   height: auto;
 }
-html.light.dockHead .header .header_nav > h4 {
+
+html.light.dockHead .header .header_nav>h4 {
   display: none;
 }
-html.light.dockHead .header .header_nav > a {
+
+html.light.dockHead .header .header_nav>a {
   left: 7px;
   top: 7px;
   width: 45px;
@@ -514,37 +619,44 @@ html.light.dockHead .header .header_nav > a {
   margin: 0;
   box-shadow: none;
 }
+
 html.light.dockHead .header #header_container {
   position: fixed;
   z-index: -1;
-  left: -20vw;
+  left: -26vw;
   top: -112vh;
   height: 90px;
-  width: 61vw;
+  width: 66vw;
   padding-left: 2vw;
   background-color: var(--light);
   border-radius: 8px;
   box-shadow: var(--boxShadMed);
   transition: all 0.25s linear 0s;
 }
+
 html.light.dockHead .header:hover #header_container,
-html.light.dockHead .header #header_container:hover {
+html.light.dockHead .header #header_container:hover,
+html.light.dockHead .header.hovered #header_container {
   top: -88vh;
   box-shadow: var(--boxShadMed);
 }
-html.light.dockHead .header.hovered #header_container {
+
+html.light.dockHead.dockHid .header.hovered #header_container {
   top: -95vh;
   box-shadow: var(--boxShadMed);
 }
-html.light.dockHead .header:hover ~ .content,
-html.light.dockHead .header.hovered ~ .content {
+
+html.light.dockHead .header:hover~.content,
+html.light.dockHead .header.hovered~.content {
   filter: brightness(0.4) opacity(0.4) blur(2px);
   transition: all 0.25s linear 0s;
 }
+
 html.light.dockHead #header_container .logo {
   width: 11%;
-  margin-top: 5vh;
+  margin-top: 4vh;
 }
+
 html.light.dockHead #header_container .welcome {
   margin-top: 25px;
   margin-left: 6%;
@@ -552,17 +664,24 @@ html.light.dockHead #header_container .welcome {
   width: 65%;
   transition: all 0.1s linear 0s;
 }
+
 html.light.dockHead .header #header_container .header_right {
   float: right;
   padding-right: 2vw;
   padding-top: 1.5vh;
 }
+
+html.light.dockHead .header #header_container .header_right .date-time>br:nth-child(3) {
+  display: none;
+}
+
 html.light.dockHead .header #header_container .btn_main {
   position: fixed;
   left: 56px;
   bottom: -37px;
   width: 202px;
 }
+
 html.light.dockHead .header #header_container .btn_main .child {
   position: relative;
   padding: 0 4px 0 0;
@@ -570,6 +689,7 @@ html.light.dockHead .header #header_container .btn_main .child {
   height: 45px;
   margin: 0 !important;
 }
+
 html.light.dockHead .header #header_container .btn_main .child button {
   width: 100%;
   min-height: 45px;
@@ -579,12 +699,15 @@ html.light.dockHead .header #header_container .btn_main .child button {
   padding: 0;
   border-width: 0 !important;
 }
+
 html.light.dockHead .header #header_container .btn_main .child#lang {
   width: 100px;
 }
+
 html.light.dockHead .header #header_container .btn_main .child#lang button font.btn_text {
   display: inline;
 }
+
 html.light.dockHead div#head-button,
 html.light.hiddenHead div#head-button {
   margin: 0;
@@ -595,31 +718,36 @@ html.light.hiddenHead div#head-button {
   padding: 4px 8px 4px 2px;
   border-radius: 0 8px 8px 0;
 }
-html.light.dockHead #head-button .show-notifications ~ .notifications,
-html.light.hiddenHead #head-button .show-notifications ~ .notifications {
+
+html.light.dockHead #head-button .show-notifications~.notifications,
+html.light.hiddenHead #head-button .show-notifications~.notifications {
   position: fixed;
   left: -15%;
   top: -15%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-html.light.dockHead #head-button .show-notifications.active ~ .notifications,
-html.light.hiddenHead #head-button .show-notifications.active ~ .notifications {
+
+html.light.dockHead #head-button .show-notifications.active~.notifications,
+html.light.hiddenHead #head-button .show-notifications.active~.notifications {
   position: fixed;
   left: 50%;
   top: 12%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-html.light.dockHead #head-button .show-notifications.active ~ .notifications,
-html.light.hiddenHead #head-button .show-notifications.active ~ .notifications {
+
+html.light.dockHead #head-button .show-notifications.active~.notifications,
+html.light.hiddenHead #head-button .show-notifications.active~.notifications {
   position: fixed;
   left: 50%;
   top: 12%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-html.light.dockHead #head-button .show-notifications.active ~ .notifications:after,
-html.light.hiddenHead #head-button .show-notifications.active ~ .notifications:after {
-    display: none;
+
+html.light.dockHead #head-button .show-notifications.active~.notifications:after,
+html.light.hiddenHead #head-button .show-notifications.active~.notifications:after {
+  display: none;
 }
+
 html.light.dockHead.RGBclass .backHead {
   position: fixed;
   bottom: 5px;
@@ -628,17 +756,21 @@ html.light.dockHead.RGBclass .backHead {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
 html.light.dockHead.RGBclass .backHead:before,
 html.light.dockHead.RGBclass .backHead:after {
   border-radius: 8px;
 }
+
 html.light.dockHid.RGBclass .backHead {
   bottom: -45px;
   transition: 0.25s linear;
 }
-html.light.dockHid .header:hover + .backHead {
+
+html.light.dockHid .header:hover+.backHead {
   bottom: 5px;
 }
+
 /* Custom color
 switch vars */
 html.light .header_nav a,
@@ -659,6 +791,7 @@ html.light .notifications.js-notifications .notificationTypeDiv a i,
 html.light .notifications.js-notifications .show-all {
   background-color: var(--green);
 }
+
 html.light .datagrid .panel-header,
 html.light .datagrid .panel-title,
 html.light .panel .panel-header {
@@ -666,42 +799,52 @@ html.light .panel .panel-header {
   border-color: var(--green);
   color: var(--light);
 }
+
 html.light .BlokNav .fa-stack,
-html.light #ShortcutsList > li > a {
+html.light #ShortcutsList>li>a {
   color: var(--green);
 }
-html.light #ShortcutsList > li:hover > a > font {
+
+html.light #ShortcutsList>li:hover>a>font {
   color: var(--light);
 }
+
 html.light .nav-tabs>li.active>a,
 html.light .nav-tabs>li.active>a:focus {
   background-color: var(--green);
   border: 1px solid var(--green);
 }
+
 html.light .nav-tabs>li.active>a:hover,
-html.light .nav > li > a:hover {
+html.light .nav>li>a:hover {
   background-color: var(--green);
   border-color: var(--light);
 }
+
 html.light legend,
 html.light li.dropdown-header {
   background: var(--orange);
   color: var(--light);
 }
+
 html.light .notifications.js-notifications .notificationTypeDiv button.tablinks.active {
   border-bottom-color: var(--orange);
 }
+
 html.light fieldset {
   background-color: var(--greyLight);
   color: var(--darker);
 }
+
 html.light #ShortcutsList {
   border: 2px solid var(--green);
 }
+
 html.light *::selection {
   background: var(--green);
   color: var(--darker);
 }
+
 html.light>body>div.page>div.content>div#innerTab {
   display: flex;
   flex-direction: column;
@@ -712,6 +855,7 @@ html.light>body>div.page>div.content>div#innerTab {
   z-index: 1;
   box-shadow: var(--boxShadMed);
 }
+
 html.light>body>div.page>div.content>div#innerTab>div {
   font-size: 1.5em;
   text-align: center;
@@ -723,25 +867,31 @@ html.light>body>div.page>div.content>div#innerTab>div {
   justify-content: space-evenly;
   align-items: center;
 }
+
 html.light>body>div.page>div.content>div#innerTab>div.selected {
   background-color: var(--light);
   color: var(--green);
 }
+
 html.light>body>div.page>div.content>div#innerTab>div>i,
 html.light>body>div.page>div.content>div#innerTab>div>div {
   padding: 7px 8px 5px 8px;
 }
+
 html.light>body>div.page>div.content>div#innerTab>div.addInnerTab>div.addInnerTabDelete {
   background-color: var(--dark);
   color: var(--red);
 }
+
 html.light>body>div.page>div.content>div#innerTab>div.selected {
   background-color: var(--light);
   color: var(--green);
 }
+
 html.light>body>div.page>div.content>div#innerTab>div:first-child {
   border-top: none;
 }
+
 html.light>body>div.page>div.content>iframe.addInnerTabContent {
   position: absolute;
   top: -105%;
@@ -752,15 +902,18 @@ html.light>body>div.page>div.content>iframe.addInnerTabContent {
   padding: 0px;
   overflow: hidden;
 }
+
 html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
   top: 0;
   left: 0;
   opacity: 1;
 }
+
 html.light.nyanCursor,
 html.light.nyanCursor * {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat925.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat925.png), auto !important;
 }
+
 html.light.nyanCursor a,
 html.light.nyanCursor a *,
 html.light.nyanCursor button,
