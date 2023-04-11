@@ -3,7 +3,7 @@
   "version": "6.9.2",
   "name": "ERP - Quick Actions",
   "description": "ERP - Quick Actions",
-  "homepage_url": "",
+  "homepage_url": "https://www.nwk.co.za/",
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   },
