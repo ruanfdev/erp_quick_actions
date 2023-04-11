@@ -351,7 +351,7 @@ function injectProcess() {
 							} else if (window.location.pathname == '/nwk/login.php') {
 								$("#txtGebruiker").val(autofill_user);
 								$("#pwdWagwoord").val(autofill_pass);
-								$('#btnSubmit').trigger('click');
+								// $('#btnSubmit').trigger('click');
 							}
 
 						}
