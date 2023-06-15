@@ -57,10 +57,6 @@ html.light .main .openPage>.fa-stack {
   transition: all 0.3s ease-in-out;
 }
 
-html.light .ui-dialog .ui-dialog-titlebar {
-  background: var(--green);
-}
-
 html.light .header .logo {
   height: auto;
   float: left;
@@ -182,18 +178,42 @@ html.light.smlBlocks .main .BlokNav a.openPage .ca-content {
 }
 
 html.light.headGlowDEV .header {
-  box-shadow: inset 0px 0px 6px 0px #c12e2a;
+  box-shadow: inset 0px 0px 6px 0px var(--red);
   border-color: var(--red);
 }
 
 html.light.headGlowPRD .header {
-  box-shadow: inset 0px 0px 6px 0px #71bf44;
+  box-shadow: inset 0px 0px 6px 0px var(--green);
   border-color: var(--green);
 }
 
 html.light.headGlowQA .header {
-  box-shadow: inset 0px 0px 6px 0px #f7931c;
+  box-shadow: inset 0px 0px 6px 0px var(--orange);
   border-color: var(--orange);
+}
+
+html.light.headGlowDEV ul#ShortcutsList {
+  border-color: var(--red) !important;
+}
+
+html.light.headGlowPRD ul#ShortcutsList {
+  border-color: var(--green) !important;
+}
+
+html.light.headGlowQA ul#ShortcutsList {
+  border-color: var(--orange) !important;
+}
+
+html.light.headGlowDEV .ui-dialog .ui-dialog-titlebar {
+  background: var(--red) !important;
+}
+
+html.light.headGlowPRD .ui-dialog .ui-dialog-titlebar {
+  background: var(--green) !important;
+}
+
+html.light.headGlowQA .ui-dialog .ui-dialog-titlebar {
+  background: var(--orange) !important;
 }
 
 html.light.headGlowDEV.dockCol .header,
