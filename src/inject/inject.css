@@ -263,10 +263,8 @@ html.light ul#ShortcutsList>li .fa-stack {
   margin-top: 2px;
 }
 
-html.light ul#ShortcutsList>li:first-child .fa-stack {
+html.light ul#ShortcutsList>li:nth-child(2) .fa-stack {
   float: none;
-  margin-right: 0px;
-  margin-top: 1px;
 }
 
 html.light .main ul.ca-menu.ui-sortable>* {
@@ -840,6 +838,25 @@ html.light #ShortcutsList {
   border: 2px solid var(--green);
 }
 
+html.light #ShortcutsList>div#filterShortList {
+  margin: 7px 15px 11px 11px;
+  text-align: center;
+}
+
+html.light #ShortcutsList>div#filterShortList>input#filterShortListInput {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  text-align: center;
+  width: 90%;
+  font-size: 1.1em;
+}
+
+html.light.dockHead #ShortcutsList>div#filterShortList>input#filterShortListInput {
+  width: 33%;
+}
+
 html.light *::selection {
   background: var(--green);
   color: var(--darker);
@@ -907,6 +924,14 @@ html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
   top: 0;
   left: 0;
   opacity: 1;
+}
+
+html.light #ShortcutsList>div#filterShortList {
+  display: none;
+}
+
+html.light.searchHome #ShortcutsList>div#filterShortList {
+  display: block;
 }
 
 html.light.nyanCursor,
