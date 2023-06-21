@@ -8,6 +8,28 @@ html.light.dark div#cboxLoadedContent iframe {
   color: var(--light) !important;
 }
 
+html.light.dark.headGlowDEV div#cboxContent #cboxClose>.btn,
+html.light.dark.headGlowPRD div#cboxContent #cboxClose>.btn,
+html.light.dark.headGlowQA div#cboxContent #cboxClose>.btn,
+html.light.dark.headGlowDEV div#cboxContent #cboxPrint>.btn,
+html.light.dark.headGlowPRD div#cboxContent #cboxPrint>.btn,
+html.light.dark.headGlowQA div#cboxContent #cboxPrint>.btn {
+  background: var(--darker) !important;
+  color: var(--light);
+  border-color: var(--red) !important;
+  text-shadow: none;
+}
+
+html.light.dark.headGlowPRD div#cboxContent #cboxClose>.btn,
+html.light.dark.headGlowPRD div#cboxContent #cboxPrint>.btn {
+  border-color: var(--green) !important;
+}
+
+html.light.dark.headGlowQA div#cboxContent #cboxClose>.btn,
+html.light.dark.headGlowQA div#cboxContent #cboxPrint>.btn {
+  border-color: var(--orange) !important;
+}
+
 html.light.dark input,
 html.light.dark textarea,
 html.light.dark .selection *,
