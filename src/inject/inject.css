@@ -827,6 +827,26 @@ html.light #ShortcutsList>li:hover>a>font {
   color: var(--light);
 }
 
+html.light .tabs-header ul.tabs>li>a.tabs-inner,
+html.light .tabs-header ul.tabs>li>a.tabs-inner:focus {
+  background: var(--green);
+  border: 1px solid var(--green);
+  color: var(--light);
+}
+
+html.light .tabs-header ul.tabs>li>a.tabs-inner:hover {
+  background: var(--green);
+  border: 1px solid var(--light);
+  color: var(--light);
+}
+
+html.light .tabs-header ul.tabs>li.tabs-selected>a.tabs-inner,
+html.light .tabs-header ul.tabs>li.tabs-selected>a.tabs-inner:focus {
+  background: var(--light);
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
 html.light .nav-tabs>li.active>a,
 html.light .nav-tabs>li.active>a:focus {
   background-color: var(--green);
@@ -837,6 +857,11 @@ html.light .nav-tabs>li.active>a:hover,
 html.light .nav>li>a:hover {
   background-color: var(--green);
   border-color: var(--light);
+}
+
+html.light .nav-tabs,
+html.light .tabs-header {
+  border-bottom: 1px solid var(--green);
 }
 
 html.light legend,

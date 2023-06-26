@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    chrome.storage.sync.get(null, function(result) {
+    chrome.storage.sync.get(null, function (result) {
         chkedCustomCol = result.chkedCustomCol;
         custColsArr = result.custColsArr;
-        
+
         if (typeof chkedCustomCol !== 'undefined') {
             if (chkedCustomCol == true) {
                 $("html").addClass("userCSS");
@@ -11,15 +11,15 @@ $(document).ready(function() {
                 $("html").removeClass("userCSS");
             }
         }
-        
+
         if (typeof custColsArr !== 'undefined') {
-            $.each( custColsArr, function(idx,val) {
+            $.each(custColsArr, function (idx, val) {
                 custColsArrSplit = val.id.split("CustCol");
                 // document.documentElement.style.setProperty('--'+custColsArrSplit[0], '');
                 if ($("html").hasClass("userCSS")) {
-                    document.documentElement.style.setProperty('--'+custColsArrSplit[0], '#'+val.val);
+                    document.documentElement.style.setProperty('--' + custColsArrSplit[0], '#' + val.val);
                 } else {
-                    document.documentElement.style.removeProperty('--'+custColsArrSplit[0]);
+                    document.documentElement.style.removeProperty('--' + custColsArrSplit[0]);
                 }
             });
         }
@@ -41,7 +41,7 @@ $(document).ready(function() {
     setTimeout(() => {
         $("#notification").fadeOut("slow");
         setTimeout(() => {
-            $("#notification").css('top','10px');
+            $("#notification").css('top', '10px');
         }, 2000);
     }, 10);
 
@@ -52,16 +52,16 @@ $(document).ready(function() {
 
                 $("#editTabs").append(`<div class="item"><div id="item${highNumber}">${saveArrNotes[i]}</div><div id="delete${highNumber}">X</div></div>`);
 
-                $('#delete'+highNumber).click(function(e){
+                $('#delete' + highNumber).click(function (e) {
                     $(this).parent().remove();
                     $(textArea).val('');
                     count--;
                     writeLocalStorage();
                     showNotif('Note deleted succesfully');
                 });
-                $('#item'+highNumber).click(function(e){
+                $('#item' + highNumber).click(function (e) {
                     menuItem = $("#editTabs .item");
-                    $(menuItem).each(function(index) {
+                    $(menuItem).each(function (index) {
                         $(this).removeClass('selected');
                     });
                     $(this).parent().addClass('selected');
@@ -99,58 +99,58 @@ $(document).ready(function() {
     function writeLocalStorage() {
         saveArrNotes = [];
         menuItem = $("#editTabs .item");
-        $(menuItem).each(function(index) {
+        $(menuItem).each(function (index) {
             saveArrNotes.push($(this).find(">:first-child").html());
         });
         localStorage.setItem('notes', JSON.stringify(saveArrNotes));
     }
 
-    $(notifBubble).click(function(e){
+    $(notifBubble).click(function (e) {
         $("#notification").fadeOut("slow");
     });
 
-    $(saveNotes).click(function(e){
+    $(saveNotes).click(function (e) {
         saveArrNotes = [];
         menuItem = $("#editTabs .item");
-        $(menuItem).each(function(index) {
+        $(menuItem).each(function (index) {
             saveArrNotes.push($(this).find(">:first-child").html());
         });
-        chrome.storage.sync.set({notes:saveArrNotes}, function() {
+        chrome.storage.sync.set({ notes: saveArrNotes }, function () {
             showNotif('Notes synced succesfully');
         });
     });
 
-    $(downloadNotes).click(function(e){
-        if(confirm("Download & Overwrite from Cloud Storage?")) {
-            chrome.storage.sync.get(null, function(result) {
+    $(downloadNotes).click(function (e) {
+        if (confirm("Download & Overwrite from Cloud Storage?")) {
+            chrome.storage.sync.get(null, function (result) {
                 saveArrNotes = result.notes;
                 if (typeof saveArrNotes !== 'undefined') {
                     if (saveArrNotes.length !== 0) {
                         menuItem = $("#editTabs .item");
-                        $(menuItem).each(function(index) {
+                        $(menuItem).each(function (index) {
                             $(this).remove();
                         });
                         for (let i = 0; i < saveArrNotes.length; i++) {
 
                             $("#editTabs").append(`<div class="item"><div id="item${highNumber}">${saveArrNotes[i]}</div><div id="delete${highNumber}">X</div></div>`);
-        
-                            $('#delete'+highNumber).click(function(e){
+
+                            $('#delete' + highNumber).click(function (e) {
                                 $(this).parent().remove();
                                 $(textArea).val('');
                                 count--;
                                 writeLocalStorage();
                                 showNotif('Note deleted succesfully');
                             });
-                            $('#item'+highNumber).click(function(e){
+                            $('#item' + highNumber).click(function (e) {
                                 menuItem = $("#editTabs .item");
-                                $(menuItem).each(function(index) {
+                                $(menuItem).each(function (index) {
                                     $(this).removeClass('selected');
                                 });
                                 $(this).parent().addClass('selected');
                                 $(textArea).val($(this).html());
                                 $(textArea).focus();
                             });
-        
+
                             highNumber++;
                         }
                         writeLocalStorage();
@@ -161,26 +161,27 @@ $(document).ready(function() {
                 } else {
                     $(addNote).trigger('click');
                 }
+                showNotif('Notes synced succesfully');
             });
         }
     });
 
-    $(addNote).click(function(e){
+    $(addNote).click(function (e) {
         menuItem = $("#editTabs .item");
         count = menuItem.length;
 
         $("#editTabs").append(`<div class="item selected"><div id="item${highNumber}"></div><div id="delete${highNumber}">X</div></div>`);
 
-        $('#delete'+highNumber).click(function(e){
+        $('#delete' + highNumber).click(function (e) {
             $(this).parent().remove();
             $(textArea).val('');
             count--;
             writeLocalStorage();
             showNotif('Note deleted succesfully');
         });
-        $('#item'+highNumber).click(function(e){
+        $('#item' + highNumber).click(function (e) {
             menuItem = $("#editTabs .item");
-            $(menuItem).each(function(index) {
+            $(menuItem).each(function (index) {
                 $(this).removeClass('selected');
             });
             $(this).parent().addClass('selected');
@@ -188,7 +189,7 @@ $(document).ready(function() {
             $(textArea).focus();
         });
 
-        $('#item'+highNumber).trigger('click');
+        $('#item' + highNumber).trigger('click');
 
         highNumber++;
         count++;

@@ -177,10 +177,6 @@ html.light.dark .show-notifications.active #icon-bell {
   fill: var(--light);
 }
 
-html.light.dark .nav-tabs {
-  border-bottom: 1px solid var(--green);
-}
-
 html.light.dark .nav>li>a {
   color: var(--white);
 }
