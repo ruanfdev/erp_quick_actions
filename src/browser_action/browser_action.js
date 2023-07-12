@@ -393,6 +393,14 @@ $(document).ready(function () {
     }
 
     if (chkedDockhead) {
+      chkedMenus = true;
+    }
+
+    if (chkedDockCol) {
+      chkedGlow = true;
+    }
+
+    if (chkedDockhead) {
       chkedHeader = false;
       chkedHidhead = false;
       chkedVivaldihead = false;
@@ -402,21 +410,25 @@ $(document).ready(function () {
       chkedDockhead = false;
       chkedDockBL = false;
       chkedDockHid = false;
-      chkedDockCol = false;
     } else if (chkedHidhead) {
       chkedHeader = false;
       chkedVivaldihead = false;
       chkedDockhead = false;
       chkedDockBL = false;
       chkedDockHid = false;
-      chkedDockCol = false;
     } else if (chkedHeader) {
       chkedHidhead = false;
       chkedVivaldihead = false;
       chkedDockhead = false;
       chkedDockBL = false;
       chkedDockHid = false;
-      chkedDockCol = false;
+    } else {
+      chkedHeader = false;
+      chkedHidhead = false;
+      chkedVivaldihead = false;
+      chkedDockhead = false;
+      chkedDockBL = false;
+      chkedDockHid = false;
     }
 
     rules = [];

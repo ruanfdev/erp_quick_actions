@@ -225,9 +225,14 @@ html.light.headGlowQA.dockCol #head-button,
 html.light.headGlowDEV.hiddenHead #head-button,
 html.light.headGlowPRD.hiddenHead #head-button,
 html.light.headGlowQA.hiddenHead #head-button {
-  border: none;
   background-color: var(--red) !important;
   box-shadow: none;
+}
+
+html.light.dockHead.dockCol .header,
+html.light.dockHead.dockCol #head-button,
+html.light.dockHead.hiddenHead #head-button {
+  border: none;
 }
 
 html.light.headGlowPRD.dockCol .header,
@@ -268,13 +273,14 @@ html.light.altMenus ul#ShortcutsList {
   border-radius: 0;
   top: 0;
   right: 0;
-  min-width: 300px;
+  min-width: 350px;
   max-height: none;
-  padding: 1vh;
+  padding: 1vh 1vw;
   height: 98vh;
   border-top: 0;
   border-bottom: 0;
   border-right: 0;
+  overflow-x: hidden;
 }
 
 html.light ul#ShortcutsList>li .fa-stack {
@@ -580,7 +586,8 @@ html.light.dockHead .header {
   transform: translateX(-50%);
 }
 
-html.light.dockHead.dockBL .header {
+html.light.dockHead.dockBL .header,
+html.light.dockHead.dockBL.RGBclass .backHead {
   margin-left: 9%;
 }
 
@@ -608,9 +615,9 @@ html.light.dockHead ul#ShortcutsList {
 html.light.dockHead ul#ShortcutsList li {
   width: 22%;
   float: left;
-  margin: 7px;
+  margin: 5px;
   min-height: 36px;
-  padding: 10px 14px;
+  padding: 10px 12px;
 }
 
 html.light.dockHead .content {
@@ -770,7 +777,7 @@ html.light.dockHead.RGBclass .backHead {
   position: fixed;
   bottom: 5px;
   height: 60px;
-  width: 19%;
+  width: 261px;
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -886,6 +893,7 @@ html.light #ShortcutsList {
 html.light #ShortcutsList>div#filterShortList {
   margin: 7px 15px 11px 11px;
   text-align: center;
+  width: 95%
 }
 
 html.light #ShortcutsList>div#filterShortList>input#filterShortListInput {

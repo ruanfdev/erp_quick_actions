@@ -40,6 +40,7 @@
       ],
       "exclude_matches": [
         "http://imap.nwk.co.za/*",
+        "http://online.nwk.co.za/*",
         "http://*.nwk.co.za/phpMyAdmin/*",
         "http://*.nwk.co.za/Betrokka/*"
       ],
