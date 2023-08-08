@@ -948,14 +948,14 @@ html.light>body>div.page>div.content>div#innerTab>div>div {
   padding: 7px 8px 5px 8px;
 }
 
-html.light>body>div.page>div.content>div#innerTab>div.addInnerTab>div.addInnerTabDelete {
-  background-color: var(--dark);
-  color: var(--red);
-}
-
 html.light>body>div.page>div.content>div#innerTab>div.selected {
   background-color: var(--light);
   color: var(--green);
+}
+
+html.light>body>div.page>div.content>div#innerTab>div.addInnerTabDelete {
+  background-color: var(--dark);
+  color: var(--red);
 }
 
 html.light>body>div.page>div.content>div#innerTab>div:first-child {

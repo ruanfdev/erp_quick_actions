@@ -55,18 +55,72 @@ var readyStateCheckInterval = setInterval(function () {
 
 		injectProcess();
 
-		// $("html>body>div.page>div.content").append(`<div id="innerTab"><div id="addInnerTabAdd"><i class="fa fa-plus" aria-hidden="true"></i></div><div id="addInnerTab1" class="addInnerTab selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab1').addClass('selected');$('#contentFrame').addClass('selected');"><i class="fa fa-desktop" aria-hidden="true"></i></div></div>`);
+		// $("html>body>div.page>div.content").append(`
+		// 	<div id="innerTab">
+		// 		<div id="addInnerTabAdd">
+		// 			<i class="fa fa-plus" aria-hidden="true"></i>
+		// 		</div>
+		// 		<div id="addInnerTab1" class="addInnerTab selected">
+		// 			<i class="fa fa-desktop" aria-hidden="true"></i>
+		// 		</div>
+		// 	</div>
+		// `);
 		// $("html>body>div.page>div.content>iframe#contentFrame").addClass('selected');
-		// var innerTabNumber = 2;
 
-		// var varaddInnerTabAdd = document.getElementById("addInnerTabAdd");
-		// varaddInnerTabAdd.onclick = function() {
-		// 	$("html>body>div.page>div.content .selected").removeClass('selected');
-		// 	$("html>body>div.page>div.content>#innerTab").append(`<div id="addInnerTab${innerTabNumber}" class="addInnerTab selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab${innerTabNumber}').addClass('selected');$('#addInnerTabContent${innerTabNumber}').addClass('selected');"><i class="fa fa-desktop" aria-hidden="true"></i></div>`);
-		// 	$("html>body>div.page>div.content>#innerTab>#addInnerTab"+innerTabNumber).append(`<div id="addInnerTabDelete${innerTabNumber}" class="addInnerTabDelete selected" onclick="$('html>body>div.page>div.content .selected').removeClass('selected');$('#addInnerTab1').addClass('selected');$('html>body>div.page>div.content>iframe#contentFrame').addClass('selected');$('#addInnerTab${innerTabNumber}').remove();$('#addInnerTabContent${innerTabNumber}').remove();"><i class="fa fa-trash" aria-hidden="true"></i></div>`);
-		// 	$("html>body>div.page>div.content").append(`<iframe id="addInnerTabContent${innerTabNumber}" ng-src="index.php" class="content_obj addInnerTabContent selected" width="100%" height="100%" seamless="" src="index.php"></iframe>`);
-		// 	innerTabNumber++;
+		// var addInnerTab1 = document.getElementById("addInnerTab1");
+		// addInnerTab1.onclick = function () {
+		// 	$('html>body>div.page>div.content>iframe.selected').removeClass('selected');
+		// 	$('html>body>div.page>div.content>#innerTab>div.selected').removeClass('selected');
+		// 	$('#addInnerTab1').addClass('selected');
+		// 	$('#contentFrame').addClass('selected');
 		// }
+
+		// var innerTabNumber = 2;
+		// var varaddInnerTabAdd = document.getElementById("addInnerTabAdd");
+		// varaddInnerTabAdd.onclick = function () {
+		// 	$('html>body>div.page>div.content>iframe.selected').removeClass('selected');
+		// 	$('html>body>div.page>div.content>#innerTab>div.selected').removeClass('selected');
+
+		// 	var newDivAdd = document.createElement("div");
+		// 	newDivAdd.id = 'addInnerTab' + innerTabNumber;
+		// 	newDivAdd.className = 'addInnerTab selected';
+		// 	newDivAdd.innerHTML = '<i class="fa fa-desktop" aria-hidden="true"></i>';
+		// 	$(newDivAdd).click(function () {
+		// 		$('html>body>div.page>div.content>iframe.selected').removeClass('selected');
+		// 		$('html>body>div.page>div.content>#innerTab>div.selected').removeClass('selected');
+		// 		var newDivAddNr = (this.id).substr(-1);
+		// 		$('#addInnerTab' + newDivAddNr).addClass('selected');
+		// 		$('#addInnerTabContent' + newDivAddNr).addClass('selected');
+		// 	});
+		// 	$("html>body>div.page>div.content>#innerTab").append(newDivAdd);
+
+		// 	var newDivDelete = document.createElement("div");
+		// 	newDivDelete.id = 'addInnerTabDelete' + innerTabNumber;
+		// 	newDivDelete.className = 'addInnerTabDelete selected';
+		// 	newDivDelete.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+		// 	$(newDivDelete).click(function () {
+		// 		$('html>body>div.page>div.content>iframe.selected').removeClass('selected');
+		// 		$('html>body>div.page>div.content>#innerTab>div.selected').removeClass('selected');
+		// 		$('#addInnerTab1').addClass('selected');
+		// 		$('html>body>div.page>div.content>iframe#contentFrame').addClass('selected');
+		// 		var newDivDeleteNr = (this.id).substr(-1);
+		// 		$('#addInnerTab' + newDivDeleteNr).remove();
+		// 		$('#addInnerTabContent' + newDivDeleteNr).remove();
+		// 	});
+		// 	$("html>body>div.page>div.content>#innerTab").append(newDivDelete);
+		// 	// $("html>body>div.page>div.content>#innerTab>#addInnerTab" + innerTabNumber).append(`
+
+		// 	var newIframe = document.createElement("iframe");
+		// 	newIframe.id = 'addInnerTabContent' + innerTabNumber;
+		// 	newIframe.className = 'content_obj addInnerTabContent selected';
+		// 	newIframe.src = "index.php";
+		// 	newIframe.width = "100%";
+		// 	newIframe.height = "100%";
+		// 	$("html>body>div.page>div.content").append(newIframe);
+		// 	// 	<iframe id="addInnerTabContent${innerTabNumber}" ng-src="index.php" class="content_obj addInnerTabContent selected" width="100%" height="100%" seamless="" src="index.php"></iframe>
+
+		// 	innerTabNumber++;
+		// };
 	}
 }, 10);
 
@@ -110,7 +164,7 @@ if (isShortListSetDiv != null) {
 			for (var i = 0; i < lis.length; i++) {
 				var name = lis[i].getAttribute('data-keyword-detail');
 				if (name != null) {
-					if (name.toUpperCase().indexOf(filter) == 0) {
+					if (name.toUpperCase().indexOf(filter) > -1) {
 						lis[i].style.display = 'list-item';
 					} else {
 						lis[i].style.display = 'none';
@@ -122,7 +176,9 @@ if (isShortListSetDiv != null) {
 
 	var windowMouseFilter = window.top.$('#ShortcutsList');
 	windowMouseFilter.mouseover(function () {
-		$("#filterShortListInput").select();
+		if ($("#filterShortListInput").val() == '') {
+			$("#filterShortListInput").select();
+		}
 	});
 }
 
@@ -217,6 +273,8 @@ function injectProcess() {
 							window.top.$('title').replaceWith('<title>QA - ' + useTitle + '</title>');
 						}
 					}
+
+					window.top.$("head").append('<link rel="icon" type="image/ico" href="/nwk/images/favicon.ico"></link>');
 
 					$("#lang button span").removeClass("fa-retweet");
 					$("#lang button span").addClass("fa-language");

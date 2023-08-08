@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "6.9.4",
+  "version": "6.9.5",
   "name": "ERP - Quick Actions",
   "description": "ERP - Quick Actions",
   "homepage_url": "https://www.nwk.co.za/",
@@ -19,7 +19,7 @@
     "default_title": "ERP - Quick Actions",
     "default_popup": "src/browser_action/browser_action.html",
     "default_icon": {
-      "16": "icons/icon_16_dev.png"
+      "16": "icons/icon_16.png"
     }
   },
   "permissions": [
