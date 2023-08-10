@@ -55,24 +55,6 @@ var readyStateCheckInterval = setInterval(function () {
 
 		injectProcess();
 
-		var newWidgetDivContainer = document.createElement("div");
-		newWidgetDivContainer.className = 'widgetNrContainer';
-		$(newWidgetDivContainer).insertAfter("html>body>.main");
-
-		var newWidgetDiv = document.createElement("div");
-		newWidgetDiv.id = 'widgetNr1';
-		newWidgetDiv.className = 'widgetNr';
-		newWidgetDiv.innerHTML = '<iframe src="/INLIGTINGSTEGNOLOGIE/TAKKOMS/inl_tkm_001_E_nvg.php"></iframe>';
-		$("html>body>.widgetNrContainer").append(newWidgetDiv);
-
-		var newWidgetDiv = document.createElement("div");
-		newWidgetDiv.id = 'widgetNr2';
-		newWidgetDiv.className = 'widgetNr';
-		newWidgetDiv.innerHTML = '<iframe src="/session.php"></iframe>';
-		$("html>body>.widgetNrContainer").append(newWidgetDiv);
-
-		$("html>body>.main").addClass('widgetsEnabledMain');
-
 		// $("html>body>div.page>div.content").append(`
 		// 	<div id="innerTab">
 		// 		<div id="addInnerTabAdd">
@@ -222,6 +204,7 @@ function injectProcess() {
 		chkedDockHid = result.chkedDockHid;
 		chkedDockCol = result.chkedDockCol;
 		chkedSearchHome = result.chkedSearchHome;
+		chkedHomeWidgets = result.chkedHomeWidgets;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
 		smallBlockSlider = result.smallBlockSlider;
@@ -466,6 +449,65 @@ function injectProcess() {
 						});
 					}
 
+					if (typeof chkedHomeWidgets !== 'undefined') {
+						if (chkedHomeWidgets == true) {
+							$("html>body>.widgetNrContainer").remove();
+							var rulesLength = (result.rules).length;
+							if (rulesLength > 0) {
+								if (result.rules[0].keyword != '') {
+									// $("html").addClass("blockBTN");
+									$("html>body>.main").addClass('widgetsEnabledMain');
+
+									var newWidgetDivContainer = document.createElement("div");
+									newWidgetDivContainer.className = 'widgetNrContainer';
+									$(newWidgetDivContainer).insertAfter("html>body>.main.widgetsEnabledMain");
+
+									if (rulesLength > 3) {
+										var cssHeight = '32vh';
+									} else if (rulesLength == 2) {
+										var cssHeight = '49vh';
+									} else if (rulesLength == 1) {
+										var cssHeight = '99vh';
+									}
+									
+									for (var rulesIndex = 0; rulesIndex < rulesLength; rulesIndex++) {
+										var widgetCounter = rulesIndex+1;
+										var element = (result.rules)[rulesIndex];
+
+										var newWidgetDiv = document.createElement("div");
+										newWidgetDiv.id = 'widgetNr'+widgetCounter;
+										newWidgetDiv.className = 'widgetNr';
+										newWidgetDiv.innerHTML = '<iframe src=/'+element.link+'></iframe>';
+										$("html>body>.widgetNrContainer").append(newWidgetDiv);
+										$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
+
+										if (rulesLength != 1) {
+											if (widgetCounter != 3) {
+												$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+											}
+											if (widgetCounter == rulesLength) {
+												$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+											}
+										}
+										widgetCounter++;
+
+										if (widgetCounter > 3) {
+											break;
+										}
+									}
+								}
+							}
+						} else {
+							$("html").removeClass("blockBTN");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedHomeWidgets: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
 					if (typeof autofill_user !== 'undefined') {
 						if (autofill_user != '' && autofill_pass != '') {
 							var prevUrlLen = window.top.document.referrer.length;
@@ -608,6 +650,7 @@ function injectProcess() {
 					chkedDockHid: false,
 					chkedDockCol: false,
 					chkedSearchHome: false,
+					chkedHomeWidgets: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
 					smallBlockSlider: '130',
@@ -636,6 +679,7 @@ function injectProcess() {
 				chkedDockHid: false,
 				chkedDockCol: false,
 				chkedSearchHome: false,
+				chkedHomeWidgets: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
 				smallBlockSlider: '130',

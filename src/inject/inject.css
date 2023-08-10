@@ -979,14 +979,20 @@ html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
   opacity: 1;
 }
 
+html.light.blockBTN .btn.btn-success,
+html.light.blockBTN .btn.btn-warning,
+html.light.blockBTN .btn.btn-danger {
+  display: none !important;
+}
+
 html.light>body>.main.widgetsEnabledMain {
-  width: 48%;
+  width: 47%;
   height: 100vh;
   float: left;
 }
 
 html.light>body>.widgetNrContainer {
-  width: 51%;
+  width: 52%;
   height: 100vh;
   float: left;
   margin: 5px 0px;
@@ -994,15 +1000,15 @@ html.light>body>.widgetNrContainer {
 
 html.light>body>.widgetNrContainer>div.widgetNr {
   width: 100%;
-  height: 49vh;
+  height: 99vh;
   float: left;
   border-radius: 8px;
   background: var(--userHomeItems);
   padding: 8px;
 }
 
-html.light>body>.widgetNrContainer>div#widgetNr1 {
-  margin-bottom: 5px;
+html.light>body>.widgetNrContainer>.widgetNr.hasNext {
+  margin-bottom: 1vh;
 }
 
 html.light>body>.widgetNrContainer>div.widgetNr>iframe {

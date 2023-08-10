@@ -87,6 +87,7 @@ $(document).ready(function () {
     chkedDockHid = result.chkedDockHid;
     chkedDockCol = result.chkedDockCol;
     chkedSearchHome = result.chkedSearchHome;
+    chkedHomeWidgets = result.chkedHomeWidgets;
     chkedMenus = result.chkedMenus;
     chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -195,6 +196,11 @@ $(document).ready(function () {
       $('#check_search_home').prop('checked', true);
     } else {
       $('#check_search_home').prop('checked', false);
+    }
+    if (chkedHomeWidgets == true) {
+      $('#check_home_widgets').prop('checked', true);
+    } else {
+      $('#check_home_widgets').prop('checked', false);
     }
     if (chkedMenus == true) {
       $('#check_menus').prop('checked', true);
@@ -379,6 +385,7 @@ $(document).ready(function () {
     var chkedDockHid = $('#check_dockHid').is(":checked");
     var chkedDockCol = $('#check_dockCol').is(":checked");
     var chkedSearchHome = $('#check_search_home').is(":checked");
+    var chkedHomeWidgets = $('#check_home_widgets').is(":checked");
 
     if (chkedTheme) {
       nwk_theme = 'light';
@@ -456,7 +463,7 @@ $(document).ready(function () {
     });
 
     chrome.storage.sync.clear(function () {
-      chrome.storage.sync.set({ rules: rules, custColsArr: custColsArr, nwk_theme: nwk_theme, injected: injected, custom_css_block: custom_css_block, custom_js_block: custom_js_block, chkedHeader: chkedHeader, chkedGlow: chkedGlow, chkedRGBhead: chkedRGBhead, chkedNyanCursor: chkedNyanCursor, chkedNewtab: chkedNewtab, chkedCustomCol: chkedCustomCol, chkedHidhead: chkedHidhead, chkedVivaldihead: chkedVivaldihead, chkedDockhead: chkedDockhead, chkedDockBL: chkedDockBL, chkedDockHid: chkedDockHid, chkedDockCol: chkedDockCol, chkedSearchHome: chkedSearchHome, chkedMenus: chkedMenus, chkedMainBlock: chkedMainBlock, smallBlockSlider: smallBlockSlider, autofill_user: autofill_user, autofill_pass: autofill_pass }, function () {
+      chrome.storage.sync.set({ rules: rules, custColsArr: custColsArr, nwk_theme: nwk_theme, injected: injected, custom_css_block: custom_css_block, custom_js_block: custom_js_block, chkedHeader: chkedHeader, chkedGlow: chkedGlow, chkedRGBhead: chkedRGBhead, chkedNyanCursor: chkedNyanCursor, chkedNewtab: chkedNewtab, chkedCustomCol: chkedCustomCol, chkedHidhead: chkedHidhead, chkedVivaldihead: chkedVivaldihead, chkedDockhead: chkedDockhead, chkedDockBL: chkedDockBL, chkedDockHid: chkedDockHid, chkedDockCol: chkedDockCol, chkedSearchHome: chkedSearchHome, chkedHomeWidgets: chkedHomeWidgets, chkedMenus: chkedMenus, chkedMainBlock: chkedMainBlock, smallBlockSlider: smallBlockSlider, autofill_user: autofill_user, autofill_pass: autofill_pass }, function () {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
