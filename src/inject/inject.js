@@ -55,6 +55,24 @@ var readyStateCheckInterval = setInterval(function () {
 
 		injectProcess();
 
+		var newWidgetDivContainer = document.createElement("div");
+		newWidgetDivContainer.className = 'widgetNrContainer';
+		$(newWidgetDivContainer).insertAfter("html>body>.main");
+
+		var newWidgetDiv = document.createElement("div");
+		newWidgetDiv.id = 'widgetNr1';
+		newWidgetDiv.className = 'widgetNr';
+		newWidgetDiv.innerHTML = '<iframe src="/INLIGTINGSTEGNOLOGIE/TAKKOMS/inl_tkm_001_E_nvg.php"></iframe>';
+		$("html>body>.widgetNrContainer").append(newWidgetDiv);
+
+		var newWidgetDiv = document.createElement("div");
+		newWidgetDiv.id = 'widgetNr2';
+		newWidgetDiv.className = 'widgetNr';
+		newWidgetDiv.innerHTML = '<iframe src="/session.php"></iframe>';
+		$("html>body>.widgetNrContainer").append(newWidgetDiv);
+
+		$("html>body>.main").addClass('widgetsEnabledMain');
+
 		// $("html>body>div.page>div.content").append(`
 		// 	<div id="innerTab">
 		// 		<div id="addInnerTabAdd">

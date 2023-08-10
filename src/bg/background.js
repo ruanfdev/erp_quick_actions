@@ -42,7 +42,7 @@ function customRule(envPage) {
       chrome.tabs.create({ url: envURL + 'nwk/index.php' }, function (data) { });
     } else {
       var rulesLen = rules.length;
-      $.each(rules, function (idx, val) {
+      rules.forEach((val, idx) => {
         if (envPage == val.keyword) {
           chrome.tabs.create({ url: envURL + val.link }, function (data) { });
           return false;
