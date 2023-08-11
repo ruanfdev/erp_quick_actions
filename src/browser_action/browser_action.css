@@ -655,7 +655,7 @@ textarea#custom_js_block {
 }
 
 p.section_description {
-  margin: 2px 0px;
+  margin: 10px 0px 0px 3px;
 }
 
 h3+p.section_description {
@@ -766,6 +766,22 @@ h3+p.section_description {
   background: var(--green);
   cursor: pointer;
   border-radius: 5px;
+}
+
+.row.h3select {
+  margin: 10px 0px;
+}
+
+.row.h3select h3 {
+  margin: 3px 0px 0px;
+}
+
+.row.h3select h3>select.widgetProgramSelect {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--green);
+  outline: none;
+  cursor: pointer;
 }
 
 

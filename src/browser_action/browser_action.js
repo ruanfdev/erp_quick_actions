@@ -87,7 +87,12 @@ $(document).ready(function () {
     chkedDockHid = result.chkedDockHid;
     chkedDockCol = result.chkedDockCol;
     chkedSearchHome = result.chkedSearchHome;
-    chkedHomeWidgets = result.chkedHomeWidgets;
+    chkedHomeWidgets1 = result.chkedHomeWidgets1;
+    chkedHomeWidgets1link = result.chkedHomeWidgets1link;
+    chkedHomeWidgets2 = result.chkedHomeWidgets2;
+    chkedHomeWidgets2link = result.chkedHomeWidgets2link;
+    chkedHomeWidgets3 = result.chkedHomeWidgets3;
+    chkedHomeWidgets3link = result.chkedHomeWidgets3link;
     chkedMenus = result.chkedMenus;
     chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -197,10 +202,26 @@ $(document).ready(function () {
     } else {
       $('#check_search_home').prop('checked', false);
     }
-    if (chkedHomeWidgets == true) {
-      $('#check_home_widgets').prop('checked', true);
+    if (chkedHomeWidgets1 == true) {
+      $('#check_home_widgets_1').prop('checked', true);
+      $('#widgetProgram1').val(chkedHomeWidgets1link);
     } else {
-      $('#check_home_widgets').prop('checked', false);
+      $('#check_home_widgets_1').prop('checked', false);
+      $('#widgetProgram1').val('');
+    }
+    if (chkedHomeWidgets2 == true) {
+      $('#check_home_widgets_2').prop('checked', true);
+      $('#widgetProgram2').val(chkedHomeWidgets2link);
+    } else {
+      $('#check_home_widgets_2').prop('checked', false);
+      $('#widgetProgram2').val('');
+    }
+    if (chkedHomeWidgets3 == true) {
+      $('#check_home_widgets_3').prop('checked', true);
+      $('#widgetProgram3').val(chkedHomeWidgets3link);
+    } else {
+      $('#check_home_widgets_3').prop('checked', false);
+      $('#widgetProgram3').val('');
     }
     if (chkedMenus == true) {
       $('#check_menus').prop('checked', true);
@@ -385,7 +406,12 @@ $(document).ready(function () {
     var chkedDockHid = $('#check_dockHid').is(":checked");
     var chkedDockCol = $('#check_dockCol').is(":checked");
     var chkedSearchHome = $('#check_search_home').is(":checked");
-    var chkedHomeWidgets = $('#check_home_widgets').is(":checked");
+    var chkedHomeWidgets1 = $('#check_home_widgets_1').is(":checked");
+    var chkedHomeWidgets1link = $('#widgetProgram1').val();
+    var chkedHomeWidgets2 = $('#check_home_widgets_2').is(":checked");
+    var chkedHomeWidgets2link = $('#widgetProgram2').val();
+    var chkedHomeWidgets3 = $('#check_home_widgets_3').is(":checked");
+    var chkedHomeWidgets3link = $('#widgetProgram3').val();
 
     if (chkedTheme) {
       nwk_theme = 'light';
@@ -463,7 +489,38 @@ $(document).ready(function () {
     });
 
     chrome.storage.sync.clear(function () {
-      chrome.storage.sync.set({ rules: rules, custColsArr: custColsArr, nwk_theme: nwk_theme, injected: injected, custom_css_block: custom_css_block, custom_js_block: custom_js_block, chkedHeader: chkedHeader, chkedGlow: chkedGlow, chkedRGBhead: chkedRGBhead, chkedNyanCursor: chkedNyanCursor, chkedNewtab: chkedNewtab, chkedCustomCol: chkedCustomCol, chkedHidhead: chkedHidhead, chkedVivaldihead: chkedVivaldihead, chkedDockhead: chkedDockhead, chkedDockBL: chkedDockBL, chkedDockHid: chkedDockHid, chkedDockCol: chkedDockCol, chkedSearchHome: chkedSearchHome, chkedHomeWidgets: chkedHomeWidgets, chkedMenus: chkedMenus, chkedMainBlock: chkedMainBlock, smallBlockSlider: smallBlockSlider, autofill_user: autofill_user, autofill_pass: autofill_pass }, function () {
+      chrome.storage.sync.set({
+        rules: rules,
+        custColsArr: custColsArr,
+        nwk_theme: nwk_theme,
+        injected: injected,
+        custom_css_block: custom_css_block,
+        custom_js_block: custom_js_block,
+        chkedHeader: chkedHeader,
+        chkedGlow: chkedGlow,
+        chkedRGBhead: chkedRGBhead,
+        chkedNyanCursor: chkedNyanCursor,
+        chkedNewtab: chkedNewtab,
+        chkedCustomCol: chkedCustomCol,
+        chkedHidhead: chkedHidhead,
+        chkedVivaldihead: chkedVivaldihead,
+        chkedDockhead: chkedDockhead,
+        chkedDockBL: chkedDockBL,
+        chkedDockHid: chkedDockHid,
+        chkedDockCol: chkedDockCol,
+        chkedSearchHome: chkedSearchHome,
+        chkedHomeWidgets1: chkedHomeWidgets1,
+        chkedHomeWidgets1link: chkedHomeWidgets1link,
+        chkedHomeWidgets2: chkedHomeWidgets2,
+        chkedHomeWidgets2link: chkedHomeWidgets2link,
+        chkedHomeWidgets3: chkedHomeWidgets3,
+        chkedHomeWidgets3link: chkedHomeWidgets3link,
+        chkedMenus: chkedMenus,
+        chkedMainBlock: chkedMainBlock,
+        smallBlockSlider: smallBlockSlider,
+        autofill_user: autofill_user,
+        autofill_pass: autofill_pass
+      }, function () {
         bar1.set(100);
         setTimeout(function () {
           document.getElementById("ldContain").style.opacity = "0";
