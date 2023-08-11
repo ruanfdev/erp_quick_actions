@@ -499,9 +499,9 @@ function injectProcess() {
 						});
 					}
 					if (chkedHomeWidgetsVar > 0) {
-						// if (window.location !== window.parent.location) {
-						// 	$("html").addClass("blockBTN");
-						// }
+						if (window.location !== window.parent.location && !$(window.frameElement).hasClass("cboxIframe")) {
+							$("html").addClass("blockBTN");
+						}
 
 						if (chkedHomeWidgetsVar == 3) {
 							var cssHeight = '32vh';
