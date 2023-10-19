@@ -206,10 +206,19 @@ function injectProcess() {
 		chkedSearchHome = result.chkedSearchHome;
 		chkedHomeWidgets1 = result.chkedHomeWidgets1;
 		chkedHomeWidgets1link = result.chkedHomeWidgets1link;
+		chkedHomeWidgets1prd = result.chkedHomeWidgets1prd;
+		chkedHomeWidgets1dev = result.chkedHomeWidgets1dev;
+		chkedHomeWidgets1qa = result.chkedHomeWidgets1qa;
 		chkedHomeWidgets2 = result.chkedHomeWidgets2;
 		chkedHomeWidgets2link = result.chkedHomeWidgets2link;
+		chkedHomeWidgets2prd = result.chkedHomeWidgets2prd;
+		chkedHomeWidgets2dev = result.chkedHomeWidgets2dev;
+		chkedHomeWidgets2qa = result.chkedHomeWidgets2qa;
 		chkedHomeWidgets3 = result.chkedHomeWidgets3;
 		chkedHomeWidgets3link = result.chkedHomeWidgets3link;
+		chkedHomeWidgets3prd = result.chkedHomeWidgets3prd;
+		chkedHomeWidgets3dev = result.chkedHomeWidgets3dev;
+		chkedHomeWidgets3qa = result.chkedHomeWidgets3qa;
 		chkedMenus = result.chkedMenus;
 		chkedMainBlock = result.chkedMainBlock;
 		smallBlockSlider = result.smallBlockSlider;
@@ -457,14 +466,19 @@ function injectProcess() {
 					var chkedHomeWidgetsVar = 0;
 					if (typeof chkedHomeWidgets1 !== 'undefined') {
 						if (chkedHomeWidgets1 == true) {
-							chkedHomeWidgetsVar++;
+							if ((chkedHomeWidgets1prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets1dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets1qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
+								chkedHomeWidgetsVar++;
+							}
 						} else {
 							chkedHomeWidgets1link = '';
 						}
 					} else {
 						chrome.storage.sync.set({
 							chkedHomeWidgets1: false,
-							chkedHomeWidgets1link: ''
+							chkedHomeWidgets1link: '',
+							chkedHomeWidgets1prd: false,
+							chkedHomeWidgets1dev: false,
+							chkedHomeWidgets1qa: false
 							
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
@@ -472,34 +486,44 @@ function injectProcess() {
 					}
 					if (typeof chkedHomeWidgets2 !== 'undefined') {
 						if (chkedHomeWidgets2 == true) {
-							chkedHomeWidgetsVar++;
+							if ((chkedHomeWidgets2prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets2dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets2qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
+								chkedHomeWidgetsVar++;
+							}
 						} else {
 							chkedHomeWidgets2link = '';
 						}
 					} else {
 						chrome.storage.sync.set({
 							chkedHomeWidgets2: false,
-							chkedHomeWidgets2link: ''
+							chkedHomeWidgets2link: '',
+							chkedHomeWidgets2prd: false,
+							chkedHomeWidgets2dev: false,
+							chkedHomeWidgets2qa: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
 					if (typeof chkedHomeWidgets3 !== 'undefined') {
 						if (chkedHomeWidgets3 == true) {
-							chkedHomeWidgetsVar++;
+							if ((chkedHomeWidgets3prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets3dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets3qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
+								chkedHomeWidgetsVar++;
+							}
 						} else {
 							chkedHomeWidgets3link = '';
 						}
 					} else {
 						chrome.storage.sync.set({
 							chkedHomeWidgets3: false,
-							chkedHomeWidgets3link: ''
+							chkedHomeWidgets3link: '',
+							chkedHomeWidgets3prd: false,
+							chkedHomeWidgets3dev: false,
+							chkedHomeWidgets3qa: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
 					}
 					if (chkedHomeWidgetsVar > 0) {
-						if (window.location !== window.parent.location && !$(window.frameElement).hasClass("cboxIframe")) {
+						if (window.location !== window.parent.location && $(window.frameElement).hasClass("widgetFrameRender")) {
 							$("html").addClass("blockBTN");
 						}
 
@@ -521,54 +545,60 @@ function injectProcess() {
 						var widgetCounter = 1;
 
 						if (chkedHomeWidgets1 == true) {
-							var newWidgetDiv = document.createElement("div");
-							newWidgetDiv.id = 'widgetNr'+widgetCounter;
-							newWidgetDiv.className = 'widgetNr';
-							newWidgetDiv.innerHTML = '<iframe src=/'+chkedHomeWidgets1link+'></iframe>';
-							$("html>body>.widgetNrContainer").append(newWidgetDiv);
-							$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
-							
-							if (widgetCounter < chkedHomeWidgetsVar) {
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+							if ((chkedHomeWidgets1prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets1dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets1qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
+								var newWidgetDiv = document.createElement("div");
+								newWidgetDiv.id = 'widgetNr'+widgetCounter;
+								newWidgetDiv.className = 'widgetNr';
+								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/'+chkedHomeWidgets1link+'></iframe>';
+								$("html>body>.widgetNrContainer").append(newWidgetDiv);
+								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
+								
+								if (widgetCounter < chkedHomeWidgetsVar) {
+									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+								}
+								if (widgetCounter == chkedHomeWidgetsVar) {
+									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+								}
+								widgetCounter++;
 							}
-							if (widgetCounter == chkedHomeWidgetsVar) {
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
-							}
-							widgetCounter++;
 						}
 
 						if (chkedHomeWidgets2 == true) {
-							var newWidgetDiv = document.createElement("div");
-							newWidgetDiv.id = 'widgetNr'+widgetCounter;
-							newWidgetDiv.className = 'widgetNr';
-							newWidgetDiv.innerHTML = '<iframe src=/'+chkedHomeWidgets2link+'></iframe>';
-							$("html>body>.widgetNrContainer").append(newWidgetDiv);
-							$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
-							
-							if (widgetCounter < chkedHomeWidgetsVar) {
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+							if ((chkedHomeWidgets2prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets2dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets2qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
+								var newWidgetDiv = document.createElement("div");
+								newWidgetDiv.id = 'widgetNr'+widgetCounter;
+								newWidgetDiv.className = 'widgetNr';
+								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/'+chkedHomeWidgets2link+'></iframe>';
+								$("html>body>.widgetNrContainer").append(newWidgetDiv);
+								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
+								
+								if (widgetCounter < chkedHomeWidgetsVar) {
+									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+								}
+								if (widgetCounter == chkedHomeWidgetsVar) {
+									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+								}
+								widgetCounter++;
 							}
-							if (widgetCounter == chkedHomeWidgetsVar) {
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
-							}
-							widgetCounter++;
 						}
 
 						if (chkedHomeWidgets3 == true) {
-							var newWidgetDiv = document.createElement("div");
-							newWidgetDiv.id = 'widgetNr'+widgetCounter;
-							newWidgetDiv.className = 'widgetNr';
-							newWidgetDiv.innerHTML = '<iframe src=/'+chkedHomeWidgets3link+'></iframe>';
-							$("html>body>.widgetNrContainer").append(newWidgetDiv);
-							$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
-							
-							if (widgetCounter < chkedHomeWidgetsVar) {
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+							if ((chkedHomeWidgets3prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets3dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets3qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
+								var newWidgetDiv = document.createElement("div");
+								newWidgetDiv.id = 'widgetNr'+widgetCounter;
+								newWidgetDiv.className = 'widgetNr';
+								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/'+chkedHomeWidgets3link+'></iframe>';
+								$("html>body>.widgetNrContainer").append(newWidgetDiv);
+								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
+								
+								if (widgetCounter < chkedHomeWidgetsVar) {
+									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+								}
+								if (widgetCounter == chkedHomeWidgetsVar) {
+									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+								}
+								widgetCounter++;
 							}
-							if (widgetCounter == chkedHomeWidgetsVar) {
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
-							}
-							widgetCounter++;
 						}
 					} else {
 						$("html").removeClass("blockBTN");
@@ -718,10 +748,19 @@ function injectProcess() {
 					chkedSearchHome: false,
 					chkedHomeWidgets1: false,
 					chkedHomeWidgets1link: '',
+					chkedHomeWidgets1prd: false,
+					chkedHomeWidgets1dev: false,
+					chkedHomeWidgets1qa: false,
 					chkedHomeWidgets2: false,
 					chkedHomeWidgets2link: '',
+					chkedHomeWidgets2prd: false,
+					chkedHomeWidgets2dev: false,
+					chkedHomeWidgets2qa: false,
 					chkedHomeWidgets3: false,
 					chkedHomeWidgets3link: '',
+					chkedHomeWidgets3prd: false,
+					chkedHomeWidgets3dev: false,
+					chkedHomeWidgets3qa: false,
 					chkedMenus: false,
 					chkedMainBlock: false,
 					smallBlockSlider: '130',
@@ -752,10 +791,19 @@ function injectProcess() {
 				chkedSearchHome: false,
 				chkedHomeWidgets1: false,
 				chkedHomeWidgets1link: '',
+				chkedHomeWidgets1prd: false,
+				chkedHomeWidgets1dev: false,
+				chkedHomeWidgets1qa: false,
 				chkedHomeWidgets2: false,
 				chkedHomeWidgets2link: '',
+				chkedHomeWidgets2prd: false,
+				chkedHomeWidgets2dev: false,
+				chkedHomeWidgets2qa: false,
 				chkedHomeWidgets3: false,
 				chkedHomeWidgets3link: '',
+				chkedHomeWidgets3prd: false,
+				chkedHomeWidgets3dev: false,
+				chkedHomeWidgets3qa: false,
 				chkedMenus: false,
 				chkedMainBlock: false,
 				smallBlockSlider: '130',

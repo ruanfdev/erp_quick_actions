@@ -89,10 +89,19 @@ $(document).ready(function () {
     chkedSearchHome = result.chkedSearchHome;
     chkedHomeWidgets1 = result.chkedHomeWidgets1;
     chkedHomeWidgets1link = result.chkedHomeWidgets1link;
+    chkedHomeWidgets1prd = result.chkedHomeWidgets1prd;
+    chkedHomeWidgets1dev = result.chkedHomeWidgets1dev;
+    chkedHomeWidgets1qa = result.chkedHomeWidgets1qa;
     chkedHomeWidgets2 = result.chkedHomeWidgets2;
     chkedHomeWidgets2link = result.chkedHomeWidgets2link;
+    chkedHomeWidgets2prd = result.chkedHomeWidgets2prd;
+    chkedHomeWidgets2dev = result.chkedHomeWidgets2dev;
+    chkedHomeWidgets2qa = result.chkedHomeWidgets2qa;
     chkedHomeWidgets3 = result.chkedHomeWidgets3;
     chkedHomeWidgets3link = result.chkedHomeWidgets3link;
+    chkedHomeWidgets3prd = result.chkedHomeWidgets3prd;
+    chkedHomeWidgets3dev = result.chkedHomeWidgets3dev;
+    chkedHomeWidgets3qa = result.chkedHomeWidgets3qa;
     chkedMenus = result.chkedMenus;
     chkedMainBlock = result.chkedMainBlock;
     smallBlockSlider = result.smallBlockSlider;
@@ -205,23 +214,77 @@ $(document).ready(function () {
     if (chkedHomeWidgets1 == true) {
       $('#check_home_widgets_1').prop('checked', true);
       $('#widgetProgram1').val(chkedHomeWidgets1link);
+      if (chkedHomeWidgets1prd == true) {
+        $('#check_home_widgets_1_prd').prop('checked', true);
+      } else {
+        $('#check_home_widgets_1_prd').prop('checked', false);
+      }
+      if (chkedHomeWidgets1dev == true) {
+        $('#check_home_widgets_1_dev').prop('checked', true);
+      } else {
+        $('#check_home_widgets_1_dev').prop('checked', false);
+      }
+      if (chkedHomeWidgets1qa == true) {
+        $('#check_home_widgets_1_qa').prop('checked', true);
+      } else {
+        $('#check_home_widgets_1_qa').prop('checked', false);
+      }
     } else {
       $('#check_home_widgets_1').prop('checked', false);
       $('#widgetProgram1').val('');
+      $('#check_home_widgets_1_prd').prop('checked', false);
+      $('#check_home_widgets_1_dev').prop('checked', false);
+      $('#check_home_widgets_1_qa').prop('checked', false);
     }
     if (chkedHomeWidgets2 == true) {
       $('#check_home_widgets_2').prop('checked', true);
       $('#widgetProgram2').val(chkedHomeWidgets2link);
+      if (chkedHomeWidgets2prd == true) {
+        $('#check_home_widgets_2_prd').prop('checked', true);
+      } else {
+        $('#check_home_widgets_2_prd').prop('checked', false);
+      }
+      if (chkedHomeWidgets2dev == true) {
+        $('#check_home_widgets_2_dev').prop('checked', true);
+      } else {
+        $('#check_home_widgets_2_dev').prop('checked', false);
+      }
+      if (chkedHomeWidgets2qa == true) {
+        $('#check_home_widgets_2_qa').prop('checked', true);
+      } else {
+        $('#check_home_widgets_2_qa').prop('checked', false);
+      }
     } else {
       $('#check_home_widgets_2').prop('checked', false);
       $('#widgetProgram2').val('');
+      $('#check_home_widgets_2_prd').prop('checked', false);
+      $('#check_home_widgets_2_dev').prop('checked', false);
+      $('#check_home_widgets_2_qa').prop('checked', false);
     }
     if (chkedHomeWidgets3 == true) {
       $('#check_home_widgets_3').prop('checked', true);
       $('#widgetProgram3').val(chkedHomeWidgets3link);
+      if (chkedHomeWidgets3prd == true) {
+        $('#check_home_widgets_3_prd').prop('checked', true);
+      } else {
+        $('#check_home_widgets_3_prd').prop('checked', false);
+      }
+      if (chkedHomeWidgets3dev == true) {
+        $('#check_home_widgets_3_dev').prop('checked', true);
+      } else {
+        $('#check_home_widgets_3_dev').prop('checked', false);
+      }
+      if (chkedHomeWidgets3qa == true) {
+        $('#check_home_widgets_3_qa').prop('checked', true);
+      } else {
+        $('#check_home_widgets_3_qa').prop('checked', false);
+      }
     } else {
       $('#check_home_widgets_3').prop('checked', false);
       $('#widgetProgram3').val('');
+      $('#check_home_widgets_3_prd').prop('checked', false);
+      $('#check_home_widgets_3_dev').prop('checked', false);
+      $('#check_home_widgets_3_qa').prop('checked', false);
     }
     if (chkedMenus == true) {
       $('#check_menus').prop('checked', true);
@@ -408,10 +471,19 @@ $(document).ready(function () {
     var chkedSearchHome = $('#check_search_home').is(":checked");
     var chkedHomeWidgets1 = $('#check_home_widgets_1').is(":checked");
     var chkedHomeWidgets1link = $('#widgetProgram1').val();
+    var chkedHomeWidgets1prd = $('#check_home_widgets_1_prd').is(":checked");
+    var chkedHomeWidgets1dev = $('#check_home_widgets_1_dev').is(":checked");
+    var chkedHomeWidgets1qa = $('#check_home_widgets_1_qa').is(":checked");
     var chkedHomeWidgets2 = $('#check_home_widgets_2').is(":checked");
     var chkedHomeWidgets2link = $('#widgetProgram2').val();
+    var chkedHomeWidgets2prd = $('#check_home_widgets_2_prd').is(":checked");
+    var chkedHomeWidgets2dev = $('#check_home_widgets_2_dev').is(":checked");
+    var chkedHomeWidgets2qa = $('#check_home_widgets_2_qa').is(":checked");
     var chkedHomeWidgets3 = $('#check_home_widgets_3').is(":checked");
     var chkedHomeWidgets3link = $('#widgetProgram3').val();
+    var chkedHomeWidgets3prd = $('#check_home_widgets_3_prd').is(":checked");
+    var chkedHomeWidgets3dev = $('#check_home_widgets_3_dev').is(":checked");
+    var chkedHomeWidgets3qa = $('#check_home_widgets_3_qa').is(":checked");
 
     if (chkedTheme) {
       nwk_theme = 'light';
@@ -464,6 +536,25 @@ $(document).ready(function () {
       chkedDockHid = false;
     }
 
+    if (!chkedHomeWidgets1) {
+      chkedHomeWidgets1link = '';
+      chkedHomeWidgets1prd = false;
+      chkedHomeWidgets1dev = false;
+      chkedHomeWidgets1qa = false;
+    }
+    if (!chkedHomeWidgets2) {
+      chkedHomeWidgets2link = '';
+      chkedHomeWidgets2prd = false;
+      chkedHomeWidgets2dev = false;
+      chkedHomeWidgets2qa = false;
+    }
+    if (!chkedHomeWidgets3) {
+      chkedHomeWidgets3link = '';
+      chkedHomeWidgets3prd = false;
+      chkedHomeWidgets3dev = false;
+      chkedHomeWidgets3qa = false;
+    }
+
     rules = [];
     $('input[name = "mytext[]"]').each(function (index) {
       var input = $(this);
@@ -511,10 +602,19 @@ $(document).ready(function () {
         chkedSearchHome: chkedSearchHome,
         chkedHomeWidgets1: chkedHomeWidgets1,
         chkedHomeWidgets1link: chkedHomeWidgets1link,
+        chkedHomeWidgets1prd: chkedHomeWidgets1prd,
+        chkedHomeWidgets1dev: chkedHomeWidgets1dev,
+        chkedHomeWidgets1qa: chkedHomeWidgets1qa,
         chkedHomeWidgets2: chkedHomeWidgets2,
         chkedHomeWidgets2link: chkedHomeWidgets2link,
+        chkedHomeWidgets2prd: chkedHomeWidgets2prd,
+        chkedHomeWidgets2dev: chkedHomeWidgets2dev,
+        chkedHomeWidgets2qa: chkedHomeWidgets2qa,
         chkedHomeWidgets3: chkedHomeWidgets3,
         chkedHomeWidgets3link: chkedHomeWidgets3link,
+        chkedHomeWidgets3prd: chkedHomeWidgets3prd,
+        chkedHomeWidgets3dev: chkedHomeWidgets3dev,
+        chkedHomeWidgets3qa: chkedHomeWidgets3qa,
         chkedMenus: chkedMenus,
         chkedMainBlock: chkedMainBlock,
         smallBlockSlider: smallBlockSlider,
