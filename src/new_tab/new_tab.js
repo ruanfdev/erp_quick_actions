@@ -65,7 +65,8 @@ $(document).ready(function () {
                         $(this).removeClass('selected');
                     });
                     $(this).parent().addClass('selected');
-                    $(textArea).val($(this).html());
+                    var tempHtmlVal = $(this).html()
+                    $(textArea).val(tempHtmlVal.replace(/&amp;/g, '&'));
                     $(textArea).focus();
                 });
 
