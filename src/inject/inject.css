@@ -1025,6 +1025,86 @@ html.light.searchHome #ShortcutsList>div#filterShortList {
   display: block;
 }
 
+html.light.blockBTN body .datagrid {
+  max-height: 86vh !important;
+}
+
+html.light.blockBTN body .datagrid .panel-body {
+  max-height: 78vh !important;
+}
+
+html.light.blockBTN body .datagrid .panel-body .datagrid-view {
+  max-height: 68vh !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view1 {
+  display: none !important;
+  max-width: 0vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td div span:first-child,
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td div {
+  display: inline-block !important;
+  white-space: initial !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEKNOMMER"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEKNOMMER"] div span:first-child {
+  width: 14vw !important;
+  max-width: 14vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEK_VAN"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEK_VAN"] div span:first-child {
+  width: 12vw !important;
+  max-width: 12vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEK_VAN"] div {
+  max-width: 100% !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_BEPLANNINGSDATUM"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_BEPLANNINGSDATUM"] div span:first-child {
+  width: 13vw !important;
+  max-width: 13vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEK"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEK"] div span:first-child {
+  width: 44vw !important;
+  max-width: 44vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_NAVRAAG"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_NAVRAAG"] div span:first-child {
+  width: 7vw !important;
+  max-width: 7vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEK_VAN"] div,
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_BEPLANNINGSDATUM"] div,
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEK"] div,
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_NAVRAAG"] div {
+  max-width: 100% !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td div {
+  padding: 0 0 0 1px !important;
+  min-width: 99% !important;
+  max-width: 99% !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_STATUS"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT_NO"] {
+  visibility: hidden !important;
+  max-width: 0vw !important;
+  border: none !important;
+}
+
 html.light.nyanCursor,
 html.light.nyanCursor * {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat925.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat925.png), auto !important;
