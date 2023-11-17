@@ -728,6 +728,11 @@ function injectProcess() {
 							window.top.$('html #header_container .werkstasie').css('padding-top', '13px');
 						}
 					}
+
+					var element007 = document.querySelector('i[title*="srv_upl_007_Z_nvg"]');
+					if (element007) {
+						element007.parentNode.classList.add('leergids_browse');
+					}
 				}
 			} else {
 				chrome.storage.sync.set({

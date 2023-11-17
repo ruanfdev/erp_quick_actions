@@ -1105,6 +1105,48 @@ html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRI
   border: none !important;
 }
 
+html.light div.leergids_browse + fieldset form[method="post"] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"],
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a {
+  width: 16%;
+  margin: 3px;
+  padding: 5px !important;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: var(--darkLight) !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"]:hover,
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a:hover {
+  background-color: var(--darker) !important;
+  text-decoration: none;
+  color: var(--light);
+}
+
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] + br,
+html.light div.leergids_browse + fieldset form[method="post"] button:first-child {
+  display: none !important;
+}
+
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] span.fa.fa-folder,
+html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a span.fa.fa-file {
+  transform: scale(2);
+  padding: 10px;
+}
+
 html.light.nyanCursor,
 html.light.nyanCursor * {
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat925.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat925.png), auto !important;
