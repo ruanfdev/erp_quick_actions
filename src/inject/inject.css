@@ -90,52 +90,11 @@ html.light .header .child {
 }
 
 html.light .login_div {
+  background-color: var(--dark);
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
 }
-
-/* html.light form[action="/nwk/login.php"] div.login_div {
-  margin: 0;
-  padding: 0;
-  width: 98vw;
-  height: 98vh;
-  box-shadow: none;
-  border: none;
-}
-
-html.light form[action="/nwk/login.php"] div.login_div div.row:first-child {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-}
-
-html.light form[action="/nwk/login.php"] div.login_div div.row:last-child {
-  width: 100vw;
-  position: absolute;
-  bottom: 0;
-}
-
-html.light form[action="/nwk/login.php"] div.login_div div.row:last-child > div:first-child {
-  position: absolute;
-  bottom: 1%;
-  left: 1%;
-  background: var(--dark);
-  border-radius: 5px;
-  padding: 5px;
-  max-width: 150px;
-}
-
-html.light form[action="/nwk/login.php"] div.login_div div.row div.login_logo {
-  min-width: 300px;
-  max-width: 25%;
-}
-
-html.light form[action="/nwk/login.php"] div.login_div br,
-html.light form[action="/nwk/login.php"] div.login_div div.row div.login_logo br,
-html.light form[action="/nwk/login.php"] div.login_div div.row div.login_logo strong {
-  display: none;
-} */
 
 html.light .btn.btn-success,
 html.light .btn.btn-warning,
