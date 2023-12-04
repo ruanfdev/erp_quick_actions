@@ -982,8 +982,17 @@ html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
 
 html.light.blockBTN .btn.btn-success,
 html.light.blockBTN .btn.btn-warning,
-html.light.blockBTN .btn.btn-danger {
+html.light.blockBTN .btn.btn-danger,
+html.light.blockBTN i.fa.fa-info-circle {
   display: none !important;
+}
+
+html.light.userCSS.blockBTN body,
+html.light.userCSS.blockBTN div#cboxContent,
+html.light.userCSS.blockBTN div#cboxOverlay,
+html.light.userCSS.blockBTN .tabs-panels .panel-html,
+html.light.userCSS.blockBTN div#cboxLoadedContent iframe {
+  background: var(--dark) !important
 }
 
 html.light>body>.main.widgetsEnabledMain {
