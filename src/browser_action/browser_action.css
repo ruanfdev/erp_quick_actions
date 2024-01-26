@@ -63,6 +63,7 @@ h1#custom_css_block_header {
   background: var(--light);
   box-shadow: var(--boxShadMed);
   border-radius: 0 0 5px 5px;
+  
 }
 
 .container1 {
@@ -75,7 +76,7 @@ h1#custom_css_block_header {
   padding: 10px 5px;
   margin: 5px 0px;
   float: left;
-  border: 1px solid var(--green);
+  border: 1px solid #4CAF50;
   width: 92%;
   border-radius: 5px 0px 0px 5px;
   outline: none;
@@ -99,7 +100,7 @@ h1#custom_css_block_header {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--green);
+  border: 1px solid #4CAF50;
   outline: none;
   cursor: text;
 }
@@ -201,7 +202,7 @@ button.import_cust_cols {
 .reset_cust_cols,
 .export_cust_cols,
 .import_cust_cols {
-  border: 1px solid var(--btnWarning);
+  border: 1px solid #FF5722;
 }
 
 .save_form_field,
@@ -214,22 +215,22 @@ button.import_cust_cols {
 
 .save_form_field,
 .save_custom_settings {
-  background-color: var(--green);
-  border: 1px solid var(--green);
+  background-color: #4CAF50;
+  border: 1px solid #4CAF50;
 }
 
 .add_form_field {
-  background-color: var(--btnWarning);
-  border: 1px solid var(--btnWarning);
+  background-color: #FF5722;
+  border: 1px solid #FF5722;
 }
 
 .clear_all {
-  background-color: var(--red);
-  border: 1px solid var(--red);
+  background-color: #E53935;
+  border: 1px solid #E53935;
 }
 
 .delete {
-  background-color: var(--red);
+  background-color: #E53935;
   border: none;
   color: var(--light);
   padding: 7px 15px;
@@ -363,7 +364,7 @@ p#versionText {
 
 #tooltipChange {
   position: absolute;
-  color: var(--green);
+  color: #4CAF50;
   display: none;
   cursor: help;
   font-size: 0.8em;
@@ -381,7 +382,7 @@ p#versionText {
   z-index: 1;
   top: 150%;
   left: 50%;
-  background-color: var(--green);
+  background-color: #4CAF50;
   width: 300px;
   margin-left: 16px;
   margin-top: -42px;
@@ -576,7 +577,7 @@ table.input tr td[colspan="6"] {
 
 .inject_container input:checked~.checkmark,
 .inject_container input:checked~.checkmark_side {
-  background-color: var(--green);
+  background-color: #4CAF50;
 }
 
 .checkmark:after,
@@ -605,7 +606,7 @@ table.input tr td[colspan="6"] {
 }
 
 input[disabled]+span.checkmark_side {
-  background-color: var(--red);
+  background-color: #E53935;
 }
 
 #ldContain {
@@ -637,7 +638,7 @@ input[disabled]+span.checkmark_side {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--green);
+  background: #4CAF50;
   border-radius: 5px;
 }
 
@@ -670,17 +671,17 @@ h3+p.section_description {
 }
 
 .sidenav .cm-s-default .cm-qualifier {
-  color: var(--orange);
+  color: #FF5722;
   text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 
 .sidenav .cm-s-default .cm-property {
-  color: var(--green);
+  color: #4CAF50;
   text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 
 .sidenav .cm-s-default .cm-keyword {
-  color: var(--red);
+  color: #E53935;
   text-shadow: 0px 0px 0px var(--boxShadMed);
 }
 
@@ -763,7 +764,7 @@ h3+p.section_description {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: var(--green);
+  background: #4CAF50;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -779,7 +780,7 @@ h3+p.section_description {
 .row.h3select h3>select.widgetProgramSelect {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--green);
+  border: 1px solid #4CAF50;
   outline: none;
   cursor: pointer;
 }
@@ -827,6 +828,10 @@ body.dark .top_container {
 
 body.dark .sidenav {
   background-color: var(--dark);
+}
+
+body.dark .container1 {
+  background-color: var(--darkLight);
 }
 
 body.dark .accordion {

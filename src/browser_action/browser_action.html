@@ -3,16 +3,17 @@
 
 <head>
   <title>ERP - Quick Actions</title>
-  <script src="../../js/jquery/jquery.min.js"></script>
-  <script src="../../loading/loading-bar.js"></script>
-  <script src="browser_action.js"></script>
-  <script src="../../editor/lib/codemirror.js"></script>
-  <script src="../../editor/mode/css/css.js"></script>
-  <script src="../jscolor.js"></script>
   <link rel="stylesheet" href="browser_action.css" />
   <link rel="stylesheet" href="../../loading/loading-bar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../editor/lib/codemirror.css">
+  <script src="../../editor/lib/codemirror.js"></script>
+  <script src="../../editor/mode/css/css.js"></script>
+  <script src="../../editor/mode/javascript/javascript.js"></script>
+  <script src="../../js/jquery/jquery.min.js"></script>
+  <script src="../../loading/loading-bar.js"></script>
+  <script src="browser_action.js"></script>
+  <script src="../jscolor.js"></script>
 </head>
 
 <body id="body">
@@ -85,31 +86,25 @@
     <div class="panel">
       <div class="fifty">
         <ul>
-          <li>index</li>
-          <li>toegang / access</li>
-          <li>taal / lang</li>
-          <li>versoek / request</li>
-          <li>php</li>
-          <li>nat</li>
+          <li>index (Homepage)</li>
+          <li>vb (Requests)</li>
+          <li>times (Login Times)</li>
         </ul>
       </div>
       <div class="fifty">
         <ul>
-          <li>builder</li>
-          <li>codiad</li>
-          <li>tye / times</li>
-          <li>kontak / contact / pers</li>
-          <li>ses</li>
+          <li>pers (Personnel Info)</li>
+          <li>ses (User Session)</li>
         </ul>
       </div>
     </div>
 
-    <!-- Automatic Login -->
+    <!-- Semi-Automatic Login -->
     <button class="accordion">
-      <h1>Automatic Login</h1>
+      <h1>Semi-Automatic Login</h1>
     </button>
     <div class="panel autofill">
-      <p class="section_description">Press "Ctrl + Enter" on an active ERP Tab when logged out to Login (requires PRD, DEV & QA to have the same password)</p>
+      <p class="section_description">Press "Ctrl + Enter" on an active ERP Tab when logged out (ideally having PRD, DEV & QA on the same password)</p>
       <div class="fifty">
         <input type="text" id="autofill_user" placeholder="Username" />
       </div>
@@ -125,7 +120,13 @@
       <h1>Home Screen Widgets</h1>
     </button>
     <div class="panel">
-      <p class="section_description">Enable and select up to 3 widget to show on home screen. Loading time depends on the dataset, for example "Contact Information / Kontakinligting" loads longer</p>
+      <p class="section_description">
+        Enable and select up to 3 widget to show on home screen.
+        <br>
+        Loading time depends on the dataset, for example "Contact Information" takes longer to load.
+        <br>
+        Save, Update &amp; Delete buttons are also automatically hidden inside widgets.
+      </p>
       <div class="row h3select">
         <div class="inject sideinj">
           <label class="inject_container">
@@ -136,9 +137,9 @@
         <h3>
           <select class="widgetProgramSelect" id="widgetProgram1">
             <option value="session.php">Session</option>
-            <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables / Taalveranderlikes</option>
-            <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information / Kontakinligting</option>
-            <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests / Versoeke</option>
+            <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables</option>
+            <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information</option>
+            <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests</option>
           </select>
         </h3>
         <div class="inject sideinj">
@@ -173,9 +174,9 @@
         <h3>
           <select class="widgetProgramSelect" id="widgetProgram2">
             <option value="session.php">Session</option>
-            <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables / Taalveranderlikes</option>
-            <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information / Kontakinligting</option>
-            <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests / Versoeke</option>
+            <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables</option>
+            <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information</option>
+            <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests</option>
           </select>
         </h3>
         <div class="inject sideinj">
@@ -210,9 +211,9 @@
         <h3>
           <select class="widgetProgramSelect" id="widgetProgram3">
             <option value="session.php">Session</option>
-            <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables / Taalveranderlikes</option>
-            <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information / Kontakinligting</option>
-            <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests / Versoeke</option>
+            <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables</option>
+            <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information</option>
+            <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests</option>
           </select>
         </h3>
         <div class="inject sideinj">
@@ -306,7 +307,7 @@
               <span class="checkmark_side"></span>
             </label>
           </div>
-          <h3>Colored Header</h3>
+          <h3>Full Colored Header</h3>
         </div>
         <div class="row">
           <div class="inject sideinj">
@@ -363,15 +364,6 @@
             </label>
           </div>
           <h3>Note taking new tab</h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_nyan_cursor">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3>Nyan Cat Cursor</h3>
         </div>
         <div class="row">
           <div class="inject sideinj">
@@ -554,7 +546,7 @@
             <li>ADDED - Favicon to all pages</li>
             <li>CHANGE - Minimal New Tab Title</li>
             <li>CHANGE - Updated some styles to match environment</li>
-            <li>FIX - Some Custom Link not working</li>
+            <li>FIX - Editor compatibility</li>
             <li>FIX - Home Item Search selecting randomly</li>
             <li>FIX - Styles &amp Various Bugs</li>
           </ul>

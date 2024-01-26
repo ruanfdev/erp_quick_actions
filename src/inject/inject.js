@@ -194,7 +194,6 @@ function injectProcess() {
 		chkedHeader = result.chkedHeader;
 		chkedGlow = result.chkedGlow;
 		chkedRGBhead = result.chkedRGBhead;
-		chkedNyanCursor = result.chkedNyanCursor;
 		chkedNewtab = result.chkedNewtab;
 		chkedCustomCol = result.chkedCustomCol;
 		chkedHidhead = result.chkedHidhead;
@@ -430,20 +429,6 @@ function injectProcess() {
 					} else {
 						chrome.storage.sync.set({
 							chkedRGBhead: false
-						}, function () {
-							// document.getElementsByTagName("head")[0].appendChild(linkLight);
-						});
-					}
-
-					if (typeof chkedNyanCursor !== 'undefined') {
-						if (chkedNyanCursor == true) {
-							$("html").addClass("nyanCursor");
-						} else {
-							$("html").removeClass("nyanCursor");
-						}
-					} else {
-						chrome.storage.sync.set({
-							chkedNyanCursor: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -750,7 +735,6 @@ function injectProcess() {
 					chkedHeader: false,
 					chkedGlow: false,
 					chkedRGBhead: false,
-					chkedNyanCursor: false,
 					chkedNewtab: false,
 					chkedCustomCol: false,
 					chkedHidhead: false,
@@ -793,7 +777,6 @@ function injectProcess() {
 				chkedHeader: false,
 				chkedGlow: false,
 				chkedRGBhead: false,
-				chkedNyanCursor: false,
 				chkedNewtab: false,
 				chkedCustomCol: false,
 				chkedHidhead: false,

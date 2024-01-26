@@ -77,7 +77,6 @@ $(document).ready(function () {
     chkedHeader = result.chkedHeader;
     chkedGlow = result.chkedGlow;
     chkedRGBhead = result.chkedRGBhead;
-    chkedNyanCursor = result.chkedNyanCursor;
     chkedNewtab = result.chkedNewtab;
     chkedCustomCol = result.chkedCustomCol;
     chkedHidhead = result.chkedHidhead;
@@ -160,11 +159,6 @@ $(document).ready(function () {
       $('#check_rgbhead').prop('checked', true);
     } else {
       $('#check_rgbhead').prop('checked', false);
-    }
-    if (chkedNyanCursor == true) {
-      $('#check_nyan_cursor').prop('checked', true);
-    } else {
-      $('#check_nyan_cursor').prop('checked', false);
     }
     if (chkedNewtab == true) {
       $('#check_newtab').prop('checked', true);
@@ -459,7 +453,6 @@ $(document).ready(function () {
     var smallBlockSlider = $('#small_Block_Slider').val();
     var chkedGlow = $('#check_glow').is(":checked");
     var chkedRGBhead = $('#check_rgbhead').is(":checked");
-    var chkedNyanCursor = $('#check_nyan_cursor').is(":checked");
     var chkedNewtab = $('#check_newtab').is(":checked");
     var chkedCustomCol = $('#check_custom_col').is(":checked");
     var chkedHidhead = $('#check_hidhead').is(":checked");
@@ -590,7 +583,6 @@ $(document).ready(function () {
         chkedHeader: chkedHeader,
         chkedGlow: chkedGlow,
         chkedRGBhead: chkedRGBhead,
-        chkedNyanCursor: chkedNyanCursor,
         chkedNewtab: chkedNewtab,
         chkedCustomCol: chkedCustomCol,
         chkedHidhead: chkedHidhead,

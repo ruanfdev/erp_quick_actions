@@ -5,17 +5,17 @@ var shouldReplaceNewTab = false;
 var rules;
 var fixedRules = [
   'index',
-  'toegang / access',
-  'taal / lang',
-  'versoek / request',
-  'php',
-  'nat',
-  'builder',
-  'codiad',
-  'tye / times',
-  'kontak / contact',
-  'ses',
+  'vb',
+  'times',
   'pers',
+  'ses'
+];
+var fixedRulesDesc = [
+  'Homepage',
+  'Requests',
+  'Login Times',
+  'Personnel Info',
+  'User Session'
 ];
 var suggestions = [];
 var startTime = 0;
@@ -69,12 +69,13 @@ function filterCalculations(text) {
   suggestions = [];
   if (filtered.length > 0) {
     for (var i = 0; i < filtered.length; i++) {
-      suggestions.push({ content: 'dev' + filtered[i], description: 'dev' + filtered[i] });
       suggestions.push({ content: 'prd' + filtered[i], description: 'prd' + filtered[i] });
+      suggestions.push({ content: 'dev' + filtered[i], description: 'dev' + filtered[i] });
+      suggestions.push({ content: 'qa' + filtered[i], description: 'qa' + filtered[i] });
     }
   }
   // Set first suggestion as the default suggestion
-  chrome.omnibox.setDefaultSuggestion({ description: 'Rules Matched (' + (filtered.length * 2) + ')' });
+  chrome.omnibox.setDefaultSuggestion({ description: 'Rules Matched (' + (filtered.length * 3) + ')' });
   // Remove the first suggestion from the array since we just suggested it
   // suggestions.shift();
   return true;
@@ -86,50 +87,15 @@ function callDefaults(envPage) {
       chrome.tabs.create({ url: envURL + 'nwk/index.php' }, function (data) { });
       break;
 
-    case 'toegang':
-    case 'access':
-    case 'toegang / access':
-      chrome.tabs.create({ url: envURL + 'ALGEMEEN/MENU/alg_men_010_S_skp.php' }, function (data) { });
-      break;
-
-    case 'taal':
-    case 'lang':
-    case 'taal / lang':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php' }, function (data) { });
-      break;
-
-    case 'versoek':
-    case 'request':
-    case 'versoek / request':
+    case 'vb':
       chrome.tabs.create({ url: envURL + 'ALGEMEEN/VERSOEKE/alg_ver_001_M_kse.php' }, function (data) { });
       break;
 
-    case 'php':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/STELSELS%20ONDERHOUD/inl_sto_086_E_kse.php' }, function (data) { });
-      break;
-
-    case 'nat':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/NATURAL%20STELSELONDERHOUD/inl_nso_001_M_kse.php' }, function (data) { });
-      break;
-
-    case 'builder':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/FORM%20BUILDER/inl_fbr_001_Z_skp.php' }, function (data) { });
-      break;
-
-    case 'codiad':
-      chrome.tabs.create({ url: envURL + 'Codiad/' }, function (data) { });
-      break;
-
-    case 'tye':
     case 'times':
-    case 'tye / times':
       chrome.tabs.create({ url: envURL + 'MENSEKAPITAAL/AANTEKENREGISTER/mhb_aan_014_Z_wsg.php?blad=wysig' }, function (data) { });
       break;
 
-    case 'kontak':
-    case 'contact':
     case 'pers':
-    case 'kontak / contact / pers':
       chrome.tabs.create({ url: envURL + 'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php' }, function (data) { });
       break;
 
@@ -223,6 +189,21 @@ chrome.storage.sync.get(null, function (result) {
       pre = 'Q';
     }
 
+    for (var i = 0; i < fixedRules.length; i++) {
+      chrome.contextMenus.create({
+        "id": pre + fixedRules[i],
+        "title": fixedRulesDesc[i],
+        "parentId": parent
+      });
+    }
+
+    chrome.contextMenus.create({
+      "id": "sep"+indFor,
+      "type": 'separator',
+      "contexts": ["all"],
+      "parentId": parent
+    });
+
     if (rules != undefined && rules[0].keyword != '') {
       for (var i = 0; i < rules.length; i++) {
         chrome.contextMenus.create({
@@ -231,13 +212,6 @@ chrome.storage.sync.get(null, function (result) {
           "parentId": parent
         });
       }
-    }
-    for (var i = 0; i < fixedRules.length; i++) {
-      chrome.contextMenus.create({
-        "id": pre + fixedRules[i],
-        "title": fixedRules[i],
-        "parentId": parent
-      });
     }
   }
   chrome.contextMenus.onClicked.addListener(openERP);

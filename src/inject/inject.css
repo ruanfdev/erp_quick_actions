@@ -983,7 +983,8 @@ html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
 html.light.blockBTN .btn.btn-success,
 html.light.blockBTN .btn.btn-warning,
 html.light.blockBTN .btn.btn-danger,
-html.light.blockBTN i.fa.fa-info-circle {
+html.light.blockBTN i.fa.fa-info-circle,
+html.light.blockBTN .datagrid-toolbar {
   display: none !important;
 }
 
@@ -1044,7 +1045,7 @@ html.light.blockBTN body .datagrid .panel-body {
 }
 
 html.light.blockBTN body .datagrid .panel-body .datagrid-view {
-  max-height: 68vh !important;
+  max-height: 100% !important;
 }
 
 html.light.blockBTN body .datagrid .datagrid-view1 {
@@ -1083,14 +1084,28 @@ html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table t
 
 html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEK"],
 html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEK"] div span:first-child {
-  width: 44vw !important;
-  max-width: 44vw !important;
+  width: 57vw !important;
+  max-width: 57vw !important;
 }
 
 html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_NAVRAAG"],
 html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_NAVRAAG"] div span:first-child {
   width: 7vw !important;
   max-width: 7vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="keyword"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="keyword"] div span:first-child {
+  width: 24vw !important;
+  max-width: 24vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="value_A"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="value_A"] div span:first-child,
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="value_E"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="value_E"] div span:first-child {
+  width: 34vw !important;
+  max-width: 34vw !important;
 }
 
 html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
@@ -1109,7 +1124,10 @@ html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td div {
 
 html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_STATUS"],
 html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT_NO"] {
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT_NO"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_BEPLANNINGSDATUM"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="log"],
+html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="restore"] {
   visibility: hidden !important;
   max-width: 0vw !important;
   border: none !important;
@@ -1155,18 +1173,4 @@ html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[
 html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a span.fa.fa-file {
   transform: scale(2);
   padding: 10px;
-}
-
-html.light.nyanCursor,
-html.light.nyanCursor * {
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat925.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat925.png), auto !important;
-}
-
-html.light.nyanCursor a,
-html.light.nyanCursor a *,
-html.light.nyanCursor button,
-html.light.nyanCursor button *,
-html.light.nyanCursor .btn,
-html.light.nyanCursor .btn * {
-  cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), auto !important;
 }
