@@ -5,17 +5,17 @@ var shouldReplaceNewTab = false;
 var rules;
 var fixedRules = [
   'index',
-  'toegang / access',
-  'taal / lang',
-  'versoek / request',
-  'php',
-  'nat',
-  'builder',
-  'codiad',
-  'tye / times',
-  'kontak / contact',
-  'ses',
+  'vb',
+  'times',
   'pers',
+  'ses'
+];
+var fixedRulesDesc = [
+  'Homepage',
+  'Requests',
+  'Login Times',
+  'Personnel Info',
+  'User Session'
 ];
 var suggestions = [];
 var startTime = 0;
@@ -69,12 +69,13 @@ function filterCalculations(text) {
   suggestions = [];
   if (filtered.length > 0) {
     for (var i = 0; i < filtered.length; i++) {
-      suggestions.push({ content: 'dev' + filtered[i], description: 'dev' + filtered[i] });
       suggestions.push({ content: 'prd' + filtered[i], description: 'prd' + filtered[i] });
+      suggestions.push({ content: 'dev' + filtered[i], description: 'dev' + filtered[i] });
+      suggestions.push({ content: 'qa' + filtered[i], description: 'qa' + filtered[i] });
     }
   }
   // Set first suggestion as the default suggestion
-  chrome.omnibox.setDefaultSuggestion({ description: 'Rules Matched (' + (filtered.length * 2) + ')' });
+  chrome.omnibox.setDefaultSuggestion({ description: 'Rules Matched (' + (filtered.length * 3) + ')' });
   // Remove the first suggestion from the array since we just suggested it
   // suggestions.shift();
   return true;
@@ -188,6 +189,21 @@ chrome.storage.sync.get(null, function (result) {
       pre = 'Q';
     }
 
+    for (var i = 0; i < fixedRules.length; i++) {
+      chrome.contextMenus.create({
+        "id": pre + fixedRules[i],
+        "title": fixedRulesDesc[i],
+        "parentId": parent
+      });
+    }
+
+    chrome.contextMenus.create({
+      "id": "sep"+indFor,
+      "type": 'separator',
+      "contexts": ["all"],
+      "parentId": parent
+    });
+
     if (rules != undefined && rules[0].keyword != '') {
       for (var i = 0; i < rules.length; i++) {
         chrome.contextMenus.create({
@@ -196,13 +212,6 @@ chrome.storage.sync.get(null, function (result) {
           "parentId": parent
         });
       }
-    }
-    for (var i = 0; i < fixedRules.length; i++) {
-      chrome.contextMenus.create({
-        "id": pre + fixedRules[i],
-        "title": fixedRules[i],
-        "parentId": parent
-      });
     }
   }
   chrome.contextMenus.onClicked.addListener(openERP);
