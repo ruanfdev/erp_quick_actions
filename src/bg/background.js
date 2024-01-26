@@ -86,50 +86,15 @@ function callDefaults(envPage) {
       chrome.tabs.create({ url: envURL + 'nwk/index.php' }, function (data) { });
       break;
 
-    case 'toegang':
-    case 'access':
-    case 'toegang / access':
-      chrome.tabs.create({ url: envURL + 'ALGEMEEN/MENU/alg_men_010_S_skp.php' }, function (data) { });
-      break;
-
-    case 'taal':
-    case 'lang':
-    case 'taal / lang':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php' }, function (data) { });
-      break;
-
-    case 'versoek':
-    case 'request':
-    case 'versoek / request':
+    case 'vb':
       chrome.tabs.create({ url: envURL + 'ALGEMEEN/VERSOEKE/alg_ver_001_M_kse.php' }, function (data) { });
       break;
 
-    case 'php':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/STELSELS%20ONDERHOUD/inl_sto_086_E_kse.php' }, function (data) { });
-      break;
-
-    case 'nat':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/NATURAL%20STELSELONDERHOUD/inl_nso_001_M_kse.php' }, function (data) { });
-      break;
-
-    case 'builder':
-      chrome.tabs.create({ url: envURL + 'INLIGTINGSTEGNOLOGIE/FORM%20BUILDER/inl_fbr_001_Z_skp.php' }, function (data) { });
-      break;
-
-    case 'codiad':
-      chrome.tabs.create({ url: envURL + 'Codiad/' }, function (data) { });
-      break;
-
-    case 'tye':
     case 'times':
-    case 'tye / times':
       chrome.tabs.create({ url: envURL + 'MENSEKAPITAAL/AANTEKENREGISTER/mhb_aan_014_Z_wsg.php?blad=wysig' }, function (data) { });
       break;
 
-    case 'kontak':
-    case 'contact':
     case 'pers':
-    case 'kontak / contact / pers':
       chrome.tabs.create({ url: envURL + 'ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php' }, function (data) { });
       break;
 
