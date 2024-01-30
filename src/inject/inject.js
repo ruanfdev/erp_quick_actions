@@ -203,6 +203,7 @@ function injectProcess() {
 		chkedDockHid = result.chkedDockHid;
 		chkedDockCol = result.chkedDockCol;
 		chkedSearchHome = result.chkedSearchHome;
+		chkedSkandeerAlt = result.chkedSkandeerAlt;
 		chkedHomeWidgets1 = result.chkedHomeWidgets1;
 		chkedHomeWidgets1link = result.chkedHomeWidgets1link;
 		chkedHomeWidgets1prd = result.chkedHomeWidgets1prd;
@@ -443,6 +444,20 @@ function injectProcess() {
 					} else {
 						chrome.storage.sync.set({
 							chkedSearchHome: false
+						}, function () {
+							// document.getElementsByTagName("head")[0].appendChild(linkLight);
+						});
+					}
+
+					if (typeof chkedSkandeerAlt !== 'undefined') {
+						if (chkedSkandeerAlt == true) {
+							$("html").addClass("skandeerAlt");
+						} else {
+							$("html").removeClass("skandeerAlt");
+						}
+					} else {
+						chrome.storage.sync.set({
+							chkedSkandeerAlt: false
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -744,6 +759,7 @@ function injectProcess() {
 					chkedDockHid: false,
 					chkedDockCol: false,
 					chkedSearchHome: false,
+					chkedSkandeerAlt: false,
 					chkedHomeWidgets1: false,
 					chkedHomeWidgets1link: '',
 					chkedHomeWidgets1prd: false,
@@ -786,6 +802,7 @@ function injectProcess() {
 				chkedDockHid: false,
 				chkedDockCol: false,
 				chkedSearchHome: false,
+				chkedSkandeerAlt: false,
 				chkedHomeWidgets1: false,
 				chkedHomeWidgets1link: '',
 				chkedHomeWidgets1prd: false,
