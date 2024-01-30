@@ -86,6 +86,7 @@ $(document).ready(function () {
     chkedDockHid = result.chkedDockHid;
     chkedDockCol = result.chkedDockCol;
     chkedSearchHome = result.chkedSearchHome;
+    chkedSkandeerAlt = result.chkedSkandeerAlt;
     chkedHomeWidgets1 = result.chkedHomeWidgets1;
     chkedHomeWidgets1link = result.chkedHomeWidgets1link;
     chkedHomeWidgets1prd = result.chkedHomeWidgets1prd;
@@ -204,6 +205,11 @@ $(document).ready(function () {
       $('#check_search_home').prop('checked', true);
     } else {
       $('#check_search_home').prop('checked', false);
+    }
+    if (chkedSkandeerAlt == true) {
+      $('#check_skandeer_alt').prop('checked', true);
+    } else {
+      $('#check_skandeer_alt').prop('checked', false);
     }
     if (chkedHomeWidgets1 == true) {
       $('#check_home_widgets_1').prop('checked', true);
@@ -462,6 +468,7 @@ $(document).ready(function () {
     var chkedDockHid = $('#check_dockHid').is(":checked");
     var chkedDockCol = $('#check_dockCol').is(":checked");
     var chkedSearchHome = $('#check_search_home').is(":checked");
+    var chkedSkandeerAlt = $('#check_skandeer_alt').is(":checked");
     var chkedHomeWidgets1 = $('#check_home_widgets_1').is(":checked");
     var chkedHomeWidgets1link = $('#widgetProgram1').val();
     var chkedHomeWidgets1prd = $('#check_home_widgets_1_prd').is(":checked");
@@ -592,6 +599,7 @@ $(document).ready(function () {
         chkedDockHid: chkedDockHid,
         chkedDockCol: chkedDockCol,
         chkedSearchHome: chkedSearchHome,
+        chkedSkandeerAlt: chkedSkandeerAlt,
         chkedHomeWidgets1: chkedHomeWidgets1,
         chkedHomeWidgets1link: chkedHomeWidgets1link,
         chkedHomeWidgets1prd: chkedHomeWidgets1prd,

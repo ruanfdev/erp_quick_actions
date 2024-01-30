@@ -90,10 +90,83 @@ html.light .header .child {
 }
 
 html.light .login_div {
-  background-color: var(--dark);
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+  max-width: 45%;
+  border: none;
+  box-shadow: none;
+}
+
+html.light .login_div > br,
+html.light .login_div .login_logo strong,
+html.light .login_div > .row:nth-child(10) > div:nth-child(3) .login {
+  display: none !important;
+}
+
+html.light .login_div .login_logo {
+  min-width: 300px;
+  max-width: 50%;
+}
+
+html.light .login_div > .row:first-child {
+  padding-bottom: 20px;
+}
+
+html.light .login_div > .row:nth-child(10) {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+html.light .login_div > .row:nth-child(4),
+html.light .login_div > .row:nth-child(5),
+html.light .login_div > .optional1 > .row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+html.light .login_div > .row:nth-child(4) > div,
+html.light .login_div > .row:nth-child(5) > div,
+html.light .login_div > .optional1 > .row > div {
+  max-width: 80%;
+  min-width: 300px;
+}
+
+html.light .login_div > .row:nth-child(4) > div,
+html.light .login_div > .row:nth-child(5) > div,
+html.light .login_div > .optional1 > .row > div,
+html.light .login_div .row > div > input {
+  text-align: center;
+}
+
+html.light .login_div .row > div > input {
+  border: 1px solid var(--green);
+}
+
+html.light .login_div > .row:nth-child(10) > div:first-child .changePassword a,
+html.light .login_div > .row:nth-child(10) > div:first-child .backToLogin a {
+  font-size: 12px;
+  border: 1px dashed var(--green);
+  border-radius: 5px;
+  margin-top: 10px;
+  /* padding: 3px; */
+  box-shadow: inset var(--boxShadMed);
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  padding: 3px 10px;
+  text-decoration: none;
+}
+
+html.light .login_div > .row:nth-child(10) > div:first-child .changePassword a:hover,
+html.light .login_div > .row:nth-child(10) > div:first-child .backToLogin a:hover {
+  box-shadow: inset var(--boxShadDark);
+  border-style: solid;
 }
 
 html.light .btn.btn-success,
@@ -1133,7 +1206,7 @@ html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="rest
   border: none !important;
 }
 
-html.light div.leergids_browse + fieldset form[method="post"] {
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1142,8 +1215,8 @@ html.light div.leergids_browse + fieldset form[method="post"] {
   align-items: flex-start;
 }
 
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"],
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a {
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"],
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a {
   width: 16%;
   margin: 3px;
   padding: 5px !important;
@@ -1157,20 +1230,20 @@ html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[
   align-items: center;
 }
 
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"]:hover,
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a:hover {
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"]:hover,
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a:hover {
   background-color: var(--darker) !important;
   text-decoration: none;
   color: var(--light);
 }
 
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] + br,
-html.light div.leergids_browse + fieldset form[method="post"] button:first-child {
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] + br,
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button:first-child {
   display: none !important;
 }
 
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] span.fa.fa-folder,
-html.light div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a span.fa.fa-file {
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] span.fa.fa-folder,
+html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a span.fa.fa-file {
   transform: scale(2);
   padding: 10px;
 }
