@@ -19,7 +19,7 @@
     "default_title": "ERP - Quick Actions",
     "default_popup": "src/browser_action/browser_action.html",
     "default_icon": {
-      "16": "icons/icon_16_dev.png"
+      "16": "icons/icon_16.png"
     }
   },
   "permissions": [
