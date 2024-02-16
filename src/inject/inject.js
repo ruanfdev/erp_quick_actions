@@ -1,5 +1,32 @@
 var nwk_theme;
 
+function isFontAwesomeIncluded() {
+	var testFAlinks = window.top.document.getElementsByTagName('link');
+	for (var i = 0; i < testFAlinks.length; i++) {
+		var link = testFAlinks[i];
+		if (link.rel === 'stylesheet' && link.href.includes('font-awesome.min.css')) {
+			return true;
+		}
+	}
+	return false;
+}
+
+if (!isFontAwesomeIncluded()) {
+	var linkCustomFA = document.createElement('link');
+	linkCustomFA.rel = 'stylesheet';
+	linkCustomFA.href = '../nwk/css/font-awesome/css/font-awesome.min.css';
+
+	document.getElementsByTagName("head")[0].appendChild(linkCustomFA);
+
+	var customFAlogo = document.createElement('i');
+	customFAlogo.className = 'fa fa-sign-in';
+
+	var loginDivfind = document.querySelector('.login_div');
+	var loginDivbutton = loginDivfind.querySelector('#btnSubmit');
+
+	loginDivbutton.appendChild(customFAlogo);
+}
+
 var linkCustomCSS = document.createElement("style");
 linkCustomCSS.innerHTML = '';
 
@@ -479,7 +506,7 @@ function injectProcess() {
 							chkedHomeWidgets1prd: false,
 							chkedHomeWidgets1dev: false,
 							chkedHomeWidgets1qa: false
-							
+
 						}, function () {
 							// document.getElementsByTagName("head")[0].appendChild(linkLight);
 						});
@@ -525,6 +552,9 @@ function injectProcess() {
 					if (chkedHomeWidgetsVar > 0) {
 						if (window.location !== window.parent.location && $(window.frameElement).hasClass("widgetFrameRender")) {
 							$("html").addClass("blockBTN");
+							if ($(window.frameElement).attr('src') === '/ALGEMEEN/TYDSKEDULE/alg_emm_011_E_cls.php') {
+								$("html").addClass("blockBTNallow");
+							}
 						}
 
 						if (chkedHomeWidgetsVar == 3) {
@@ -547,17 +577,17 @@ function injectProcess() {
 						if (chkedHomeWidgets1 == true) {
 							if ((chkedHomeWidgets1prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets1dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets1qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
 								var newWidgetDiv = document.createElement("div");
-								newWidgetDiv.id = 'widgetNr'+widgetCounter;
+								newWidgetDiv.id = 'widgetNr' + widgetCounter;
 								newWidgetDiv.className = 'widgetNr';
-								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/'+chkedHomeWidgets1link+'></iframe>';
+								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/' + chkedHomeWidgets1link + '></iframe>';
 								$("html>body>.widgetNrContainer").append(newWidgetDiv);
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
-								
+								$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).css('height', cssHeight);
+
 								if (widgetCounter < chkedHomeWidgetsVar) {
-									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+									$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).addClass('hasNext');
 								}
 								if (widgetCounter == chkedHomeWidgetsVar) {
-									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+									$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).removeClass('hasNext');
 								}
 								widgetCounter++;
 							}
@@ -566,17 +596,17 @@ function injectProcess() {
 						if (chkedHomeWidgets2 == true) {
 							if ((chkedHomeWidgets2prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets2dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets2qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
 								var newWidgetDiv = document.createElement("div");
-								newWidgetDiv.id = 'widgetNr'+widgetCounter;
+								newWidgetDiv.id = 'widgetNr' + widgetCounter;
 								newWidgetDiv.className = 'widgetNr';
-								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/'+chkedHomeWidgets2link+'></iframe>';
+								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/' + chkedHomeWidgets2link + '></iframe>';
 								$("html>body>.widgetNrContainer").append(newWidgetDiv);
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
-								
+								$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).css('height', cssHeight);
+
 								if (widgetCounter < chkedHomeWidgetsVar) {
-									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+									$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).addClass('hasNext');
 								}
 								if (widgetCounter == chkedHomeWidgetsVar) {
-									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+									$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).removeClass('hasNext');
 								}
 								widgetCounter++;
 							}
@@ -585,23 +615,24 @@ function injectProcess() {
 						if (chkedHomeWidgets3 == true) {
 							if ((chkedHomeWidgets3prd && window.top.location.hostname == 'php-prd.nwk.co.za') || (chkedHomeWidgets3dev && window.top.location.hostname == 'php-dev.nwk.co.za') || (chkedHomeWidgets3qa && window.top.location.hostname == 'php-qa.nwk.co.za')) {
 								var newWidgetDiv = document.createElement("div");
-								newWidgetDiv.id = 'widgetNr'+widgetCounter;
+								newWidgetDiv.id = 'widgetNr' + widgetCounter;
 								newWidgetDiv.className = 'widgetNr';
-								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/'+chkedHomeWidgets3link+'></iframe>';
+								newWidgetDiv.innerHTML = '<iframe class="widgetFrameRender" src=/' + chkedHomeWidgets3link + '></iframe>';
 								$("html>body>.widgetNrContainer").append(newWidgetDiv);
-								$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).css('height',cssHeight);
-								
+								$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).css('height', cssHeight);
+
 								if (widgetCounter < chkedHomeWidgetsVar) {
-									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).addClass('hasNext');
+									$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).addClass('hasNext');
 								}
 								if (widgetCounter == chkedHomeWidgetsVar) {
-									$("html>body>.widgetNrContainer>#widgetNr"+widgetCounter).removeClass('hasNext');
+									$("html>body>.widgetNrContainer>#widgetNr" + widgetCounter).removeClass('hasNext');
 								}
 								widgetCounter++;
 							}
 						}
 					} else {
 						$("html").removeClass("blockBTN");
+						$("html").removeClass("blockBTNallow");
 					}
 
 					if (typeof autofill_user !== 'undefined') {
