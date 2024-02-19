@@ -1,3 +1,8 @@
+html.light .loadingFrame {
+  background-color: rgb(242 242 242 / 80%);
+  backdrop-filter: blur(5px);
+}
+
 html.light .header {
   border: 2px solid var(--green);
   height: 90px;
