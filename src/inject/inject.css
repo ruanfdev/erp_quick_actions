@@ -362,16 +362,16 @@ html.light.dockCol .header #header_container .btn_main .child button:hover {
 }
 
 html.light.altMenus .ui-widget-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0 0 0 / 50%);
   opacity: unset !important;
 }
 
 html.light.altMenus .ui-widget-content.ui-dialog {
-  box-shadow: 1px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0px 7px 1px rgb(0 0 0 / 50%);
 }
 
 html.light.altMenus ul#ShortcutsList {
-  box-shadow: -1px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 0px 7px 1px rgb(0 0 0 / 50%);
   border-radius: 0;
   top: 0;
   right: 0;
