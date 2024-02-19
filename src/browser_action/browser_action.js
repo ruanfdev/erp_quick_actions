@@ -507,33 +507,57 @@ $(document).ready(function () {
 
     if (chkedDockhead) {
       chkedHeader = false;
+      $('#check_header').prop('checked', false);
       chkedHidhead = false;
+      $('#check_hidhead').prop('checked', false);
       chkedVivaldihead = false;
+      $('#check_vivaldiHead').prop('checked', false);
     } else if (chkedVivaldihead) {
       chkedHeader = false;
+      $('#check_header').prop('checked', false);
       chkedHidhead = false;
+      $('#check_hidhead').prop('checked', false);
       chkedDockhead = false;
+      $('#check_dockHead').prop('checked', false);
       chkedDockBL = false;
+      $('#check_dockBL').prop('checked', false);
       chkedDockHid = false;
+      $('#check_dockHid').prop('checked', false);
     } else if (chkedHidhead) {
       chkedHeader = false;
+      $('#check_header').prop('checked', false);
       chkedVivaldihead = false;
+      $('#check_vivaldiHead').prop('checked', false);
       chkedDockhead = false;
+      $('#check_dockHead').prop('checked', false);
       chkedDockBL = false;
+      $('#check_dockBL').prop('checked', false);
       chkedDockHid = false;
+      $('#check_dockHid').prop('checked', false);
     } else if (chkedHeader) {
       chkedHidhead = false;
+      $('#check_hidhead').prop('checked', false);
       chkedVivaldihead = false;
+      $('#check_vivaldiHead').prop('checked', false);
       chkedDockhead = false;
+      $('#check_dockHead').prop('checked', false);
       chkedDockBL = false;
+      $('#check_dockBL').prop('checked', false);
       chkedDockHid = false;
+      $('#check_dockHid').prop('checked', false);
     } else {
       chkedHeader = false;
+      $('#check_header').prop('checked', false);
       chkedHidhead = false;
+      $('#check_hidhead').prop('checked', false);
       chkedVivaldihead = false;
+      $('#check_vivaldiHead').prop('checked', false);
       chkedDockhead = false;
+      $('#check_dockHead').prop('checked', false);
       chkedDockBL = false;
+      $('#check_dockBL').prop('checked', false);
       chkedDockHid = false;
+      $('#check_dockHid').prop('checked', false);
     }
 
     if (!chkedHomeWidgets1) {
