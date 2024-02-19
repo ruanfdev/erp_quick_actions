@@ -148,6 +148,10 @@ html.light.dark .login_div input {
   color: var(--light);
 }
 
+html.light.dark .login_div {
+  background-color: var(--dark);
+}
+
 html.light.dark .BlokNav>div .fa,
 html.light.dark .BlokNav:not(:hover)>a {
   color: var(--offWhite);

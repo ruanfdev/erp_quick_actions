@@ -99,7 +99,7 @@ html.light .login_div {
   max-width: 25%;
   border: none;
   border-radius: 15px;
-  background-color: var(--dark);
+  background-color: var(--light);
   padding: 2%;
   box-shadow: var(--boxShadMed);
 }
