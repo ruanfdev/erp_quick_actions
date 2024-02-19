@@ -104,7 +104,8 @@
       <h1>Semi-Automatic Login</h1>
     </button>
     <div class="panel autofill">
-      <p class="section_description">Press "Ctrl + Enter" on an active ERP Tab when logged out (ideally having PRD, DEV &amp; QA on the same password)</p>
+      <p class="section_description">Press "Ctrl + Enter" on an active ERP Tab when logged out (ideally having PRD, DEV
+        &amp; QA on the same password)</p>
       <div class="fifty">
         <input type="text" id="autofill_user" placeholder="Username" />
       </div>
@@ -123,9 +124,9 @@
       <p class="section_description">
         Enable and select up to 3 widget to show on home screen.
         <br>
-        Loading time depends on the dataset, for example "Contact Information" takes longer to load.
+        Loading times depend on the dataset, for example "Contact Information" takes longer to load.
         <br>
-        Save, Update &amp; Delete buttons are also automatically hidden inside widgets.
+        Save, Update &amp; Delete buttons are also automatically removed inside widgets.
       </p>
       <div class="row h3select">
         <div class="inject sideinj">
@@ -136,7 +137,9 @@
         </div>
         <h3>
           <select class="widgetProgramSelect" id="widgetProgram1">
+            <option value=""> - Widget 1 - </option>
             <option value="session.php">Session</option>
+            <option value="ALGEMEEN/TYDSKEDULE/alg_emm_011_E_cls.php">Time Schedule</option>
             <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables</option>
             <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information</option>
             <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests</option>
@@ -173,7 +176,9 @@
         </div>
         <h3>
           <select class="widgetProgramSelect" id="widgetProgram2">
+            <option value=""> - Widget 2 - </option>
             <option value="session.php">Session</option>
+            <option value="ALGEMEEN/TYDSKEDULE/alg_emm_011_E_cls.php">Time Schedule</option>
             <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables</option>
             <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information</option>
             <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests</option>
@@ -210,7 +215,9 @@
         </div>
         <h3>
           <select class="widgetProgramSelect" id="widgetProgram3">
+            <option value=""> - Widget 3 - </option>
             <option value="session.php">Session</option>
+            <option value="ALGEMEEN/TYDSKEDULE/alg_emm_011_E_cls.php">Time Schedule</option>
             <option value="INLIGTINGSTEGNOLOGIE/TAALVERANDERLIKE/inl_tvr_001_E_nvg.php">Language Variables</option>
             <option value="ALGEMEEN/KONTAK_INLIGTING/alg_kon_001_E_nvg.php">Contact Information</option>
             <option value="ALGEMEEN/VERSOEKE/alg_ver_029_E_nvg.php">Requests</option>
@@ -245,6 +252,9 @@
       <h1>Personalized Settings</h1>
     </button>
     <div class="panel">
+      <div class="hundred">
+        <h2 class="settings_head">Headers</h2>
+      </div>
       <div class="fifty">
         <div class="row">
           <div class="inject sideinj">
@@ -273,6 +283,8 @@
           </div>
           <h3>Vivaldi Header</h3>
         </div>
+      </div>
+      <div class="fifty">
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
@@ -300,6 +312,11 @@
           </div>
           <h3>Hidden (Slide Out)</h3>
         </div>
+      </div>
+      <div class="hundred">
+        <h2 class="settings_head">Colors</h2>
+      </div>
+      <div class="fifty">
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
@@ -312,6 +329,26 @@
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
+              <input type="checkbox" id="check_rgbhead">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Animated RGB header glow</h3>
+        </div>
+      </div>
+      <div class="fifty">
+        <!-- <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_dynamic_you">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Dynamic Environment Color</h3>
+        </div> -->
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
               <input type="checkbox" id="check_glow">
               <span class="checkmark_side"></span>
             </label>
@@ -320,16 +357,10 @@
           <p class="section_description">(this is also used to adapt some colors based on current environment)</p>
         </div>
       </div>
+      <div class="hundred">
+        <h2 class="settings_head">Look &amp; Feel</h2>
+      </div>
       <div class="fifty">
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_rgbhead">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3>Animated RGB header glow</h3>
-        </div>
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
@@ -339,6 +370,33 @@
           </div>
           <h3>Alternative menu look &amp; feel</h3>
         </div>
+        <div class="row">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_skandeer_alt">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>Alternative Scan Directory</h3>
+        </div>
+        <!-- <div class="row h3select">
+          <div class="inject sideinj">
+            <label class="inject_container">
+              <input type="checkbox" id="check_home_widgets_3">
+              <span class="checkmark_side"></span>
+            </label>
+          </div>
+          <h3>
+            <select class="widgetProgramSelect" id="widgetProgram3">
+              <option value=""> - Choose Custom Font - </option>
+              <option value="roboto">Roboto</option>
+              <option value="cursive">Cursive</option>
+              <option value="system">System-UI</option>
+            </select>
+          </h3>
+        </div> -->
+      </div>
+      <div class="fifty">
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
@@ -356,6 +414,11 @@
           </div>
           <!-- <h3>Smaller Home Items</h3> -->
         </div>
+      </div>
+      <div class="hundred">
+        <h2 class="settings_head">Functionality</h2>
+      </div>
+      <div class="fifty">
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
@@ -365,6 +428,8 @@
           </div>
           <h3>Note taking new tab</h3>
         </div>
+      </div>
+      <div class="fifty">
         <div class="row">
           <div class="inject sideinj">
             <label class="inject_container">
@@ -373,15 +438,6 @@
             </label>
           </div>
           <h3>Searchable Home Items</h3>
-        </div>
-        <div class="row">
-          <div class="inject sideinj">
-            <label class="inject_container">
-              <input type="checkbox" id="check_skandeer_alt">
-              <span class="checkmark_side"></span>
-            </label>
-          </div>
-          <h3>Alternative Scan Directory</h3>
         </div>
       </div>
     </div>
@@ -546,17 +602,17 @@
       <i id="menu_bars" class="fa fa-bars" aria-hidden="true"></i>
       <span>ERP - Quick Actions</span>
       <br>
-      <span id="smallVersion">Version 6.9.7</span>
+      <span id="smallVersion">Version 6.9.9</span>
       <br>
       <i id="tooltipChange" class="fa fa-history" aria-hidden="true">
         <span class="tooltiptextChange">
-          <p id="changeHead">Changelog for version 6.9.7</p>
+          <p id="changeHead">Changelog for version 6.9.9</p>
           <ul id="changeList">
-            <li>ADDED - Homepage Widgets</li>
             <li>ADDED - Alternative Scan Directory styling</li>
-            <li>CHANGE - Some environment based styles</li>
+            <li>CHANGE - Prep for environment based styles</li>
+            <li>FIX - Homepage Widget tables</li>
             <li>FIX - Custom Editor compatibility</li>
-            <li>FIX - Styles &amp; Various Bugs</li>
+            <li>FIX - Various Bugs</li>
           </ul>
         </span>
       </i>

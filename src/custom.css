@@ -1,6 +1,6 @@
 :root {
     --green: #71bf44;
-    --greenHover: rgba(113,191,68,0.25);
+    --greenHover: rgb(113 191 68 / 25%);
     --orange: #f7931c;
     --red: #c12e2a;
     --blue: #2aabd2;
@@ -34,39 +34,76 @@
     --light: #F2F2F2;
     --offWhite: #DDDDDD;
 
-    --boxShadMed: 0px 0px 5px rgba(0,0,0,0.5);
-    --boxShadDark: 0px 0px 5px rgba(0,0,0,0.8);
+    --boxShadMed: 0px 0px 5px rgb(0 0 0 / 50%);
+    --boxShadDark: 0px 0px 5px rgb(0 0 0 / 80%);
 
     --mainPadding: 15px;
 }
+
 @font-face {
     font-family: myRoboto;
     src: url(../fonts/Roboto-Regular.ttf);
 }
+
 @keyframes scaleX {
-    0% {transform: scaleX(1);}
-    50% {transform: scaleX(0);}
-    100% {transform: scaleX(1);}
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
 }
+
 @keyframes scaleY {
-    0% {transform: scaleY(1);}
-    50% {transform: scaleY(0);}
-    100% {transform: scaleY(1);}
+    0% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
 }
+
 @keyframes quiverAnimate {
-    0% {transform: rotate(0deg) scale(1);}
-    25% {transform: rotate(0deg) scale(0.98);}
-    50% {transform: rotate(0deg) scale(1.01);}
-    75% {transform: rotate(0deg) scale(0.99);}
-    100% {transform: rotate(0deg) scale(1);}
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(0deg) scale(0.98);
+    }
+
+    50% {
+        transform: rotate(0deg) scale(1.01);
+    }
+
+    75% {
+        transform: rotate(0deg) scale(0.99);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
 }
+
 @keyframes rgbanimate {
     0% {
         background-position: 0 0;
     }
+
     50% {
         background-position: 400% 0;
     }
+
     100% {
         background-position: 0 0;
     }

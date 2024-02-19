@@ -1,3 +1,8 @@
+html.light .loadingFrame {
+  background-color: rgb(242 242 242 / 80%);
+  backdrop-filter: blur(5px);
+}
+
 html.light .header {
   border: 2px solid var(--green);
   height: 90px;
@@ -8,9 +13,9 @@ html.light .header>.header_nav>h4 {
 }
 
 html.light .header>.header_nav a {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
+  -webkit-box-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
+  -moz-box-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
   transition: 0.1s linear;
 }
 
@@ -29,13 +34,13 @@ html.light #head-button .show-notifications.active~.notifications {
 
 html.light .main .BlokNav {
   border-radius: 8px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 30%);
 }
 
 html.light .main .BlokNav:hover,
 html.light ul#ShortcutsList>li:hover {
   background-color: var(--green) !important;
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 1px 6px 0px rgb(0 0 0 / 60%);
 }
 
 html.light .BlokNav:hover *,
@@ -91,14 +96,37 @@ html.light .header .child {
 
 html.light .login_div {
   min-width: 300px;
-  max-width: 45%;
+  max-width: 25%;
   border: none;
-  box-shadow: none;
+  border-radius: 15px;
+  background-color: var(--light);
+  padding: 2%;
+  box-shadow: var(--boxShadMed);
 }
 
-html.light .login_div > br,
+html.light .login_div #btnSubmit {
+  background: none;
+  background-color: var(--green);
+  border-color: var(--green);
+  border-radius: 5px;
+  padding: 0;
+  font-size: 20px;
+  width: 60px;
+  height: 40px;
+}
+
+html.light .login_div #btnSubmit:hover {
+  background-color: var(--greenHover);
+  box-shadow: var(--boxShadMed);
+}
+
+html.light .login_div>.row:nth-child(10)>div:nth-child(3) {
+  width: 100%;
+}
+
+html.light .login_div>br,
 html.light .login_div .login_logo strong,
-html.light .login_div > .row:nth-child(10) > div:nth-child(3) .login {
+html.light .login_div>.row:nth-child(10)>div:nth-child(3) .login {
   display: none !important;
 }
 
@@ -107,11 +135,11 @@ html.light .login_div .login_logo {
   max-width: 50%;
 }
 
-html.light .login_div > .row:first-child {
+html.light .login_div>.row:first-child {
   padding-bottom: 20px;
 }
 
-html.light .login_div > .row:nth-child(10) {
+html.light .login_div>.row:nth-child(10) {
   padding-top: 40px;
   display: flex;
   flex-direction: column-reverse;
@@ -120,9 +148,9 @@ html.light .login_div > .row:nth-child(10) {
   align-items: center;
 }
 
-html.light .login_div > .row:nth-child(4),
-html.light .login_div > .row:nth-child(5),
-html.light .login_div > .optional1 > .row {
+html.light .login_div>.row:nth-child(4),
+html.light .login_div>.row:nth-child(5),
+html.light .login_div>.optional1>.row {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -130,26 +158,26 @@ html.light .login_div > .optional1 > .row {
   align-items: center;
 }
 
-html.light .login_div > .row:nth-child(4) > div,
-html.light .login_div > .row:nth-child(5) > div,
-html.light .login_div > .optional1 > .row > div {
+html.light .login_div>.row:nth-child(4)>div,
+html.light .login_div>.row:nth-child(5)>div,
+html.light .login_div>.optional1>.row>div {
   max-width: 80%;
   min-width: 300px;
 }
 
-html.light .login_div > .row:nth-child(4) > div,
-html.light .login_div > .row:nth-child(5) > div,
-html.light .login_div > .optional1 > .row > div,
-html.light .login_div .row > div > input {
+html.light .login_div>.row:nth-child(4)>div,
+html.light .login_div>.row:nth-child(5)>div,
+html.light .login_div>.optional1>.row>div,
+html.light .login_div .row>div>input {
   text-align: center;
 }
 
-html.light .login_div .row > div > input {
+html.light .login_div .row>div>input {
   border: 1px solid var(--green);
 }
 
-html.light .login_div > .row:nth-child(10) > div:first-child .changePassword a,
-html.light .login_div > .row:nth-child(10) > div:first-child .backToLogin a {
+html.light .login_div>.row:nth-child(10)>div:first-child .changePassword a,
+html.light .login_div>.row:nth-child(10)>div:first-child .backToLogin a {
   font-size: 12px;
   border: 1px dashed var(--green);
   border-radius: 5px;
@@ -163,8 +191,8 @@ html.light .login_div > .row:nth-child(10) > div:first-child .backToLogin a {
   text-decoration: none;
 }
 
-html.light .login_div > .row:nth-child(10) > div:first-child .changePassword a:hover,
-html.light .login_div > .row:nth-child(10) > div:first-child .backToLogin a:hover {
+html.light .login_div>.row:nth-child(10)>div:first-child .changePassword a:hover,
+html.light .login_div>.row:nth-child(10)>div:first-child .backToLogin a:hover {
   box-shadow: inset var(--boxShadDark);
   border-style: solid;
 }
@@ -175,9 +203,9 @@ html.light .btn.btn-danger,
 html.light .btn.btn-info,
 html.light .btn.btn-default {
   background-image: none;
-  box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px -1px rgb(0 0 0 / 40%);
+  -webkit-box-shadow: 1px 1px 2px -1px rgb(0 0 0 / 40%);
+  -moz-box-shadow: 1px 1px 2px -1px rgb(0 0 0 / 40%);
   transition: 0.1s linear;
   outline: none;
 }
@@ -334,16 +362,16 @@ html.light.dockCol .header #header_container .btn_main .child button:hover {
 }
 
 html.light.altMenus .ui-widget-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0 0 0 / 50%);
   opacity: unset !important;
 }
 
 html.light.altMenus .ui-widget-content.ui-dialog {
-  box-shadow: 1px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0px 7px 1px rgb(0 0 0 / 50%);
 }
 
 html.light.altMenus ul#ShortcutsList {
-  box-shadow: -1px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 0px 7px 1px rgb(0 0 0 / 50%);
   border-radius: 0;
   top: 0;
   right: 0;
@@ -1053,11 +1081,11 @@ html.light>body>div.page>div.content>iframe.addInnerTabContent.selected {
   opacity: 1;
 }
 
-html.light.blockBTN .btn.btn-success,
-html.light.blockBTN .btn.btn-warning,
-html.light.blockBTN .btn.btn-danger,
-html.light.blockBTN i.fa.fa-info-circle,
-html.light.blockBTN .datagrid-toolbar {
+html.light.blockBTN:not(.blockBTNallow) .btn.btn-success,
+html.light.blockBTN:not(.blockBTNallow) .btn.btn-warning,
+html.light.blockBTN:not(.blockBTNallow) .btn.btn-danger,
+html.light.blockBTN:not(.blockBTNallow) i.fa.fa-info-circle,
+html.light.blockBTN:not(.blockBTNallow) .datagrid-toolbar {
   display: none !important;
 }
 
@@ -1110,11 +1138,28 @@ html.light.searchHome #ShortcutsList>div#filterShortList {
 }
 
 html.light.blockBTN body .datagrid {
-  max-height: 86vh !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+html.light.blockBTN body .datagrid .panel-header {
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 8vh;
+  max-height: 8vh;
 }
 
 html.light.blockBTN body .datagrid .panel-body {
-  max-height: 78vh !important;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 92vh;
+  max-height: 92vh;
 }
 
 html.light.blockBTN body .datagrid .panel-body .datagrid-view {
@@ -1126,87 +1171,104 @@ html.light.blockBTN body .datagrid .datagrid-view1 {
   max-width: 0vw !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td div span:first-child,
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td div {
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td div span:first-child,
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td div {
   display: inline-block !important;
   white-space: initial !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEKNOMMER"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEKNOMMER"] div span:first-child {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_VERSOEKNOMMER"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="_VERSOEKNOMMER"] div span:first-child {
+  width: 15vw !important;
+  max-width: 15vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_VERSOEK_VAN"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="_VERSOEK_VAN"] div span:first-child {
   width: 14vw !important;
   max-width: 14vw !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEK_VAN"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEK_VAN"] div span:first-child {
-  width: 12vw !important;
-  max-width: 12vw !important;
-}
-
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEK_VAN"] div {
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td[field="_VERSOEK_VAN"] div {
   max-width: 100% !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_BEPLANNINGSDATUM"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_BEPLANNINGSDATUM"] div span:first-child {
-  width: 13vw !important;
-  max-width: 13vw !important;
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_VERSOEK"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="_VERSOEK"] div span:first-child {
+  width: 61vw !important;
+  max-width: 61vw !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_VERSOEK"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_VERSOEK"] div span:first-child {
-  width: 57vw !important;
-  max-width: 57vw !important;
-}
-
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_NAVRAAG"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="_NAVRAAG"] div span:first-child {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_NAVRAAG"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="_NAVRAAG"] div span:first-child {
   width: 7vw !important;
   max-width: 7vw !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="keyword"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="keyword"] div span:first-child {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="keyword"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="keyword"] div span:first-child {
   width: 24vw !important;
   max-width: 24vw !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="value_A"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="value_A"] div span:first-child,
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="value_E"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-header table tr td[field="value_E"] div span:first-child {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="value_A"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="value_A"] div span:first-child,
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="value_E"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="value_E"] div span:first-child {
   width: 34vw !important;
   max-width: 34vw !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEK_VAN"] div,
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_BEPLANNINGSDATUM"] div,
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_VERSOEK"] div,
-html.light.blockBTN body .datagrid .datagrid-view2 > div.datagrid-body table tr td[field="_NAVRAAG"] div {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="Project_Id"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="Project_Id"] div span:first-child {
+  width: 55vw !important;
+  max-width: 55vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="Duration"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="Duration"] div span:first-child,
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="Date_entered"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="Date_entered"] div span:first-child {
+  width: 16vw !important;
+  max-width: 16vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="View"],
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-header table tr td[field="View"] div span:first-child {
+  width: 10vw !important;
+  max-width: 10vw !important;
+}
+
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td[field="_VERSOEKNOMMER"] div,
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td[field="_VERSOEK_VAN"] div,
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td[field="_VERSOEK"] div,
+html.light.blockBTN body .datagrid .datagrid-view2>div.datagrid-body table tr td[field="_NAVRAAG"] div {
   max-width: 100% !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td div {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td div {
   padding: 0 0 0 1px !important;
   min-width: 99% !important;
   max-width: 99% !important;
 }
 
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_STATUS"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_PRIORITEIT_NO"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="_BEPLANNINGSDATUM"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="log"],
-html.light.blockBTN body .datagrid .datagrid-view2 > div table tr td[field="restore"] {
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_STATUS"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_PRIORITEIT"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_PRIORITEIT_NO"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="_BEPLANNINGSDATUM"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="log"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="restore"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="Pers_number"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="Branch_code"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="Project_description"],
+html.light.blockBTN body .datagrid .datagrid-view2>div table tr td[field="delete"] {
   visibility: hidden !important;
   max-width: 0vw !important;
   border: none !important;
 }
 
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] {
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1215,8 +1277,8 @@ html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] {
   align-items: flex-start;
 }
 
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"],
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a {
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"],
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"]~a {
   width: 16%;
   margin: 3px;
   padding: 5px !important;
@@ -1230,20 +1292,20 @@ html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button
   align-items: center;
 }
 
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"]:hover,
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a:hover {
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"]:hover,
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"]~a:hover {
   background-color: var(--darker) !important;
   text-decoration: none;
   color: var(--light);
 }
 
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] + br,
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button:first-child {
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"]+br,
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button:first-child {
   display: none !important;
 }
 
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] span.fa.fa-folder,
-html.light.skandeerAlt div.leergids_browse + fieldset form[method="post"] button.dir-button[name="dir"] ~ a span.fa.fa-file {
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"] span.fa.fa-folder,
+html.light.skandeerAlt div.leergids_browse+fieldset form[method="post"] button.dir-button[name="dir"]~a span.fa.fa-file {
   transform: scale(2);
   padding: 10px;
 }

@@ -17,6 +17,11 @@ h1 {
   padding-left: 15px;
 }
 
+h2.settings_head {
+  font-size: 1.5em;
+  color: var(--light);
+}
+
 h3 {
   color: var(--dark);
   font-size: 1.2em;
