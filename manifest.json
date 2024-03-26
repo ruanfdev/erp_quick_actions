@@ -1,60 +1,50 @@
 {
-  "manifest_version": 3,
-  "version": "20240219.1",
-  "name": "ERP - Quick Actions",
-  "description": "ERP - Quick Actions",
-  "homepage_url": "https://www.nwk.co.za/",
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self';"
-  },
-  "icons": {
-    "16": "icons/icon_16.png",
-    "48": "icons/icon_48.png",
-    "128": "icons/icon_128.png"
-  },
-  "background": {
-    "service_worker": "src/bg/background.js"
-  },
-  "action": {
-    "default_title": "ERP - Quick Actions",
-    "default_popup": "src/browser_action/browser_action.html",
-    "default_icon": {
-      "16": "icons/icon_16.png"
-    }
-  },
-  "permissions": [
-    "contextMenus",
-    "tabs",
-    "storage"
-  ],
-  "host_permissions": [
-    "http://*.nwk.co.za/*"
-  ],
-  "omnibox": {
-    "keyword": "erp"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*.nwk.co.za/*"
-      ],
-      "exclude_matches": [
-        "http://imap.nwk.co.za/*",
-        "http://online.nwk.co.za/*",
-        "http://*.nwk.co.za/phpMyAdmin/*",
-        "http://*.nwk.co.za/Betrokka/*"
-      ],
-      "all_frames": true,
-      "js": [
-        "js/jquery/jquery.min.js",
-        "src/inject/inject.js"
-      ],
-      "css": [
-        "src/custom.css",
-        "src/inject/inject.css",
-        "src/inject/inject_dark.css",
-        "src/user.css"
-      ]
-    }
-  ]
+	"manifest_version": 3,
+	"version": "20240326.1",
+	"name": "ERP - Quick Actions",
+	"description": "ERP - Quick Actions",
+	"homepage_url": "https://www.nwk.co.za/",
+	"content_security_policy": {
+		"extension_pages": "script-src 'self'; object-src 'self';"
+	},
+	"icons": {
+		"16": "icons/icon_16.png",
+		"48": "icons/icon_48.png",
+		"128": "icons/icon_128.png"
+	},
+	"background": {
+		"service_worker": "src/bg/background.js"
+	},
+	"action": {
+		"default_title": "ERP - Quick Actions",
+		"default_popup": "src/browser_action/browser_action.html",
+		"default_icon": {
+			"16": "icons/icon_16.png"
+		}
+	},
+	"permissions": ["contextMenus", "tabs", "storage"],
+	"host_permissions": ["http://*.nwk.co.za/*"],
+	"omnibox": {
+		"keyword": "erp"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*.nwk.co.za/*"],
+			"exclude_matches": [
+				"http://imap.nwk.co.za/*",
+				"http://online.nwk.co.za/*",
+				"http://*.nwk.co.za/phpMyAdmin/*",
+				"http://*.nwk.co.za/Betrokka/*",
+				"http://php-dev.nwk.co.za/*"
+			],
+			"all_frames": true,
+			"js": ["js/jquery/jquery.min.js", "src/inject/inject.js"],
+			"css": [
+				"src/custom.css",
+				"src/inject/inject.css",
+				"src/inject/inject_dark.css",
+				"src/user.css"
+			]
+		}
+	]
 }
